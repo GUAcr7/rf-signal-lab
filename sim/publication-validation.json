@@ -4,7 +4,7 @@
   "checks": [
     {
       "name": "published_file_hashes",
-      "files": 2211,
+      "files": 2204,
       "passed": true
     },
     {

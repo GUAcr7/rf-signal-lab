@@ -1,33 +1,53 @@
-# 复现入口与当前边界
+# 复现说明
 
-## 1. 无板卡的可执行核查
+## 离线数据与算法检查
 
-Python 3.11+ 和 NumPy；运行 `python sim/verify_package.py`。检查发布哈希、活跃 Python 文件语法、FIR 整数实现与独立 Fraction 参考、三个正式技能案例及保留的九抽头历史案例、舍入/饱和边界、学习套件四种波形共 16 块的原始 RX12 数据与 NPZ 解码一致性。不会连接串口、发射或修改板卡。
+环境要求为 Python 3.11+ 和 NumPy。在仓库根目录执行：
 
-学习回放可执行 `python data/rf-learning-kit/example_read.py`；GUI 额外需要 Matplotlib/Tk。数据标签来自已知发射配置，不是推理结果，不能作独立机器学习测试集。
+```text
+python sim/verify_package.py
+```
 
-## 2. 技能包验证
+检查内容包括文件哈希、Python 文件语法、FIR 与独立 Fraction 有理数参考的对照、三个正式技能案例与保留的九抽头历史案例、舍入和饱和边界，以及四种波形共 16 块 RX12 数据与 NPZ 解码的一致性。该入口不访问串口或射频设备。
 
-`skill/verify-fixed-point-fir/README.md` 说明单案例入口、接口契约和失效条件。实际 RTL 验证需要 Icarus Verilog 的 iverilog/vvp，工具不随包分发。历史 11 项验证证据位于 `sim/fir-skill-validation/validation/`。本次打包设备未安装 Icarus，因此发布检查没有冒称重新运行 RTL 仿真。
+学习数据读取示例：
 
-原完整验证驱动仍保存在 `sim/fir-skill-validation/validate.py`，其原相对目录布局在本地完整留档包 `fir-skill/` 中保持原样。公开目录下若要运行整套驱动，使用 `skill/validate.py`（路径适配副本）；单案例脚本可直接使用。
+```text
+python data/rf-learning-kit/example_read.py
+```
 
-## 3. 原工程路径恢复
+图形界面额外依赖 Matplotlib 和 Tk。学习套件的标签来自已知发射配置，适合回放与程序调试，不作为独立机器学习测试集。
+
+## FIR 技能包验证
+
+单案例用法、接口契约和失效条件见 `skill/verify-fixed-point-fir/README.md`。RTL 仿真依赖 Icarus Verilog 的 `iverilog` 和 `vvp`。完整验证入口为：
+
+```text
+python skill/validate.py --tool-root <icarus-root> --output <new-output-directory>
+```
+
+输出目录必须尚不存在。历史 11 项验证记录位于 `sim/fir-skill-validation/validation/`，涵盖正例、有理数复核、错误通道和饱和标志反例、无效输入及缺失工具拒绝。`sim/verify_package.py` 的数值检查与这套 RTL 验证分别运行。
+
+`sim/fir-skill-validation/validate.py` 保留原验证驱动，`skill/validate.py` 适配当前目录布局。
+
+## 原工程路径恢复
 
 ```text
 python build/prepare_workspace.py --output local/workspace
 ```
 
-只向一个尚不存在的新目录复制已公开的项目文件，依据来源清单恢复原文件名大小写。用户目录隐去和密码环境变量改动仍保留。此步骤不编译、不连接硬件。历史结果中的绝对路径只是来源记录，不能据此直接操作新机器。
+该命令依据来源清单向一个尚不存在的新目录复制项目文件，并恢复原文件名大小写；不执行构建或硬件操作。环境信息隐去和密码环境变量设置仍保留。历史日志中的绝对路径用于追溯，运行脚本前需配置本机路径。
 
-## 4. FPGA/板端重建
+## FPGA 与板端重建
 
-实际工程使用 Vivado 2021.1；与指南推荐 2026.1/2025.2 的差异已在报告说明。现有 FIR/FFT 的 Tcl、合并工程准备和构建脚本均保留。先执行只读检查：
+实际工具版本为 Vivado 2021.1，与指南推荐 2026.1/2025.2 的差异在设计报告中说明。FIR、FFT、合并工程和厂商基线的构建脚本分别位于 `fpga/` 和 `experiments/`。
+
+先检查外部输入：
 
 ```text
 python build/preflight.py --vivado <vivado-launcher> --adi-hdl <complete-adi-hdl> --display-project <vendor-display-project>
 ```
 
-本仓库只含部分厂商源快照。完整 ADI HDL、板厂显示/启动工程、迁移导出、工具与器件支持、原阶段构建输入路径须从各自合法来源补齐并记录版本。历史脚本含原机器的 E:/D: 路径与结果指针，需先按本机目录配置和核对后使用；当前不宣称在新电脑全量构建通过。
+仓库包含部分厂商源代码。完整 ADI HDL、板厂显示与启动工程、迁移导出、工具及器件支持需从相应来源取得并固定版本。历史构建脚本中的 E:/D: 路径和结果指针需对应本机目录配置。目前尚无干净环境下完整重建的验收记录。
 
-上板还需核对当前设备身份、镜像/位流/overlay 配对、同轴衰减链、供电和单一操作者。当前未重新执行任何硬件操作。CDC 与外部 I/O 时序未完全闭合、固定八相位策略尚缺新独立测试等限制见报告。
+上板前需核对设备身份、镜像/位流/overlay 对应关系、同轴衰减链和供电。当前 CDC 与外部 I/O 时序未完全闭合，固定八相位策略尚缺新的独立测试；各项限制及已有板级验收范围见设计报告。

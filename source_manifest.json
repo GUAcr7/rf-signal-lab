@@ -9712,54 +9712,6 @@
       "published_sha256": "579689c09fc198edd77fced61368978c93e6d69acdfe7c94bab121ecd2207c8d"
     },
     {
-      "path": "docs/material-notes/00-read-first.md",
-      "archive": "rf-evidence-v2-20261029.zip",
-      "member": "rf-evidence-v2-20261029/00-read-first.md",
-      "original_project_path": null,
-      "original_sha256": "1fedb2b71169a1a241de08aa698369a71e0eaa13917861c4aacddd4dcc70701f",
-      "published_sha256": "1fedb2b71169a1a241de08aa698369a71e0eaa13917861c4aacddd4dcc70701f"
-    },
-    {
-      "path": "docs/material-notes/01-measured-results.md",
-      "archive": "rf-evidence-v2-20261029.zip",
-      "member": "rf-evidence-v2-20261029/01-measured-results.md",
-      "original_project_path": null,
-      "original_sha256": "8b1d87efb9f3614922693388bcb5c2f70183646e8beff11b0eb4982e3f66db2b",
-      "published_sha256": "8b1d87efb9f3614922693388bcb5c2f70183646e8beff11b0eb4982e3f66db2b"
-    },
-    {
-      "path": "docs/material-notes/02-own-rtl-and-boundaries.md",
-      "archive": "rf-evidence-v2-20261029.zip",
-      "member": "rf-evidence-v2-20261029/02-own-rtl-and-boundaries.md",
-      "original_project_path": null,
-      "original_sha256": "23053f2a12ef36a3b86c273fabc4de8b456126845bd5d6b01612cae3fba2c1bf",
-      "published_sha256": "23053f2a12ef36a3b86c273fabc4de8b456126845bd5d6b01612cae3fba2c1bf"
-    },
-    {
-      "path": "docs/material-notes/03-ps-pl-partition.md",
-      "archive": "rf-evidence-v2-20261029.zip",
-      "member": "rf-evidence-v2-20261029/03-ps-pl-partition.md",
-      "original_project_path": null,
-      "original_sha256": "9378b4a48f48dbab4746b501741a6ef21b90eadc046911e88c773204cac26a4c",
-      "published_sha256": "9378b4a48f48dbab4746b501741a6ef21b90eadc046911e88c773204cac26a4c"
-    },
-    {
-      "path": "docs/material-notes/04-skill-and-guide.md",
-      "archive": "rf-evidence-v2-20261029.zip",
-      "member": "rf-evidence-v2-20261029/04-skill-and-guide.md",
-      "original_project_path": null,
-      "original_sha256": "b1c69c9f94a91067fe3c735b76051adc7ab7e1ed82e17c58f51ad077c0b6fc2a",
-      "published_sha256": "b1c69c9f94a91067fe3c735b76051adc7ab7e1ed82e17c58f51ad077c0b6fc2a"
-    },
-    {
-      "path": "docs/material-notes/06-supplement-status.md",
-      "archive": "rf-evidence-v2-20261029.zip",
-      "member": "rf-evidence-v2-20261029/06-supplement-status.md",
-      "original_project_path": null,
-      "original_sha256": "6ac1f40987057c2a5877bba30f8ad661c6b8bdee25b1b798dbf651ef1ea565ea",
-      "published_sha256": "6ac1f40987057c2a5877bba30f8ad661c6b8bdee25b1b798dbf651ef1ea565ea"
-    },
-    {
       "path": "report/development-chat/messages.jsonl",
       "archive": "rf-evidence-v2-20261029.zip",
       "member": "rf-evidence-v2-20261029/development-chat/messages.jsonl",
@@ -9789,7 +9741,7 @@
       "member": "rf-evidence-v2-20261029/development-chat/README.md",
       "original_project_path": null,
       "original_sha256": "8310b50ab76349bf3f72da9fc0897da7cfb8421c4f7b4074ab93300365f621c6",
-      "published_sha256": "8310b50ab76349bf3f72da9fc0897da7cfb8421c4f7b4074ab93300365f621c6"
+      "published_sha256": "cc34853ed8f5de7b5bab03ef8e1bd425f1b90fd120b509a9905036a6d0704b69"
     },
     {
       "path": "README.md",
@@ -9797,7 +9749,7 @@
       "member": "rf-evidence-v2-20261029/evidence/README.md",
       "original_project_path": "README.md",
       "original_sha256": "5f5454fedaad2a8eb796e62d5908d326ed7b5e7817bab0becdfa657e5d66d255",
-      "published_sha256": "5f45967866101e943877d85264d0a08c807e7473741e7887a0068f689c9bbc93"
+      "published_sha256": "05fe7c205c37fa8fd42547f40fc545f51c5242f51443868eb876480680f9a87c"
     },
     {
       "path": "start-here.md",

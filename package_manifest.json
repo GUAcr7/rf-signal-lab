@@ -1,6 +1,6 @@
 {
   "schema": "rfsig.publication.v1",
-  "created_utc": "2026-11-01T12:30:59.258175+00:00",
+  "created_utc": "2026-11-01T14:04:55.060534+00:00",
   "exclusions": [
     "package_manifest.json (self)",
     "sim/publication-validation.json (verification attestation)"
@@ -3732,36 +3732,6 @@
       "sha256": "77e6d3301609366b16fb17ee65aad5ed0bb29adac9f116e1e5ffa4b97b569210"
     },
     {
-      "path": "docs/material-notes/00-read-first.md",
-      "bytes": 2147,
-      "sha256": "1fedb2b71169a1a241de08aa698369a71e0eaa13917861c4aacddd4dcc70701f"
-    },
-    {
-      "path": "docs/material-notes/01-measured-results.md",
-      "bytes": 3308,
-      "sha256": "8b1d87efb9f3614922693388bcb5c2f70183646e8beff11b0eb4982e3f66db2b"
-    },
-    {
-      "path": "docs/material-notes/02-own-rtl-and-boundaries.md",
-      "bytes": 2767,
-      "sha256": "23053f2a12ef36a3b86c273fabc4de8b456126845bd5d6b01612cae3fba2c1bf"
-    },
-    {
-      "path": "docs/material-notes/03-ps-pl-partition.md",
-      "bytes": 1873,
-      "sha256": "9378b4a48f48dbab4746b501741a6ef21b90eadc046911e88c773204cac26a4c"
-    },
-    {
-      "path": "docs/material-notes/04-skill-and-guide.md",
-      "bytes": 3216,
-      "sha256": "b1c69c9f94a91067fe3c735b76051adc7ab7e1ed82e17c58f51ad077c0b6fc2a"
-    },
-    {
-      "path": "docs/material-notes/06-supplement-status.md",
-      "bytes": 2177,
-      "sha256": "6ac1f40987057c2a5877bba30f8ad661c6b8bdee25b1b798dbf651ef1ea565ea"
-    },
-    {
       "path": "docs/models/cnn-115-synthetic-v1.md",
       "bytes": 2034,
       "sha256": "947fef9059d2b77c8b7939469a859f1347668578b74776c992dfd29c31092354"
@@ -3783,8 +3753,8 @@
     },
     {
       "path": "docs/reproduction.md",
-      "bytes": 2666,
-      "sha256": "59b89fdeb0b9783af22cd8ba39823627dda51c25fb9bc9dc4fbb9c6dbc901fea"
+      "bytes": 2794,
+      "sha256": "5278e8466439229d9d1d5cd4d1b26c021437fd2d0ae0e74388f23a4b7f93f475"
     },
     {
       "path": "docs/roadmap.md",
@@ -3800,11 +3770,6 @@
       "path": "docs/source-screen-control.md",
       "bytes": 4394,
       "sha256": "9194e2f14d6eee64844225373daff01c763d48f79465756826086f3b5009a321"
-    },
-    {
-      "path": "docs/submission-checklist.md",
-      "bytes": 3379,
-      "sha256": "22dbafc4b3f3242225103d862d78e2f59e2d8708f0f60acc02c1a2a57aace7c3"
     },
     {
       "path": "docs/team-three-person.md",
@@ -7643,8 +7608,8 @@
     },
     {
       "path": "notice.md",
-      "bytes": 1246,
-      "sha256": "480070daade8d585f203ffb835d578cab5adc55d90aae3919bf13d93724e3ebd"
+      "bytes": 1181,
+      "sha256": "03eb2151aa3fdf8fbb583a8a32facb32e08433541feb36cf8fb5e87461d4f20d"
     },
     {
       "path": "publication_changes.json",
@@ -7663,8 +7628,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 4719,
-      "sha256": "5f45967866101e943877d85264d0a08c807e7473741e7887a0068f689c9bbc93"
+      "bytes": 4430,
+      "sha256": "05fe7c205c37fa8fd42547f40fc545f51c5242f51443868eb876480680f9a87c"
     },
     {
       "path": "report/design_report.docx",
@@ -7693,8 +7658,8 @@
     },
     {
       "path": "report/development-chat/README.md",
-      "bytes": 1190,
-      "sha256": "8310b50ab76349bf3f72da9fc0897da7cfb8421c4f7b4074ab93300365f621c6"
+      "bytes": 1005,
+      "sha256": "cc34853ed8f5de7b5bab03ef8e1bd425f1b90fd120b509a9905036a6d0704b69"
     },
     {
       "path": "requirements-lock.txt",
@@ -10253,8 +10218,8 @@
     },
     {
       "path": "source_manifest.json",
-      "bytes": 1089951,
-      "sha256": "865f2cb3941afa303185ccd87baae5d1df308442ac8b1563fbf1c1e56a1988be"
+      "bytes": 1087445,
+      "sha256": "db39fa5d8ec5c05fabd5507541402e1bc720251a600c5f14603b847bcf2dbffa"
     },
     {
       "path": "src/rfsig/__init__.py",
