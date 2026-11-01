@@ -1,0 +1,94 @@
+#!/bin/sh
+# Touch panel axis correction for the TL070A / TL-70RESLCD-B2 assembly.
+#
+# WHY THERE IS NO `exit` IN THIS FILE
+# -----------------------------------
+# /etc/X11/Xsession does NOT execute these files, it SOURCES them:
+#
+#     for SESSIONFILE in $SESSIONFILES; do
+#         if [ -x "$SYSSESSIONDIR/$SESSIONFILE" ]; then
+#             . $SYSSESSIONDIR/$SESSIONFILE
+#         fi
+#     done
+#     exit 0
+#
+# An earlier version of this script ended with `exit 0`. Sourced into that
+# loop, it terminated /etc/X11/Xsession before any window manager was started,
+# so xinit saw its client disappear and shut the X server down. The symptom was
+# a desktop that never appeared plus this in /var/log/Xsession.log:
+#
+#     touch-cal: calibration set: 0, 4095, 0, 4095
+#     touch-cal: inversion set: 0, 1
+#     xinit: connection to X server lost
+#
+# So: log, adjust, and fall off the end. Never exit, never `return` from top
+# level.
+#
+# WHY THE RETRY LOOP
+# ------------------
+# At session start the input device exists before evdev has created the
+# "Evdev Axis Calibration" property, so a single set can silently do nothing
+# while the inversion sticks. Every set is retried until the readback matches.
+
+DEV="ADS7846 Touchscreen"
+CAL_TARGET="0, 4095, 0, 4095"
+INV_TARGET="0, 1"
+
+touch_cal_log() {
+    echo "touch-cal: $*"
+}
+
+touch_cal_configure() {
+    # --- wait for the device (max 5 s) ---
+    touch_cal_i=0
+    while [ $touch_cal_i -lt 10 ]; do
+        if xinput list --short 2>/dev/null | grep -q "ADS7846"; then
+            break
+        fi
+        touch_cal_i=$((touch_cal_i + 1))
+        sleep 0.5
+    done
+
+    if ! xinput list --short 2>/dev/null | grep -q "ADS7846"; then
+        touch_cal_log "touchscreen never appeared; skipping"
+        return 0
+    fi
+
+    # --- calibration: retry until the readback matches (max 7 s) ---
+    touch_cal_ok=0
+    touch_cal_i=0
+    touch_cal_got=""
+    while [ $touch_cal_i -lt 14 ]; do
+        xinput set-prop "$DEV" "Evdev Axis Calibration" 0 4095 0 4095 2>/dev/null
+        touch_cal_got=$(xinput list-props "$DEV" 2>/dev/null | grep 'Evdev Axis Calibration')
+        case "$touch_cal_got" in
+            *"$CAL_TARGET"*)
+                touch_cal_log "calibration set: $CAL_TARGET"
+                touch_cal_ok=1
+                break
+                ;;
+        esac
+        touch_cal_i=$((touch_cal_i + 1))
+        sleep 0.5
+    done
+    if [ "$touch_cal_ok" -ne 1 ]; then
+        touch_cal_log "calibration FAILED after retries; last readback: $touch_cal_got"
+    fi
+
+    # --- inversion ---
+    xinput set-prop "$DEV" "Evdev Axis Inversion" 0 1 2>/dev/null
+    touch_cal_got2=$(xinput list-props "$DEV" 2>/dev/null | grep 'Evdev Axis Inversion')
+    case "$touch_cal_got2" in
+        *"$INV_TARGET"*)
+            touch_cal_log "inversion set: $INV_TARGET"
+            ;;
+        *)
+            touch_cal_log "inversion FAILED; last readback: $touch_cal_got2"
+            ;;
+    esac
+    return 0
+}
+
+touch_cal_configure
+
+# No exit statement on purpose - see the header.

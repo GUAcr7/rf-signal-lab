@@ -1,0 +1,30 @@
+{
+  "schema": "P63_DESIGN_ONLY_NOT_HMI",
+  "page": {"name": "source", "id": 0, "width": 480, "height": 272},
+  "user_model": "TJC4827T143_011C_P20",
+  "compiled_or_flashed": false,
+  "component_ids_are_planned_not_editor_verified": true,
+  "creation_order_buttons_first": [
+    {"id": 1, "name": "bTone", "text": "TONE", "rect": [12, 44, 105, 40], "signal": "tone"},
+    {"id": 2, "name": "bBpsk", "text": "BPSK", "rect": [129, 44, 105, 40], "signal": "bpsk"},
+    {"id": 3, "name": "bQpsk", "text": "QPSK", "rect": [246, 44, 105, 40], "signal": "qpsk"},
+    {"id": 4, "name": "bQam", "text": "16QAM", "rect": [363, 44, 105, 40], "signal": "qam16"},
+    {"id": 5, "name": "bApply", "text": "APPLY", "rect": [12, 224, 140, 36]},
+    {"id": 6, "name": "bStart", "text": "START", "rect": [170, 224, 140, 36]},
+    {"id": 7, "name": "bStop", "text": "STOP", "rect": [328, 224, 140, 36]},
+    {"id": 8, "name": "bMinus", "text": "-", "rect": [140, 180, 40, 32]},
+    {"id": 9, "name": "bPlus", "text": "+", "rect": [300, 180, 40, 32]}
+  ],
+  "remaining_components_after_buttons": [
+    {"name": "vaTag", "type": "number_variable", "value": 20261025, "purpose": "project identity, not sufficient alone to arm"},
+    {"name": "nDur", "type": "number", "rect": [188, 180, 100, 32], "default": 15, "unit": "s"},
+    {"name": "tState", "type": "text", "rect": [310, 8, 158, 24], "default": "OFFLINE"},
+    {"name": "tSel", "type": "text", "rect": [12, 94, 456, 22], "default": "Selected: TONE | not applied"},
+    {"name": "tmPoll", "type": "timer", "interval_ms": 500, "purpose": "planned heartbeat protocol, not implemented"}
+  ],
+  "touch_contract": "0x65 page id edge FF FF FF; route release edge 0 only",
+  "duration": {"minimum": 8, "maximum": 60, "step": 5, "default": 15, "clamp_endpoints": true},
+  "fixed_validated_preset": {"LO_kHz": 2450000, "offset_kHz": 960, "Fs_kSps": 30720, "Rs_ksym_s": 240, "TX_gain_dB": -10, "peak_code": 256},
+  "startup": "OFFLINE, no automatic apply or RF start",
+  "readback_contract": "APPLY/START states require validated board-side replies; HMI touch code must not set RUNNING itself"
+}

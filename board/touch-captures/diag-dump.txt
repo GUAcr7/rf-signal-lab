@@ -1,0 +1,7 @@
+﻿--- recovered (Ctrl-C x2) ---
+
+$ od -An -v -tx1 /tmp/diag.raw
+od -An -v -tx1 /tmp/diag.raw
+root@Zynq-Tronlong:~# 
+
+port closed

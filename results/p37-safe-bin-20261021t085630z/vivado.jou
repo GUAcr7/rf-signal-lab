@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2021.1 (64-bit)
+# SW Build 3247384 on Thu Jun 10 19:36:33 MDT 2021
+# IP Build 3246043 on Fri Jun 11 00:30:35 MDT 2021
+# Start of session at: Wed Oct 21 16:56:32 2026
+# Process ID: 35208
+# Current directory: E:/p37-clock-082321
+# Command line: vivado.exe -mode batch -notrace -source C:\Users\project_user\Documents\Codex\2026-09-09\2026-fpga-fmql30tai-fpai-python-c\outputs\rf-signal-lab\results\p37-safe-bin-20261021T085630Z\executed.tcl -log C:\Users\project_user\Documents\Codex\2026-09-09\2026-fpga-fmql30tai-fpai-python-c\outputs\rf-signal-lab\results\p37-safe-bin-20261021T085630Z\vivado.log -journal C:\Users\project_user\Documents\Codex\2026-09-09\2026-fpga-fmql30tai-fpai-python-c\outputs\rf-signal-lab\results\p37-safe-bin-20261021T085630Z\vivado.jou
+# Log file: C:/Users/project_user/Documents/Codex/2026-09-09/2026-fpga-fmql30tai-fpai-python-c/outputs/rf-signal-lab/results/p37-safe-bin-20261021T085630Z/vivado.log
+# Journal file: C:\Users\project_user\Documents\Codex\2026-09-09\2026-fpga-fmql30tai-fpai-python-c\outputs\rf-signal-lab\results\p37-safe-bin-20261021T085630Z\vivado.jou
+#-----------------------------------------------------------
+source {C:\Users\project_user\Documents\Codex\2026-09-09\2026-fpga-fmql30tai-fpai-python-c\outputs\rf-signal-lab\results\p37-safe-bin-20261021T085630Z\executed.tcl} -notrace

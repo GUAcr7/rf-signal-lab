@@ -1,0 +1,39 @@
+#!/bin/sh
+# TLZ7xH-EVM boot bring-up: load the display bitstream, then start the fan.
+#
+# Display
+# -------
+# The 480p device-tree overlay carries firmware-name = "system_wrapper.bin", so
+# applying it makes fpga_manager load /lib/firmware/system_wrapper.bin and
+# instantiates xilinx_drm + the AXI VDMA + the PWM backlight. Note that
+# /lib/firmware/system_wrapper.bin currently holds the axi_video_display_demo
+# bitstream; the original AD9361 bitstream is kept as sw-ad9361.bak and the
+# AD9361 overlay is still pl.dtbo.
+#
+# Fan
+# ---
+# The fan is switched by PS MIO8 (gpio 914: gpiochip base 906 + 8). Per the
+# evaluation-board hardware manual section 26 it is a plain on/off switch with
+# no speed control. MIO8 is a PS pin, so this works with any bitstream.
+# Without this the pin resets to input/low on every boot and the fan stays off.
+
+# --- display: apply the 480p overlay (this also loads the bitstream) ---
+if [ ! -d /sys/kernel/config/device-tree ]; then
+    mount -t configfs none /sys/kernel/config 2>/dev/null
+fi
+
+if [ -d /sys/kernel/config/device-tree/overlays ] \
+   && [ ! -d /sys/kernel/config/device-tree/overlays/pl ] \
+   && [ -f /lib/firmware/d480p.dtbo ]; then
+    mkdir -p /sys/kernel/config/device-tree/overlays/pl
+    cat /lib/firmware/d480p.dtbo > /sys/kernel/config/device-tree/overlays/pl/dtbo
+fi
+
+# --- fan: on ---
+if [ ! -d /sys/class/gpio/gpio914 ]; then
+    echo 914 > /sys/class/gpio/export
+fi
+
+# The kernel leaves the pin as an input; writing value only works as an output.
+echo out > /sys/class/gpio/gpio914/direction
+echo 1 > /sys/class/gpio/gpio914/value

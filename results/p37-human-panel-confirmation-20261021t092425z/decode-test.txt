@@ -1,0 +1,8 @@
+Recorded command output from this turn (not an additional test run):
+.\.venv\Scripts\python.exe -m pytest tests/test_p37_archive_review.py -q
+.                                                                        [100%]
+1 passed in 0.81s
+
+Scope: every one of 65,536 little-endian 16-bit stored words, including all
+16 upper-padding patterns, decodes to the correct signed low12 value.
+This is an offline decoder regression, not a hardware continuity test.

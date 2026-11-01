@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2021.1 (64-bit)
+# SW Build 3247384 on Thu Jun 10 19:36:33 MDT 2021
+# IP Build 3246043 on Fri Jun 11 00:30:35 MDT 2021
+# Start of session at: Sun Oct 11 11:59:32 2026
+# Process ID: 46960
+# Current directory: E:/FPGA_Tools/Work/p07-fir-ooc-20261011-115930-d17039
+# Command line: vivado.exe -mode batch -source synth_fir.tcl -log vivado.log -journal vivado.jou
+# Log file: E:/FPGA_Tools/Work/p07-fir-ooc-20261011-115930-d17039/vivado.log
+# Journal file: E:/FPGA_Tools/Work/p07-fir-ooc-20261011-115930-d17039\vivado.jou
+#-----------------------------------------------------------
+source synth_fir.tcl

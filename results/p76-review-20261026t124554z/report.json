@@ -1,0 +1,187 @@
+{
+  "status": "passed_P76_installed_10min_RF_history_FFT_pixels_cleanup",
+  "demo": "results/p59-p76-demo-20261026T123523281595Z/report.json",
+  "demo_sha256": "0caffe6ec1d14d6d01bb98609c55c070bc56b6bfa6978e14378f486240116576",
+  "board_operations": false,
+  "gates": [
+    {
+      "name": "immutable warm proof",
+      "passed": true
+    },
+    {
+      "name": "board-init autonomous app",
+      "passed": true
+    },
+    {
+      "name": "new boot cleared calibration",
+      "passed": true
+    },
+    {
+      "name": "computer selected exact startup certificate",
+      "passed": true
+    },
+    {
+      "name": "archived SHA ai.json",
+      "passed": true
+    },
+    {
+      "name": "archived SHA ai-history.jsonl",
+      "passed": true
+    },
+    {
+      "name": "archived SHA metrics.json",
+      "passed": true
+    },
+    {
+      "name": "archived SHA metrics-history.jsonl",
+      "passed": true
+    },
+    {
+      "name": "archived SHA summary.json",
+      "passed": true
+    },
+    {
+      "name": "archived SHA progress.json",
+      "passed": true
+    },
+    {
+      "name": "archived SHA last-display-packed.bin",
+      "passed": true
+    },
+    {
+      "name": "archived SHA fb.raw",
+      "passed": true
+    },
+    {
+      "name": "complete 630s stopped session",
+      "passed": true
+    },
+    {
+      "name": "clean resource release",
+      "passed": true
+    },
+    {
+      "name": "one live boot and original weights",
+      "passed": true
+    },
+    {
+      "name": "AI and metric source identity",
+      "passed": true
+    },
+    {
+      "name": "invalid numbers always cleared",
+      "passed": true
+    },
+    {
+      "name": "stop cleared class and numbers",
+      "passed": true
+    },
+    {
+      "name": "source cleanup tone",
+      "passed": true
+    },
+    {
+      "name": "full-history signal gate tone",
+      "passed": true
+    },
+    {
+      "name": "source cleanup bpsk",
+      "passed": true
+    },
+    {
+      "name": "full-history signal gate bpsk",
+      "passed": true
+    },
+    {
+      "name": "source cleanup qpsk",
+      "passed": true
+    },
+    {
+      "name": "full-history signal gate qpsk",
+      "passed": true
+    },
+    {
+      "name": "source cleanup qam16",
+      "passed": true
+    },
+    {
+      "name": "full-history signal gate qam16",
+      "passed": true
+    },
+    {
+      "name": "all four source groups scored",
+      "passed": true
+    },
+    {
+      "name": "fresh advancing updates",
+      "passed": true
+    },
+    {
+      "name": "final FFT and RMS same source",
+      "passed": true
+    },
+    {
+      "name": "stop framebuffer State: STOPPED",
+      "passed": true
+    },
+    {
+      "name": "stop framebuffer LO+center: unavailable",
+      "passed": true
+    },
+    {
+      "name": "stop framebuffer 99% ROI BW: unavailable",
+      "passed": true
+    },
+    {
+      "name": "stop framebuffer AI: STOPPED | controlled 3 classes",
+      "passed": true
+    }
+  ],
+  "groups": [
+    {
+      "source": "tone",
+      "updates": 17,
+      "accepted": 0,
+      "correct": 0,
+      "coverage": 0.0,
+      "conditional_accuracy": 0,
+      "passed": true
+    },
+    {
+      "source": "bpsk",
+      "updates": 40,
+      "accepted": 40,
+      "correct": 40,
+      "coverage": 1.0,
+      "conditional_accuracy": 1.0,
+      "passed": true
+    },
+    {
+      "source": "qpsk",
+      "updates": 40,
+      "accepted": 40,
+      "correct": 40,
+      "coverage": 1.0,
+      "conditional_accuracy": 1.0,
+      "passed": true
+    },
+    {
+      "source": "qam16",
+      "updates": 40,
+      "accepted": 40,
+      "correct": 40,
+      "coverage": 1.0,
+      "conditional_accuracy": 1.0,
+      "passed": true
+    }
+  ],
+  "elapsed_software_s": 666.487863,
+  "display_updates": 1153,
+  "maximum_update_interval_s": 0.8567280000000039,
+  "new_independent_accuracy_claimed": false,
+  "physical_LCD_confirmed": false,
+  "true_power_cycle_verified": false,
+  "receiver_selection_sha256": "191b2e1c54ec8973d831fb6cb713703ef29f1e68518499e480168f42204fff5d",
+  "release_scope": "controlled_competition_demo",
+  "next_task": "saved halt and one actual power cycle if final cold confirmation required"
+}

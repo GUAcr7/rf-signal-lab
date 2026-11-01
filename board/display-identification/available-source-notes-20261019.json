@@ -1,0 +1,16 @@
+{
+  "source_of_review": "read-only local document inventory and existing extracted text",
+  "known_documents": [
+    {
+      "path": "D:/xilinx/xilinx/1-开箱必读/产品规格书/拓展模块规格书/TL070A显示屏规格书.pdf",
+      "scope": "TL070A specification lists LCD module 070007T0-50; this is not proof that the photographed bare panel is that module"
+    },
+    {
+      "path": "D:/xilinx/xilinx/5-硬件资料/评估底板原理图/TLZ7xH-EVM评估底板原理图/TLZ7xH-EVM-B2原理图.pdf",
+      "scope": "Evaluation motherboard LCD interface, not a confirmed standalone TL-70RESLCD-B2 adapter schematic"
+    }
+  ],
+  "exact_photographed_panel_timing_confirmed": false,
+  "search_scope_note": "Focused search did not locate a more exact matching panel timing document or independent adapter schematic; no claim that they are absent from every supplied file",
+  "board_operations": false
+}

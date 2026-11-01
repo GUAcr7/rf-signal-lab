@@ -1,0 +1,17 @@
+{
+  "required_vivado": "2021.1",
+  "part": "xc7z020clg400-2",
+  "top": "fixed_fir_iq",
+  "taps": 63,
+  "clock_period_ns": 10.0,
+  "sources": [
+    {"relative_path": "fpga/rtl/fixed_fir_iq.v", "sha256": "3cb08c3ee81664ed86d492aadfbb101bf002d97a26f86734ae9b17d254755dc6", "synthesis_input": true},
+    {"relative_path": "fpga/ip/fir63_q17.hex", "sha256": "41ea00cd11a244d5522456409813a88051cc831ef456e0783773da45f27bb3d6", "synthesis_input": true},
+    {"relative_path": "fpga/tb/tb_fixed_fir_iq.sv", "sha256": "524a7c0505141ddd9a3ff3e13166a5da6aaa0e2947958f9927cd117d04100ad9", "synthesis_input": false}
+  ],
+  "simulation_report": "results/p07-fir-rtl-20261010T081533765282Z/report.json",
+  "simulation_cases": 18,
+  "simulation_outputs": 72356,
+  "default_coeff_report": "results/p07-fir-rtl-20261010T081544645644Z/report.json",
+  "default_coeff_outputs": 1086
+}

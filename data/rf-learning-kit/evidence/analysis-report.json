@@ -1,0 +1,462 @@
+{
+  "status": "passed_all_known_source_snapshot_quality",
+  "archives": "C:\\Users\\project_user\\Documents\\Codex\\2026-09-09\\2026-fpga-fmql30tai-fpai-python-c\\outputs\\rf-signal-lab\\results\\p46-archives-20261022T114430Z\\report.json",
+  "archives_sha256": "cb9f9817a31da10052bb9e2533a0910c7bf532627ae9d18cae143ff0ff4cf719",
+  "trial": "C:\\Users\\project_user\\Documents\\Codex\\2026-09-09\\2026-fpga-fmql30tai-fpai-python-c\\outputs\\rf-signal-lab\\results\\p46-known-20261022T114115Z\\report.json",
+  "trial_sha256": "b812694c1a0c4a2dc998c92f50c13bf0a44b0bceae3dc0941d767baaa7eff1d7",
+  "plan": "C:\\Users\\project_user\\Documents\\Codex\\2026-09-09\\2026-fpga-fmql30tai-fpai-python-c\\outputs\\rf-signal-lab\\results\\p46-quality-plan-20261022.json",
+  "plan_sha256": "d6e3a31ab9249339d5348fcd03055cd16d817900f4a902debadf403e570608bb",
+  "cases": [
+    {
+      "name": "tone",
+      "archive": "C:\\Users\\project_user\\Documents\\Codex\\2026-09-09\\2026-fpga-fmql30tai-fpai-python-c\\outputs\\rf-signal-lab\\results\\p36-file-archive-20261022T114430Z\\report.json",
+      "complete_frames": 262144,
+      "buffers": [
+        {
+          "buffer": 0,
+          "stats": {
+            "sample_count": 65536,
+            "mean_power": 187358.90948486328,
+            "rms": 432.849753938781,
+            "peak_abs": 469.12898013232996,
+            "crest_factor_db": 0.6991017411842954,
+            "full_scale": 2048.0,
+            "endpoint_fraction": 0.0,
+            "endpoint_fraction_both": 0.0,
+            "positive_rail": 2047.0
+          },
+          "carrier_hz": 993841.6158456716,
+          "carrier_offset_from_nominal_hz": 33841.61584567162,
+          "tone_residual_nmse_db": -29.025786256184727,
+          "status": "passed"
+        },
+        {
+          "buffer": 1,
+          "stats": {
+            "sample_count": 65536,
+            "mean_power": 187262.79530334473,
+            "rms": 432.73871481916746,
+            "peak_abs": 467.0,
+            "crest_factor_db": 0.6618225924784732,
+            "full_scale": 2048.0,
+            "endpoint_fraction": 0.0,
+            "endpoint_fraction_both": 0.0,
+            "positive_rail": 2047.0
+          },
+          "carrier_hz": 993837.9235101789,
+          "carrier_offset_from_nominal_hz": 33837.92351017892,
+          "tone_residual_nmse_db": -29.073139646214024,
+          "status": "passed"
+        },
+        {
+          "buffer": 2,
+          "stats": {
+            "sample_count": 65536,
+            "mean_power": 187294.85691833496,
+            "rms": 432.77575823783724,
+            "peak_abs": 467.18090714411693,
+            "crest_factor_db": 0.664443193482192,
+            "full_scale": 2048.0,
+            "endpoint_fraction": 0.0,
+            "endpoint_fraction_both": 0.0,
+            "positive_rail": 2047.0
+          },
+          "carrier_hz": 993839.0998337155,
+          "carrier_offset_from_nominal_hz": 33839.099833715474,
+          "tone_residual_nmse_db": -29.067816202787874,
+          "status": "passed"
+        },
+        {
+          "buffer": 3,
+          "stats": {
+            "sample_count": 65536,
+            "mean_power": 187353.83227539062,
+            "rms": 432.8438890355166,
+            "peak_abs": 467.1241804916547,
+            "crest_factor_db": 0.662021169860934,
+            "full_scale": 2048.0,
+            "endpoint_fraction": 0.0,
+            "endpoint_fraction_both": 0.0,
+            "positive_rail": 2047.0
+          },
+          "carrier_hz": 993842.5728910202,
+          "carrier_offset_from_nominal_hz": 33842.572891020216,
+          "tone_residual_nmse_db": -29.017181991777488,
+          "status": "passed"
+        }
+      ],
+      "source_bytes_reproduced": true,
+      "no_cross_DMA_filtering": true,
+      "ADC_gaps": "unknown",
+      "status": "passed_known_source_snapshot_quality"
+    },
+    {
+      "name": "bpsk",
+      "archive": "C:\\Users\\project_user\\Documents\\Codex\\2026-09-09\\2026-fpga-fmql30tai-fpai-python-c\\outputs\\rf-signal-lab\\results\\p36-file-archive-20261022T114615Z\\report.json",
+      "complete_frames": 262144,
+      "buffers": [
+        {
+          "buffer": 0,
+          "stats": {
+            "sample_count": 65536,
+            "mean_power": 77766.2126159668,
+            "rms": 278.8659402221196,
+            "peak_abs": 452.4477870428808,
+            "crest_factor_db": 4.20345988390564,
+            "full_scale": 2048.0,
+            "endpoint_fraction": 0.0,
+            "endpoint_fraction_both": 0.0,
+            "positive_rail": 2047.0
+          },
+          "carrier_hz": 993855.0468499347,
+          "waveform_correlation": 0.9983894906847091,
+          "source_start_modulo_period": 82613,
+          "raw_waveform_nmse_db": -24.90956623445871,
+          "reference_evm_db": -37.964471577908846,
+          "valid_symbols": 502,
+          "guard_per_side": 640,
+          "checked_symbols": 251,
+          "symbol_errors": 0,
+          "status": "passed"
+        },
+        {
+          "buffer": 1,
+          "stats": {
+            "sample_count": 65536,
+            "mean_power": 77796.29692077637,
+            "rms": 278.9198754495211,
+            "peak_abs": 447.017896733453,
+            "crest_factor_db": 4.096908964407581,
+            "full_scale": 2048.0,
+            "endpoint_fraction": 0.0,
+            "endpoint_fraction_both": 0.0,
+            "positive_rail": 2047.0
+          },
+          "carrier_hz": 993851.3088392449,
+          "waveform_correlation": 0.9984048847251263,
+          "source_start_modulo_period": 17078,
+          "raw_waveform_nmse_db": -24.951378378301197,
+          "reference_evm_db": -37.77495203221648,
+          "valid_symbols": 502,
+          "guard_per_side": 640,
+          "checked_symbols": 251,
+          "symbol_errors": 0,
+          "status": "passed"
+        },
+        {
+          "buffer": 2,
+          "stats": {
+            "sample_count": 65536,
+            "mean_power": 77809.85990905762,
+            "rms": 278.94418780296826,
+            "peak_abs": 450.71165948974516,
+            "crest_factor_db": 4.167629526173048,
+            "full_scale": 2048.0,
+            "endpoint_fraction": 0.0,
+            "endpoint_fraction_both": 0.0,
+            "positive_rail": 2047.0
+          },
+          "carrier_hz": 993857.6544510213,
+          "waveform_correlation": 0.9984224817876398,
+          "source_start_modulo_period": 82615,
+          "raw_waveform_nmse_db": -24.999670145628127,
+          "reference_evm_db": -37.95835608478224,
+          "valid_symbols": 502,
+          "guard_per_side": 640,
+          "checked_symbols": 251,
+          "symbol_errors": 0,
+          "status": "passed"
+        },
+        {
+          "buffer": 3,
+          "stats": {
+            "sample_count": 65536,
+            "mean_power": 77807.20268249512,
+            "rms": 278.9394247547218,
+            "peak_abs": 451.1873225169342,
+            "crest_factor_db": 4.176939747589134,
+            "full_scale": 2048.0,
+            "endpoint_fraction": 0.0,
+            "endpoint_fraction_both": 0.0,
+            "positive_rail": 2047.0
+          },
+          "carrier_hz": 993853.6254529153,
+          "waveform_correlation": 0.9984107181250702,
+          "source_start_modulo_period": 17080,
+          "raw_waveform_nmse_db": -24.9673278841261,
+          "reference_evm_db": -37.43166331539535,
+          "valid_symbols": 502,
+          "guard_per_side": 640,
+          "checked_symbols": 251,
+          "symbol_errors": 0,
+          "status": "passed"
+        }
+      ],
+      "source_bytes_reproduced": true,
+      "no_cross_DMA_filtering": true,
+      "ADC_gaps": "unknown",
+      "extra_source_advance_modulo_period": [
+        1,
+        1,
+        1
+      ],
+      "nonperiod_jumps_detected": 0,
+      "whole_period_loss_unobservable": true,
+      "status": "passed_known_source_snapshot_quality",
+      "evm_min_db": -37.964471577908846,
+      "evm_max_db": -37.43166331539535,
+      "total_checked_symbols": 1004,
+      "total_symbol_errors": 0
+    },
+    {
+      "name": "qpsk",
+      "archive": "C:\\Users\\project_user\\Documents\\Codex\\2026-09-09\\2026-fpga-fmql30tai-fpai-python-c\\outputs\\rf-signal-lab\\results\\p36-file-archive-20261022T114802Z\\report.json",
+      "complete_frames": 262144,
+      "buffers": [
+        {
+          "buffer": 0,
+          "stats": {
+            "sample_count": 65536,
+            "mean_power": 83046.5177154541,
+            "rms": 288.1779271829369,
+            "peak_abs": 450.6495312324201,
+            "crest_factor_db": 3.8835642084726594,
+            "full_scale": 2048.0,
+            "endpoint_fraction": 0.0,
+            "endpoint_fraction_both": 0.0,
+            "positive_rail": 2047.0
+          },
+          "carrier_hz": 993847.6604459381,
+          "waveform_correlation": 0.9985555011097551,
+          "source_start_modulo_period": 119485,
+          "raw_waveform_nmse_db": -25.38310991227979,
+          "reference_evm_db": -38.30785999317709,
+          "valid_symbols": 502,
+          "guard_per_side": 640,
+          "checked_symbols": 251,
+          "symbol_errors": 0,
+          "status": "passed"
+        },
+        {
+          "buffer": 1,
+          "stats": {
+            "sample_count": 65536,
+            "mean_power": 83068.79092407227,
+            "rms": 288.21656948217304,
+            "peak_abs": 452.68311212149274,
+            "crest_factor_db": 3.921506965526023,
+            "full_scale": 2048.0,
+            "endpoint_fraction": 0.0,
+            "endpoint_fraction_both": 0.0,
+            "positive_rail": 2047.0
+          },
+          "carrier_hz": 993852.4708487836,
+          "waveform_correlation": 0.9985419072495317,
+          "source_start_modulo_period": 53950,
+          "raw_waveform_nmse_db": -25.342341824441178,
+          "reference_evm_db": -38.276321405227726,
+          "valid_symbols": 502,
+          "guard_per_side": 640,
+          "checked_symbols": 251,
+          "symbol_errors": 0,
+          "status": "passed"
+        },
+        {
+          "buffer": 2,
+          "stats": {
+            "sample_count": 65536,
+            "mean_power": 83018.96478271484,
+            "rms": 288.13011779873835,
+            "peak_abs": 444.1823949685534,
+            "crest_factor_db": 3.7594536927611206,
+            "full_scale": 2048.0,
+            "endpoint_fraction": 0.0,
+            "endpoint_fraction_both": 0.0,
+            "positive_rail": 2047.0
+          },
+          "carrier_hz": 993852.1968951814,
+          "waveform_correlation": 0.9985145973459785,
+          "source_start_modulo_period": 119487,
+          "raw_waveform_nmse_db": -25.261573161747787,
+          "reference_evm_db": -38.55331010735766,
+          "valid_symbols": 502,
+          "guard_per_side": 640,
+          "checked_symbols": 251,
+          "symbol_errors": 0,
+          "status": "passed"
+        },
+        {
+          "buffer": 3,
+          "stats": {
+            "sample_count": 65536,
+            "mean_power": 83082.01614379883,
+            "rms": 288.2395117672087,
+            "peak_abs": 448.51867296691233,
+            "crest_factor_db": 3.8405403009271217,
+            "full_scale": 2048.0,
+            "endpoint_fraction": 0.0,
+            "endpoint_fraction_both": 0.0,
+            "positive_rail": 2047.0
+          },
+          "carrier_hz": 993846.8360926056,
+          "waveform_correlation": 0.9985004636119269,
+          "source_start_modulo_period": 53952,
+          "raw_waveform_nmse_db": -25.220352794557883,
+          "reference_evm_db": -38.04146560960036,
+          "valid_symbols": 502,
+          "guard_per_side": 640,
+          "checked_symbols": 251,
+          "symbol_errors": 0,
+          "status": "passed"
+        }
+      ],
+      "source_bytes_reproduced": true,
+      "no_cross_DMA_filtering": true,
+      "ADC_gaps": "unknown",
+      "extra_source_advance_modulo_period": [
+        1,
+        1,
+        1
+      ],
+      "nonperiod_jumps_detected": 0,
+      "whole_period_loss_unobservable": true,
+      "status": "passed_known_source_snapshot_quality",
+      "evm_min_db": -38.55331010735766,
+      "evm_max_db": -38.04146560960036,
+      "total_checked_symbols": 1004,
+      "total_symbol_errors": 0
+    },
+    {
+      "name": "qam16",
+      "archive": "C:\\Users\\project_user\\Documents\\Codex\\2026-09-09\\2026-fpga-fmql30tai-fpai-python-c\\outputs\\rf-signal-lab\\results\\p36-file-archive-20261022T114948Z\\report.json",
+      "complete_frames": 262144,
+      "buffers": [
+        {
+          "buffer": 0,
+          "stats": {
+            "sample_count": 65536,
+            "mean_power": 55956.62538146973,
+            "rms": 236.55152796266128,
+            "peak_abs": 444.6234361794259,
+            "crest_factor_db": 5.481331861257518,
+            "full_scale": 2048.0,
+            "endpoint_fraction": 0.0,
+            "endpoint_fraction_both": 0.0,
+            "positive_rail": 2047.0
+          },
+          "carrier_hz": 993834.1574945487,
+          "waveform_correlation": 0.9977767639471986,
+          "source_start_modulo_period": 13787,
+          "raw_waveform_nmse_db": -23.505342378265905,
+          "reference_evm_db": -37.52469754020344,
+          "valid_symbols": 502,
+          "guard_per_side": 640,
+          "checked_symbols": 251,
+          "symbol_errors": 0,
+          "status": "passed"
+        },
+        {
+          "buffer": 1,
+          "stats": {
+            "sample_count": 65536,
+            "mean_power": 53473.43894958496,
+            "rms": 231.24324627885883,
+            "peak_abs": 436.2396130568612,
+            "crest_factor_db": 5.513120838549646,
+            "full_scale": 2048.0,
+            "endpoint_fraction": 0.0,
+            "endpoint_fraction_both": 0.0,
+            "positive_rail": 2047.0
+          },
+          "carrier_hz": 993838.6131587924,
+          "waveform_correlation": 0.9977314569478452,
+          "source_start_modulo_period": 79324,
+          "raw_waveform_nmse_db": -23.41743196266428,
+          "reference_evm_db": -37.59824157981117,
+          "valid_symbols": 502,
+          "guard_per_side": 640,
+          "checked_symbols": 251,
+          "symbol_errors": 0,
+          "status": "passed"
+        },
+        {
+          "buffer": 2,
+          "stats": {
+            "sample_count": 65536,
+            "mean_power": 55898.972900390625,
+            "rms": 236.42963625652058,
+            "peak_abs": 451.24937673087146,
+            "crest_factor_db": 5.614294019858495,
+            "full_scale": 2048.0,
+            "endpoint_fraction": 0.0,
+            "endpoint_fraction_both": 0.0,
+            "positive_rail": 2047.0
+          },
+          "carrier_hz": 993837.0376755418,
+          "waveform_correlation": 0.9978365156234609,
+          "source_start_modulo_period": 13789,
+          "raw_waveform_nmse_db": -23.624050755876766,
+          "reference_evm_db": -36.74927620720521,
+          "valid_symbols": 502,
+          "guard_per_side": 640,
+          "checked_symbols": 251,
+          "symbol_errors": 0,
+          "status": "passed"
+        },
+        {
+          "buffer": 3,
+          "stats": {
+            "sample_count": 65536,
+            "mean_power": 53482.604751586914,
+            "rms": 231.26306395874573,
+            "peak_abs": 435.0356307246568,
+            "crest_factor_db": 5.488371064133374,
+            "full_scale": 2048.0,
+            "endpoint_fraction": 0.0,
+            "endpoint_fraction_both": 0.0,
+            "positive_rail": 2047.0
+          },
+          "carrier_hz": 993834.1454667285,
+          "waveform_correlation": 0.997742286196251,
+          "source_start_modulo_period": 79326,
+          "raw_waveform_nmse_db": -23.438284069502508,
+          "reference_evm_db": -37.24131284334091,
+          "valid_symbols": 502,
+          "guard_per_side": 640,
+          "checked_symbols": 251,
+          "symbol_errors": 0,
+          "status": "passed"
+        }
+      ],
+      "source_bytes_reproduced": true,
+      "no_cross_DMA_filtering": true,
+      "ADC_gaps": "unknown",
+      "extra_source_advance_modulo_period": [
+        1,
+        1,
+        1
+      ],
+      "nonperiod_jumps_detected": 0,
+      "whole_period_loss_unobservable": true,
+      "status": "passed_known_source_snapshot_quality",
+      "evm_min_db": -37.59824157981117,
+      "evm_max_db": -36.74927620720521,
+      "total_checked_symbols": 1004,
+      "total_symbol_errors": 0
+    }
+  ],
+  "RF_operations": false,
+  "lossless_proven": false,
+  "blind_AI": false,
+  "scope": "Known modulation and exact TX symbols supplied; carrier/source fits use whole DMA window. Second-half decisions are not independent BER.",
+  "source_seed_shared_across_windows": true,
+  "absolute_power_calibrated": false,
+  "absolute_frequency_calibrated": false,
+  "plot": "C:\\Users\\project_user\\Documents\\Codex\\2026-09-09\\2026-fpga-fmql30tai-fpai-python-c\\outputs\\rf-signal-lab\\results\\p46-analysis-20261022T115205Z\\quality.png",
+  "inputs_sha256": {
+    "experiments\\p46_analyse.py": "ba82e88f5103dfeffe2e822b8116b07423cc7227a1c8661afa07ac96eabe0cdb",
+    "src\\rfsig\\reference_receiver.py": "e13eac458b8c3fb01c49554d3edc4f1cd314b8e53b64b2779206d8d40446a2af",
+    "src\\rfsig\\capture_continuity.py": "151cf423a555e76278f35d9337d5cbefd9dc9d118417500d821e4e896751dcd6",
+    "src\\rfsig\\symbol_recovery.py": "74161b7c2b3df798a14b36a51df48cd5510e707708b98d20f55e2adb12df57e8"
+  }
+}

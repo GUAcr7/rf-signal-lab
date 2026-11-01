@@ -1,0 +1,92 @@
+{
+  "checked_at": "2026-10-11T03:59:05.892919+00:00",
+  "scope": "standalone_RTL_simulation_not_Vivado_synthesis_or_board_execution",
+  "input_sample_rate_assumption_hz": 1000000,
+  "clock_period_ns_in_simulation": 10,
+  "timing_closed": false,
+  "hardware_resources_measured": false,
+  "random_stalls_enabled": false,
+  "default_coefficient_initialization": true,
+  "vector_manifest": "C:\\Users\\project_user\\Documents\\Codex\\2026-09-09\\2026-fpga-fmql30tai-fpai-python-c\\outputs\\rf-signal-lab\\results\\p07-fixed-fir-20261010T080230137429Z\\manifest.json",
+  "vector_manifest_sha256": "defe256add969d8e700cfd1c7c161d596bc8713eeeb3fc8168fb27bc1b1e640e",
+  "sources": [
+    {
+      "path": "C:\\Users\\project_user\\Documents\\Codex\\2026-09-09\\2026-fpga-fmql30tai-fpai-python-c\\outputs\\rf-signal-lab\\fpga\\rtl\\fixed_fir_iq.v",
+      "sha256": "bfd540ae1bada5dae89fefd0d4f3f881d659473f0c522c4390f1ea9bef53660d"
+    },
+    {
+      "path": "C:\\Users\\project_user\\Documents\\Codex\\2026-09-09\\2026-fpga-fmql30tai-fpai-python-c\\outputs\\rf-signal-lab\\fpga\\tb\\tb_fixed_fir_iq.sv",
+      "sha256": "47ae7c58d5594d673d9753b9c179c93435e7963c5dd8f822a45fb048b5615056"
+    },
+    {
+      "path": "C:\\Users\\project_user\\Documents\\Codex\\2026-09-09\\2026-fpga-fmql30tai-fpai-python-c\\outputs\\rf-signal-lab\\fpga\\ip\\fir63_q17.hex",
+      "sha256": "41ea00cd11a244d5522456409813a88051cc831ef456e0783773da45f27bb3d6"
+    }
+  ],
+  "tool_root": "E:\\FPGA_Tools\\IcarusVerilog13.0\\ucrt64",
+  "cases": [
+    {
+      "name": "random_12bit",
+      "passed": true,
+      "sample_comparisons": 1086,
+      "metrics": {
+        "case": "random_12bit",
+        "taps": "63",
+        "accepted": "1086",
+        "received": "1086",
+        "valid_after_cycles": "64",
+        "handshake_min": "65",
+        "handshake_max": "65",
+        "output_stall_cycles": "0",
+        "input_wait_cycles": "70525",
+        "reset_during_mac": "1",
+        "reset_stalled_output": "1",
+        "rounding_checks": "22",
+        "random_stalls": "0",
+        "default_coeff": "1"
+      },
+      "host_simulation_seconds": 1.100667999999132,
+      "verified_vector_files": [
+        {
+          "name": "coefficients.hex",
+          "sha256": "41ea00cd11a244d5522456409813a88051cc831ef456e0783773da45f27bb3d6",
+          "words": 63
+        },
+        {
+          "name": "input_i.hex",
+          "sha256": "5ff4ee7c7a4f1e1556f31b5db0800ecedc91b52b5e5980446e9d0b1ec49f706d",
+          "words": 1024
+        },
+        {
+          "name": "expected_i.hex",
+          "sha256": "afc1235f206328aad52bb16a2d81c09e8ef8e551dc02938e0dd43c135be569a3",
+          "words": 1086
+        },
+        {
+          "name": "saturated_i.hex",
+          "sha256": "f27b3c3655d63fba7ef8d5806b74d3cf669143ead5dfa7bedd17da9e42b141f6",
+          "words": 1086
+        },
+        {
+          "name": "input_q.hex",
+          "sha256": "8a811bf6050de579da473123c9f92e3d476405731727a3e36ca1f2a340e62a3e",
+          "words": 1024
+        },
+        {
+          "name": "expected_q.hex",
+          "sha256": "2b9794d85184b3049f86226fcd5932ba2ddc7cc0c3fb6a4a0ca337c1da641179",
+          "words": 1086
+        },
+        {
+          "name": "saturated_q.hex",
+          "sha256": "f27b3c3655d63fba7ef8d5806b74d3cf669143ead5dfa7bedd17da9e42b141f6",
+          "words": 1086
+        }
+      ]
+    }
+  ],
+  "all_passed": true,
+  "tool_version_first_line": "Icarus Verilog version 13.0 (stable) (v13_0)",
+  "case_count": 1,
+  "sample_comparisons": 1086
+}

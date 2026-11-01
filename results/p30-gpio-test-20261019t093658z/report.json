@@ -1,0 +1,26 @@
+{
+  "status": "passed",
+  "stage": "gpio-test",
+  "created_utc": "2026-10-19T09:36:58.870484+00:00",
+  "work": "E:\\p30c-1019-173651",
+  "board_operations": false,
+  "boot_files_modified": false,
+  "commands": [
+    {
+      "name": "compile",
+      "exit_code": 0
+    },
+    {
+      "name": "elaborate",
+      "exit_code": 0
+    },
+    {
+      "name": "simulate",
+      "exit_code": 0
+    }
+  ],
+  "markers": [
+    "P30_GPIO_TB_PASS checks=352"
+  ],
+  "ended_utc": "2026-10-19T09:37:13.762398+00:00"
+}

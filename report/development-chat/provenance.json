@@ -1,0 +1,24 @@
+{
+  "scope": "one local project conversation, text-only selected response_item messages, not complete all-AI history",
+  "thread_id": "01a0863a-5ed4-7640-ade6-6f37056f4201",
+  "source": "C:\\Users\\project_user\\.codex\\sessions\\2026\\09\\09\\rollout-2026-09-09T20-52-47-01a0863a-5ed4-7640-ade6-6f37056f4201.jsonl",
+  "snapshot_bytes": 813366739,
+  "snapshot_sha256": "3a43c92b020742d9bde0da9685a782d1465b4a855730a1cbe2bdeb371dcc43e0",
+  "first_exported_timestamp": "2026-09-09T12:53:03.587Z",
+  "last_exported_timestamp": "2026-10-29T14:40:56.376Z",
+  "messages": {
+    "user": 457,
+    "assistant": 1191
+  },
+  "parsed_source_lines": 41969,
+  "skipped": {},
+  "redactions": {
+    "environment_blocks": 119,
+    "media_data": 0,
+    "email": 0,
+    "api_key": 0,
+    "credential_line": 3
+  },
+  "transformed_export": true,
+  "complete_conversation_proven": false
+}

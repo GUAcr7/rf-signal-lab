@@ -1,0 +1,11 @@
+{
+  "checked_at": "2026-10-10T07:59:36.136835+00:00",
+  "archive": "D:\\FPGA natch\\plutosdr-fw.tar",
+  "bytes": 12338708480,
+  "mtime_ns": 1789917929118870400,
+  "sha256": "461ce40cc8915303e6c9044ff3216ec77f174d49c85d71044fd6a4929ae11d8e",
+  "source_unchanged": true,
+  "official_digest_available": false,
+  "purpose": "Local provenance fingerprint; not a vendor signature or current-board firmware match",
+  "elapsed_s": 14.889999999999873
+}

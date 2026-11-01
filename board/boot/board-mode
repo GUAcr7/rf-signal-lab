@@ -1,0 +1,48 @@
+#!/bin/sh
+# Switch the TLZ7xH-EVM between the display and RF bitstream/overlay pairs.
+#
+# The pair is chosen by /etc/board-mode at boot (see /etc/rcS.d/S99board), so
+# this only records the choice and tells you what to do next. It does not touch
+# the fabric directly, because reconfiguring the PL under a bound driver is the
+# thing we are trying to avoid.
+#
+# Usage: board-mode [display|rf]     (no argument prints the current mode)
+
+MODE_FILE=/etc/board-mode
+VALID="display rf"
+
+usage() {
+    echo "usage: board-mode [display|rf]"
+    echo "  no argument: print current mode"
+    exit 2
+}
+
+case "$1" in
+    "")
+        current=$(cat "$MODE_FILE" 2>/dev/null)
+        [ -z "$current" ] && current="display (default, $MODE_FILE missing)"
+        echo "current mode: $current"
+        exit 0
+        ;;
+    display|rf)
+        ;;
+    *)
+        usage
+        ;;
+esac
+
+ok=0
+for m in $VALID; do
+    [ "$1" = "$m" ] && ok=1
+done
+[ "$ok" -eq 1 ] || usage
+
+echo "$1" > "$MODE_FILE"
+if [ "$?" -ne 0 ]; then
+    echo "failed to write $MODE_FILE"
+    exit 1
+fi
+
+echo "mode set to: $(cat "$MODE_FILE")"
+echo "reboot to apply: the boot script will stage the matching bitstream and"
+echo "overlay together, and will still start the fan either way."

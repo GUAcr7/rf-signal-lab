@@ -1,0 +1,4 @@
+Scope: synthesis internal register timing at 100 MHz only.
+Input/output delays and external reset/handshake timing are intentionally unspecified.
+No timing exceptions, external drive/load, pin assignments, board or ADC timing assumptions.
+check_timing/timing_summary may therefore report unconstrained I/O; inspect them explicitly.

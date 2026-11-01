@@ -1,0 +1,2235 @@
+{
+  "status": "passed_independent_real_RF_ARM_full_frontend_CNN_matches_Python",
+  "stages": [
+    {
+      "port": "COM8",
+      "stage": "wake",
+      "output": "\r\nroot@Zynq-Tronlong:/sys/bus/iio/devices/iio:device1# "
+    },
+    {
+      "port": "COM8",
+      "command": "p52_prompt=$PS1",
+      "output": "p52_prompt=$PS1\r\nroot@Zynq-Tronlong:/sys/bus/iio/devices/iio:device1# printf '\\n__P46_ef2156f0__: \r%s\\n' \"$?\"\r\n\r\n__P46_ef2156f0__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:50:12.260529+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "PS1=''",
+      "output": "PS1=''\r\nprintf '\\n__P46_41dc91b0__:%s\\n' \"$?\"\r\nroot@Zynq-Tronlong:/sys/bus/iio/devices/iio:device1# PS1=''\r\nprintf '\\n__P46_41dc91b0__:%s\\n' \"$?\"\r\n\r\n__P46_41dc91b0__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:50:12.350830+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "stty -echo",
+      "output": "stty -echo\r\nprintf '\\n__P46_de8f4b57__:%s\\n' \"$?\"\r\nstty -echo\r\n\r\n__P46_de8f4b57__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:50:12.416338+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "uname -a",
+      "output": "Linux Zynq-Tronlong 4.9.0-rt1-xilinx-g0e07141-dirty #4 SMP PREEMPT Tue Sep 1 17:20:08 CST 2020 armv7l armv7l armv7l GNU/Linux\r\n\r\n__P46_fae22267__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:50:12.480854+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "a=/proc/sys/kernel/random/boot_id",
+      "output": "\r\n__P46_5a0bf2cb__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:50:12.519771+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "echo __VALUE__$(cat $a)__END__",
+      "output": "__VALUE__9734d483-07e3-44d3-9dd3-6582703ee77d__END__\r\n\r\n__P46_53bc7921__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:50:12.571282+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "a=/proc/sys/kernel/tainted",
+      "output": "\r\n__P46_6c09ec02__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:50:12.600345+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "echo __VALUE__$(cat $a)__END__",
+      "output": "__VALUE__0__END__\r\n\r\n__P46_4eb2c6bc__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:50:12.660857+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "s=/etc/rcS.d/S99board",
+      "output": "\r\n__P46_bf88d1f7__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:50:12.690857+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "sha256sum $s",
+      "output": "89183f1fe397f8bc20bd0c39544f5d30c37a8f1ca4e440c8cce6841d9b1247f2  /etc/rcS.d/S99board\r\n\r\n__P46_76a06ed9__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:50:12.760546+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "ps -ef",
+      "output": "UID        PID  PPID  C STIME TTY          TIME CMD\r\nroot         1     0  0 02:45 ?        00:00:01 init [5]\r\nroot         2     0  0 02:45 ?        00:00:00 [kthreadd]\r\nroot         3     2  0 02:45 ?        00:00:00 [ksoftirqd/0]\r\nroot         4     2  0 02:45 ?        00:00:00 [kworker/0:0]\r\nroot         5     2  0 02:45 ?        00:00:00 [kworker/0:0H]\r\nroot         6     2  0 02:45 ?        00:00:00 [kworker/u4:0]\r\nroot         7     2  0 02:45 ?        00:00:00 [rcu_preempt]\r\nroot         8     2  0 02:45 ?        00:00:00 [rcu_sched]\r\nroot         9     2  0 02:45 ?        00:00:00 [rcu_bh]\r\nroot        10     2  0 02:45 ?        00:00:00 [rcuc/0]\r\nroot        11     2  0 02:45 ?        00:00:00 [migration/0]\r\nroot        12     2  0 02:45 ?        00:00:00 [lru-add-drain]\r\nroot        13     2  0 02:45 ?        00:00:00 [cpuhp/0]\r\nroot        14     2  0 02:45 ?        00:00:00 [cpuhp/1]\r\nroot        15     2  0 02:45 ?        00:00:00 [migration/1]\r\nroot        16     2  0 02:45 ?        00:00:00 [rcuc/1]\r\nroot        17     2  0 02:45 ?        00:00:00 [ksoftirqd/1]\r\nroot        19     2  0 02:45 ?        00:00:00 [kworker/1:0H]\r\nroot        20     2  0 02:45 ?        00:00:00 [kdevtmpfs]\r\nroot        22     2  0 02:45 ?        00:00:00 [kswork]\r\nroot        50     2  0 02:45 ?        00:00:00 [kworker/0:1]\r\nroot        94     2  0 02:45 ?        00:00:01 [kworker/1:1]\r\nroot       283     2  0 02:45 ?        00:00:00 [oom_reaper]\r\nroot       284     2  0 02:45 ?        00:00:00 [writeback]\r\nroot       286     2  0 02:45 ?        00:00:00 [crypto]\r\nroot       287     2  0 02:45 ?        00:00:00 [bioset]\r\nroot       289     2  0 02:45 ?        00:00:00 [kblockd]\r\nroot       324     2  0 02:45 ?        00:00:00 [edac-poller]\r\nroot       341     2  0 02:45 ?        00:00:00 [watchdogd]\r\nroot       425     2  0 02:45 ?        00:00:00 [rpciod]\r\nroot       426     2  0 02:45 ?        00:00:00 [xprtiod]\r\nroot       440     2  0 02:45 ?        00:00:00 [kswapd0]\r\nroot       441     2  0 02:45 ?        00:00:00 [vmstat]\r\nroot       442     2  0 02:45 ?        00:00:00 [nfsiod]\r\nroot       481     2  0 02:45 ?        00:00:00 [bioset]\r\nroot       482     2  0 02:45 ?        00:00:00 [bioset]\r\nroot       483     2  0 02:45 ?        00:00:00 [bioset]\r\nroot       484     2  0 02:45 ?        00:00:00 [bioset]\r\nroot       485     2  0 02:45 ?        00:00:00 [bioset]\r\nroot       486     2  0 02:45 ?        00:00:00 [bioset]\r\nroot       487     2  0 02:45 ?        00:00:00 [bioset]\r\nroot       488     2  0 02:45 ?        00:00:00 [bioset]\r\nroot       489     2  0 02:45 ?        00:00:00 [bioset]\r\nroot       490     2  0 02:45 ?        00:00:00 [bioset]\r\nroot       491     2  0 02:45 ?        00:00:00 [bioset]\r\nroot       492     2  0 02:45 ?        00:00:00 [bioset]\r\nroot       493     2  0 02:45 ?        00:00:00 [bioset]\r\nroot       494     2  0 02:45 ?        00:00:00 [bioset]\r\nroot       495     2  0 02:45 ?        00:00:00 [bioset]\r\nroot       496     2  0 02:45 ?        00:00:00 [bioset]\r\nroot       530     2  0 02:45 ?        00:00:00 [bioset]\r\nroot       533     2  0 02:45 ?        00:00:00 [bioset]\r\nroot       536     2  0 02:45 ?        00:00:00 [bioset]\r\nroot       539     2  0 02:45 ?        00:00:00 [bioset]\r\nroot       542     2  0 02:45 ?        00:00:00 [bioset]\r\nroot       545     2  0 02:45 ?        00:00:00 [bioset]\r\nroot       548     2  0 02:45 ?        00:00:00 [bioset]\r\nroot       551     2  0 02:45 ?        00:00:00 [bioset]\r\nroot       569     2  0 02:45 ?        00:00:00 [spi32766]\r\nroot       574     2  0 02:45 ?        00:00:00 [spi0]\r\nroot       578     2  0 02:45 ?        00:00:00 [bioset]\r\nroot       583     2  0 02:45 ?        00:00:00 [bioset]\r\nroot       588     2  0 02:45 ?        00:00:00 [bioset]\r\nroot       593     2  0 02:45 ?        00:00:00 [bioset]\r\nroot       681     2  0 02:45 ?        00:00:00 [irq/106-ads7846]\r\nroot       725     2  0 02:45 ?        00:00:00 [irq/33-mmc0]\r\nroot       729     2  0 02:45 ?        00:00:00 [irq/34-mmc1]\r\nroot       750     2  0 02:45 ?        00:00:00 [bioset]\r\nroot       755     2  0 02:45 ?        00:00:00 [mmcqd/0]\r\nroot       766     2  0 02:45 ?        00:00:00 [ipv6_addrconf]\r\nroot       772     2  0 02:45 ?        00:00:00 [kworker/u4:3]\r\nroot       778     2  0 02:45 ?        00:00:00 [bioset]\r\nroot       780     2  0 02:45 ?        00:00:00 [mmcqd/1]\r\nroot       781     2  0 02:45 ?        00:00:00 [bioset]\r\nroot       782     2  0 02:45 ?        00:00:00 [mmcqd/1boot0]\r\nroot       783     2  0 02:45 ?        00:00:00 [bioset]\r\nroot       784     2  0 02:45 ?        00:00:00 [mmcqd/1boot1]\r\nroot       785     2  0 02:45 ?        00:00:00 [bioset]\r\nroot       786     2  0 02:45 ?        00:00:00 [mmcqd/1rpmb]\r\nroot       803     2  0 02:45 ?        00:00:00 [kworker/1:1H]\r\nroot       804     2  0 02:45 ?        00:00:00 [kworker/0:1H]\r\nroot       805     2  0 02:45 ?        00:00:00 [jbd2/mmcblk0p2-]\r\nroot       806     2  0 02:45 ?        00:00:00 [ext4-rsv-conver]\r\nroot       833     1  0 02:45 ?        00:00:00 /sbin/syslogd -n -O /var/log/mes\r\nroot       836     1  0 02:45 ?        00:00:00 /sbin/klogd -n\r\nroot       852     1  0 02:45 ?        00:00:00 /sbin/udevd -d\r\nroot      1228     2  0 02:45 ?        00:00:00 [jbd2/mmcblk1p3-]\r\nroot      1230     2  0 02:45 ?        00:00:00 [ext4-rsv-conver]\r\nroot      1239     2  0 02:45 ?        00:00:00 [jbd2/mmcblk0p3-]\r\nroot      1241     2  0 02:45 ?        00:00:00 [jbd2/mmcblk1p2-]\r\nroot      1244     2  0 02:45 ?        00:00:00 [ext4-rsv-conver]\r\nroot      1247     2  0 02:45 ?        00:00:00 [ext4-rsv-conver]\r\nroot      1299     2  0 02:45 ?        00:00:00 [spi32765]\r\nroot      1301     2  0 02:45 ?        00:00:00 [kworker/1:2]\r\nroot      1364     1  0 02:45 ?        00:00:00 udhcpc -R -b -p /var/run/udhcpc.\r\nmessage+  1394     1  0 02:45 ?        00:00:00 /usr/bin/dbus-daemon --system\r\nroot      1406     1  0 02:45 ?        00:00:00 /usr/sbin/dropbear -r /etc/dropb\r\ndaemon    1410     1  0 02:45 ?        00:00:00 /sbin/portmap\r\nrpc       1414     1  0 02:45 ?        00:00:00 /usr/sbin/rpcbind\r\nrpcuser   1419     1  0 02:45 ?        00:00:00 /usr/sbin/rpc.statd\r\nntp       1430     1  0 02:45 ?        00:00:00 /usr/sbin/ntpd -u ntp:ntp -p /va\r\navahi     1440     1  0 02:45 ?        00:00:00 avahi-daemon: running [Zynq-Tron\r\navahi     1441  1440  0 02:45 ?        00:00:00 avahi-daemon: chroot helper\r\nroot      1452     1  0 02:45 ?        00:00:00 /usr/sbin/ofonod\r\nroot      1462     1  0 02:45 ?        00:00:00 /usr/sbin/lighttpd -f /etc/light\r\nroot      1473     1  0 02:45 ?        00:00:00 /usr/sbin/tcf-agent -d -L- -l0\r\nroot      1478     1  0 02:45 ttyPS0   00:00:00 -sh\r\nroot      1479     1  0 02:45 tty1     00:00:00 /sbin/getty 38400 tty1\r\nroot      1588  1478  0 02:58 ttyPS0   00:00:00 ps -ef\r\n\r\n__P46_91c53494__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:50:13.420464+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "/etc/rcS.d/S99board --check-rf",
+      "output": "RF_READY phy=ad9361-phy adc=cf-ad9361-lpc dds=cf-ad9361-dds-core-lpc\r\n\r\n__P46_2581571d__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:50:13.540427+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "ir=/sys/bus/iio/devices",
+      "output": "\r\n__P46_ec8bb25b__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:50:13.571246+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "for n in $ir/iio:device*;do echo __D__$n:$(cat $n/name)__E__;done",
+      "output": "__D__/sys/bus/iio/devices/iio:device0:xadc__E__\r\n__D__/sys/bus/iio/devices/iio:device1:ad9361-phy__E__\r\n__D__/sys/bus/iio/devices/iio:device2:cf-ad9361-lpc__E__\r\n__D__/sys/bus/iio/devices/iio:device3:cf-ad9361-dds-core-lpc__E__\r\n\r\n__P46_74ef9262__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:50:13.660833+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "cd /sys/bus/iio/devices/iio:device1",
+      "output": "\r\n__P46_8730af9e__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:50:13.690832+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "a=in_voltage_sampling_frequency",
+      "output": "\r\n__P46_7f73b8bf__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:50:13.720541+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "echo __VALUE__$(cat $a)__END__",
+      "output": "__VALUE__30720000__END__\r\n\r\n__P46_2dfa026a__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:50:13.781446+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "a=in_voltage_rf_bandwidth",
+      "output": "\r\n__P46_f63271d4__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:50:13.810676+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "echo __VALUE__$(cat $a)__END__",
+      "output": "__VALUE__18000000__END__\r\n\r\n__P46_b1bb6b6b__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:50:13.870504+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "a=out_altvoltage0_RX_LO_frequency",
+      "output": "\r\n__P46_20479fa0__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:50:13.900668+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "echo __VALUE__$(cat $a)__END__",
+      "output": "__VALUE__2450000000__END__\r\n\r\n__P46_bb5679e8__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:50:13.960624+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "a=in_voltage0_gain_control_mode",
+      "output": "\r\n__P46_f0702756__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:50:13.991141+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "echo __VALUE__$(cat $a)__END__",
+      "output": "__VALUE__manual__END__\r\n\r\n__P46_3d873873__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:50:14.050730+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "a=in_voltage0_hardwaregain",
+      "output": "\r\n__P46_dc0081cb__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:50:14.080521+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "echo __VALUE__$(cat $a)__END__",
+      "output": "__VALUE__0.000000 dB__END__\r\n\r\n__P46_1fd7c019__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:50:14.141868+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "a=in_voltage0_rf_port_select",
+      "output": "\r\n__P46_a12e968c__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:50:14.170918+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "echo __VALUE__$(cat $a)__END__",
+      "output": "__VALUE__A_BALANCED__END__\r\n\r\n__P46_18dcd85d__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:50:14.230668+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "cd /sys/bus/iio/devices/iio:device2",
+      "output": "\r\n__P46_bbd76b2d__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:50:14.261282+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "a=buffer/enable",
+      "output": "\r\n__P46_4cc5deed__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:50:14.290337+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "echo __VALUE__$(cat $a)__END__",
+      "output": "__VALUE__0__END__\r\n\r\n__P46_802c37f7__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:50:14.350396+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "a=scan_elements/in_voltage0_en",
+      "output": "\r\n__P46_8f53c2b3__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:50:14.380865+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "echo __VALUE__$(cat $a)__END__",
+      "output": "__VALUE__0__END__\r\n\r\n__P46_21baf54b__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:50:14.440481+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "a=scan_elements/in_voltage1_en",
+      "output": "\r\n__P46_b25694b0__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:50:14.471028+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "echo __VALUE__$(cat $a)__END__",
+      "output": "__VALUE__0__END__\r\n\r\n__P46_4aca0b5c__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:50:14.530035+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "a=scan_elements/in_voltage2_en",
+      "output": "\r\n__P46_a8969287__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:50:14.561044+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "echo __VALUE__$(cat $a)__END__",
+      "output": "__VALUE__0__END__\r\n\r\n__P46_8521b390__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:50:14.620236+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "a=scan_elements/in_voltage3_en",
+      "output": "\r\n__P46_44edaa31__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:50:14.650484+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "echo __VALUE__$(cat $a)__END__",
+      "output": "__VALUE__0__END__\r\n\r\n__P46_e8159efc__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:50:14.710697+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "dmesg | tail -n 160",
+      "output": "[    0.224418] zynq-ocm f800c000.ocmc: can't request region for resource [mem 0xfffc0000-0xffffffff]\r\n[    0.224441] zynq-ocm: probe of f800c000.ocmc failed with error -16\r\n[    0.224745] zynq-pinctrl 700.pinctrl: zynq pinctrl initialized\r\n[    0.225127] e0000000.serial: ttyPS1 at MMIO 0xe0000000 (irq = 28, base_baud = 6249999) is a xuartps\r\n[    0.225824] e0001000.serial: ttyPS0 at MMIO 0xe0001000 (irq = 29, base_baud = 6249999) is a xuartps\r\n[    0.692261] console [ttyPS0] enabled\r\n[    0.723142] vgaarb: loaded\r\n[    0.726286] SCSI subsystem initialized\r\n[    0.730591] usbcore: registered new interface driver usbfs\r\n[    0.736169] usbcore: registered new interface driver hub\r\n[    0.741572] usbcore: registered new device driver usb\r\n[    0.747063] media: Linux media interface: v0.10\r\n[    0.751663] Linux video capture interface: v2.00\r\n[    0.756348] pps_core: LinuxPPS API ver. 1 registered\r\n[    0.761257] pps_core: Software ver. 5.3.6 - Copyright 2005-2007 Rodolfo Giometti <giometti@linux.it>\r\n[    0.770421] PTP clock support registered\r\n[    0.774451] EDAC MC: Ver: 3.0.0\r\n[    0.778488] FPGA manager framework\r\n[    0.782327] fpga-region fpga-full: FPGA Region probed\r\n[    0.787583] Advanced Linux Sound Architecture Driver Initialized.\r\n[    0.794883] clocksource: Switched to clocksource arm_global_timer\r\n[    0.816297] NET: Registered protocol family 2\r\n[    0.821268] TCP established hash table entries: 8192 (order: 3, 32768 bytes)\r\n[    0.828407] TCP bind hash table entries: 8192 (order: 4, 65536 bytes)\r\n[    0.834937] TCP: Hash tables configured (established 8192 bind 8192)\r\n[    0.841258] UDP hash table entries: 512 (order: 2, 16384 bytes)\r\n[    0.847185] UDP-Lite hash table entries: 512 (order: 2, 16384 bytes)\r\n[    0.853618] NET: Registered protocol family 1\r\n[    0.858317] RPC: Registered named UNIX socket transport module.\r\n[    0.864150] RPC: Registered udp transport module.\r\n[    0.868886] RPC: Registered tcp transport module.\r\n[    0.873524] RPC: Registered tcp NFSv4.1 backchannel transport module.\r\n[    0.879982] PCI: CLS 0 bytes, default 64\r\n[    0.880578] hw perfevents: enabled with armv7_cortex_a9 PMU driver, 7 counters available\r\n[    0.890300] futex hash table entries: 512 (order: 3, 32768 bytes)\r\n[    0.897306] workingset: timestamp_bits=30 max_order=18 bucket_order=0\r\n[    0.904369] jffs2: version 2.2. (NAND) (SUMMARY)  \\xffffffc2\\xffffffa9 2001-2006 Red Hat, Inc.\r\n[    0.912124] bounce: pool size: 64 pages\r\n[    0.915943] io scheduler noop registered\r\n[    0.919780] io scheduler deadline registered\r\n[    0.924074] io scheduler cfq registered (default)\r\n[    0.932579] dma-pl330 f8003000.dmac: Loaded driver for PL330 DMAC-241330\r\n[    0.939250] dma-pl330 f8003000.dmac: \tDBUFF-128x8bytes Num_Chans-8 Num_Peri-4 Num_Events-16\r\n[    0.948880] [drm] Initialized\r\n[    0.965343] brd: module loaded\r\n[    0.975863] loop: module loaded\r\n[    0.983058] m25p80 spi0.0: found mx25l25635e, expected s25fl256s1\r\n[    0.989172] m25p80 spi0.0: failed to read ear reg\r\n[    0.993798] m25p80 spi0.0: mx25l25635e (32768 Kbytes)\r\n[    0.998903] 4 ofpart partitions found on MTD device spi0.0\r\n[    1.004298] Creating 4 MTD partitions on \"spi0.0\":\r\n[    1.009119] 0x000000000000-0x000000040000 : \"spi.fsbl\"\r\n[    1.015649] 0x000000040000-0x0000000c0000 : \"spi.u-boot\"\r\n[    1.022177] 0x0000000c0000-0x000000100000 : \"spi.env\"\r\n[    1.028534] 0x000000100000-0x000002000000 : \"spi.user-data\"\r\n[    1.035948] libphy: Fixed MDIO Bus: probed\r\n[    1.043583] libphy: mdio_driver_register: xgmiitorgmii\r\n[    1.048792] CAN device driver interface\r\n[    1.056357] libphy: MACB_mii_bus: probed\r\n[    1.155524] macb e000b000.ethernet eth0: Cadence GEM rev 0x00020118 at 0xe000b000 irq 32 (00:0a:35:00:01:22)\r\n[    1.165319] Micrel KSZ9031 Gigabit PHY e000b000.etherne:00: attached PHY driver [Micrel KSZ9031 Gigabit PHY] (mii_bus:phy_addr=e000b000.etherne:00, irq=-1)\r\n[    1.179428] e1000e: Intel(R) PRO/1000 Network Driver - 3.2.6-k\r\n[    1.185210] e1000e: Copyright(c) 1999 - 2015 Intel Corporation.\r\n[    1.192170] ehci_hcd: USB 2.0 'Enhanced' Host Controller (EHCI) Driver\r\n[    1.198657] ehci-pci: EHCI PCI platform driver\r\n[    1.203202] usbcore: registered new interface driver usb-storage\r\n[    1.209668] e0002000.usb supply vbus not found, using dummy regulator\r\n[    1.216365] ULPI transceiver vendor/product ID 0x0424/0x0007\r\n[    1.221940] Found SMSC USB3320 ULPI transceiver.\r\n[    1.226592] ULPI integrity check: passed.\r\n[    1.230553] ci_hdrc ci_hdrc.0: EHCI Host Controller\r\n[    1.235452] ci_hdrc ci_hdrc.0: new USB bus registered, assigned bus number 1\r\n[    1.264923] ci_hdrc ci_hdrc.0: USB 2.0 started, EHCI 1.00\r\n[    1.271047] hub 1-0:1.0: USB hub found\r\n[    1.274747] hub 1-0:1.0: 1 port detected\r\n[    1.280516] mousedev: PS/2 mouse device common for all mice\r\n[    1.286574] spi32766.0 supply vcc not found, using dummy regulator\r\n[    1.293032] ads7846 spi32766.0: touchscreen, irq 106\r\n[    1.298463] input: ADS7846 Touchscreen as /devices/soc0/amba/e0006000.spi/spi_master/spi32766/spi32766.0/input/input0\r\n[    1.309559] i2c /dev entries driver\r\n[    1.313320] cdns-i2c e0004000.i2c: 100 kHz mmio e0004000 irq 25\r\n[    1.323919] rtc-ds1307 0-0068: rtc core: registered ds1307 as rtc0\r\n[    1.330075] rtc-ds1307 0-0068: 56 bytes nvram\r\n[    1.338141] ina2xx 0-0040: power monitor ina220 (Rshunt = 20480 uOhm)\r\n[    1.345629] ina2xx 0-0041: power monitor ina220 (Rshunt = 20480 uOhm)\r\n[    1.353052] cdns-wdt f8005000.watchdog: Xilinx Watchdog Timer at f0968000 with timeout 10s\r\n[    1.361675] EDAC MC: ECC not enabled\r\n[    1.365451] Xilinx Zynq CpuIdle Driver started\r\n[    1.370507] sdhci: Secure Digital Host Controller Interface driver\r\n[    1.376636] sdhci: Copyright(c) Pierre Ossman\r\n[    1.380939] sdhci-pltfm: SDHCI platform and OF driver helper\r\n[    1.444930] mmc0: SDHCI controller on e0100000.sdhci [e0100000.sdhci] using ADMA\r\n[    1.514949] mmc1: SDHCI controller on e0101000.sdhci [e0101000.sdhci] using ADMA\r\n[    1.524816] ledtrig-cpu: registered to indicate activity on CPUs\r\n[    1.533899] mmc0: new high speed SDHC card at address aaaa\r\n[    1.536211] usbcore: registered new interface driver usbhid\r\n[    1.536214] usbhid: USB HID core driver\r\n[    1.559724] mmcblk0: mmc0:aaaa SL16G 14.8 GiB \r\n[    1.560783] fpga_manager fpga0: Xilinx Zynq FPGA Manager registered\r\n[    1.561312] usbcore: registered new interface driver snd-usb-audio\r\n[    1.564182] NET: Registered protocol family 10\r\n[    1.570677] sit: IPv6, IPv4 and MPLS over IPv4 tunneling driver\r\n[    1.571424] NET: Registered protocol family 17\r\n[    1.571440] can: controller area network core (rev 20120528 abi 9)\r\n[    1.571496] NET: Registered protocol family 29\r\n[    1.571519] can: raw protocol (rev 20120528)\r\n[    1.571524] can: broadcast manager protocol (rev 20161123 t)\r\n[    1.571533] can: netlink gateway (rev 20130117) max_hops=1\r\n[    1.577567] zynq_pm_remap_ocm: OCM pool is not available\r\n[    1.577570] zynq_pm_suspend_init: Unable to map OCM.\r\n[    1.577590] Registering SWP/SWPB emulation handler\r\n[    1.582596] input: gpio-keys as /devices/soc0/gpio-keys/input/input1\r\n[    1.587791] rtc-ds1307 0-0068: setting system clock to 2000-01-01 00:00:04 UTC (946684804)\r\n[    1.587797] of_cfs_init\r\n[    1.587868] of_cfs_init: OK\r\n[    1.588164] ALSA device list:\r\n[    1.588167]   No soundcards found.\r\n[    1.610830] mmc1: new high speed MMC card at address 0001\r\n[    1.621417] mmcblk1: mmc1:0001 8GUF4R 7.28 GiB \r\n[    1.631679] mmcblk1boot0: mmc1:0001 8GUF4R partition 1 31.9 MiB\r\n[    1.641941] mmcblk1boot1: mmc1:0001 8GUF4R partition 2 31.9 MiB\r\n[    1.652204] mmcblk1rpmb: mmc1:0001 8GUF4R partition 3 4.00 MiB\r\n[    1.653211]  mmcblk1: p1 p2 p3\r\n[    1.655204] usb 1-1: new high-speed USB device number 2 using ci_hdrc\r\n[    1.701616]  mmcblk0: p1 p2 p3\r\n[    1.769095] random: fast init done\r\n[    1.787330] EXT4-fs (mmcblk0p2): recovery complete\r\n[    1.792794] EXT4-fs (mmcblk0p2): mounted filesystem with ordered data mode. Opts: (null)\r\n[    1.800877] VFS: Mounted root (ext4 filesystem) on device 179:2.\r\n[    1.812305] devtmpfs: mounted\r\n[    1.818422] Freeing unused kernel memory: 1024K (c0900000 - c0a00000)\r\n[    1.837771] hub 1-1:1.0: USB hub found\r\n[    1.841889] hub 1-1:1.0: 4 ports detected\r\n[    2.689051] udevd[851]: starting version 3.2\r\n[    2.786900] udevd[852]: starting eudev-3.2\r\n[    2.984581] EXT4-fs (mmcblk0p2): re-mounted. Opts: (null)\r\n[    4.718054] EXT4-fs (mmcblk1p3): recovery complete\r\n[    4.723884] EXT4-fs (mmcblk1p3): mounted filesystem with ordered data mode. Opts: (null)\r\n[    4.748396] EXT4-fs (mmcblk0p3): mounting ext3 file system using the ext4 subsystem\r\n[    4.776732] FAT-fs (mmcblk1p1): Volume was not properly unmounted. Some data may be corrupt. Please run fsck.\r\n[    4.802184] EXT4-fs (mmcblk1p2): recovery complete\r\n[    4.809739] EXT4-fs (mmcblk0p3): recovery complete\r\n[    4.809754] EXT4-fs (mmcblk0p3): mounted filesystem with ordered data mode. Opts: (null)\r\n[    4.840156] EXT4-fs (mmcblk1p2): mounted filesystem with ordered data mode. Opts: (null)\r\n[    4.869724] FAT-fs (mmcblk0p1): Volume was not properly unmounted. Some data may be corrupt. Please run fsck.\r\n[    5.061974] board-init: fan on\r\n[    5.079309] board-init: mode=rf bitstream=/lib/firmware/ad9361.bin overlay=/lib/firmware/pl.dtbo\r\n[    6.683246] board-init: staged bitstream already current\r\n[    6.706868] fpga_manager fpga0: writing system_wrapper.bin to Xilinx Zynq FPGA Manager\r\n[    6.838856] fpga_manager fpga0: Found swapped sync word\r\n[    7.439386] board-init: fabric operating after explicit bitstream load\r\n[    7.481936] ad9361 spi32765.0: ad9361_probe : enter (ad9361)\r\n[    7.726222] ad9361 spi32765.0: ad9361_probe : AD936x Rev 2 successfully initialized\r\n[    7.746260] board-init: overlay applied: /lib/firmware/pl.dtbo (attempt 1)\r\n[    8.596470] cf_axi_adc 79020000.cf-ad9361-lpc: ADI AIM (10.00.b) at 0x79020000 mapped to 0xf09f8000, probed ADC AD9361 as MASTER\r\n[    8.621056] cf_axi_dds 79024000.cf-ad9361-dds-core-lpc: Analog Devices CF_AXI_DDS_DDS MASTER (9.00.b) at 0x79024000 mapped to 0xf09da000, probed DDS AD9361\r\n[    8.989543] board-init: rf ready: PHY/ADC/DDS names verified (attempt 1)\r\n[    9.002077] board-init: bring-up complete (mode=rf)\r\n[    9.192649] IPv6: ADDRCONF(NETDEV_UP): eth0: link is not ready\r\n[  692.184694] random: crng init done\r\n\r\n__P46_0ecb0f7c__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:50:15.681600+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "readlink -f /tmp",
+      "output": "/var/volatile/tmp\r\n\r\n__P46_c63c837c__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:50:15.740078+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "cat /proc/mounts",
+      "output": "/dev/root / ext4 rw,relatime,data=ordered 0 0\r\ndevtmpfs /dev devtmpfs rw,relatime,size=433112k,nr_inodes=108278,mode=755 0 0\r\nproc /proc proc rw,relatime 0 0\r\ntmpfs /mnt/.psplash tmpfs rw,relatime,size=40k 0 0\r\nsysfs /sys sysfs rw,relatime 0 0\r\ndebugfs /sys/kernel/debug debugfs rw,relatime 0 0\r\ntmpfs /run tmpfs rw,nosuid,nodev,mode=755 0 0\r\ntmpfs /var/volatile tmpfs rw,relatime 0 0\r\ndevpts /dev/pts devpts rw,relatime,gid=5,mode=620,ptmxmode=000 0 0\r\n/dev/mmcblk1p3 /run/media/mmcblk1p3 ext4 rw,relatime,data=ordered 0 0\r\n/dev/mmcblk1p1 /run/media/mmcblk1p1 vfat rw,relatime,gid=6,fmask=0007,dmask=0007,allow_utime=0020,codepage=437,iocharset=iso8859-1,shortname=mixed,errors=remount-ro 0 0\r\n/dev/mmcblk0p3 /run/media/mmcblk0p3 ext3 rw,relatime,data=ordered 0 0\r\n/dev/mmcblk1p2 /run/media/mmcblk1p2 ext4 rw,relatime,data=ordered 0 0\r\n/dev/mmcblk0p1 /run/media/mmcblk0p1 vfat rw,relatime,gid=6,fmask=0007,dmask=0007,allow_utime=0020,codepage=437,iocharset=iso8859-1,shortname=mixed,errors=remount-ro 0 0\r\nnone /sys/kernel/config configfs rw,relatime 0 0\r\n\r\n__P46_4ab261f2__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:50:15.890310+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "mkdir /tmp/p35-ai-075009",
+      "output": "\r\n__P46_faa438ef__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:50:15.925562+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "PS1='# '",
+      "output": "# \r\n__P46_46c165c5__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:50:15.952001+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "command -v base64",
+      "output": "# /bin/base64\r\n# \r\n__P46_4b44f8a5__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:50:16.010888+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "test ! -e /tmp/p35-ai-075009/a",
+      "output": "# # \r\n__P46_f800b8d0__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:50:16.040469+00:00"
+    },
+    {
+      "stage": "upload_echo_off",
+      "output": "# # "
+    },
+    {
+      "stage": "upload_banner",
+      "path": "/tmp/p35-ai-075009/a",
+      "output": "__P35_DATA__\r\n"
+    },
+    {
+      "stage": "upload_tail",
+      "path": "/tmp/p35-ai-075009/a",
+      "output": "#"
+    },
+    {
+      "stage": "upload_echo_restored",
+      "output": " # "
+    },
+    {
+      "port": "COM8",
+      "command": "sha256sum /tmp/p35-ai-075009/a",
+      "output": "sha256sum /tmp/p35-ai-075009/a\r\n6b1dd4a963e09409ca81635611240d93ba4f9f1358db3ffa0b7897c744062855  /tmp/p35-ai-075009/a\r\n# printf '\\n__P46_51bcc67e__:%s\\n' \"$?\"\r\n\r\n__P46_51bcc67e__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:50:20.340642+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "PS1=''",
+      "output": "PS1=''\r\nprintf '\\n__P46_72f372dd__:%s\\n' \"$?\"\r\n# PS1=''\r\nprintf '\\n__P46_72f372dd__:%s\\n' \"$?\"\r\n\r\n__P46_72f372dd__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:50:20.430730+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "stty -echo",
+      "output": "stty -echo\r\nprintf '\\n__P46_093e78cc__:%s\\n' \"$?\"\r\nstty -echo\r\n\r\n__P46_093e78cc__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:50:20.495666+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "chmod 755 /tmp/p35-ai-075009/a",
+      "output": "\r\n__P46_3cd5e0b0__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:50:20.525826+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "b=/tmp/p35-ai-075009/a",
+      "output": "\r\n__P46_774b6dae__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:50:20.551175+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "x=/tmp/p35-ai-075009/x",
+      "output": "\r\n__P46_4c2deabc__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:50:20.582064+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "PS1='# '",
+      "output": "# \r\n__P46_5883307d__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:50:20.610904+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "command -v base64",
+      "output": "# /bin/base64\r\n# \r\n__P46_46287781__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:50:20.670172+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "test ! -e /tmp/p35-ai-075009/z",
+      "output": "# # \r\n__P46_9dc7ea2e__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:50:20.701185+00:00"
+    },
+    {
+      "stage": "upload_echo_off",
+      "output": "# # "
+    },
+    {
+      "stage": "upload_banner",
+      "path": "/tmp/p35-ai-075009/z",
+      "output": "__P35_DATA__\r\n"
+    },
+    {
+      "stage": "upload_tail",
+      "path": "/tmp/p35-ai-075009/z",
+      "output": "#"
+    },
+    {
+      "stage": "upload_echo_restored",
+      "output": " # "
+    },
+    {
+      "port": "COM8",
+      "command": "sha256sum /tmp/p35-ai-075009/z",
+      "output": "sha256sum /tmp/p35-ai-075009/z\r\nc7bd6989ec53e762118b75c4bdba6dc9666048822a44cd38dc1f1d2d29144402  /tmp/p35-ai-075009/z\r\n# printf '\\n__P46_5f40cd4f__:%s\\n' \"$?\"\r\n\r\n__P46_5f40cd4f__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:02.441396+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "PS1=''",
+      "output": "PS1=''\r\nprintf '\\n__P46_45a69138__:%s\\n' \"$?\"\r\n# PS1=''\r\nprintf '\\n__P46_45a69138__:%s\\n' \"$?\"\r\n\r\n__P46_45a69138__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:02.531659+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "stty -echo",
+      "output": "stty -echo\r\nprintf '\\n__P46_64cbbfef__:%s\\n' \"$?\"\r\nstty -echo\r\n\r\n__P46_64cbbfef__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:02.596717+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "z=/tmp/p35-ai-075009/z",
+      "output": "\r\n__P46_17fc32d9__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:02.621251+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "gzip -t $z",
+      "output": "\r\n__P46_b692b956__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:03.151468+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "gzip -dc $z > /tmp/p35-ai-075009/all",
+      "output": "\r\n__P46_5d245f07__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:03.687682+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "s=/tmp/p35-ai-075009/all",
+      "output": "\r\n__P46_f0498dc8__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:03.711738+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "sha256sum $s",
+      "output": "c9b12953ad69dc33b5a985ba7ed454e73ec8c89b7986e4195fb200c828f341eb  /tmp/p35-ai-075009/all\r\n\r\n__P46_5560ffa7__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:03.971707+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "s=/tmp/p35-ai-075009/all",
+      "output": "\r\n__P46_c40b6d05__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:04.001474+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "dd if=$s of=$x bs=262144 skip=0 count=1",
+      "output": "1+0 records in\r\n1+0 records out\r\n262144 bytes (262 kB, 256 KiB) copied, 0.00223633 s, 117 MB/s\r\n\r\n__P46_d3ae83b4__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:04.071604+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "s=/tmp/p35-ai-075009/x",
+      "output": "\r\n__P46_028ddda1__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:04.102760+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "sha256sum $s",
+      "output": "74a35bcf7e7c65c70e46ef922195792d588d2e4cb33874a8a15bd164dd3a70c2  /tmp/p35-ai-075009/x\r\n\r\n__P46_9b925b37__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:04.181280+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "f=993760.89225713501",
+      "output": "\r\n__P46_35562371__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:04.213037+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "timeout -k 2 12 $b $x $f fp32",
+      "output": "0,0.28328323364257812,-1.8893718719482422,-2.3129634857177734,0\r\n1,-2.090179443359375,-0.31238555908203125,-2.3074951171875,1\r\n2,-0.0488433837890625,-3.6151161193847656,0.084472030401229858,2\r\n\r\n__P46_913316f2__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:04.321697+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "timeout -k 2 12 $b $x $f int8 --bench",
+      "output": "0,0.79590831170067733,-2.3615210389073447,-2.383211978704745,0\r\n1,-1.5071173828499576,-0.92575201709255772,-2.3300122818323334,1\r\n2,0.54348017515449976,-4.2630414426445622,0.045257486598028862,0\r\n{\"repeats\":10,\"mean_block_ms\":22.5490607,\"max_block_ms\":22.680397,\"frames_per_block\":3,\"maxrss_kib\":2556,\"scope\":\"mix/FIR/decimation/DC/RMS/CNN; file IO excluded\"}\r\n\r\n__P46_5639eddb__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:05.031247+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "s=/tmp/p35-ai-075009/all",
+      "output": "\r\n__P46_7a34ba11__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:05.062257+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "dd if=$s of=$x bs=262144 skip=1 count=1",
+      "output": "1+0 records in\r\n1+0 records out\r\n262144 bytes (262 kB, 256 KiB) copied, 0.00222931 s, 118 MB/s\r\n\r\n__P46_394109e4__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:05.131052+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "s=/tmp/p35-ai-075009/x",
+      "output": "\r\n__P46_692d5d7f__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:05.161247+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "sha256sum $s",
+      "output": "81821a6b89e342203772c7e0ed92daaf5c4d5bc2898525e99d55230ebef7bff0  /tmp/p35-ai-075009/x\r\n\r\n__P46_caf4f071__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:05.241001+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "f=993760.89225713501",
+      "output": "\r\n__P46_ec2d9032__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:05.272408+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "timeout -k 2 12 $b $x $f fp32",
+      "output": "0,1.8671684265136719,-3.8076210021972656,0.45611172914505005,0\r\n1,3.7257003784179688,-2.6056022644042969,-2.201836109161377,0\r\n2,2.1409835815429688,-1.2928543090820312,-1.4707856178283691,0\r\n\r\n__P46_8d81c2b8__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:05.362112+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "timeout -k 2 12 $b $x $f int8",
+      "output": "0,2.5133767758577381,-4.6790348825754204,0.55876731481935238,0\r\n1,4.1307065622913113,-3.2900409485221438,-2.1148534338529661,0\r\n2,2.4958074366564977,-1.9226153450554655,-1.3530783535603845,0\r\n\r\n__P46_fe170a18__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:05.451408+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "s=/tmp/p35-ai-075009/all",
+      "output": "\r\n__P46_75739815__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:05.481741+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "dd if=$s of=$x bs=262144 skip=2 count=1",
+      "output": "1+0 records in\r\n1+0 records out\r\n262144 bytes (262 kB, 256 KiB) copied, 0.00222829 s, 118 MB/s\r\n\r\n__P46_382e11dd__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:05.551348+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "s=/tmp/p35-ai-075009/x",
+      "output": "\r\n__P46_e58518e2__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:05.582256+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "sha256sum $s",
+      "output": "6afc90a2751e2c7325ba95e5ad71733f9d0bd702961f5eab266c93109f3bfdac  /tmp/p35-ai-075009/x\r\n\r\n__P46_4b1a9aff__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:05.661303+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "f=993760.89225713501",
+      "output": "\r\n__P46_d075d15f__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:05.690939+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "timeout -k 2 12 $b $x $f fp32",
+      "output": "0,-4.9592704772949219,1.9798965454101562,-0.93836259841918945,1\r\n1,-4.5087699890136719,0.576202392578125,-0.34053099155426025,1\r\n2,-4.7235374450683594,0.62086105346679688,-0.1438215970993042,1\r\n\r\n__P46_d70c1a16__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:05.781596+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "timeout -k 2 12 $b $x $f int8 --bench",
+      "output": "0,-4.7765222907046327,1.6596614707765198,-0.93125031964105354,1\r\n1,-4.336076001810854,0.20317636244086756,-0.29819687189188748,1\r\n2,-4.537107265469821,0.2784032905506546,-0.13541825533711283,1\r\n{\"repeats\":10,\"mean_block_ms\":22.4626615,\"max_block_ms\":22.613716,\"frames_per_block\":3,\"maxrss_kib\":2612,\"scope\":\"mix/FIR/decimation/DC/RMS/CNN; file IO excluded\"}\r\n\r\n__P46_100f4535__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:06.111184+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "s=/tmp/p35-ai-075009/all",
+      "output": "\r\n__P46_0a7ce33f__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:06.141361+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "dd if=$s of=$x bs=262144 skip=3 count=1",
+      "output": "1+0 records in\r\n1+0 records out\r\n262144 bytes (262 kB, 256 KiB) copied, 0.00226812 s, 116 MB/s\r\n\r\n__P46_7727f2ed__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:06.210962+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "s=/tmp/p35-ai-075009/x",
+      "output": "\r\n__P46_2cffe8ab__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:06.241609+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "sha256sum $s",
+      "output": "54b34739f551f3bd19813a34a720f612b7f625ce42cb509a16d5290d070ddc53  /tmp/p35-ai-075009/x\r\n\r\n__P46_39c8809b__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:06.321498+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "f=993760.89225713501",
+      "output": "\r\n__P46_8e40db9e__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:06.351633+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "timeout -k 2 12 $b $x $f fp32",
+      "output": "0,-6.944732666015625,2.6725330352783203,-0.41355994343757629,1\r\n1,-5.5056610107421875,1.8618011474609375,-0.91009747982025146,1\r\n2,-3.3451957702636719,1.7698650360107422,-2.1413650512695312,1\r\n\r\n__P46_e615f7c7__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:06.441870+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "timeout -k 2 12 $b $x $f int8",
+      "output": "0,-6.6913508133144308,2.2271576827001613,-0.34389026526227795,1\r\n1,-5.4171803778095589,1.5392000499471195,-0.84628814201117564,1\r\n2,-3.1673216015134238,1.3441344947482747,-2.0411671007850778,1\r\n\r\n__P46_bb2a76d2__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:06.532375+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "s=/tmp/p35-ai-075009/all",
+      "output": "\r\n__P46_a839480c__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:06.561716+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "dd if=$s of=$x bs=262144 skip=4 count=1",
+      "output": "1+0 records in\r\n1+0 records out\r\n262144 bytes (262 kB, 256 KiB) copied, 0.002289 s, 115 MB/s\r\n\r\n__P46_540abec0__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:06.631429+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "s=/tmp/p35-ai-075009/x",
+      "output": "\r\n__P46_9cf26a37__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:06.662393+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "sha256sum $s",
+      "output": "e3eacc3c9923ccea1a20b9ebf3bca660a115f675c1beb261ce182452f30a07b2  /tmp/p35-ai-075009/x\r\n\r\n__P46_389d6c54__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:06.741804+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "f=993760.89225713501",
+      "output": "\r\n__P46_55c2fc96__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:06.771774+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "timeout -k 2 12 $b $x $f fp32",
+      "output": "0,-3.8284416198730469,-0.2003326416015625,0.71828031539916992,2\r\n1,-5.8269004821777344,-0.49592971801757812,1.8344930410385132,2\r\n2,-4.4057960510253906,-1.1676387786865234,2.0315227508544922,2\r\n\r\n__P46_e1b2d210__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:06.871334+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "timeout -k 2 12 $b $x $f int8 --bench",
+      "output": "0,-3.5132015777288848,-0.7464201984918386,0.84780916757408598,2\r\n1,-5.5354456312388036,-0.96485690826248316,1.9048868166427368,2\r\n2,-4.3603649576842098,-1.4178901864347608,2.0435403704137194,2\r\n{\"repeats\":10,\"mean_block_ms\":22.4574368,\"max_block_ms\":22.57269,\"frames_per_block\":3,\"maxrss_kib\":2512,\"scope\":\"mix/FIR/decimation/DC/RMS/CNN; file IO excluded\"}\r\n\r\n__P46_e6a40c47__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:07.201730+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "s=/tmp/p35-ai-075009/all",
+      "output": "\r\n__P46_a7462fc0__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:07.231499+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "dd if=$s of=$x bs=262144 skip=5 count=1",
+      "output": "1+0 records in\r\n1+0 records out\r\n262144 bytes (262 kB, 256 KiB) copied, 0.00225367 s, 116 MB/s\r\n\r\n__P46_4b5e7752__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:07.301477+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "s=/tmp/p35-ai-075009/x",
+      "output": "\r\n__P46_8c1e3961__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:07.331135+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "sha256sum $s",
+      "output": "89108223013281e319f8f41efd9b20e662812ea6b027997eb119c537abb17377  /tmp/p35-ai-075009/x\r\n\r\n__P46_dc4ab2a6__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:07.411743+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "f=993760.89225713501",
+      "output": "\r\n__P46_601806df__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:07.441435+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "timeout -k 2 12 $b $x $f fp32",
+      "output": "0,-2.76422119140625,-1.4285602569580078,0.90762197971343994,2\r\n1,-2.7685699462890625,-2.0124931335449219,1.2139163017272949,2\r\n2,-0.829437255859375,-2.58758544921875,0.66807723045349121,2\r\n\r\n__P46_a1d49510__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:07.531176+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "timeout -k 2 12 $b $x $f int8",
+      "output": "0,-2.7704708744436179,-1.6444559934477709,0.92451113348994873,2\r\n1,-2.4265903939208355,-2.5467857873502737,1.2942539435459004,2\r\n2,-0.3442631337768246,-3.2415613726291692,0.77159888092691453,2\r\n\r\n__P46_ccf14323__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:07.622023+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "s=/tmp/p35-ai-075009/all",
+      "output": "\r\n__P46_f31f3bb0__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:07.651761+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "dd if=$s of=$x bs=262144 skip=6 count=1",
+      "output": "1+0 records in\r\n1+0 records out\r\n262144 bytes (262 kB, 256 KiB) copied, 0.0022663 s, 116 MB/s\r\n\r\n__P46_d4d948e6__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:07.721701+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "s=/tmp/p35-ai-075009/x",
+      "output": "\r\n__P46_b0f69421__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:07.751677+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "sha256sum $s",
+      "output": "d0c800cddf958427ca9e3860eea92d5c911550c55170d6eb6b8dbcb83b25baa2  /tmp/p35-ai-075009/x\r\n\r\n__P46_bdc61250__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:07.831089+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "f=993940.68375231512",
+      "output": "\r\n__P46_1e9494bd__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:07.861158+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "timeout -k 2 12 $b $x $f fp32",
+      "output": "0,1.0188102722167969,0.44406509399414062,-1.8005199432373047,0\r\n1,1.021820068359375,0.28870773315429688,-1.5590445995330811,0\r\n2,4.08465576171875,-0.21795272827148438,-3.2202479839324951,0\r\n\r\n__P46_51ef2af5__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:07.951366+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "timeout -k 2 12 $b $x $f int8",
+      "output": "0,2.8527665857264721,-1.6630414698043054,-1.3064016016526114,0\r\n1,1.8283036614810189,-0.77428202371768684,-1.3217419948357847,0\r\n2,4.423649070577663,-0.85616301126376548,-3.0567797981940839,0\r\n\r\n__P46_3b31ef5f__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:08.041180+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "s=/tmp/p35-ai-075009/all",
+      "output": "\r\n__P46_3bddfdef__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:08.072181+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "dd if=$s of=$x bs=262144 skip=7 count=1",
+      "output": "1+0 records in\r\n1+0 records out\r\n262144 bytes (262 kB, 256 KiB) copied, 0.00225404 s, 116 MB/s\r\n\r\n__P46_14702dc7__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:08.141072+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "s=/tmp/p35-ai-075009/x",
+      "output": "\r\n__P46_f1e7d3ee__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:08.171404+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "sha256sum $s",
+      "output": "dfa740f75f071f29fcc207ee1a949e6973750530d976d31c532c924cafc985e2  /tmp/p35-ai-075009/x\r\n\r\n__P46_7c0dff38__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:08.251195+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "f=993940.68375231512",
+      "output": "\r\n__P46_54948913__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:08.282061+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "timeout -k 2 12 $b $x $f fp32",
+      "output": "0,3.0116004943847656,-3.4637889862060547,-0.74778318405151367,0\r\n1,3.7314109802246094,-2.2403411865234375,-2.3949275016784668,0\r\n2,0.67200469970703125,-2.0056285858154297,-0.20056506991386414,0\r\n\r\n__P46_98a2cfdd__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:08.381679+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "timeout -k 2 12 $b $x $f int8",
+      "output": "0,3.6964554321830452,-4.4040222782873499,-0.61441219889630005,0\r\n1,4.2950585525058989,-3.0695719644409092,-2.2840566595186402,0\r\n2,1.190005634865811,-2.7455881049911728,-0.12410963215721083,0\r\n\r\n__P46_2297065b__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:08.471719+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "s=/tmp/p35-ai-075009/all",
+      "output": "\r\n__P46_93d4ff5d__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:08.501853+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "dd if=$s of=$x bs=262144 skip=8 count=1",
+      "output": "1+0 records in\r\n1+0 records out\r\n262144 bytes (262 kB, 256 KiB) copied, 0.00223071 s, 118 MB/s\r\n\r\n__P46_d2b5fe4e__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:08.572230+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "s=/tmp/p35-ai-075009/x",
+      "output": "\r\n__P46_854f16a1__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:08.602038+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "sha256sum $s",
+      "output": "a51753dd3c0b2f550f02cd4c3996fbb86ccc32943be94568d64a9ea5397ef2e1  /tmp/p35-ai-075009/x\r\n\r\n__P46_e5f16781__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:08.681938+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "f=993940.68375231512",
+      "output": "\r\n__P46_7104767f__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:08.712142+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "timeout -k 2 12 $b $x $f fp32",
+      "output": "0,-8.859222412109375,1.8286361694335938,1.7535266876220703,1\r\n1,-8.2778205871582031,1.9994602203369141,1.3284928798675537,1\r\n2,-7.8695449829101562,3.1409511566162109,-0.023895293474197388,1\r\n\r\n__P46_b4655f21__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:08.811833+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "timeout -k 2 12 $b $x $f int8",
+      "output": "0,-8.5891016759916816,1.4486982858899857,1.7703961473466752,2\r\n1,-7.9848934120057447,1.5919080675508415,1.342536847731397,1\r\n2,-7.6302943234254892,2.7483377075130733,0.033653855856911719,1\r\n\r\n__P46_739594df__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:08.901733+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "s=/tmp/p35-ai-075009/all",
+      "output": "\r\n__P46_14b2dc23__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:08.931923+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "dd if=$s of=$x bs=262144 skip=9 count=1",
+      "output": "1+0 records in\r\n1+0 records out\r\n262144 bytes (262 kB, 256 KiB) copied, 0.00229879 s, 114 MB/s\r\n\r\n__P46_5bc2f1b6__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:09.001700+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "s=/tmp/p35-ai-075009/x",
+      "output": "\r\n__P46_3e30bb8d__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:09.032398+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "sha256sum $s",
+      "output": "a866245e00a9cf445c84e8b4c95b3803b3eec85ff5f90c79fe1f7b3c0a7e36f1  /tmp/p35-ai-075009/x\r\n\r\n__P46_03a42f3a__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:09.111009+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "f=993940.68375231512",
+      "output": "\r\n__P46_ed0376b8__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:09.141992+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "timeout -k 2 12 $b $x $f fp32",
+      "output": "0,-2.2441978454589844,0.44306182861328125,-1.497570276260376,1\r\n1,-7.0903892517089844,2.8905448913574219,-0.69155979156494141,1\r\n2,-5.9916000366210938,2.5696392059326172,-0.70231688022613525,1\r\n\r\n__P46_17923370__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:09.232037+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "timeout -k 2 12 $b $x $f int8",
+      "output": "0,-2.025871789937324,0.069275708267236169,-1.4661645853594116,1\r\n1,-6.9796387578571695,2.5584839525623568,-0.61087210816172188,1\r\n2,-5.7294950492823524,2.1457028171869492,-0.63994674225034132,1\r\n\r\n__P46_bc7a4215__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:09.321547+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "s=/tmp/p35-ai-075009/all",
+      "output": "\r\n__P46_b6f02b36__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:09.351854+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "dd if=$s of=$x bs=262144 skip=10 count=1",
+      "output": "1+0 records in\r\n1+0 records out\r\n262144 bytes (262 kB, 256 KiB) copied, 0.00224556 s, 117 MB/s\r\n\r\n__P46_58b440ae__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:09.422219+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "s=/tmp/p35-ai-075009/x",
+      "output": "\r\n__P46_22f5f9e2__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:09.451532+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "sha256sum $s",
+      "output": "e4d8173b8d80fd93e34a12858f3d929872f8693dcfc41067c8ffbf4dfaa61292  /tmp/p35-ai-075009/x\r\n\r\n__P46_85508b7c__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:09.531718+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "f=993940.68375231512",
+      "output": "\r\n__P46_bf20bff1__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:09.561572+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "timeout -k 2 12 $b $x $f fp32",
+      "output": "0,-3.1559410095214844,-2.395172119140625,1.9752465486526489,2\r\n1,-4.3907089233398438,-1.7508811950683594,1.7693449258804321,2\r\n2,-2.0834617614746094,-1.1360435485839844,0.1567632257938385,2\r\n\r\n__P46_d78d6ca2__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:09.651911+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "timeout -k 2 12 $b $x $f int8",
+      "output": "0,-2.9347900860402922,-2.810915890491307,2.0475721404169889,2\r\n1,-4.0785999581061105,-2.2910142317769946,1.903051214039623,2\r\n2,-1.8050750196769612,-1.5592643654925027,0.195186884931001,2\r\n\r\n__P46_7e4f8005__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:09.741713+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "s=/tmp/p35-ai-075009/all",
+      "output": "\r\n__P46_2962bdce__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:09.771560+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "dd if=$s of=$x bs=262144 skip=11 count=1",
+      "output": "1+0 records in\r\n1+0 records out\r\n262144 bytes (262 kB, 256 KiB) copied, 0.00225418 s, 116 MB/s\r\n\r\n__P46_c9e7d319__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:09.841580+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "s=/tmp/p35-ai-075009/x",
+      "output": "\r\n__P46_2085a7a5__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:09.872245+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "sha256sum $s",
+      "output": "dbe6c334897ea86549dab9978e290c0f737d449b5015e3bd6a9b27a5b3f8dcdc  /tmp/p35-ai-075009/x\r\n\r\n__P46_44fbd059__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:09.951512+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "f=993940.68375231512",
+      "output": "\r\n__P46_d95edf1d__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:09.981709+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "timeout -k 2 12 $b $x $f fp32",
+      "output": "0,-4.6075820922851562,0.27589988708496094,0.11532586812973022,1\r\n1,-3.8406753540039062,-2.0894222259521484,2.2353701591491699,2\r\n2,-2.1705665588378906,-1.8311405181884766,0.54253792762756348,2\r\n\r\n__P46_94bd2051__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:10.071089+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "timeout -k 2 12 $b $x $f int8",
+      "output": "0,-4.2716660176122776,-0.3015487961798371,0.25113998570808427,2\r\n1,-3.5895102002297938,-2.5713369721669324,2.3262559499112889,2\r\n2,-1.8037966535783636,-2.2771816550178094,0.54988430936499455,2\r\n\r\n__P46_93a7ca57__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:10.161727+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "s=/tmp/p35-ai-075009/all",
+      "output": "\r\n__P46_08e910ed__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:10.192254+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "dd if=$s of=$x bs=262144 skip=12 count=1",
+      "output": "1+0 records in\r\n1+0 records out\r\n262144 bytes (262 kB, 256 KiB) copied, 0.0022631 s, 116 MB/s\r\n\r\n__P46_7e55f12d__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:10.261323+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "s=/tmp/p35-ai-075009/x",
+      "output": "\r\n__P46_b28c251a__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:10.292533+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "sha256sum $s",
+      "output": "2a7e3d1dc13df853b21c77907aa88776c40cc816646dd72d543243492b229ca0  /tmp/p35-ai-075009/x\r\n\r\n__P46_7b6e9f02__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:10.371203+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "f=993983.16945713875",
+      "output": "\r\n__P46_fc5fb578__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:10.401604+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "timeout -k 2 12 $b $x $f fp32",
+      "output": "0,2.9570999145507812,-2.3883075714111328,-1.640662670135498,0\r\n1,3.9014701843261719,-0.11491775512695312,-4.0660004615783691,0\r\n2,1.3087654113769531,0.006771087646484375,-2.1232726573944092,0\r\n\r\n__P46_295b5069__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:10.491330+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "timeout -k 2 12 $b $x $f int8",
+      "output": "0,3.3576228588188277,-3.0754393370472943,-1.5344424464716937,0\r\n1,4.2941079725864286,-0.82695726270349468,-3.9204308229595277,0\r\n2,1.7044988216245183,-0.68505862575914911,-1.9815427948017632,0\r\n\r\n__P46_c768db4b__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:10.581973+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "s=/tmp/p35-ai-075009/all",
+      "output": "\r\n__P46_5d8f572d__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:10.612087+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "dd if=$s of=$x bs=262144 skip=13 count=1",
+      "output": "1+0 records in\r\n1+0 records out\r\n262144 bytes (262 kB, 256 KiB) copied, 0.00230685 s, 114 MB/s\r\n\r\n__P46_8cf5d1e0__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:10.680823+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "s=/tmp/p35-ai-075009/x",
+      "output": "\r\n__P46_c44c9849__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:10.712181+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "sha256sum $s",
+      "output": "e2343281c32f42ec7f35be6b7072198def0aac017de3de828c7e97525fff9411  /tmp/p35-ai-075009/x\r\n\r\n__P46_46e3196e__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:10.791582+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "f=993983.16945713875",
+      "output": "\r\n__P46_10391912__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:10.821577+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "timeout -k 2 12 $b $x $f fp32",
+      "output": "0,3.6804924011230469,0.75524330139160156,-3.9368984699249268,0\r\n1,3.7668914794921875,-1.6220779418945312,-1.8058160543441772,0\r\n2,4.8476600646972656,-0.75949859619140625,-2.847416877746582,0\r\n\r\n__P46_328ce5d0__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:10.911259+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "timeout -k 2 12 $b $x $f int8",
+      "output": "0,4.0850131689209217,0.077077019330472396,-3.7869562908187646,0\r\n1,3.9709763572024244,-2.1646198811053843,-1.6419235346076402,0\r\n2,5.1218336321194862,-1.36754222932076,-2.6468504025770869,0\r\n\r\n__P46_7152df59__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:11.001825+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "s=/tmp/p35-ai-075009/all",
+      "output": "\r\n__P46_95701e24__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:11.031906+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "dd if=$s of=$x bs=262144 skip=14 count=1",
+      "output": "1+0 records in\r\n1+0 records out\r\n262144 bytes (262 kB, 256 KiB) copied, 0.00229586 s, 114 MB/s\r\n\r\n__P46_c9cc3f49__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:11.101382+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "s=/tmp/p35-ai-075009/x",
+      "output": "\r\n__P46_385b2b29__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:11.131782+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "sha256sum $s",
+      "output": "ab3d23d62d028188575a3e97c0f3f4954614fa7f94522a22af52c80ee8c2bdec  /tmp/p35-ai-075009/x\r\n\r\n__P46_005463ff__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:11.211688+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "f=993983.16945713875",
+      "output": "\r\n__P46_60959a77__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:11.241825+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "timeout -k 2 12 $b $x $f fp32",
+      "output": "0,-8.0403480529785156,2.8802642822265625,-0.48073238134384155,1\r\n1,-7.3548355102539062,2.5430126190185547,0.54197597503662109,1\r\n2,-3.5350570678710938,0.88731575012207031,-1.2689268589019775,1\r\n\r\n__P46_20ee6161__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:11.331805+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "timeout -k 2 12 $b $x $f int8",
+      "output": "0,-7.7502968436041098,2.4769635298133181,-0.48916509985163792,1\r\n1,-7.1988293758398072,2.2501354938570071,0.55601391091468066,1\r\n2,-3.3717290628174053,0.52883193140415408,-1.2247828430498355,1\r\n\r\n__P46_6f40a920__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:11.422232+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "s=/tmp/p35-ai-075009/all",
+      "output": "\r\n__P46_92595be3__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:11.451547+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "dd if=$s of=$x bs=262144 skip=15 count=1",
+      "output": "1+0 records in\r\n1+0 records out\r\n262144 bytes (262 kB, 256 KiB) copied, 0.00225003 s, 117 MB/s\r\n\r\n__P46_f6488661__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:11.522349+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "s=/tmp/p35-ai-075009/x",
+      "output": "\r\n__P46_a6a965e6__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:11.552948+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "sha256sum $s",
+      "output": "d01e2e4fe2905af3a44aa27ca8bf7bc83fa75bb6c005ffdbde22d96a89005a0d  /tmp/p35-ai-075009/x\r\n\r\n__P46_0147f4da__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:11.631542+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "f=993983.16945713875",
+      "output": "\r\n__P46_cc9e7318__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:11.661497+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "timeout -k 2 12 $b $x $f fp32",
+      "output": "0,-10.675514221191406,3.7211551666259766,0.72561168670654297,1\r\n1,-3.05889892578125,1.433502197265625,-2.0305566787719727,1\r\n2,-6.2403373718261719,2.9204978942871094,-1.0863018035888672,1\r\n\r\n__P46_77581972__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:11.751529+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "timeout -k 2 12 $b $x $f int8",
+      "output": "0,-10.545493486114861,3.4045328595086488,0.78543145768609968,1\r\n1,-2.8853927088457603,1.0481435749960379,-1.9560082514477219,1\r\n2,-6.0522005426334911,2.4971879370654921,-0.97828763634586657,1\r\n\r\n__P46_3ce03289__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:11.841359+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "s=/tmp/p35-ai-075009/all",
+      "output": "\r\n__P46_bd5b9df5__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:11.871212+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "dd if=$s of=$x bs=262144 skip=16 count=1",
+      "output": "1+0 records in\r\n1+0 records out\r\n262144 bytes (262 kB, 256 KiB) copied, 0.0023185 s, 113 MB/s\r\n\r\n__P46_8a4dcacf__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:11.941741+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "s=/tmp/p35-ai-075009/x",
+      "output": "\r\n__P46_8073db53__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:11.971540+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "sha256sum $s",
+      "output": "f23a03db23686f381224de44ebf120dd38d66d4dec9f85310ed872ae2416ab2b  /tmp/p35-ai-075009/x\r\n\r\n__P46_0335bca8__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:12.051451+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "f=993983.16945713875",
+      "output": "\r\n__P46_74388a18__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:12.081901+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "timeout -k 2 12 $b $x $f fp32",
+      "output": "0,-2.5912322998046875,-0.83754348754882812,-0.068514734506607056,2\r\n1,-3.6746139526367188,-1.1455650329589844,1.2395846843719482,2\r\n2,-5.2256011962890625,-1.3848743438720703,2.2518963813781738,2\r\n\r\n__P46_84d83a1f__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:12.171570+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "timeout -k 2 12 $b $x $f int8",
+      "output": "0,-2.4282621034343861,-1.1419597808451343,-0.064911448206762756,2\r\n1,-3.2980755083674298,-1.6925750045437038,1.3121510689262674,2\r\n2,-4.7724905207013624,-2.0421917432012204,2.3809634632076868,2\r\n\r\n__P46_7d0f7bee__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:12.261206+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "s=/tmp/p35-ai-075009/all",
+      "output": "\r\n__P46_fe4caf39__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:12.292151+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "dd if=$s of=$x bs=262144 skip=17 count=1",
+      "output": "1+0 records in\r\n1+0 records out\r\n262144 bytes (262 kB, 256 KiB) copied, 0.00226729 s, 116 MB/s\r\n\r\n__P46_988f4102__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:12.361544+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "s=/tmp/p35-ai-075009/x",
+      "output": "\r\n__P46_ad7a7bd2__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:12.391704+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "sha256sum $s",
+      "output": "6eaf7370814580b08861a7530ac18b67493d8e057a9d1bd34b3799234825fa93  /tmp/p35-ai-075009/x\r\n\r\n__P46_0c00b263__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:12.471204+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "f=993983.16945713875",
+      "output": "\r\n__P46_1e6db4fe__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:12.505208+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "timeout -k 2 12 $b $x $f fp32",
+      "output": "0,-1.8745231628417969,-2.52850341796875,1.1110234260559082,2\r\n1,-2.062164306640625,-2.3861083984375,1.0611034631729126,2\r\n2,-2.0526161193847656,-1.5547714233398438,0.10853302478790283,2\r\n\r\n__P46_a923dec0__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:12.590820+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "timeout -k 2 12 $b $x $f int8",
+      "output": "0,-1.3489605514208827,-3.2512638435313477,1.2455121387096231,2\r\n1,-1.4867290825082198,-3.1711856799704705,1.2256155176365766,2\r\n2,-1.533897513684684,-2.2788205859134472,0.25956409051166496,2\r\n\r\n__P46_8fdafad6__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:12.681227+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "uname -a",
+      "output": "Linux Zynq-Tronlong 4.9.0-rt1-xilinx-g0e07141-dirty #4 SMP PREEMPT Tue Sep 1 17:20:08 CST 2020 armv7l armv7l armv7l GNU/Linux\r\n\r\n__P46_462eb3d4__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:12.751508+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "a=/proc/sys/kernel/random/boot_id",
+      "output": "\r\n__P46_93be6bc3__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:12.781868+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "echo __VALUE__$(cat $a)__END__",
+      "output": "__VALUE__9734d483-07e3-44d3-9dd3-6582703ee77d__END__\r\n\r\n__P46_337ba653__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:12.841374+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "a=/proc/sys/kernel/tainted",
+      "output": "\r\n__P46_041e7edf__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:12.872055+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "echo __VALUE__$(cat $a)__END__",
+      "output": "__VALUE__0__END__\r\n\r\n__P46_9decb6d6__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:12.931004+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "s=/etc/rcS.d/S99board",
+      "output": "\r\n__P46_cc2b73e3__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:12.962079+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "sha256sum $s",
+      "output": "89183f1fe397f8bc20bd0c39544f5d30c37a8f1ca4e440c8cce6841d9b1247f2  /etc/rcS.d/S99board\r\n\r\n__P46_087362b3__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:13.031528+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "ps -ef",
+      "output": "UID        PID  PPID  C STIME TTY          TIME CMD\r\nroot         1     0  0 02:45 ?        00:00:01 init [5]\r\nroot         2     0  0 02:45 ?        00:00:00 [kthreadd]\r\nroot         3     2  0 02:45 ?        00:00:00 [ksoftirqd/0]\r\nroot         4     2  0 02:45 ?        00:00:00 [kworker/0:0]\r\nroot         5     2  0 02:45 ?        00:00:00 [kworker/0:0H]\r\nroot         6     2  0 02:45 ?        00:00:00 [kworker/u4:0]\r\nroot         7     2  0 02:45 ?        00:00:00 [rcu_preempt]\r\nroot         8     2  0 02:45 ?        00:00:00 [rcu_sched]\r\nroot         9     2  0 02:45 ?        00:00:00 [rcu_bh]\r\nroot        10     2  0 02:45 ?        00:00:00 [rcuc/0]\r\nroot        11     2  0 02:45 ?        00:00:00 [migration/0]\r\nroot        12     2  0 02:45 ?        00:00:00 [lru-add-drain]\r\nroot        13     2  0 02:45 ?        00:00:00 [cpuhp/0]\r\nroot        14     2  0 02:45 ?        00:00:00 [cpuhp/1]\r\nroot        15     2  0 02:45 ?        00:00:00 [migration/1]\r\nroot        16     2  0 02:45 ?        00:00:00 [rcuc/1]\r\nroot        17     2  0 02:45 ?        00:00:00 [ksoftirqd/1]\r\nroot        19     2  0 02:45 ?        00:00:00 [kworker/1:0H]\r\nroot        20     2  0 02:45 ?        00:00:00 [kdevtmpfs]\r\nroot        22     2  0 02:45 ?        00:00:00 [kswork]\r\nroot        50     2  0 02:45 ?        00:00:00 [kworker/0:1]\r\nroot        94     2  0 02:45 ?        00:00:01 [kworker/1:1]\r\nroot       283     2  0 02:45 ?        00:00:00 [oom_reaper]\r\nroot       284     2  0 02:45 ?        00:00:00 [writeback]\r\nroot       286     2  0 02:45 ?        00:00:00 [crypto]\r\nroot       287     2  0 02:45 ?        00:00:00 [bioset]\r\nroot       289     2  0 02:45 ?        00:00:00 [kblockd]\r\nroot       324     2  0 02:45 ?        00:00:00 [edac-poller]\r\nroot       341     2  0 02:45 ?        00:00:00 [watchdogd]\r\nroot       425     2  0 02:45 ?        00:00:00 [rpciod]\r\nroot       426     2  0 02:45 ?        00:00:00 [xprtiod]\r\nroot       440     2  0 02:45 ?        00:00:00 [kswapd0]\r\nroot       441     2  0 02:45 ?        00:00:00 [vmstat]\r\nroot       442     2  0 02:45 ?        00:00:00 [nfsiod]\r\nroot       481     2  0 02:45 ?        00:00:00 [bioset]\r\nroot       482     2  0 02:45 ?        00:00:00 [bioset]\r\nroot       483     2  0 02:45 ?        00:00:00 [bioset]\r\nroot       484     2  0 02:45 ?        00:00:00 [bioset]\r\nroot       485     2  0 02:45 ?        00:00:00 [bioset]\r\nroot       486     2  0 02:45 ?        00:00:00 [bioset]\r\nroot       487     2  0 02:45 ?        00:00:00 [bioset]\r\nroot       488     2  0 02:45 ?        00:00:00 [bioset]\r\nroot       489     2  0 02:45 ?        00:00:00 [bioset]\r\nroot       490     2  0 02:45 ?        00:00:00 [bioset]\r\nroot       491     2  0 02:45 ?        00:00:00 [bioset]\r\nroot       492     2  0 02:45 ?        00:00:00 [bioset]\r\nroot       493     2  0 02:45 ?        00:00:00 [bioset]\r\nroot       494     2  0 02:45 ?        00:00:00 [bioset]\r\nroot       495     2  0 02:45 ?        00:00:00 [bioset]\r\nroot       496     2  0 02:45 ?        00:00:00 [bioset]\r\nroot       530     2  0 02:45 ?        00:00:00 [bioset]\r\nroot       533     2  0 02:45 ?        00:00:00 [bioset]\r\nroot       536     2  0 02:45 ?        00:00:00 [bioset]\r\nroot       539     2  0 02:45 ?        00:00:00 [bioset]\r\nroot       542     2  0 02:45 ?        00:00:00 [bioset]\r\nroot       545     2  0 02:45 ?        00:00:00 [bioset]\r\nroot       548     2  0 02:45 ?        00:00:00 [bioset]\r\nroot       551     2  0 02:45 ?        00:00:00 [bioset]\r\nroot       569     2  0 02:45 ?        00:00:00 [spi32766]\r\nroot       574     2  0 02:45 ?        00:00:00 [spi0]\r\nroot       578     2  0 02:45 ?        00:00:00 [bioset]\r\nroot       583     2  0 02:45 ?        00:00:00 [bioset]\r\nroot       588     2  0 02:45 ?        00:00:00 [bioset]\r\nroot       593     2  0 02:45 ?        00:00:00 [bioset]\r\nroot       681     2  0 02:45 ?        00:00:00 [irq/106-ads7846]\r\nroot       725     2  0 02:45 ?        00:00:00 [irq/33-mmc0]\r\nroot       729     2  0 02:45 ?        00:00:00 [irq/34-mmc1]\r\nroot       750     2  0 02:45 ?        00:00:00 [bioset]\r\nroot       755     2  0 02:45 ?        00:00:00 [mmcqd/0]\r\nroot       766     2  0 02:45 ?        00:00:00 [ipv6_addrconf]\r\nroot       772     2  0 02:45 ?        00:00:01 [kworker/u4:3]\r\nroot       778     2  0 02:45 ?        00:00:00 [bioset]\r\nroot       780     2  0 02:45 ?        00:00:00 [mmcqd/1]\r\nroot       781     2  0 02:45 ?        00:00:00 [bioset]\r\nroot       782     2  0 02:45 ?        00:00:00 [mmcqd/1boot0]\r\nroot       783     2  0 02:45 ?        00:00:00 [bioset]\r\nroot       784     2  0 02:45 ?        00:00:00 [mmcqd/1boot1]\r\nroot       785     2  0 02:45 ?        00:00:00 [bioset]\r\nroot       786     2  0 02:45 ?        00:00:00 [mmcqd/1rpmb]\r\nroot       803     2  0 02:45 ?        00:00:00 [kworker/1:1H]\r\nroot       804     2  0 02:45 ?        00:00:00 [kworker/0:1H]\r\nroot       805     2  0 02:45 ?        00:00:00 [jbd2/mmcblk0p2-]\r\nroot       806     2  0 02:45 ?        00:00:00 [ext4-rsv-conver]\r\nroot       833     1  0 02:45 ?        00:00:00 /sbin/syslogd -n -O /var/log/mes\r\nroot       836     1  0 02:45 ?        00:00:00 /sbin/klogd -n\r\nroot       852     1  0 02:45 ?        00:00:00 /sbin/udevd -d\r\nroot      1228     2  0 02:45 ?        00:00:00 [jbd2/mmcblk1p3-]\r\nroot      1230     2  0 02:45 ?        00:00:00 [ext4-rsv-conver]\r\nroot      1239     2  0 02:45 ?        00:00:00 [jbd2/mmcblk0p3-]\r\nroot      1241     2  0 02:45 ?        00:00:00 [jbd2/mmcblk1p2-]\r\nroot      1244     2  0 02:45 ?        00:00:00 [ext4-rsv-conver]\r\nroot      1247     2  0 02:45 ?        00:00:00 [ext4-rsv-conver]\r\nroot      1299     2  0 02:45 ?        00:00:00 [spi32765]\r\nroot      1301     2  0 02:45 ?        00:00:00 [kworker/1:2]\r\nroot      1364     1  0 02:45 ?        00:00:00 udhcpc -R -b -p /var/run/udhcpc.\r\nmessage+  1394     1  0 02:45 ?        00:00:00 /usr/bin/dbus-daemon --system\r\nroot      1406     1  0 02:45 ?        00:00:00 /usr/sbin/dropbear -r /etc/dropb\r\ndaemon    1410     1  0 02:45 ?        00:00:00 /sbin/portmap\r\nrpc       1414     1  0 02:45 ?        00:00:00 /usr/sbin/rpcbind\r\nrpcuser   1419     1  0 02:45 ?        00:00:00 /usr/sbin/rpc.statd\r\nntp       1430     1  0 02:45 ?        00:00:00 /usr/sbin/ntpd -u ntp:ntp -p /va\r\navahi     1440     1  0 02:45 ?        00:00:00 avahi-daemon: running [Zynq-Tron\r\navahi     1441  1440  0 02:45 ?        00:00:00 avahi-daemon: chroot helper\r\nroot      1452     1  0 02:45 ?        00:00:00 /usr/sbin/ofonod\r\nroot      1462     1  0 02:45 ?        00:00:00 /usr/sbin/lighttpd -f /etc/light\r\nroot      1473     1  0 02:45 ?        00:00:00 /usr/sbin/tcf-agent -d -L- -l0\r\nroot      1478     1  0 02:45 ttyPS0   00:00:00 -sh\r\nroot      1479     1  0 02:45 tty1     00:00:00 /sbin/getty 38400 tty1\r\nroot      1660     2  0 03:06 ?        00:00:00 [kworker/u4:1]\r\nroot      1782  1478  0 03:07 ttyPS0   00:00:00 ps -ef\r\n\r\n__P46_f57d91d3__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:13.691240+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "/etc/rcS.d/S99board --check-rf",
+      "output": "RF_READY phy=ad9361-phy adc=cf-ad9361-lpc dds=cf-ad9361-dds-core-lpc\r\n\r\n__P46_d2caec9f__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:13.811458+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "ir=/sys/bus/iio/devices",
+      "output": "\r\n__P46_a7424e5c__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:13.841599+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "for n in $ir/iio:device*;do echo __D__$n:$(cat $n/name)__E__;done",
+      "output": "__D__/sys/bus/iio/devices/iio:device0:xadc__E__\r\n__D__/sys/bus/iio/devices/iio:device1:ad9361-phy__E__\r\n__D__/sys/bus/iio/devices/iio:device2:cf-ad9361-lpc__E__\r\n__D__/sys/bus/iio/devices/iio:device3:cf-ad9361-dds-core-lpc__E__\r\n\r\n__P46_e5e85508__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:13.931581+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "cd /sys/bus/iio/devices/iio:device1",
+      "output": "\r\n__P46_12d99c30__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:13.961889+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "a=in_voltage_sampling_frequency",
+      "output": "\r\n__P46_60a5b2ae__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:13.991771+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "echo __VALUE__$(cat $a)__END__",
+      "output": "__VALUE__30720000__END__\r\n\r\n__P46_ec0ca010__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:14.051787+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "a=in_voltage_rf_bandwidth",
+      "output": "\r\n__P46_d551f605__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:14.081691+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "echo __VALUE__$(cat $a)__END__",
+      "output": "__VALUE__18000000__END__\r\n\r\n__P46_4798b557__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:14.141926+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "a=out_altvoltage0_RX_LO_frequency",
+      "output": "\r\n__P46_40e859c9__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:14.171617+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "echo __VALUE__$(cat $a)__END__",
+      "output": "__VALUE__2450000000__END__\r\n\r\n__P46_d1813c39__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:14.231759+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "a=in_voltage0_gain_control_mode",
+      "output": "\r\n__P46_c98a4660__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:14.262032+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "echo __VALUE__$(cat $a)__END__",
+      "output": "__VALUE__manual__END__\r\n\r\n__P46_3bc5d95c__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:14.321188+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "a=in_voltage0_hardwaregain",
+      "output": "\r\n__P46_79c66c1c__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:14.351270+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "echo __VALUE__$(cat $a)__END__",
+      "output": "__VALUE__0.000000 dB__END__\r\n\r\n__P46_e0074b86__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:14.411052+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "a=in_voltage0_rf_port_select",
+      "output": "\r\n__P46_7af877d0__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:14.441390+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "echo __VALUE__$(cat $a)__END__",
+      "output": "__VALUE__A_BALANCED__END__\r\n\r\n__P46_74ac3de9__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:14.501539+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "cd /sys/bus/iio/devices/iio:device2",
+      "output": "\r\n__P46_16985379__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:14.533117+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "a=buffer/enable",
+      "output": "\r\n__P46_79bcd1ec__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:14.561193+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "echo __VALUE__$(cat $a)__END__",
+      "output": "__VALUE__0__END__\r\n\r\n__P46_ed820957__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:14.621365+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "a=scan_elements/in_voltage0_en",
+      "output": "\r\n__P46_29321e4d__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:14.651672+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "echo __VALUE__$(cat $a)__END__",
+      "output": "__VALUE__0__END__\r\n\r\n__P46_7ac635db__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:14.711090+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "a=scan_elements/in_voltage1_en",
+      "output": "\r\n__P46_cd8d336d__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:14.741855+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "echo __VALUE__$(cat $a)__END__",
+      "output": "__VALUE__0__END__\r\n\r\n__P46_da9a04b8__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:14.801421+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "a=scan_elements/in_voltage2_en",
+      "output": "\r\n__P46_100a706b__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:14.831801+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "echo __VALUE__$(cat $a)__END__",
+      "output": "__VALUE__0__END__\r\n\r\n__P46_c9178d57__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:14.891529+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "a=scan_elements/in_voltage3_en",
+      "output": "\r\n__P46_d058471e__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:14.922553+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "echo __VALUE__$(cat $a)__END__",
+      "output": "__VALUE__0__END__\r\n\r\n__P46_1335d6f4__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:14.981593+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "dmesg | tail -n 160",
+      "output": "[    0.224418] zynq-ocm f800c000.ocmc: can't request region for resource [mem 0xfffc0000-0xffffffff]\r\n[    0.224441] zynq-ocm: probe of f800c000.ocmc failed with error -16\r\n[    0.224745] zynq-pinctrl 700.pinctrl: zynq pinctrl initialized\r\n[    0.225127] e0000000.serial: ttyPS1 at MMIO 0xe0000000 (irq = 28, base_baud = 6249999) is a xuartps\r\n[    0.225824] e0001000.serial: ttyPS0 at MMIO 0xe0001000 (irq = 29, base_baud = 6249999) is a xuartps\r\n[    0.692261] console [ttyPS0] enabled\r\n[    0.723142] vgaarb: loaded\r\n[    0.726286] SCSI subsystem initialized\r\n[    0.730591] usbcore: registered new interface driver usbfs\r\n[    0.736169] usbcore: registered new interface driver hub\r\n[    0.741572] usbcore: registered new device driver usb\r\n[    0.747063] media: Linux media interface: v0.10\r\n[    0.751663] Linux video capture interface: v2.00\r\n[    0.756348] pps_core: LinuxPPS API ver. 1 registered\r\n[    0.761257] pps_core: Software ver. 5.3.6 - Copyright 2005-2007 Rodolfo Giometti <giometti@linux.it>\r\n[    0.770421] PTP clock support registered\r\n[    0.774451] EDAC MC: Ver: 3.0.0\r\n[    0.778488] FPGA manager framework\r\n[    0.782327] fpga-region fpga-full: FPGA Region probed\r\n[    0.787583] Advanced Linux Sound Architecture Driver Initialized.\r\n[    0.794883] clocksource: Switched to clocksource arm_global_timer\r\n[    0.816297] NET: Registered protocol family 2\r\n[    0.821268] TCP established hash table entries: 8192 (order: 3, 32768 bytes)\r\n[    0.828407] TCP bind hash table entries: 8192 (order: 4, 65536 bytes)\r\n[    0.834937] TCP: Hash tables configured (established 8192 bind 8192)\r\n[    0.841258] UDP hash table entries: 512 (order: 2, 16384 bytes)\r\n[    0.847185] UDP-Lite hash table entries: 512 (order: 2, 16384 bytes)\r\n[    0.853618] NET: Registered protocol family 1\r\n[    0.858317] RPC: Registered named UNIX socket transport module.\r\n[    0.864150] RPC: Registered udp transport module.\r\n[    0.868886] RPC: Registered tcp transport module.\r\n[    0.873524] RPC: Registered tcp NFSv4.1 backchannel transport module.\r\n[    0.879982] PCI: CLS 0 bytes, default 64\r\n[    0.880578] hw perfevents: enabled with armv7_cortex_a9 PMU driver, 7 counters available\r\n[    0.890300] futex hash table entries: 512 (order: 3, 32768 bytes)\r\n[    0.897306] workingset: timestamp_bits=30 max_order=18 bucket_order=0\r\n[    0.904369] jffs2: version 2.2. (NAND) (SUMMARY)  \\xffffffc2\\xffffffa9 2001-2006 Red Hat, Inc.\r\n[    0.912124] bounce: pool size: 64 pages\r\n[    0.915943] io scheduler noop registered\r\n[    0.919780] io scheduler deadline registered\r\n[    0.924074] io scheduler cfq registered (default)\r\n[    0.932579] dma-pl330 f8003000.dmac: Loaded driver for PL330 DMAC-241330\r\n[    0.939250] dma-pl330 f8003000.dmac: \tDBUFF-128x8bytes Num_Chans-8 Num_Peri-4 Num_Events-16\r\n[    0.948880] [drm] Initialized\r\n[    0.965343] brd: module loaded\r\n[    0.975863] loop: module loaded\r\n[    0.983058] m25p80 spi0.0: found mx25l25635e, expected s25fl256s1\r\n[    0.989172] m25p80 spi0.0: failed to read ear reg\r\n[    0.993798] m25p80 spi0.0: mx25l25635e (32768 Kbytes)\r\n[    0.998903] 4 ofpart partitions found on MTD device spi0.0\r\n[    1.004298] Creating 4 MTD partitions on \"spi0.0\":\r\n[    1.009119] 0x000000000000-0x000000040000 : \"spi.fsbl\"\r\n[    1.015649] 0x000000040000-0x0000000c0000 : \"spi.u-boot\"\r\n[    1.022177] 0x0000000c0000-0x000000100000 : \"spi.env\"\r\n[    1.028534] 0x000000100000-0x000002000000 : \"spi.user-data\"\r\n[    1.035948] libphy: Fixed MDIO Bus: probed\r\n[    1.043583] libphy: mdio_driver_register: xgmiitorgmii\r\n[    1.048792] CAN device driver interface\r\n[    1.056357] libphy: MACB_mii_bus: probed\r\n[    1.155524] macb e000b000.ethernet eth0: Cadence GEM rev 0x00020118 at 0xe000b000 irq 32 (00:0a:35:00:01:22)\r\n[    1.165319] Micrel KSZ9031 Gigabit PHY e000b000.etherne:00: attached PHY driver [Micrel KSZ9031 Gigabit PHY] (mii_bus:phy_addr=e000b000.etherne:00, irq=-1)\r\n[    1.179428] e1000e: Intel(R) PRO/1000 Network Driver - 3.2.6-k\r\n[    1.185210] e1000e: Copyright(c) 1999 - 2015 Intel Corporation.\r\n[    1.192170] ehci_hcd: USB 2.0 'Enhanced' Host Controller (EHCI) Driver\r\n[    1.198657] ehci-pci: EHCI PCI platform driver\r\n[    1.203202] usbcore: registered new interface driver usb-storage\r\n[    1.209668] e0002000.usb supply vbus not found, using dummy regulator\r\n[    1.216365] ULPI transceiver vendor/product ID 0x0424/0x0007\r\n[    1.221940] Found SMSC USB3320 ULPI transceiver.\r\n[    1.226592] ULPI integrity check: passed.\r\n[    1.230553] ci_hdrc ci_hdrc.0: EHCI Host Controller\r\n[    1.235452] ci_hdrc ci_hdrc.0: new USB bus registered, assigned bus number 1\r\n[    1.264923] ci_hdrc ci_hdrc.0: USB 2.0 started, EHCI 1.00\r\n[    1.271047] hub 1-0:1.0: USB hub found\r\n[    1.274747] hub 1-0:1.0: 1 port detected\r\n[    1.280516] mousedev: PS/2 mouse device common for all mice\r\n[    1.286574] spi32766.0 supply vcc not found, using dummy regulator\r\n[    1.293032] ads7846 spi32766.0: touchscreen, irq 106\r\n[    1.298463] input: ADS7846 Touchscreen as /devices/soc0/amba/e0006000.spi/spi_master/spi32766/spi32766.0/input/input0\r\n[    1.309559] i2c /dev entries driver\r\n[    1.313320] cdns-i2c e0004000.i2c: 100 kHz mmio e0004000 irq 25\r\n[    1.323919] rtc-ds1307 0-0068: rtc core: registered ds1307 as rtc0\r\n[    1.330075] rtc-ds1307 0-0068: 56 bytes nvram\r\n[    1.338141] ina2xx 0-0040: power monitor ina220 (Rshunt = 20480 uOhm)\r\n[    1.345629] ina2xx 0-0041: power monitor ina220 (Rshunt = 20480 uOhm)\r\n[    1.353052] cdns-wdt f8005000.watchdog: Xilinx Watchdog Timer at f0968000 with timeout 10s\r\n[    1.361675] EDAC MC: ECC not enabled\r\n[    1.365451] Xilinx Zynq CpuIdle Driver started\r\n[    1.370507] sdhci: Secure Digital Host Controller Interface driver\r\n[    1.376636] sdhci: Copyright(c) Pierre Ossman\r\n[    1.380939] sdhci-pltfm: SDHCI platform and OF driver helper\r\n[    1.444930] mmc0: SDHCI controller on e0100000.sdhci [e0100000.sdhci] using ADMA\r\n[    1.514949] mmc1: SDHCI controller on e0101000.sdhci [e0101000.sdhci] using ADMA\r\n[    1.524816] ledtrig-cpu: registered to indicate activity on CPUs\r\n[    1.533899] mmc0: new high speed SDHC card at address aaaa\r\n[    1.536211] usbcore: registered new interface driver usbhid\r\n[    1.536214] usbhid: USB HID core driver\r\n[    1.559724] mmcblk0: mmc0:aaaa SL16G 14.8 GiB \r\n[    1.560783] fpga_manager fpga0: Xilinx Zynq FPGA Manager registered\r\n[    1.561312] usbcore: registered new interface driver snd-usb-audio\r\n[    1.564182] NET: Registered protocol family 10\r\n[    1.570677] sit: IPv6, IPv4 and MPLS over IPv4 tunneling driver\r\n[    1.571424] NET: Registered protocol family 17\r\n[    1.571440] can: controller area network core (rev 20120528 abi 9)\r\n[    1.571496] NET: Registered protocol family 29\r\n[    1.571519] can: raw protocol (rev 20120528)\r\n[    1.571524] can: broadcast manager protocol (rev 20161123 t)\r\n[    1.571533] can: netlink gateway (rev 20130117) max_hops=1\r\n[    1.577567] zynq_pm_remap_ocm: OCM pool is not available\r\n[    1.577570] zynq_pm_suspend_init: Unable to map OCM.\r\n[    1.577590] Registering SWP/SWPB emulation handler\r\n[    1.582596] input: gpio-keys as /devices/soc0/gpio-keys/input/input1\r\n[    1.587791] rtc-ds1307 0-0068: setting system clock to 2000-01-01 00:00:04 UTC (946684804)\r\n[    1.587797] of_cfs_init\r\n[    1.587868] of_cfs_init: OK\r\n[    1.588164] ALSA device list:\r\n[    1.588167]   No soundcards found.\r\n[    1.610830] mmc1: new high speed MMC card at address 0001\r\n[    1.621417] mmcblk1: mmc1:0001 8GUF4R 7.28 GiB \r\n[    1.631679] mmcblk1boot0: mmc1:0001 8GUF4R partition 1 31.9 MiB\r\n[    1.641941] mmcblk1boot1: mmc1:0001 8GUF4R partition 2 31.9 MiB\r\n[    1.652204] mmcblk1rpmb: mmc1:0001 8GUF4R partition 3 4.00 MiB\r\n[    1.653211]  mmcblk1: p1 p2 p3\r\n[    1.655204] usb 1-1: new high-speed USB device number 2 using ci_hdrc\r\n[    1.701616]  mmcblk0: p1 p2 p3\r\n[    1.769095] random: fast init done\r\n[    1.787330] EXT4-fs (mmcblk0p2): recovery complete\r\n[    1.792794] EXT4-fs (mmcblk0p2): mounted filesystem with ordered data mode. Opts: (null)\r\n[    1.800877] VFS: Mounted root (ext4 filesystem) on device 179:2.\r\n[    1.812305] devtmpfs: mounted\r\n[    1.818422] Freeing unused kernel memory: 1024K (c0900000 - c0a00000)\r\n[    1.837771] hub 1-1:1.0: USB hub found\r\n[    1.841889] hub 1-1:1.0: 4 ports detected\r\n[    2.689051] udevd[851]: starting version 3.2\r\n[    2.786900] udevd[852]: starting eudev-3.2\r\n[    2.984581] EXT4-fs (mmcblk0p2): re-mounted. Opts: (null)\r\n[    4.718054] EXT4-fs (mmcblk1p3): recovery complete\r\n[    4.723884] EXT4-fs (mmcblk1p3): mounted filesystem with ordered data mode. Opts: (null)\r\n[    4.748396] EXT4-fs (mmcblk0p3): mounting ext3 file system using the ext4 subsystem\r\n[    4.776732] FAT-fs (mmcblk1p1): Volume was not properly unmounted. Some data may be corrupt. Please run fsck.\r\n[    4.802184] EXT4-fs (mmcblk1p2): recovery complete\r\n[    4.809739] EXT4-fs (mmcblk0p3): recovery complete\r\n[    4.809754] EXT4-fs (mmcblk0p3): mounted filesystem with ordered data mode. Opts: (null)\r\n[    4.840156] EXT4-fs (mmcblk1p2): mounted filesystem with ordered data mode. Opts: (null)\r\n[    4.869724] FAT-fs (mmcblk0p1): Volume was not properly unmounted. Some data may be corrupt. Please run fsck.\r\n[    5.061974] board-init: fan on\r\n[    5.079309] board-init: mode=rf bitstream=/lib/firmware/ad9361.bin overlay=/lib/firmware/pl.dtbo\r\n[    6.683246] board-init: staged bitstream already current\r\n[    6.706868] fpga_manager fpga0: writing system_wrapper.bin to Xilinx Zynq FPGA Manager\r\n[    6.838856] fpga_manager fpga0: Found swapped sync word\r\n[    7.439386] board-init: fabric operating after explicit bitstream load\r\n[    7.481936] ad9361 spi32765.0: ad9361_probe : enter (ad9361)\r\n[    7.726222] ad9361 spi32765.0: ad9361_probe : AD936x Rev 2 successfully initialized\r\n[    7.746260] board-init: overlay applied: /lib/firmware/pl.dtbo (attempt 1)\r\n[    8.596470] cf_axi_adc 79020000.cf-ad9361-lpc: ADI AIM (10.00.b) at 0x79020000 mapped to 0xf09f8000, probed ADC AD9361 as MASTER\r\n[    8.621056] cf_axi_dds 79024000.cf-ad9361-dds-core-lpc: Analog Devices CF_AXI_DDS_DDS MASTER (9.00.b) at 0x79024000 mapped to 0xf09da000, probed DDS AD9361\r\n[    8.989543] board-init: rf ready: PHY/ADC/DDS names verified (attempt 1)\r\n[    9.002077] board-init: bring-up complete (mode=rf)\r\n[    9.192649] IPv6: ADDRCONF(NETDEV_UP): eth0: link is not ready\r\n[  692.184694] random: crng init done\r\n\r\n__P46_de7df4ae__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:15.952142+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "stty echo",
+      "output": "printf '\\n__P46_055839cc__:%s\\n' \"$?\"\r\n\r\n__P46_055839cc__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:16.011236+00:00"
+    },
+    {
+      "port": "COM8",
+      "command": "PS1=$p52_prompt",
+      "output": "PS1=$p52_prompt\r\nprintf '\\n__P46_9bafd0a7__:%s\\n' \"$?\"\r\nPS1=$p52_prompt\r\nroot@Zynq-Tronlong:/sys/bus/iio/devices/iio:device2# printf '\\n__P46_9bafd0a7__: \r%s\\n' \"$?\"\r\n\r\n__P46_9bafd0a7__:0\r\n",
+      "exit_code": 0,
+      "utc": "2026-10-24T07:59:16.101232+00:00"
+    }
+  ],
+  "evaluation": "results/p52-test-20261024T045844Z/report.json",
+  "evaluation_sha256": "d54be6385f9314dfe37af36dbb98018930b324c16e9fa41a574ce7da2f557ca1",
+  "frozen": "results/p52-export-20261024T043113Z/report.json",
+  "frozen_sha256": "74b1baff39220ba658b4cbabb998fb686791ae38ffef303e951d6a41c4f2b0aa",
+  "ARM_binary_sha256": "6b1dd4a963e09409ca81635611240d93ba4f9f1358db3ffa0b7897c744062855",
+  "expected_boot": "9734d483-07e3-44d3-9dd3-6582703ee77d",
+  "checks": [
+    {
+      "seed": 2026102313,
+      "source": "bpsk",
+      "block": 0,
+      "mode": "fp32",
+      "raw_sha256": "74a35bcf7e7c65c70e46ef922195792d588d2e4cb33874a8a15bd164dd3a70c2",
+      "predictions": [
+        0,
+        1,
+        2
+      ],
+      "max_logit_absolute_error": 4.76837158203125e-06,
+      "matched": true
+    },
+    {
+      "seed": 2026102313,
+      "source": "bpsk",
+      "block": 0,
+      "mode": "int8",
+      "raw_sha256": "74a35bcf7e7c65c70e46ef922195792d588d2e4cb33874a8a15bd164dd3a70c2",
+      "predictions": [
+        0,
+        1,
+        0
+      ],
+      "max_logit_absolute_error": 0.0,
+      "matched": true
+    },
+    {
+      "seed": 2026102313,
+      "source": "bpsk",
+      "block": 1,
+      "mode": "fp32",
+      "raw_sha256": "81821a6b89e342203772c7e0ed92daaf5c4d5bc2898525e99d55230ebef7bff0",
+      "predictions": [
+        0,
+        0,
+        0
+      ],
+      "max_logit_absolute_error": 5.7220458984375e-06,
+      "matched": true
+    },
+    {
+      "seed": 2026102313,
+      "source": "bpsk",
+      "block": 1,
+      "mode": "int8",
+      "raw_sha256": "81821a6b89e342203772c7e0ed92daaf5c4d5bc2898525e99d55230ebef7bff0",
+      "predictions": [
+        0,
+        0,
+        0
+      ],
+      "max_logit_absolute_error": 0.0,
+      "matched": true
+    },
+    {
+      "seed": 2026102313,
+      "source": "qpsk",
+      "block": 0,
+      "mode": "fp32",
+      "raw_sha256": "6afc90a2751e2c7325ba95e5ad71733f9d0bd702961f5eab266c93109f3bfdac",
+      "predictions": [
+        1,
+        1,
+        1
+      ],
+      "max_logit_absolute_error": 8.106231689453125e-06,
+      "matched": true
+    },
+    {
+      "seed": 2026102313,
+      "source": "qpsk",
+      "block": 0,
+      "mode": "int8",
+      "raw_sha256": "6afc90a2751e2c7325ba95e5ad71733f9d0bd702961f5eab266c93109f3bfdac",
+      "predictions": [
+        1,
+        1,
+        1
+      ],
+      "max_logit_absolute_error": 0.0,
+      "matched": true
+    },
+    {
+      "seed": 2026102313,
+      "source": "qpsk",
+      "block": 1,
+      "mode": "fp32",
+      "raw_sha256": "54b34739f551f3bd19813a34a720f612b7f625ce42cb509a16d5290d070ddc53",
+      "predictions": [
+        1,
+        1,
+        1
+      ],
+      "max_logit_absolute_error": 1.1920928955078125e-05,
+      "matched": true
+    },
+    {
+      "seed": 2026102313,
+      "source": "qpsk",
+      "block": 1,
+      "mode": "int8",
+      "raw_sha256": "54b34739f551f3bd19813a34a720f612b7f625ce42cb509a16d5290d070ddc53",
+      "predictions": [
+        1,
+        1,
+        1
+      ],
+      "max_logit_absolute_error": 0.0,
+      "matched": true
+    },
+    {
+      "seed": 2026102313,
+      "source": "qam16",
+      "block": 0,
+      "mode": "fp32",
+      "raw_sha256": "e3eacc3c9923ccea1a20b9ebf3bca660a115f675c1beb261ce182452f30a07b2",
+      "predictions": [
+        2,
+        2,
+        2
+      ],
+      "max_logit_absolute_error": 8.106231689453125e-06,
+      "matched": true
+    },
+    {
+      "seed": 2026102313,
+      "source": "qam16",
+      "block": 0,
+      "mode": "int8",
+      "raw_sha256": "e3eacc3c9923ccea1a20b9ebf3bca660a115f675c1beb261ce182452f30a07b2",
+      "predictions": [
+        2,
+        2,
+        2
+      ],
+      "max_logit_absolute_error": 0.0,
+      "matched": true
+    },
+    {
+      "seed": 2026102313,
+      "source": "qam16",
+      "block": 1,
+      "mode": "fp32",
+      "raw_sha256": "89108223013281e319f8f41efd9b20e662812ea6b027997eb119c537abb17377",
+      "predictions": [
+        2,
+        2,
+        2
+      ],
+      "max_logit_absolute_error": 5.7220458984375e-06,
+      "matched": true
+    },
+    {
+      "seed": 2026102313,
+      "source": "qam16",
+      "block": 1,
+      "mode": "int8",
+      "raw_sha256": "89108223013281e319f8f41efd9b20e662812ea6b027997eb119c537abb17377",
+      "predictions": [
+        2,
+        2,
+        2
+      ],
+      "max_logit_absolute_error": 0.0,
+      "matched": true
+    },
+    {
+      "seed": 2026102314,
+      "source": "bpsk",
+      "block": 0,
+      "mode": "fp32",
+      "raw_sha256": "d0c800cddf958427ca9e3860eea92d5c911550c55170d6eb6b8dbcb83b25baa2",
+      "predictions": [
+        0,
+        0,
+        0
+      ],
+      "max_logit_absolute_error": 1.621246337890625e-05,
+      "matched": true
+    },
+    {
+      "seed": 2026102314,
+      "source": "bpsk",
+      "block": 0,
+      "mode": "int8",
+      "raw_sha256": "d0c800cddf958427ca9e3860eea92d5c911550c55170d6eb6b8dbcb83b25baa2",
+      "predictions": [
+        0,
+        0,
+        0
+      ],
+      "max_logit_absolute_error": 0.0,
+      "matched": true
+    },
+    {
+      "seed": 2026102314,
+      "source": "bpsk",
+      "block": 1,
+      "mode": "fp32",
+      "raw_sha256": "dfa740f75f071f29fcc207ee1a949e6973750530d976d31c532c924cafc985e2",
+      "predictions": [
+        0,
+        0,
+        0
+      ],
+      "max_logit_absolute_error": 1.6689300537109375e-05,
+      "matched": true
+    },
+    {
+      "seed": 2026102314,
+      "source": "bpsk",
+      "block": 1,
+      "mode": "int8",
+      "raw_sha256": "dfa740f75f071f29fcc207ee1a949e6973750530d976d31c532c924cafc985e2",
+      "predictions": [
+        0,
+        0,
+        0
+      ],
+      "max_logit_absolute_error": 0.0,
+      "matched": true
+    },
+    {
+      "seed": 2026102314,
+      "source": "qpsk",
+      "block": 0,
+      "mode": "fp32",
+      "raw_sha256": "a51753dd3c0b2f550f02cd4c3996fbb86ccc32943be94568d64a9ea5397ef2e1",
+      "predictions": [
+        1,
+        1,
+        1
+      ],
+      "max_logit_absolute_error": 8.58306884765625e-06,
+      "matched": true
+    },
+    {
+      "seed": 2026102314,
+      "source": "qpsk",
+      "block": 0,
+      "mode": "int8",
+      "raw_sha256": "a51753dd3c0b2f550f02cd4c3996fbb86ccc32943be94568d64a9ea5397ef2e1",
+      "predictions": [
+        2,
+        1,
+        1
+      ],
+      "max_logit_absolute_error": 0.0,
+      "matched": true
+    },
+    {
+      "seed": 2026102314,
+      "source": "qpsk",
+      "block": 1,
+      "mode": "fp32",
+      "raw_sha256": "a866245e00a9cf445c84e8b4c95b3803b3eec85ff5f90c79fe1f7b3c0a7e36f1",
+      "predictions": [
+        1,
+        1,
+        1
+      ],
+      "max_logit_absolute_error": 6.67572021484375e-06,
+      "matched": true
+    },
+    {
+      "seed": 2026102314,
+      "source": "qpsk",
+      "block": 1,
+      "mode": "int8",
+      "raw_sha256": "a866245e00a9cf445c84e8b4c95b3803b3eec85ff5f90c79fe1f7b3c0a7e36f1",
+      "predictions": [
+        1,
+        1,
+        1
+      ],
+      "max_logit_absolute_error": 0.0,
+      "matched": true
+    },
+    {
+      "seed": 2026102314,
+      "source": "qam16",
+      "block": 0,
+      "mode": "fp32",
+      "raw_sha256": "e4d8173b8d80fd93e34a12858f3d929872f8693dcfc41067c8ffbf4dfaa61292",
+      "predictions": [
+        2,
+        2,
+        2
+      ],
+      "max_logit_absolute_error": 1.049041748046875e-05,
+      "matched": true
+    },
+    {
+      "seed": 2026102314,
+      "source": "qam16",
+      "block": 0,
+      "mode": "int8",
+      "raw_sha256": "e4d8173b8d80fd93e34a12858f3d929872f8693dcfc41067c8ffbf4dfaa61292",
+      "predictions": [
+        2,
+        2,
+        2
+      ],
+      "max_logit_absolute_error": 0.0,
+      "matched": true
+    },
+    {
+      "seed": 2026102314,
+      "source": "qam16",
+      "block": 1,
+      "mode": "fp32",
+      "raw_sha256": "dbe6c334897ea86549dab9978e290c0f737d449b5015e3bd6a9b27a5b3f8dcdc",
+      "predictions": [
+        1,
+        2,
+        2
+      ],
+      "max_logit_absolute_error": 7.62939453125e-06,
+      "matched": true
+    },
+    {
+      "seed": 2026102314,
+      "source": "qam16",
+      "block": 1,
+      "mode": "int8",
+      "raw_sha256": "dbe6c334897ea86549dab9978e290c0f737d449b5015e3bd6a9b27a5b3f8dcdc",
+      "predictions": [
+        2,
+        2,
+        2
+      ],
+      "max_logit_absolute_error": 0.0,
+      "matched": true
+    },
+    {
+      "seed": 2026102315,
+      "source": "bpsk",
+      "block": 0,
+      "mode": "fp32",
+      "raw_sha256": "2a7e3d1dc13df853b21c77907aa88776c40cc816646dd72d543243492b229ca0",
+      "predictions": [
+        0,
+        0,
+        0
+      ],
+      "max_logit_absolute_error": 1.049041748046875e-05,
+      "matched": true
+    },
+    {
+      "seed": 2026102315,
+      "source": "bpsk",
+      "block": 0,
+      "mode": "int8",
+      "raw_sha256": "2a7e3d1dc13df853b21c77907aa88776c40cc816646dd72d543243492b229ca0",
+      "predictions": [
+        0,
+        0,
+        0
+      ],
+      "max_logit_absolute_error": 0.0,
+      "matched": true
+    },
+    {
+      "seed": 2026102315,
+      "source": "bpsk",
+      "block": 1,
+      "mode": "fp32",
+      "raw_sha256": "e2343281c32f42ec7f35be6b7072198def0aac017de3de828c7e97525fff9411",
+      "predictions": [
+        0,
+        0,
+        0
+      ],
+      "max_logit_absolute_error": 1.1444091796875e-05,
+      "matched": true
+    },
+    {
+      "seed": 2026102315,
+      "source": "bpsk",
+      "block": 1,
+      "mode": "int8",
+      "raw_sha256": "e2343281c32f42ec7f35be6b7072198def0aac017de3de828c7e97525fff9411",
+      "predictions": [
+        0,
+        0,
+        0
+      ],
+      "max_logit_absolute_error": 0.0,
+      "matched": true
+    },
+    {
+      "seed": 2026102315,
+      "source": "qpsk",
+      "block": 0,
+      "mode": "fp32",
+      "raw_sha256": "ab3d23d62d028188575a3e97c0f3f4954614fa7f94522a22af52c80ee8c2bdec",
+      "predictions": [
+        1,
+        1,
+        1
+      ],
+      "max_logit_absolute_error": 1.52587890625e-05,
+      "matched": true
+    },
+    {
+      "seed": 2026102315,
+      "source": "qpsk",
+      "block": 0,
+      "mode": "int8",
+      "raw_sha256": "ab3d23d62d028188575a3e97c0f3f4954614fa7f94522a22af52c80ee8c2bdec",
+      "predictions": [
+        1,
+        1,
+        1
+      ],
+      "max_logit_absolute_error": 0.0,
+      "matched": true
+    },
+    {
+      "seed": 2026102315,
+      "source": "qpsk",
+      "block": 1,
+      "mode": "fp32",
+      "raw_sha256": "d01e2e4fe2905af3a44aa27ca8bf7bc83fa75bb6c005ffdbde22d96a89005a0d",
+      "predictions": [
+        1,
+        1,
+        1
+      ],
+      "max_logit_absolute_error": 8.58306884765625e-06,
+      "matched": true
+    },
+    {
+      "seed": 2026102315,
+      "source": "qpsk",
+      "block": 1,
+      "mode": "int8",
+      "raw_sha256": "d01e2e4fe2905af3a44aa27ca8bf7bc83fa75bb6c005ffdbde22d96a89005a0d",
+      "predictions": [
+        1,
+        1,
+        1
+      ],
+      "max_logit_absolute_error": 0.0,
+      "matched": true
+    },
+    {
+      "seed": 2026102315,
+      "source": "qam16",
+      "block": 0,
+      "mode": "fp32",
+      "raw_sha256": "f23a03db23686f381224de44ebf120dd38d66d4dec9f85310ed872ae2416ab2b",
+      "predictions": [
+        2,
+        2,
+        2
+      ],
+      "max_logit_absolute_error": 1.2874603271484375e-05,
+      "matched": true
+    },
+    {
+      "seed": 2026102315,
+      "source": "qam16",
+      "block": 0,
+      "mode": "int8",
+      "raw_sha256": "f23a03db23686f381224de44ebf120dd38d66d4dec9f85310ed872ae2416ab2b",
+      "predictions": [
+        2,
+        2,
+        2
+      ],
+      "max_logit_absolute_error": 0.0,
+      "matched": true
+    },
+    {
+      "seed": 2026102315,
+      "source": "qam16",
+      "block": 1,
+      "mode": "fp32",
+      "raw_sha256": "6eaf7370814580b08861a7530ac18b67493d8e057a9d1bd34b3799234825fa93",
+      "predictions": [
+        2,
+        2,
+        2
+      ],
+      "max_logit_absolute_error": 7.152557373046875e-06,
+      "matched": true
+    },
+    {
+      "seed": 2026102315,
+      "source": "qam16",
+      "block": 1,
+      "mode": "int8",
+      "raw_sha256": "6eaf7370814580b08861a7530ac18b67493d8e057a9d1bd34b3799234825fa93",
+      "predictions": [
+        2,
+        2,
+        2
+      ],
+      "max_logit_absolute_error": 0.0,
+      "matched": true
+    }
+  ],
+  "benchmarks": [
+    {
+      "source": "bpsk",
+      "mode": "int8",
+      "repeats": 10,
+      "mean_block_ms": 22.5490607,
+      "max_block_ms": 22.680397,
+      "frames_per_block": 3,
+      "maxrss_kib": 2556,
+      "scope": "mix/FIR/decimation/DC/RMS/CNN; file IO excluded"
+    },
+    {
+      "source": "qpsk",
+      "mode": "int8",
+      "repeats": 10,
+      "mean_block_ms": 22.4626615,
+      "max_block_ms": 22.613716,
+      "frames_per_block": 3,
+      "maxrss_kib": 2612,
+      "scope": "mix/FIR/decimation/DC/RMS/CNN; file IO excluded"
+    },
+    {
+      "source": "qam16",
+      "mode": "int8",
+      "repeats": 10,
+      "mean_block_ms": 22.4574368,
+      "max_block_ms": 22.57269,
+      "frames_per_block": 3,
+      "maxrss_kib": 2512,
+      "scope": "mix/FIR/decimation/DC/RMS/CNN; file IO excluded"
+    }
+  ],
+  "serial_closed": true,
+  "RF_operations": false,
+  "PL_changes": false,
+  "persistent_files_written": false,
+  "live_AI_on_LCD": false,
+  "scope": "current ARM execution on archived independent RF from prior boot; no new RF acquisition",
+  "deployment_driver_revision": "p55_tty_upload_fix",
+  "frozen_original_verifier": "experiments/p52_arm_verify.py",
+  "frozen_original_verifier_sha256": "45e1fb3c516e8e16098b53a5dcd0b8e915dc5275f41791ed42c06e0705f4639a",
+  "model_or_preprocessor_modified": false,
+  "fix": "nonempty prompt only during existing upload protocol; empty prompt for framed numeric output",
+  "input_origin_boot": "4e7438d3-3e8f-470d-86a5-abf5f732bb71",
+  "archived_input_bytes": 4718592,
+  "archive_sha256": "c7bd6989ec53e762118b75c4bdba6dc9666048822a44cd38dc1f1d2d29144402",
+  "decompressed_sha256": "c9b12953ad69dc33b5a985ba7ed454e73ec8c89b7986e4195fb200c828f341eb",
+  "archived_inputs_uploaded_to_RAM": true,
+  "current_boot_RF_capture": false,
+  "preflight": "results/p46-preflight-20261024T074202Z/report.json",
+  "before": {
+    "boot": "9734d483-07e3-44d3-9dd3-6582703ee77d",
+    "taint": "0",
+    "attributes": {
+      "in_voltage_sampling_frequency": "30720000",
+      "in_voltage_rf_bandwidth": "18000000",
+      "out_altvoltage0_RX_LO_frequency": "2450000000",
+      "in_voltage0_gain_control_mode": "manual",
+      "in_voltage0_hardwaregain": "0.000000 dB",
+      "in_voltage0_rf_port_select": "A_BALANCED"
+    },
+    "buffer": "0",
+    "scans": [
+      "0",
+      "0",
+      "0",
+      "0"
+    ]
+  },
+  "resolved_RAM_tmp": "/var/volatile/tmp",
+  "after": {
+    "boot": "9734d483-07e3-44d3-9dd3-6582703ee77d",
+    "taint": "0",
+    "attributes": {
+      "in_voltage_sampling_frequency": "30720000",
+      "in_voltage_rf_bandwidth": "18000000",
+      "out_altvoltage0_RX_LO_frequency": "2450000000",
+      "in_voltage0_gain_control_mode": "manual",
+      "in_voltage0_hardwaregain": "0.000000 dB",
+      "in_voltage0_rf_port_select": "A_BALANCED"
+    },
+    "buffer": "0",
+    "scans": [
+      "0",
+      "0",
+      "0",
+      "0"
+    ]
+  },
+  "test_frames_per_mode": 54,
+  "independent_final_RX_idle": true,
+  "ARM_actual_execution": true,
+  "labels_used_by_inference": false,
+  "scratch_files_are_RAM_only": true,
+  "raw_evidence_not_modified": true
+}

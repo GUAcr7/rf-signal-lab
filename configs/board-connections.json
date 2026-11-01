@@ -1,0 +1,15 @@
+{
+  "schema": "rfsig.board_connections.v1",
+  "TX_transport": "usb-console",
+  "selected_by_user_on": "2026-10-25",
+  "reason": "User explicitly selected the working COM10 connection; do not require COM9 or a pin-header replacement.",
+  "COM_number_is_not_pinned": true,
+  "require_unique_USB_candidate_and_P201_Linux_model": true,
+  "RF_link_reviewed": false,
+  "RX_USB_location": "1-4",
+  "RX_USB_binding_evidence": {
+    "report": "results/p59-p78-screen-preflight-20261028T133432201529Z/report.json",
+    "sha256": "249d97fccf63dce8970fad1bd5d1ece7aa1b386cf4e2dd96e9a0d65454e9faa1"
+  },
+  "RX_USB_binding_reason": "P85 exact TJC identity plus other CH340 Linux/profile verified after USB topology change; COM numbers remain unpinned."
+}

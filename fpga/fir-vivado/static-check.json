@@ -1,0 +1,85 @@
+{
+  "checked_at": "2026-10-11T00:26:06.7235383+08:00",
+  "scope": "Preparation static syntax and source/provenance checks only; Vivado not started",
+  "powershell_parser_error_count": 0,
+  "tcl_info_complete": {
+    "fir_internal_100mhz.xdc": true,
+    "synth_fir.tcl": true
+  },
+  "source_validation": {
+    "source_validation_passed": true,
+    "synthesis_started": false,
+    "expected_version": "2021.1",
+    "part": "xc7z020clg400-2",
+    "clock_period_ns": 10,
+    "coefficient_words": 63,
+    "sources": [
+      {
+        "relative_path": "fpga/rtl/fixed_fir_iq.v",
+        "original_path": "C:\\Users\\project_user\\Documents\\Codex\\2026-09-09\\2026-fpga-fmql30tai-fpai-python-c\\outputs\\rf-signal-lab\\fpga\\rtl\\fixed_fir_iq.v",
+        "bytes": 5065,
+        "sha256": "3cb08c3ee81664ed86d492aadfbb101bf002d97a26f86734ae9b17d254755dc6",
+        "synthesis_input": true
+      },
+      {
+        "relative_path": "fpga/ip/fir63_q17.hex",
+        "original_path": "C:\\Users\\project_user\\Documents\\Codex\\2026-09-09\\2026-fpga-fmql30tai-fpai-python-c\\outputs\\rf-signal-lab\\fpga\\ip\\fir63_q17.hex",
+        "bytes": 441,
+        "sha256": "41ea00cd11a244d5522456409813a88051cc831ef456e0783773da45f27bb3d6",
+        "synthesis_input": true
+      },
+      {
+        "relative_path": "fpga/tb/tb_fixed_fir_iq.sv",
+        "original_path": "C:\\Users\\project_user\\Documents\\Codex\\2026-09-09\\2026-fpga-fmql30tai-fpai-python-c\\outputs\\rf-signal-lab\\fpga\\tb\\tb_fixed_fir_iq.sv",
+        "bytes": 9573,
+        "sha256": "524a7c0505141ddd9a3ff3e13166a5da6aaa0e2947958f9927cd117d04100ad9",
+        "synthesis_input": false
+      }
+    ],
+    "simulation_evidence": [
+      {
+        "path": "C:\\Users\\project_user\\Documents\\Codex\\2026-09-09\\2026-fpga-fmql30tai-fpai-python-c\\outputs\\rf-signal-lab\\results\\p07-fir-rtl-20261010T081533765282Z\\report.json",
+        "sha256": "5f7b83e404f74190ee791b2afc229c1ab97eb86664d1525e29f4a0dbed7d1e0b",
+        "comparisons": 72356,
+        "all_passed": true
+      },
+      {
+        "path": "C:\\Users\\project_user\\Documents\\Codex\\2026-09-09\\2026-fpga-fmql30tai-fpai-python-c\\outputs\\rf-signal-lab\\results\\p07-fir-rtl-20261010T081544645644Z\\report.json",
+        "sha256": "3c1a2e1f9294043418f148d5f3a51b79256a4a74e6b99aeca589e030b1a1b5b6",
+        "comparisons": 1086,
+        "all_passed": true
+      }
+    ]
+  },
+  "task_files": [
+    {
+      "name": "expected-contract.json",
+      "bytes": 864,
+      "sha256": "a444b67d5e8db0565d6aa01d11ea514213af5999d0432cd4212869cdeb927575"
+    },
+    {
+      "name": "fir_internal_100mhz.xdc",
+      "bytes": 285,
+      "sha256": "55ce128c19265000096df2eacb10c5a868751251eb4cb8bc3d707ea9edcab871"
+    },
+    {
+      "name": "README.md",
+      "bytes": 3426,
+      "sha256": "a69a7a38e5110eec4ecb0fccfc86c6698718ff75dde0820fe7d3916772b49c11"
+    },
+    {
+      "name": "run-fir-synthesis.ps1",
+      "bytes": 10301,
+      "sha256": "ab4249a1c951d55ceedce54160c294c8d8389a444402f573031394c00bbd09aa"
+    },
+    {
+      "name": "synth_fir.tcl",
+      "bytes": 6062,
+      "sha256": "9dd2fd422da486fd01d80587220d1c24164d8a4ad56699ffa8224ba1e3d97729"
+    }
+  ],
+  "vivado_started": false,
+  "synthesis_executed": false,
+  "board_accessed": false,
+  "rtl_modified": false
+}

@@ -1,0 +1,44 @@
+Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
+| Date         : Sun Oct 11 12:00:09 2026
+| Host         : LAPTOP-CLPF2QOU running 64-bit major release  (build 9200)
+| Command      : report_clocks -file E:/FPGA_Tools/Work/p07-fir-ooc-20261011-115930-d17039/reports/clocks.rpt
+| Design       : fixed_fir_iq
+| Device       : 7z020-clg400
+| Speed File   : -2  PRODUCTION 1.12 2019-11-22
+--------------------------------------------------------------------------------------------------------------
+
+Clock Report
+
+
+Attributes
+  P: Propagated
+  G: Generated
+  A: Auto-derived
+  R: Renamed
+  V: Virtual
+  I: Inverted
+  S: Pin phase-shifted with Latency mode
+
+Clock    Period(ns)  Waveform(ns)   Attributes  Sources
+fir_clk  10.000      {0.000 5.000}  P           {clk}
+
+
+====================================================
+Generated Clocks
+====================================================
+
+
+
+====================================================
+User Uncertainty
+====================================================
+
+
+
+====================================================
+User Jitter
+====================================================
+
+

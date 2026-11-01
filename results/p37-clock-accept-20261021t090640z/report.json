@@ -1,0 +1,44 @@
+{
+  "status": "passed_ARM32_clock_overflow_fix_driver_register_consistency_this_boot",
+  "trial": "C:\\Users\\project_user\\Documents\\Codex\\2026-09-09\\2026-fpga-fmql30tai-fpai-python-c\\outputs\\rf-signal-lab\\results\\p35-once-merged-20261021T090121Z\\report.json",
+  "trial_sha256": "13c6c2d7b8df2def9c4e5560390c28e8c391c5cb4110effe0f7711e367abe08a",
+  "readback": "C:\\Users\\project_user\\Documents\\Codex\\2026-09-09\\2026-fpga-fmql30tai-fpai-python-c\\outputs\\rf-signal-lab\\results\\p36-clockwiz-readback-20261021T090546Z\\report.json",
+  "readback_sha256": "fbb7e129b89be4cf6ef39517757a49310cb2bcb18fb02137621d69eeae620e86",
+  "boot_id": "92bd78be-43f1-48c0-b390-b6841cb82111",
+  "registers": {
+    "status": 1,
+    "feedback": 99880962,
+    "output0": 25
+  },
+  "decoded": {
+    "locked": true,
+    "M_integer": 16,
+    "M_fraction_thousandths": 500,
+    "D": 2,
+    "O_integer": 25,
+    "O_fraction_thousandths": 0,
+    "input_software_rate_hz": 99999999,
+    "feedback_fraction_enable_bit": true,
+    "output_fraction_enable_bit": false,
+    "fractional_flag_semantics": "Recorded; supplied recalc code uses fraction fields directly.",
+    "valid_dividers": true,
+    "predicted_output_hz": 32999999.67,
+    "predicted_33MHz_within_1kHz": true,
+    "physical_frequency_measured": false,
+    "software_output_rate_hz": 32999000,
+    "software_matches_prediction_within_1kHz": true
+  },
+  "registered_clock_rates": {
+    "fclk0": 99999999,
+    "fclk1": 199999998,
+    "43c10000.clk_wiz_mul": 1649999983,
+    "43c10000.clk_wiz_mul_div": 824999992,
+    "clk_out1": 32999000
+  },
+  "board_operations": false,
+  "physical_external_PCLK_measured": false,
+  "physical_LCD_visibility_confirmed": false,
+  "continuous_RF_or_ADC_losslessness_proven": false,
+  "CDC_closed": false,
+  "production_release": false
+}

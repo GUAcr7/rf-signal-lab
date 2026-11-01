@@ -1,0 +1,22 @@
+{
+  "created_utc": "2026-10-19T15:17:16.528163+00:00",
+  "source": "user supplied rear-of-display photo",
+  "photo": "board/display-identification/panel-back-20261019.jpg",
+  "photo_sha256": "b9cfb2ec0379252a3fce82e3af3ad11deeed8585c02cc426182f66ccd0aef764",
+  "confirmed_from_silkscreen": {
+    "adapter_board_manufacturer": "Tronlong",
+    "adapter_board_model": "TL-70RESLCD-B2",
+    "size_marking": "7inch",
+    "connector_markings": [
+      "CON2",
+      "CON3",
+      "CON4",
+      "touch"
+    ]
+  },
+  "raw_LCD_panel_model_confirmed": false,
+  "FPC_code": "not transcribed: characters/occlusion insufficient for a reliable exact identifier",
+  "electrical_timing_verified": false,
+  "board_operations": false,
+  "note": "Adapter PCB identification does not establish the exact bare LCD timing specification. Existing source documents will be checked first."
+}

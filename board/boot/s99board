@@ -1,0 +1,206 @@
+#!/bin/sh
+# TLZ7xH-EVM boot bring-up.
+#
+# Order matters and is deliberate:
+#   1. fan first  - it is a PS pin (MIO8 / gpio 914), independent of the fabric,
+#                   so the board is cooled even if every later step fails.
+#   2. resolve mode from /etc/board-mode.
+#   3. stage the matching bitstream as system_wrapper.bin, then VERIFY the copy.
+#   4. mount configfs (checked).
+#   5. rf mode only: load the bitstream explicitly and check the state.
+#   6. apply the matching overlay (checked).
+#   7. confirm the fabric reports "operating" before declaring success.
+#
+# Every step checks its return value and stops the remaining configuration on
+# failure, so a half-configured fabric can never look like success. A non-zero
+# exit does not stop the rest of rcS; it only stops this script.
+#
+# Pairing: bitstream and overlay are both derived from $MODE, so they cannot be
+# mismatched. display -> display.bin + d480p.dtbo (that overlay carries
+# firmware-name=system_wrapper.bin and loads the bitstream itself);
+# rf -> ad9361.bin + pl.dtbo (no firmware-name, so load it here first).
+#
+# Disabling this script: the ONLY unconditionally reliable way is to move it out
+# of /etc/rcS.d. Renaming to "S99board.off" does NOT work because sysvinit globs
+# /etc/rcS.d/S*, which still matches. See board/README.md.
+
+# Readiness is identified by names, never by enumeration order. A directory
+# named iio:device1 may be an unrelated device, or only the PHY may have probed
+# while ADC/DDS failed. The optional diagnostic path performs NO writes.
+rf_devices_ready() {
+    for required in ad9361-phy cf-ad9361-lpc cf-ad9361-dds-core-lpc; do
+        found=0
+        for entry in "$1"/iio:device*/name; do
+            [ -r "$entry" ] || continue
+            actual=$(cat "$entry") || continue
+            if [ "$actual" = "$required" ]; then
+                found=1
+                break
+            fi
+        done
+        [ "$found" -eq 1 ] || return 1
+    done
+    return 0
+}
+
+# A partial probe is still a live driver, not permission to reconfigure PL.
+rf_any_device_present() {
+    for entry in "$1"/iio:device*/name; do
+        [ -r "$entry" ] || continue
+        case "$(cat "$entry")" in
+            ad9361-phy|cf-ad9361-lpc|cf-ad9361-dds-core-lpc) return 0 ;;
+        esac
+    done
+    return 1
+}
+
+case "$1" in
+    --check-rf)
+        if rf_devices_ready "${2:-/sys/bus/iio/devices}"; then
+            echo "RF_READY phy=ad9361-phy adc=cf-ad9361-lpc dds=cf-ad9361-dds-core-lpc"
+            exit 0
+        fi
+        echo "RF_NOT_READY missing PHY/ADC/DDS name" >&2
+        exit 1
+        ;;
+    ""|start) ;;
+    stop) exit 0 ;;
+    *) echo "usage: S99board [start|stop|--check-rf [iio-root]]" >&2; exit 2 ;;
+esac
+
+FW=/lib/firmware
+MODE_FILE=/etc/board-mode
+FABRIC=/sys/class/fpga_manager/fpga0
+IIO_ROOT=/sys/bus/iio/devices
+
+log() {
+    echo "board-init: $*"
+    echo "board-init: $*" > /dev/kmsg 2>/dev/null
+}
+
+fail() {
+    log "FAILED: $*"
+    exit 1
+}
+
+# --- 1. fan first, independent of the fabric -------------------------------
+if [ ! -d /sys/class/gpio/gpio914 ]; then
+    echo 914 > /sys/class/gpio/export 2>/dev/null
+fi
+[ -d /sys/class/gpio/gpio914 ] || fail "fan: gpio914 not exported"
+
+# The kernel leaves the pin as an input; writing a value only works as output.
+echo out > /sys/class/gpio/gpio914/direction || fail "fan: cannot set direction"
+echo 1   > /sys/class/gpio/gpio914/value     || fail "fan: cannot set value"
+log "fan on"
+
+# --- 2. resolve mode --------------------------------------------------------
+MODE=$(cat "$MODE_FILE" 2>/dev/null)
+[ -z "$MODE" ] && MODE=display
+
+case "$MODE" in
+    rf)
+        BITSTREAM=$FW/ad9361.bin
+        OVERLAY=$FW/pl.dtbo
+        ;;
+    display)
+        BITSTREAM=$FW/display.bin
+        OVERLAY=$FW/d480p.dtbo
+        ;;
+    *) fail "invalid mode '$MODE'" ;;
+esac
+log "mode=$MODE bitstream=$BITSTREAM overlay=$OVERLAY"
+
+# The installed vendor kernel crashed in axiadc_remove when the original RF
+# overlay was removed (2026-10-19). Do not hot-unload any overlay, including
+# incomplete probes. A repeated start must also not rewrite PL under drivers.
+# --check-rf exits above this path and remains read-only.
+for slot in /sys/kernel/config/device-tree/overlays/*; do
+    [ ! -d "$slot" ] || fail "overlay already present; reboot to change mode"
+done
+if rf_any_device_present "$IIO_ROOT"; then
+    fail "RF device already present; refusing fabric reconfiguration"
+fi
+
+# --- 3. files must exist before touching anything ---------------------------
+[ -f "$BITSTREAM" ] || fail "missing bitstream $BITSTREAM"
+[ -f "$OVERLAY" ]   || fail "missing overlay $OVERLAY"
+
+# --- 4. stage the bitstream and verify the copy -----------------------------
+# Compare first: rewriting 17 MB to SD on every boot is needless wear, and a
+# no-op copy cannot introduce corruption.
+if cmp -s "$BITSTREAM" "$FW/system_wrapper.bin"; then
+    log "staged bitstream already current"
+else
+    cp -f "$BITSTREAM" "$FW/system_wrapper.bin" || fail "copy bitstream failed"
+    cmp -s "$BITSTREAM" "$FW/system_wrapper.bin" || fail "staged bitstream does not match source"
+    log "staged bitstream copied and verified"
+fi
+
+# --- 5. configfs ------------------------------------------------------------
+mount -t configfs none /sys/kernel/config 2>/dev/null
+grep -q ' /sys/kernel/config configfs ' /proc/mounts \
+    || grep -q 'configfs /sys/kernel/config' /proc/mounts \
+    || fail "configfs not mounted"
+[ -d /sys/kernel/config/device-tree/overlays ] || fail "device-tree overlay support missing"
+
+# --- 6. rf mode: the overlay has no firmware-name, so load it here ----------
+if [ "$MODE" = "rf" ]; then
+    echo system_wrapper.bin > "$FABRIC/firmware" || fail "bitstream write to fpga_manager failed"
+    STATE=$(cat "$FABRIC/state")
+    [ "$STATE" = "operating" ] || fail "fabric state is '$STATE' after bitstream load"
+    log "fabric operating after explicit bitstream load"
+fi
+
+# --- 7. apply the paired overlay ONCE --------------------------------------
+# The AD9361 probe can fail on the FIRST attempt with
+#     ad9361_probe : Unsupported PRODUCT_ID 0xFF
+# A historical rebind recovered one such failure, but unloading a successfully
+# bound original overlay later caused a kernel Oops. Until the exact vendor
+# removal path is fixed, ALL automatic removal/rebind retries are disabled.
+# Incomplete initialization fails visibly and requires a new boot.
+attempt=1
+while : ; do
+    if [ ! -d /sys/kernel/config/device-tree/overlays/pl ]; then
+        mkdir -p /sys/kernel/config/device-tree/overlays/pl \
+            || fail "cannot create overlay slot"
+        cat "$OVERLAY" > /sys/kernel/config/device-tree/overlays/pl/dtbo \
+            || fail "overlay apply failed for $OVERLAY"
+        [ -d /sys/kernel/config/device-tree/overlays/pl ] \
+            || fail "overlay slot vanished after apply"
+        log "overlay applied: $OVERLAY (attempt $attempt)"
+    fi
+
+    # Display mode has nothing to wait for beyond the overlay itself.
+    [ "$MODE" = "rf" ] || break
+
+    # Give the AD9361 and the ADC/DDS cores up to 6 s to probe.
+    i=0
+    while [ $i -lt 12 ]; do
+        rf_devices_ready "$IIO_ROOT" && break
+        i=$((i + 1))
+        sleep 0.5
+    done
+    rf_devices_ready "$IIO_ROOT" && break
+
+    fail "incomplete PHY/ADC/DDS; hot removal disabled; reboot required"
+done
+
+# --- 8. final acceptance ---------------------------------------------------
+STATE=$(cat "$FABRIC/state")
+[ "$STATE" = "operating" ] || fail "final fabric state is '$STATE', expected operating"
+
+case "$MODE" in
+    display)
+        [ -c /dev/fb0 ] || fail "display mode selected but /dev/fb0 is missing"
+        log "display ready: /dev/fb0 present"
+        ;;
+    rf)
+        rf_devices_ready "$IIO_ROOT" \
+            || fail "rf mode selected but PHY/ADC/DDS incomplete after $attempt attempt(s)"
+        log "rf ready: PHY/ADC/DDS names verified (attempt $attempt)"
+        ;;
+esac
+
+log "bring-up complete (mode=$MODE)"
+exit 0

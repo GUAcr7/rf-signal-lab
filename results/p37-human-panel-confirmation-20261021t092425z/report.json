@@ -1,0 +1,18 @@
+{
+  "schema": "rfsig.p37_human_panel_confirmation.v1",
+  "recorded_utc": "2026-10-21T09:24:25Z",
+  "source": "human_user_reply_current_chat",
+  "question": "新固件已完成接收和绘图测试。请看一下新板连接的小屏幕：能否看到‘RF SIGNAL LAB’标题和绿色频谱曲线，且画面稳定？",
+  "answer_verbatim": "能看到，画面稳定",
+  "boot_context": "92bd78be-43f1-48c0-b390-b6841cb82111",
+  "boot_context_source": "results/p36-panel-snapshot-20261021T091016Z/report.json",
+  "user_did_not_independently_read_boot_id": true,
+  "physical_LCD_visibility_confirmed_by_user": true,
+  "physical_LCD_stable_as_observed_by_user": true,
+  "observation_duration_quantified": false,
+  "physical_PCLK_instrument_measurement": false,
+  "photo_evidence_provided_for_this_confirmation": false,
+  "live_RF_display_verified": false,
+  "AI_verified": false,
+  "scope": "Current loaded configuration and saved-IQ panel drawing; no cold-start or prolonged stability acceptance. Timestamp is recording time, not claimed exact response/observation time."
+}

@@ -1,0 +1,45 @@
+{
+  "source_validation_passed": true,
+  "synthesis_started": false,
+  "expected_version": "2021.1",
+  "part": "xc7z020clg400-2",
+  "clock_period_ns": 10,
+  "coefficient_words": 63,
+  "sources": [
+    {
+      "relative_path": "fpga/rtl/fixed_fir_iq.v",
+      "original_path": "C:\\Users\\project_user\\Documents\\Codex\\2026-09-09\\2026-fpga-fmql30tai-fpai-python-c\\outputs\\rf-signal-lab\\fpga\\rtl\\fixed_fir_iq.v",
+      "bytes": 5232,
+      "sha256": "bfd540ae1bada5dae89fefd0d4f3f881d659473f0c522c4390f1ea9bef53660d",
+      "synthesis_input": true
+    },
+    {
+      "relative_path": "fpga/ip/fir63_q17.hex",
+      "original_path": "C:\\Users\\project_user\\Documents\\Codex\\2026-09-09\\2026-fpga-fmql30tai-fpai-python-c\\outputs\\rf-signal-lab\\fpga\\ip\\fir63_q17.hex",
+      "bytes": 441,
+      "sha256": "41ea00cd11a244d5522456409813a88051cc831ef456e0783773da45f27bb3d6",
+      "synthesis_input": true
+    },
+    {
+      "relative_path": "fpga/tb/tb_fixed_fir_iq.sv",
+      "original_path": "C:\\Users\\project_user\\Documents\\Codex\\2026-09-09\\2026-fpga-fmql30tai-fpai-python-c\\outputs\\rf-signal-lab\\fpga\\tb\\tb_fixed_fir_iq.sv",
+      "bytes": 9575,
+      "sha256": "47ae7c58d5594d673d9753b9c179c93435e7963c5dd8f822a45fb048b5615056",
+      "synthesis_input": false
+    }
+  ],
+  "simulation_evidence": [
+    {
+      "path": "C:\\Users\\project_user\\Documents\\Codex\\2026-09-09\\2026-fpga-fmql30tai-fpai-python-c\\outputs\\rf-signal-lab\\results\\p07-fir-rtl-20261011T035739182285Z\\report.json",
+      "sha256": "ac2c2b47432a388f69450df6138837005c9e53b998b576cc5622c3a2899d5224",
+      "comparisons": 72356,
+      "all_passed": true
+    },
+    {
+      "path": "C:\\Users\\project_user\\Documents\\Codex\\2026-09-09\\2026-fpga-fmql30tai-fpai-python-c\\outputs\\rf-signal-lab\\results\\p07-fir-rtl-20261011T035905891918Z\\report.json",
+      "sha256": "f1d0f741b176059efccaf2a515f63176c2464aab3acd849facd54d898dca12ca",
+      "comparisons": 1086,
+      "all_passed": true
+    }
+  ]
+}

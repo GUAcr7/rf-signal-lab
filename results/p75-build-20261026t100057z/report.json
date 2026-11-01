@@ -1,0 +1,130 @@
+{
+  "status": "passed_P75_phase_candidate_build_lifecycle12_not_deployed",
+  "board_operations": false,
+  "stages": [
+    {
+      "label": "host-build",
+      "exit_code": 0
+    },
+    {
+      "label": "ARM-build",
+      "exit_code": 0
+    },
+    {
+      "label": "ARM-ELF",
+      "exit_code": 0
+    },
+    {
+      "label": "mock-build",
+      "exit_code": 0
+    },
+    {
+      "label": "mock-good",
+      "exit_code": 0,
+      "gate_passed": true
+    },
+    {
+      "label": "mock-version",
+      "exit_code": 1,
+      "gate_passed": true
+    },
+    {
+      "label": "mock-config",
+      "exit_code": 1,
+      "gate_passed": true
+    },
+    {
+      "label": "mock-format",
+      "exit_code": 1,
+      "gate_passed": true
+    },
+    {
+      "label": "mock-step",
+      "exit_code": 1,
+      "gate_passed": true
+    },
+    {
+      "label": "mock-end",
+      "exit_code": 1,
+      "gate_passed": true
+    },
+    {
+      "label": "mock-sample_size",
+      "exit_code": 1,
+      "gate_passed": true
+    },
+    {
+      "label": "mock-create",
+      "exit_code": 1,
+      "gate_passed": true
+    },
+    {
+      "label": "mock-short",
+      "exit_code": 1,
+      "gate_passed": true
+    },
+    {
+      "label": "mock-after_config",
+      "exit_code": 1,
+      "gate_passed": true
+    },
+    {
+      "label": "mock-cancel",
+      "exit_code": 0,
+      "gate_passed": true
+    },
+    {
+      "label": "mock-join_hang",
+      "exit_code": 3,
+      "gate_passed": true
+    },
+    {
+      "label": "raw-host-build",
+      "exit_code": 0
+    },
+    {
+      "label": "raw-ARM-build",
+      "exit_code": 0
+    }
+  ],
+  "frozen": "results/p52-export-20261024T043113Z/report.json",
+  "raw_host": "results/p75-build-20261026T100057Z/phase-raw-host",
+  "raw_host_sha256": "cdd4067d2163225fa9b68996a3dbbcd5dabaad0f87200909c2b7f8e775636751",
+  "raw_ARM": "results/p75-build-20261026T100057Z/phase-raw-ARM",
+  "raw_ARM_sha256": "3f77dd1db5e1ada23680f74602b5d813a809bbae4cbf5009fad70760ae17097d",
+  "candidate": "P74 fixed eight phases; same original weights and 3/3 policy",
+  "binary": "results/p75-build-20261026T100057Z/monitor-arm",
+  "binary_sha256": "c07f0c70b79e4ade990a6a8c1ecb6b0649b5da587ceb7e0d6a7040acd709c2a2",
+  "host": "results/p75-build-20261026T100057Z/monitor-host",
+  "inputs_sha256": {
+    "results/p75-build-code-20261026T100057Z/executed-build.py": "f4a672351972a1d4ab6391973d8ab66f7354558ca8c89090d344f6f990c00724",
+    "embedded/arm_live_panel_p56/runtime_policy.h": "bfcbf685690341700b6df3a6395bb0856d7f1741b10b17c4b7ff0906c3273509",
+    "embedded/arm_live_panel_p56/telemetry.h": "5169c2f38338b25af54d8746160216d830bf5891a56eefa2aacf4d5c615338ce",
+    "embedded/arm_live_panel_p67/dashboard.h": "fe87d237796343463aadd82c9b39b6cd2faa02d58e125413b0f6acdfecd1a2ec",
+    "embedded/arm_live_panel_p69/measurements.h": "529bc9eeaea01ec3443e5b125d09c21c5d91f0ce2a97f0ad97f977830b2391cb",
+    "embedded/arm_live_panel_p69/roi_math.h": "a0821fe1bb3cc8f7dc8dab36116b19854fa192e30238a616b370bbdef94e2c37",
+    "embedded/arm_live_panel_p74/phase_pool.h": "8b9a160a0f9fc573c0b65812d2f27251a751feb4a0afc95d833a2c643ef9a648",
+    "embedded/arm_live_panel_p73/event_capture.h": "682b14142765c8abfefb0e1e2bb6542e4c52a89340d11c9d8cfa48769941aa1a",
+    "results/p75-build-20261026T100057Z/bundle/ai_impl.h": "a7f7117739016fd5f0375631d850e050f15a4894b421dbc8c3dd7ae57894b962",
+    "results/p75-build-20261026T100057Z/bundle/dashboard.h": "fe87d237796343463aadd82c9b39b6cd2faa02d58e125413b0f6acdfecd1a2ec",
+    "results/p75-build-20261026T100057Z/bundle/event_capture.h": "682b14142765c8abfefb0e1e2bb6542e4c52a89340d11c9d8cfa48769941aa1a",
+    "results/p75-build-20261026T100057Z/bundle/measurements.h": "529bc9eeaea01ec3443e5b125d09c21c5d91f0ce2a97f0ad97f977830b2391cb",
+    "results/p75-build-20261026T100057Z/bundle/monitor.c": "8d366ac4be400e6cca9b421276fcdc6110e8f9940398416897a7f7f36a876d92",
+    "results/p75-build-20261026T100057Z/bundle/phase_pool.h": "8b9a160a0f9fc573c0b65812d2f27251a751feb4a0afc95d833a2c643ef9a648",
+    "results/p75-build-20261026T100057Z/bundle/phase_raw.c": "a5df37ddab2a621dd6f11f0d2130c4df5866a87faeaf297767f802d936536596",
+    "results/p75-build-20261026T100057Z/bundle/rf_frontend.h": "a8ac9819789606b8fb11b35dd10befa8713b89605e86c7e66cc23c9add3eab22",
+    "results/p75-build-20261026T100057Z/bundle/roi_math.h": "a0821fe1bb3cc8f7dc8dab36116b19854fa192e30238a616b370bbdef94e2c37",
+    "results/p75-build-20261026T100057Z/bundle/runtime_policy.h": "bfcbf685690341700b6df3a6395bb0856d7f1741b10b17c4b7ff0906c3273509",
+    "results/p75-build-20261026T100057Z/bundle/telemetry.h": "5169c2f38338b25af54d8746160216d830bf5891a56eefa2aacf4d5c615338ce",
+    "results/p75-build-20261026T100057Z/bundle/trained_cnn_infer.c": "645ad0b690c2036cdc137d2f043c47e8606f5e0fd0322b49901dd71c7fb8d93e",
+    "results/p75-build-20261026T100057Z/bundle/trained_model.h": "05b329753a2063a3891fdff8636e7a0c5fd1da1ede51ba02e9f5c4699483c2ee",
+    "experiments/p67_build_dashboard.py": "462de24b1f593bcea526e67520c2b7263eed0c75057e4b3ef7d59855f225b3b0",
+    "experiments/p56_build_runtime_ai.py": "8e36eb8488d9fce2e69be99b8fe460fbf042977e1b74ca554be96fa86bda94f6",
+    "experiments/p53_build_live_ai.py": "0fb36ef38a94e0fed80e54595c832021ac98d75fc8c90da8f6c3fab6e58997d1",
+    "embedded/arm_live_panel_p48/arm_live_panel_p48.c": "04ff884659c2d2343559aeb553c8241977d174bf5e12ac61d76ec28d437bb7b2",
+    "embedded/arm_panel_p48/arm_panel.c": "8b35fceae0cd4f729f77539b702673b35607c10d5669851aafbc0dfe62b4df03",
+    "embedded/arm_rx_full_p36/arm_rx_full_p36.c": "0e3e7cdbd32ad82c4593cce502d1f8e8f00306c81f5d383edf5e7b750e78e307",
+    "embedded/arm_panel/font8x12.h": "cfd86f35716459278ad17f90a0916f09c085db7b91a6856e49b900aabaefea11",
+    "embedded/vendor/libiio-v0.24/iio.h": "e20a69cdef4654261b56cc5970bb91a9aacc3643ab0357b7f571aad9559a583d"
+  }
+}

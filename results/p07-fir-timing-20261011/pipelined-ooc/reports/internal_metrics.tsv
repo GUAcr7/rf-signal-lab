@@ -1,0 +1,14 @@
+tool_version	2021.1
+part	xc7z020clg400-2
+top	fixed_fir_iq
+taps	63
+clock_period_ns	10.0
+setup_slack_ns	1.866
+hold_slack_ns	0.246
+internal_setup_estimate_nonnegative	1
+internal_hold_estimate_nonnegative	1
+register_cells	1633
+placed	false
+routed	false
+timing_closed	false
+board_accessed	false

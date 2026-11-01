@@ -1,0 +1,47 @@
+{
+  "schema": "rfsig.p35_ttl_bitstream.v1",
+  "phase": "P37_safe_clock32",
+  "status": "passed_TTL33_native_bin_not_deployed",
+  "work": "E:\\p37-clock-082321",
+  "route_report": "C:\\Users\\project_user\\Documents\\Codex\\2026-09-09\\2026-fpga-fmql30tai-fpai-python-c\\outputs\\rf-signal-lab\\results\\p37-safe-route-20261021T084904Z\\report.json",
+  "route_report_sha256": "cda03ca04b832f2d7be0f0aeba47369e4dde9f5aecd623349ac85bab641fa525",
+  "checkpoint": "E:\\p37-clock-082321\\p37-safe-route.dcp",
+  "checkpoint_sha256": "e2401f3a53b422964a897789f3c014e28eb439a63f990bab6bc69e399858c38f",
+  "candidate_BD": "E:\\p37-clock-082321\\project\\combined.srcs\\sources_1\\bd\\system\\system.bd",
+  "candidate_BD_sha256": "093dfc4823508884a9877e22f4b4f2ad3c0310e2fe6f5f949ce4a0cdc8a147ab",
+  "board_operations": false,
+  "native_bin_verified": true,
+  "TTL33_clock_verified": true,
+  "no_auxiliary_LVDS_PLL": true,
+  "safe_clock_32bit_overflow_fix": true,
+  "clock_parameters": {
+    "M": 16.5,
+    "D": 2,
+    "O": 25
+  },
+  "CDC_closed": false,
+  "external_IO_timing_closed": false,
+  "ADI_sync_id_patch_applied": false,
+  "production_release": false,
+  "factory_firmware_sha256": {
+    "ad9361.bin": "65b44449b074bd1f497c1989ca0ee3a519fba5bfe5554eb04b06e4de9cf2950a",
+    "display.bin": "12566368b747728d00dda1e6774ff708b3d1a67fa37b38268bdaa8957f11286e",
+    "system_wrapper.bin": "12566368b747728d00dda1e6774ff708b3d1a67fa37b38268bdaa8957f11286e"
+  },
+  "DRP_source": "E:\\p37-clock-082321\\project\\combined.gen\\sources_1\\bd\\system\\ip\\system_clk_wiz_0_0\\system_clk_wiz_0_0_clk_wiz_drp.vhd",
+  "DRP_source_sha256": "16435c3e505ee01947a30ce4576f924c0459d6a8d071a4f11ae5d788d64a8f4b",
+  "DRP_reset_shadow": {
+    "feedback": "0x05F41002",
+    "output0": "0x00000019"
+  },
+  "child_pid": 30832,
+  "exit_code": 0,
+  "bitstream": "C:\\Users\\project_user\\Documents\\Codex\\2026-09-09\\2026-fpga-fmql30tai-fpai-python-c\\outputs\\rf-signal-lab\\results\\p37-safe-bin-20261021T085630Z\\rf_display_top.bin",
+  "bitstream_sha256": "1b0fac1aec86e4efeb003f9ea8d1a98d0e339e649633e31034d59e0990064405",
+  "bitstream_bytes": 4911716,
+  "bit_container_sha256": "3919efeec5ece5a97f312aebb038e020b113927a774f8b1b367b2d3b16928bca",
+  "parsed_container_payload_offset": 124,
+  "raw_equals_parsed_payload": true,
+  "paired_overlay_report": "C:\\Users\\project_user\\Documents\\Codex\\2026-09-09\\2026-fpga-fmql30tai-fpai-python-c\\outputs\\rf-signal-lab\\results\\p37-safe-bin-20261021T085630Z\\overlay-report.json",
+  "paired_overlay_report_sha256": "a6cd2c628d84a5b0d2d2b808c61341eada15c4fd9eb3ebf4b192796e808afee4"
+}

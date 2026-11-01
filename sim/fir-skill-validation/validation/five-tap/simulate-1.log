@@ -1,0 +1,2 @@
+PASS case=five-tap taps=5 accepted=23 received=23 valid_after_cycles=6 handshake_min=7 handshake_max=8 output_stall_cycles=5 input_wait_cycles=159 reset_during_mac=1 reset_stalled_output=1 rounding_checks=22 random_stalls=1 default_coeff=0
+C:\Users\project_user\Downloads\fir-validation-release-20261029\relocated skill\assets\tb_fixed_fir_iq.sv:202: $finish called at 2246000 (1ps)

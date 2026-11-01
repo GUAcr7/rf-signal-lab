@@ -1,0 +1,274 @@
+/dts-v1/;
+/plugin/;
+
+/ {
+
+	fragment@1 {
+		target-path = "/";
+
+		overlay1: __overlay__ {
+			linux,phandle = <0x05>;
+			phandle = <0x05>;
+
+			ad9361_clkin: clock@0 {
+				compatible = "fixed-clock";
+				clock-frequency = <0x2625a00>;
+				clock-output-names = "ad9361_ext_refclk";
+				#clock-cells = <0x00>;
+				linux,phandle = <0x04>;
+				phandle = <0x04>;
+			};
+		};
+	};
+
+	fragment@2 {
+		target = <&amba>;
+
+		overlay2: __overlay__ {
+			compatible = "simple-bus";
+			#address-cells = <0x01>;
+			#size-cells = <0x01>;
+			ranges;
+			linux,phandle = <0x06>;
+			phandle = <0x06>;
+
+			rx_dma: dma@7c400000 {
+				compatible = "adi,axi-dmac-1.00.a";
+				reg = <0x7c400000 0x10000>;
+				#dma-cells = <0x01>;
+				interrupt-parent = <&intc>;
+				interrupts = <0x00 0x39 0x00>;
+				clocks = <&clkc>, <0x10>;
+				linux,phandle = <0x01>;
+				phandle = <0x01>;
+
+				adi,channels {
+					#size-cells = <0x00>;
+					#address-cells = <0x01>;
+
+					dma-channel@0 {
+						reg = <0x00>;
+						adi,source-bus-width = <0x40>;
+						adi,source-bus-type = <0x02>;
+						adi,destination-bus-width = <0x40>;
+						adi,destination-bus-type = <0x00>;
+						adi,length-width = <0x18>;
+					};
+				};
+			};
+
+			tx_dma: dma@7c420000 {
+				compatible = "adi,axi-dmac-1.00.a";
+				reg = <0x7c420000 0x10000>;
+				#dma-cells = <0x01>;
+				interrupt-parent = <&intc>;
+				interrupts = <0x00 0x38 0x00>;
+				clocks = <&clkc>, <0x10>;
+				linux,phandle = <0x03>;
+				phandle = <0x03>;
+
+				adi,channels {
+					#size-cells = <0x00>;
+					#address-cells = <0x01>;
+
+					dma-channel@0 {
+						reg = <0x00>;
+						adi,source-bus-width = <0x40>;
+						adi,source-bus-type = <0x00>;
+						adi,destination-bus-width = <0x40>;
+						adi,destination-bus-type = <0x02>;
+						adi,length-width = <0x18>;
+						adi,cyclic;
+					};
+				};
+			};
+
+			cf_ad9361_adc_core_0: cf-ad9361-lpc@79020000 {
+				compatible = "adi,axi-ad9361-6.00.a";
+				reg = <0x79020000 0x6000>;
+				dmas = <&rx_dma>, <0x00>;
+				dma-names = "rx";
+				spibus-connected = <&adc0_ad9361>;
+				linux,phandle = <0x07>;
+				phandle = <0x07>;
+			};
+
+			cf_ad9361_dac_core_0: cf-ad9361-dds-core-lpc@79024000 {
+				compatible = "adi,axi-ad9361-dds-6.00.a";
+				reg = <0x79024000 0x1000>;
+				clocks = <&adc0_ad9361>, <0x0d>;
+				clock-names = "sampl_clk";
+				dmas = <&tx_dma>, <0x00>;
+				dma-names = "tx";
+				linux,phandle = <0x08>;
+				phandle = <0x08>;
+			};
+		};
+	};
+
+	fragment@3 {
+		target = <&spi1>;
+
+		overlay3: __overlay__ {
+			status = "okay";
+			linux,phandle = <0x09>;
+			phandle = <0x09>;
+
+			adc0_ad9361: ad9361-phy@0 {
+				compatible = "adi,ad9361";
+				reg = <0x00>;
+				spi-cpha;
+				spi-max-frequency = <0x989680>;
+				clocks = <&ad9361_clkin>, <0x00>;
+				clock-names = "ad9361_ext_refclk";
+				clock-output-names = "rx_sampl_clk", "tx_sampl_clk";
+				#clock-cells = <0x01>;
+				adi,digital-interface-tune-skip-mode = <0x00>;
+				adi,pp-tx-swap-enable;
+				adi,pp-rx-swap-enable;
+				adi,rx-frame-pulse-mode-enable;
+				adi,lvds-mode-enable;
+				adi,lvds-bias-mV = <0x96>;
+				adi,lvds-rx-onchip-termination-enable;
+				adi,rx-data-delay = <0x04>;
+				adi,tx-fb-clock-delay = <0x07>;
+				adi,dcxo-coarse-and-fine-tune = <0x08 0x1720>;
+				adi,2rx-2tx-mode-enable;
+				adi,frequency-division-duplex-mode-enable;
+				adi,rx-rf-port-input-select = <0x00>;
+				adi,tx-rf-port-input-select = <0x00>;
+				adi,tx-attenuation-mdB = <0x2710>;
+				adi,tx-lo-powerdown-managed-enable;
+				adi,rf-rx-bandwidth-hz = <0x112a880>;
+				adi,rf-tx-bandwidth-hz = <0x112a880>;
+				adi,rx-synthesizer-frequency-hz = <0x00 0x8f0d1800>;
+				adi,tx-synthesizer-frequency-hz = <0x00 0x92080880>;
+				adi,rx-path-clock-frequencies = <0x3a980000 0xea60000 0x7530000 0x3a98000 0x1d4c000 0x1d4c000>;
+				adi,tx-path-clock-frequencies = <0x3a980000 0x7530000 0x7530000 0x3a98000 0x1d4c000 0x1d4c000>;
+				adi,gc-rx1-mode = <0x02>;
+				adi,gc-rx2-mode = <0x02>;
+				adi,gc-adc-ovr-sample-size = <0x04>;
+				adi,gc-adc-small-overload-thresh = <0x2f>;
+				adi,gc-adc-large-overload-thresh = <0x3a>;
+				adi,gc-lmt-overload-high-thresh = <0x320>;
+				adi,gc-lmt-overload-low-thresh = <0x2c0>;
+				adi,gc-dec-pow-measurement-duration = <0x2000>;
+				adi,gc-low-power-thresh = <0x18>;
+				adi,mgc-inc-gain-step = <0x02>;
+				adi,mgc-dec-gain-step = <0x02>;
+				adi,mgc-split-table-ctrl-inp-gain-mode = <0x00>;
+				adi,agc-attack-delay-extra-margin-us = <0x01>;
+				adi,agc-outer-thresh-high = <0x05>;
+				adi,agc-outer-thresh-high-dec-steps = <0x02>;
+				adi,agc-inner-thresh-high = <0x0a>;
+				adi,agc-inner-thresh-high-dec-steps = <0x01>;
+				adi,agc-inner-thresh-low = <0x0c>;
+				adi,agc-inner-thresh-low-inc-steps = <0x01>;
+				adi,agc-outer-thresh-low = <0x12>;
+				adi,agc-outer-thresh-low-inc-steps = <0x02>;
+				adi,agc-adc-small-overload-exceed-counter = <0x0a>;
+				adi,agc-adc-large-overload-exceed-counter = <0x0a>;
+				adi,agc-adc-large-overload-inc-steps = <0x02>;
+				adi,agc-lmt-overload-large-exceed-counter = <0x0a>;
+				adi,agc-lmt-overload-small-exceed-counter = <0x0a>;
+				adi,agc-lmt-overload-large-inc-steps = <0x02>;
+				adi,agc-gain-update-interval-us = <0x3e8>;
+				adi,fagc-dec-pow-measurement-duration = <0x40>;
+				adi,fagc-lp-thresh-increment-steps = <0x01>;
+				adi,fagc-lp-thresh-increment-time = <0x05>;
+				adi,fagc-energy-lost-stronger-sig-gain-lock-exit-cnt = <0x08>;
+				adi,fagc-final-overrange-count = <0x03>;
+				adi,fagc-gain-index-type-after-exit-rx-mode = <0x00>;
+				adi,fagc-lmt-final-settling-steps = <0x01>;
+				adi,fagc-lock-level = <0x0a>;
+				adi,fagc-lock-level-gain-increase-upper-limit = <0x05>;
+				adi,fagc-lock-level-lmt-gain-increase-enable;
+				adi,fagc-lpf-final-settling-steps = <0x01>;
+				adi,fagc-optimized-gain-offset = <0x05>;
+				adi,fagc-power-measurement-duration-in-state5 = <0x40>;
+				adi,fagc-rst-gla-engergy-lost-goto-optim-gain-enable;
+				adi,fagc-rst-gla-engergy-lost-sig-thresh-below-ll = <0x0a>;
+				adi,fagc-rst-gla-engergy-lost-sig-thresh-exceeded-enable;
+				adi,fagc-rst-gla-if-en-agc-pulled-high-mode = <0x00>;
+				adi,fagc-rst-gla-large-adc-overload-enable;
+				adi,fagc-rst-gla-large-lmt-overload-enable;
+				adi,fagc-rst-gla-stronger-sig-thresh-above-ll = <0x0a>;
+				adi,fagc-rst-gla-stronger-sig-thresh-exceeded-enable;
+				adi,fagc-state-wait-time-ns = <0x104>;
+				adi,fagc-use-last-lock-level-for-set-gain-enable;
+				adi,rssi-restart-mode = <0x03>;
+				adi,rssi-delay = <0x01>;
+				adi,rssi-wait = <0x01>;
+				adi,rssi-duration = <0x3e8>;
+				adi,ctrl-outs-index = <0x00>;
+				adi,ctrl-outs-enable-mask = <0xff>;
+				adi,temp-sense-measurement-interval-ms = <0x3e8>;
+				adi,temp-sense-offset-signed = <0xce>;
+				adi,temp-sense-periodic-measurement-enable;
+				adi,aux-dac-manual-mode-enable;
+				adi,aux-dac1-default-value-mV = <0x00>;
+				adi,aux-dac1-rx-delay-us = <0x00>;
+				adi,aux-dac1-tx-delay-us = <0x00>;
+				adi,aux-dac2-default-value-mV = <0x00>;
+				adi,aux-dac2-rx-delay-us = <0x00>;
+				adi,aux-dac2-tx-delay-us = <0x00>;
+				en_agc-gpios = <&gpio0>, <0x62 0x00>;
+				sync-gpios = <&gpio0>, <0x63 0x00>;
+				reset-gpios = <&gpio0>, <0x64 0x00>;
+				enable-gpios = <&gpio0>, <0x65 0x00>;
+				txnrx-gpios = <&gpio0>, <0x66 0x00>;
+				linux,phandle = <0x02>;
+				phandle = <0x02>;
+			};
+		};
+	};
+
+	__symbols__ {
+		overlay1 = "/fragment@1/__overlay__";
+		ad9361_clkin = "/fragment@1/__overlay__/clock@0";
+		overlay2 = "/fragment@2/__overlay__";
+		rx_dma = "/fragment@2/__overlay__/dma@7c400000";
+		tx_dma = "/fragment@2/__overlay__/dma@7c420000";
+		cf_ad9361_adc_core_0 = "/fragment@2/__overlay__/cf-ad9361-lpc@79020000";
+		cf_ad9361_dac_core_0 = "/fragment@2/__overlay__/cf-ad9361-dds-core-lpc@79024000";
+		overlay3 = "/fragment@3/__overlay__";
+		adc0_ad9361 = "/fragment@3/__overlay__/ad9361-phy@0";
+	};
+
+	__fixups__ {
+		amba = "/fragment@2:target:0";
+		intc = "/fragment@2/__overlay__/dma@7c400000:interrupt-parent:0", "/fragment@2/__overlay__/dma@7c420000:interrupt-parent:0";
+		clkc = "/fragment@2/__overlay__/dma@7c400000:clocks:0", "/fragment@2/__overlay__/dma@7c420000:clocks:0";
+		spi1 = "/fragment@3:target:0";
+		gpio0 = "/fragment@3/__overlay__/ad9361-phy@0:en_agc-gpios:0", "/fragment@3/__overlay__/ad9361-phy@0:sync-gpios:0", "/fragment@3/__overlay__/ad9361-phy@0:reset-gpios:0", "/fragment@3/__overlay__/ad9361-phy@0:enable-gpios:0", "/fragment@3/__overlay__/ad9361-phy@0:txnrx-gpios:0";
+	};
+
+	__local_fixups__ {
+
+		fragment@2 {
+
+			__overlay__ {
+
+				cf-ad9361-lpc@79020000 {
+					dmas = <0x00>;
+					spibus-connected = <0x00>;
+				};
+
+				cf-ad9361-dds-core-lpc@79024000 {
+					clocks = <0x00>;
+					dmas = <0x00>;
+				};
+			};
+		};
+
+		fragment@3 {
+
+			__overlay__ {
+
+				ad9361-phy@0 {
+					clocks = <0x00>;
+				};
+			};
+		};
+	};
+};

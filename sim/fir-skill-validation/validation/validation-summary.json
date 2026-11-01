@@ -1,0 +1,84 @@
+{
+  "all_passed": true,
+  "checks": [
+    {
+      "name": "three-tap",
+      "expected_pass": true,
+      "actual_exit": 0,
+      "passed": true,
+      "error": null
+    },
+    {
+      "name": "three-tap independent Fraction oracle",
+      "passed": true,
+      "output_pairs": 8,
+      "saturated_components": 0
+    },
+    {
+      "name": "five-tap",
+      "expected_pass": true,
+      "actual_exit": 0,
+      "passed": true,
+      "error": null
+    },
+    {
+      "name": "five-tap independent Fraction oracle",
+      "passed": true,
+      "output_pairs": 23,
+      "saturated_components": 0
+    },
+    {
+      "name": "nineteen-tap-saturation",
+      "expected_pass": true,
+      "actual_exit": 0,
+      "passed": true,
+      "error": null
+    },
+    {
+      "name": "nineteen-tap-saturation independent Fraction oracle",
+      "passed": true,
+      "output_pairs": 114,
+      "saturated_components": 132
+    },
+    {
+      "name": "reject-wrong-channel",
+      "expected_pass": false,
+      "actual_exit": 1,
+      "passed": true,
+      "error": "RuntimeError: simulate-0 failed, see simulate-0.log"
+    },
+    {
+      "name": "reject-missing-saturation",
+      "expected_pass": false,
+      "actual_exit": 1,
+      "passed": true,
+      "error": "RuntimeError: simulate-0 failed, see simulate-0.log"
+    },
+    {
+      "name": "reject-out-of-range",
+      "expected_pass": false,
+      "actual_exit": 1,
+      "passed": true,
+      "error": "ValueError: expected signed 12-bit integer, got 2048"
+    },
+    {
+      "name": "reject-bool",
+      "expected_pass": false,
+      "actual_exit": 1,
+      "passed": true,
+      "error": "ValueError: expected signed 12-bit integer, got True"
+    },
+    {
+      "name": "reject-missing-tool",
+      "expected_pass": false,
+      "actual_exit": 1,
+      "passed": true,
+      "error": "FileNotFoundError: Icarus tools unavailable; install them or set --tool-root"
+    }
+  ],
+  "relocated_package": "C:\\Users\\project_user\\Downloads\\fir-validation-release-20261029\\relocated skill",
+  "scope": "three FIR configurations + Fraction oracle + channel/saturation DUT defects + invalid input + absent tool",
+  "board_accessed": false,
+  "cross_board_verified": false,
+  "PYNQ_verified": false
+}

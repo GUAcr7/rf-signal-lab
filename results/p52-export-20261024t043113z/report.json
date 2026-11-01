@@ -1,0 +1,372 @@
+{
+  "status": "frozen_real_RF_model_before_unseen_test_capture",
+  "board_operations": false,
+  "AI_accepted": false,
+  "independent_test_accuracy": "not_yet_measured",
+  "numeric_checks": [
+    {
+      "fixture": "bpsk-0.bin",
+      "mode": "fp32",
+      "frames": 3,
+      "max_logit_absolute_error": 9.5367431640625e-06,
+      "same_prediction": true
+    },
+    {
+      "fixture": "bpsk-0.bin",
+      "mode": "int8",
+      "frames": 3,
+      "max_logit_absolute_error": 0.0,
+      "same_prediction": true
+    },
+    {
+      "fixture": "bpsk-1.bin",
+      "mode": "fp32",
+      "frames": 3,
+      "max_logit_absolute_error": 4.76837158203125e-06,
+      "same_prediction": true
+    },
+    {
+      "fixture": "bpsk-1.bin",
+      "mode": "int8",
+      "frames": 3,
+      "max_logit_absolute_error": 0.0,
+      "same_prediction": true
+    },
+    {
+      "fixture": "qpsk-0.bin",
+      "mode": "fp32",
+      "frames": 3,
+      "max_logit_absolute_error": 1.049041748046875e-05,
+      "same_prediction": true
+    },
+    {
+      "fixture": "qpsk-0.bin",
+      "mode": "int8",
+      "frames": 3,
+      "max_logit_absolute_error": 0.0,
+      "same_prediction": true
+    },
+    {
+      "fixture": "qpsk-1.bin",
+      "mode": "fp32",
+      "frames": 3,
+      "max_logit_absolute_error": 5.7220458984375e-06,
+      "same_prediction": true
+    },
+    {
+      "fixture": "qpsk-1.bin",
+      "mode": "int8",
+      "frames": 3,
+      "max_logit_absolute_error": 0.0,
+      "same_prediction": true
+    },
+    {
+      "fixture": "qam16-0.bin",
+      "mode": "fp32",
+      "frames": 3,
+      "max_logit_absolute_error": 1.2874603271484375e-05,
+      "same_prediction": true
+    },
+    {
+      "fixture": "qam16-0.bin",
+      "mode": "int8",
+      "frames": 3,
+      "max_logit_absolute_error": 0.0,
+      "same_prediction": true
+    },
+    {
+      "fixture": "qam16-1.bin",
+      "mode": "fp32",
+      "frames": 3,
+      "max_logit_absolute_error": 7.569789886474609e-06,
+      "same_prediction": true
+    },
+    {
+      "fixture": "qam16-1.bin",
+      "mode": "int8",
+      "frames": 3,
+      "max_logit_absolute_error": 0.0,
+      "same_prediction": true
+    }
+  ],
+  "stages": [
+    {
+      "label": "host-build",
+      "exit_code": 0
+    },
+    {
+      "label": "ARM-build",
+      "exit_code": 0
+    },
+    {
+      "label": "ARM-ELF",
+      "exit_code": 0
+    },
+    {
+      "label": "bpsk-0-fp32",
+      "exit_code": 0
+    },
+    {
+      "label": "bpsk-0-int8",
+      "exit_code": 0
+    },
+    {
+      "label": "bpsk-1-fp32",
+      "exit_code": 0
+    },
+    {
+      "label": "bpsk-1-int8",
+      "exit_code": 0
+    },
+    {
+      "label": "qpsk-0-fp32",
+      "exit_code": 0
+    },
+    {
+      "label": "qpsk-0-int8",
+      "exit_code": 0
+    },
+    {
+      "label": "qpsk-1-fp32",
+      "exit_code": 0
+    },
+    {
+      "label": "qpsk-1-int8",
+      "exit_code": 0
+    },
+    {
+      "label": "qam16-0-fp32",
+      "exit_code": 0
+    },
+    {
+      "label": "qam16-0-int8",
+      "exit_code": 0
+    },
+    {
+      "label": "qam16-1-fp32",
+      "exit_code": 0
+    },
+    {
+      "label": "qam16-1-int8",
+      "exit_code": 0
+    }
+  ],
+  "frozen_utc": "2026-10-24T04:31:58.261100+00:00",
+  "frozen_inputs": {
+    "model": {
+      "path": "results/p52-trained-20261024T042912Z/cnn-model.npz",
+      "sha256": "bd571ef0d30b76cdb8138d3ebd90f55463eb5439bd4c78636555bc8800873457"
+    },
+    "quantized": {
+      "path": "results/p52-trained-20261024T042912Z/quantized-model.npz",
+      "sha256": "d900b28411275a3e080b896a3c0fd4f1aa82d978f09eb2aa8a0413f258d02582"
+    },
+    "trained": {
+      "path": "results/p52-trained-20261024T042912Z/report.json",
+      "sha256": "f986d301174bda9268c347ad19f981e5df71850d5819ad433af78fe755beacac"
+    },
+    "plan": {
+      "path": "results/p54-plan-20261024T042837Z/report.json",
+      "sha256": "5db35c29f9114d113a81f658eb85d95dd308887abc1312bba13be7d07db69d49"
+    },
+    "dataset": {
+      "path": "results/p54-plan-20261024T042837Z/dataset/report.json",
+      "sha256": "6be9a569674e5959227a90e4bc465249cf01c9aba4a9703070403391836b7a9f"
+    },
+    "host": {
+      "path": "results/p52-export-20261024T043113Z/real-rf-host.exe",
+      "sha256": "4502ab1b136edd0f8b05cfc8546316c06af9524ff96c8619e123b772d3ebfcf7"
+    },
+    "ARM": {
+      "path": "results/p52-export-20261024T043113Z/real-rf-arm",
+      "sha256": "6b1dd4a963e09409ca81635611240d93ba4f9f1358db3ffa0b7897c744062855"
+    },
+    "header": {
+      "path": "results/p52-export-20261024T043113Z/bundle/trained_model.h",
+      "sha256": "05b329753a2063a3891fdff8636e7a0c5fd1da1ede51ba02e9f5c4699483c2ee"
+    },
+    "taps": {
+      "path": "results/p52-export-20261024T043113Z/bundle/rf_frontend.h",
+      "sha256": "a8ac9819789606b8fb11b35dd10befa8713b89605e86c7e66cc23c9add3eab22"
+    },
+    "C": {
+      "path": "results/p52-export-20261024T043113Z/bundle/trained_cnn_infer.c",
+      "sha256": "645ad0b690c2036cdc137d2f043c47e8606f5e0fd0322b49901dd71c7fb8d93e"
+    },
+    "frontend": {
+      "path": "results/p52-export-20261024T043113Z/bundle/real_rf_infer.c",
+      "sha256": "c34b03dae075ec89a41f51356d72e3694677cf6bf5290f36509a178531c1adba"
+    },
+    "frontend_source": {
+      "path": "embedded/tiny_cnn_probe/real_rf_infer.c",
+      "sha256": "c34b03dae075ec89a41f51356d72e3694677cf6bf5290f36509a178531c1adba"
+    },
+    "adapter": {
+      "path": "src/rfsig/rf_ai_input.py",
+      "sha256": "f3ed131491f52ec05ac16e812bd701f2fa03c9be0d0d96cfa379373e0e98bf6a"
+    },
+    "calibration": {
+      "path": "src/rfsig/rf_ai_calibration.py",
+      "sha256": "79a8c58d5ab303faa00ba1e6676a389b190565327c3c99d62c597b586f865583"
+    },
+    "preprocess": {
+      "path": "src/rfsig/trainable_cnn.py",
+      "sha256": "c05cbc423944c18d713286742440bb488a8470f0277f4ff5eb39635a485c82ba"
+    },
+    "quantization": {
+      "path": "src/rfsig/cnn_quantization.py",
+      "sha256": "2719c4e6e197d3cd24c5a8ecd0e9d46fbba23466c58e57e0ca82e9528c2f5e4e"
+    },
+    "dataset_builder": {
+      "path": "experiments/p52_make_dataset.py",
+      "sha256": "efb45a427da35af8bfb4a7012add3ce0af7c90f30ba3b57ba664184cd6d7ffee"
+    },
+    "learning": {
+      "path": "src/rfsig/real_rf_learning.py",
+      "sha256": "5ce1c21819d234db811deef678c5066dfa31670d0bc35f59583d9d4317f6943f"
+    },
+    "trainer": {
+      "path": "experiments/p52_train_real.py",
+      "sha256": "f75cb5246e7115332706671340c06ede8a4eabd4a60af9731bdbc22dc3b0fa4b"
+    },
+    "exporter": {
+      "path": "experiments/p52_export_real.py",
+      "sha256": "5eda16d1b75188ef5ea7dc671bc988d7e1b730f1387e9f0c0f68b68115fb0f8a"
+    },
+    "evaluator": {
+      "path": "experiments/p52_evaluate_real.py",
+      "sha256": "51187f89471c7d39fbf82e296ec81241a3ce68bd2eb7ab9f3a2db481bf4c945b"
+    },
+    "ARM_verifier": {
+      "path": "experiments/p52_arm_verify.py",
+      "sha256": "45e1fb3c516e8e16098b53a5dcd0b8e915dc5275f41791ed42c06e0705f4639a"
+    },
+    "RAM_gate": {
+      "path": "experiments/p52_ram.py",
+      "sha256": "cf49b80096b56b3c1d87a4d095824cf77187f9bf03645fd32134cfba2ab347e9"
+    }
+  },
+  "selected_mode": "int8",
+  "class_order": [
+    "BPSK",
+    "QPSK",
+    "16QAM"
+  ],
+  "validation": {
+    "fp32": {
+      "frames": 54,
+      "correct": 53,
+      "fraction_correct": 0.9814814814814815,
+      "per_class_fraction_correct": [
+        1.0,
+        0.9444444444444444,
+        1.0
+      ],
+      "confusion_rows_truth_cols_prediction": [
+        [
+          18,
+          0,
+          0
+        ],
+        [
+          0,
+          17,
+          1
+        ],
+        [
+          0,
+          0,
+          18
+        ]
+      ]
+    },
+    "int8": {
+      "frames": 54,
+      "correct": 53,
+      "fraction_correct": 0.9814814814814815,
+      "per_class_fraction_correct": [
+        1.0,
+        0.9444444444444444,
+        1.0
+      ],
+      "confusion_rows_truth_cols_prediction": [
+        [
+          18,
+          0,
+          0
+        ],
+        [
+          0,
+          17,
+          1
+        ],
+        [
+          0,
+          0,
+          18
+        ]
+      ]
+    }
+  },
+  "fixtures": [
+    {
+      "path": "results/p52-export-20261024T043113Z/fixtures/bpsk-0.bin",
+      "sha256": "e4a491a2c476b698f93557b9500e7c4e298fb1ba3273a9d83ba88aebd138c916",
+      "mode": "int8",
+      "frequency_hz": 994496.4201745512,
+      "seed": 2026102307,
+      "source_name": "bpsk",
+      "block": 0
+    },
+    {
+      "path": "results/p52-export-20261024T043113Z/fixtures/bpsk-1.bin",
+      "sha256": "1da952259f45a3d212c680dd87a6af7cd9b2bfd8b52cc47ac213f4ef829ace63",
+      "mode": "int8",
+      "frequency_hz": 994496.4201745512,
+      "seed": 2026102307,
+      "source_name": "bpsk",
+      "block": 1
+    },
+    {
+      "path": "results/p52-export-20261024T043113Z/fixtures/qpsk-0.bin",
+      "sha256": "1901e5e4118c5f82953e7f1d9cee77278423ddb877f1a21b88dab84035250205",
+      "mode": "int8",
+      "frequency_hz": 994496.4201745512,
+      "seed": 2026102307,
+      "source_name": "qpsk",
+      "block": 0
+    },
+    {
+      "path": "results/p52-export-20261024T043113Z/fixtures/qpsk-1.bin",
+      "sha256": "c55f230415ac8c4ed0ef0320b631ff9c9537cc0a706d27524300d144e8064fc5",
+      "mode": "int8",
+      "frequency_hz": 994496.4201745512,
+      "seed": 2026102307,
+      "source_name": "qpsk",
+      "block": 1
+    },
+    {
+      "path": "results/p52-export-20261024T043113Z/fixtures/qam16-0.bin",
+      "sha256": "a0271ab4b1efbd11a3952c800f522c266f62f63477df7282552dddc46e4f19d6",
+      "mode": "int8",
+      "frequency_hz": 994496.4201745512,
+      "seed": 2026102307,
+      "source_name": "qam16",
+      "block": 0
+    },
+    {
+      "path": "results/p52-export-20261024T043113Z/fixtures/qam16-1.bin",
+      "sha256": "a31e72d98c43921a4910f7efa0a1ad99016bcd8823c23d87b567530975597133",
+      "mode": "int8",
+      "frequency_hz": 994496.4201745512,
+      "seed": 2026102307,
+      "source_name": "qam16",
+      "block": 1
+    }
+  ],
+  "test_RF_acquired": false,
+  "C_full_frontend_and_Python_match": true,
+  "full_frontend": "packed RX12/common IF/mix/513tap FIR/16x/3x1024/DC/RMS/CNN",
+  "labels_used_by_inference": false,
+  "live_AI_on_LCD": false
+}

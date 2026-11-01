@@ -1,0 +1,138 @@
+{
+  "schema": "rfsig.p37_safe_clock_build.v1",
+  "status": "passed_native_route_within_declared_constraints_only",
+  "stage": "route",
+  "work": "E:\\p37-clock-082321",
+  "prepare_report": "C:\\Users\\project_user\\Documents\\Codex\\2026-09-09\\2026-fpga-fmql30tai-fpai-python-c\\outputs\\rf-signal-lab\\results\\p37-safe-clock-prepare-20261021T082321Z\\report.json",
+  "prepare_report_sha256": "165c635edaa4fd5c0479b9cecd9d6c54f55f16483cfcd5c5bc2aec10c63ef172",
+  "candidate_BD": "E:\\p37-clock-082321\\project\\combined.srcs\\sources_1\\bd\\system\\system.bd",
+  "candidate_BD_sha256": "093dfc4823508884a9877e22f4b4f2ad3c0310e2fe6f5f949ce4a0cdc8a147ab",
+  "board_operations": false,
+  "external_IO_timing_closed": false,
+  "CDC_closed": false,
+  "production_release": false,
+  "original_hashes_before": {
+    "E:\\p33-ttl-114312\\project\\combined.srcs\\sources_1\\bd\\system\\system.bd": "c373bacbfc2acc6213b60988d100f49b1a66781a009678e4a59218d99efc46f3",
+    "E:\\p33-ttl-114312\\project\\combined.xpr": "f9d26137ec07d3a995945b0b5d8847193ca047cf025e8339adfeb5404a6f6faa",
+    "E:\\p33-ttl-114312\\hdl\\rf_display_top.v": "ad3a9f008756a2c53fbfb519e6e23bcee2b1d2cf988dfb9ad32499b18057a601",
+    "E:\\p33-ttl-114312\\constraints\\rf.xdc": "e751580b1ef95081d66ffeba21fe28796aa79b13e9853360f84e61e0670eaa0c",
+    "E:\\p33-ttl-114312\\constraints\\display.xdc": "e2ee7790d7b488a1047e52eea65064dc86c2208a0be8a0122b7d4932b12ec2ec"
+  },
+  "command": [
+    "E:/FPGA_Tools/Xilinx/Vivado/2021.1/bin/vivado.bat",
+    "-mode",
+    "batch",
+    "-notrace",
+    "-source",
+    "C:\\Users\\project_user\\Documents\\Codex\\2026-09-09\\2026-fpga-fmql30tai-fpai-python-c\\outputs\\rf-signal-lab\\results\\p37-safe-route-20261021T084904Z\\executed.tcl",
+    "-log",
+    "C:\\Users\\project_user\\Documents\\Codex\\2026-09-09\\2026-fpga-fmql30tai-fpai-python-c\\outputs\\rf-signal-lab\\results\\p37-safe-route-20261021T084904Z\\vivado.log",
+    "-journal",
+    "C:\\Users\\project_user\\Documents\\Codex\\2026-09-09\\2026-fpga-fmql30tai-fpai-python-c\\outputs\\rf-signal-lab\\results\\p37-safe-route-20261021T084904Z\\vivado.jou"
+  ],
+  "child_pid": 16484,
+  "exit_code": 0,
+  "errors": [],
+  "markers": [
+    "P37_ROUTE_STATUS route_design Complete!",
+    "P37_CLOCK ps_fclk0 clk_fpga_0 period_ns=10.000",
+    "P37_CLOCK ps_fclk1 clk_fpga_1 period_ns=5.000",
+    "P37_CLOCK lcd_pixel clk_out1_system_clk_wiz_0_0 period_ns=30.303",
+    "P37_CLOCK clockwiz_input clk_fpga_0 period_ns=10.000",
+    "P37_CLOCK clockwiz_axi clk_fpga_1 period_ns=5.000",
+    "P37_TTL_CLOCK_GUARD_PASS no_auxiliary_lvds single_pixel_33MHz",
+    "P37_MMCM CLKFBOUT_MULT_F=16.500",
+    "P37_MMCM DIVCLK_DIVIDE=2",
+    "P37_MMCM CLKOUT0_DIVIDE_F=25.000",
+    "P37_SAFE_MMCM_PRIMITIVE_PASS",
+    "P37_TTL_ROUTE_PASS"
+  ],
+  "checkpoint": "E:\\p37-clock-082321\\p37-safe-route.dcp",
+  "checkpoint_sha256": "e2401f3a53b422964a897789f3c014e28eb439a63f990bab6bc69e399858c38f",
+  "report_hashes": {
+    "bus-skew.rpt": "e0e0870c61d15002e3f6045fdc1f2df9545dd6c2376be824026d1d600604dd54",
+    "cdc.rpt": "6bce0ac8a845f48d5557ae0e4d41e942617cab285aa97a9fede497e5bf26c2e9",
+    "check-timing.rpt": "92ae3b504abcc46508e6e318caf9d225ff30e03bc406a837f118e9b2b426d847",
+    "clock-interaction.rpt": "a56c0a30855c86ba5bb3ca8e7b69ed4d56887becee9422a498d3826875051a25",
+    "clocks.rpt": "684fbe27fde659ded889f58963866b57a1e3c4fb3a05e2bad5f2104a2ce0981c",
+    "drc.rpt": "f479520663ca7e826431ef86d79ad57e8b613394e577cd6d3db13a4148dccc7c",
+    "io.rpt": "0621a9b56cbe821470d41bf280bd04c578bf5d653958300d6bd690980b122f43",
+    "methodology.rpt": "edd17ae7dbfd79d188884d00594d773b8775cad0a924f86ab5b3d1e98ee7db48",
+    "route-status.rpt": "f00756940a989d1d9c0957966e52921cc5de69452331994abaa758fcc4589e5c",
+    "timing.rpt": "5892187855c98cdf4da5f3d4bd8563073c1f28221aea077c2cf8a6d0937d3a12",
+    "utilization.rpt": "19a6964f91d2066c51d8cecea41c160913ece52094fa5596492f77772b2255d8"
+  },
+  "timing_claim": true,
+  "CDC_summary": [
+    {
+      "rule": "CDC-1",
+      "severity": "Critical",
+      "count": 50
+    },
+    {
+      "rule": "CDC-2",
+      "severity": "Warning",
+      "count": 4
+    },
+    {
+      "rule": "CDC-3",
+      "severity": "Info",
+      "count": 166
+    },
+    {
+      "rule": "CDC-5",
+      "severity": "Warning",
+      "count": 4
+    },
+    {
+      "rule": "CDC-6",
+      "severity": "Warning",
+      "count": 17
+    },
+    {
+      "rule": "CDC-8",
+      "severity": "Warning",
+      "count": 4
+    },
+    {
+      "rule": "CDC-9",
+      "severity": "Info",
+      "count": 40
+    },
+    {
+      "rule": "CDC-10",
+      "severity": "Critical",
+      "count": 4
+    },
+    {
+      "rule": "CDC-12",
+      "severity": "Critical",
+      "count": 2
+    },
+    {
+      "rule": "CDC-13",
+      "severity": "Critical",
+      "count": 2
+    },
+    {
+      "rule": "CDC-15",
+      "severity": "Warning",
+      "count": 1745
+    },
+    {
+      "rule": "CDC-17",
+      "severity": "Warning",
+      "count": 21
+    }
+  ],
+  "CDC_critical_count": 58,
+  "original_hashes_after": {
+    "E:\\p33-ttl-114312\\project\\combined.srcs\\sources_1\\bd\\system\\system.bd": "c373bacbfc2acc6213b60988d100f49b1a66781a009678e4a59218d99efc46f3",
+    "E:\\p33-ttl-114312\\project\\combined.xpr": "f9d26137ec07d3a995945b0b5d8847193ca047cf025e8339adfeb5404a6f6faa",
+    "E:\\p33-ttl-114312\\hdl\\rf_display_top.v": "ad3a9f008756a2c53fbfb519e6e23bcee2b1d2cf988dfb9ad32499b18057a601",
+    "E:\\p33-ttl-114312\\constraints\\rf.xdc": "e751580b1ef95081d66ffeba21fe28796aa79b13e9853360f84e61e0670eaa0c",
+    "E:\\p33-ttl-114312\\constraints\\display.xdc": "e2ee7790d7b488a1047e52eea65064dc86c2208a0be8a0122b7d4932b12ec2ec"
+  },
+  "originals_unchanged": true,
+  "ended_utc": "2026-10-21T08:56:15.414793+00:00"
+}

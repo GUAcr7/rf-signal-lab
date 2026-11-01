@@ -1,0 +1,154 @@
+{
+  "all_passed": true,
+  "scope": "integer_reference_and_RTL_simulation_only",
+  "hardware_accessed": false,
+  "timing_closed": false,
+  "runs": [
+    {
+      "stage": "tool-version",
+      "tool_returncode": 0,
+      "command": [
+        "E:\\FPGA_Tools\\IcarusVerilog13.0\\ucrt64\\bin\\iverilog.exe",
+        "-B",
+        "E:\\FPGA_Tools\\IcarusVerilog13.0\\ucrt64\\lib\\ivl",
+        "-V"
+      ]
+    },
+    {
+      "stage": "compile-0",
+      "tool_returncode": 0,
+      "command": [
+        "E:\\FPGA_Tools\\IcarusVerilog13.0\\ucrt64\\bin\\iverilog.exe",
+        "-B",
+        "E:\\FPGA_Tools\\IcarusVerilog13.0\\ucrt64\\lib\\ivl",
+        "-g2012",
+        "-Wall",
+        "-s",
+        "tb_fixed_fir_iq",
+        "-P",
+        "tb_fixed_fir_iq.N_TAPS=3",
+        "-P",
+        "tb_fixed_fir_iq.RANDOM_STALLS=0",
+        "-o",
+        "C:\\Users\\project_user\\Downloads\\fir-validation-release-20261029\\three-tap\\fir-0.vvp",
+        "C:\\Users\\project_user\\Downloads\\fir-validation-release-20261029\\relocated skill\\assets\\fixed_fir_iq.v",
+        "C:\\Users\\project_user\\Downloads\\fir-validation-release-20261029\\relocated skill\\assets\\tb_fixed_fir_iq.sv"
+      ]
+    },
+    {
+      "stage": "simulate-0",
+      "tool_returncode": 0,
+      "command": [
+        "E:\\FPGA_Tools\\IcarusVerilog13.0\\ucrt64\\bin\\vvp.exe",
+        "-M",
+        "E:\\FPGA_Tools\\IcarusVerilog13.0\\ucrt64\\lib\\ivl",
+        "C:\\Users\\project_user\\Downloads\\fir-validation-release-20261029\\three-tap\\fir-0.vvp",
+        "+CASE=three-tap",
+        "+INPUT_COUNT=6",
+        "+OUTPUT_COUNT=8",
+        "+COEFF=C:\\Users\\project_user\\Downloads\\fir-validation-release-20261029\\three-tap\\COEFF.hex",
+        "+I=C:\\Users\\project_user\\Downloads\\fir-validation-release-20261029\\three-tap\\I.hex",
+        "+EI=C:\\Users\\project_user\\Downloads\\fir-validation-release-20261029\\three-tap\\EI.hex",
+        "+SI=C:\\Users\\project_user\\Downloads\\fir-validation-release-20261029\\three-tap\\SI.hex",
+        "+Q=C:\\Users\\project_user\\Downloads\\fir-validation-release-20261029\\three-tap\\Q.hex",
+        "+EQ=C:\\Users\\project_user\\Downloads\\fir-validation-release-20261029\\three-tap\\EQ.hex",
+        "+SQ=C:\\Users\\project_user\\Downloads\\fir-validation-release-20261029\\three-tap\\SQ.hex"
+      ]
+    },
+    {
+      "stage": "compile-1",
+      "tool_returncode": 0,
+      "command": [
+        "E:\\FPGA_Tools\\IcarusVerilog13.0\\ucrt64\\bin\\iverilog.exe",
+        "-B",
+        "E:\\FPGA_Tools\\IcarusVerilog13.0\\ucrt64\\lib\\ivl",
+        "-g2012",
+        "-Wall",
+        "-s",
+        "tb_fixed_fir_iq",
+        "-P",
+        "tb_fixed_fir_iq.N_TAPS=3",
+        "-P",
+        "tb_fixed_fir_iq.RANDOM_STALLS=1",
+        "-o",
+        "C:\\Users\\project_user\\Downloads\\fir-validation-release-20261029\\three-tap\\fir-1.vvp",
+        "C:\\Users\\project_user\\Downloads\\fir-validation-release-20261029\\relocated skill\\assets\\fixed_fir_iq.v",
+        "C:\\Users\\project_user\\Downloads\\fir-validation-release-20261029\\relocated skill\\assets\\tb_fixed_fir_iq.sv"
+      ]
+    },
+    {
+      "stage": "simulate-1",
+      "tool_returncode": 0,
+      "command": [
+        "E:\\FPGA_Tools\\IcarusVerilog13.0\\ucrt64\\bin\\vvp.exe",
+        "-M",
+        "E:\\FPGA_Tools\\IcarusVerilog13.0\\ucrt64\\lib\\ivl",
+        "C:\\Users\\project_user\\Downloads\\fir-validation-release-20261029\\three-tap\\fir-1.vvp",
+        "+CASE=three-tap",
+        "+INPUT_COUNT=6",
+        "+OUTPUT_COUNT=8",
+        "+COEFF=C:\\Users\\project_user\\Downloads\\fir-validation-release-20261029\\three-tap\\COEFF.hex",
+        "+I=C:\\Users\\project_user\\Downloads\\fir-validation-release-20261029\\three-tap\\I.hex",
+        "+EI=C:\\Users\\project_user\\Downloads\\fir-validation-release-20261029\\three-tap\\EI.hex",
+        "+SI=C:\\Users\\project_user\\Downloads\\fir-validation-release-20261029\\three-tap\\SI.hex",
+        "+Q=C:\\Users\\project_user\\Downloads\\fir-validation-release-20261029\\three-tap\\Q.hex",
+        "+EQ=C:\\Users\\project_user\\Downloads\\fir-validation-release-20261029\\three-tap\\EQ.hex",
+        "+SQ=C:\\Users\\project_user\\Downloads\\fir-validation-release-20261029\\three-tap\\SQ.hex"
+      ]
+    }
+  ],
+  "case": "three-tap",
+  "tap_count": 3,
+  "input_pairs": 6,
+  "output_pairs": 8,
+  "reference_saturated_components": 0,
+  "sources": [
+    {
+      "path": "C:\\Users\\project_user\\Downloads\\fir-validation-release-20261029\\relocated skill\\examples\\three-tap.json",
+      "sha256": "927d4d76c6ba7ae49fe671c9c4c3d80a2d2eec5ec0431b56965217f0660b7a11"
+    },
+    {
+      "path": "C:\\Users\\project_user\\Downloads\\fir-validation-release-20261029\\relocated skill\\assets\\fixed_fir_iq.v",
+      "sha256": "bfd540ae1bada5dae89fefd0d4f3f881d659473f0c522c4390f1ea9bef53660d"
+    },
+    {
+      "path": "C:\\Users\\project_user\\Downloads\\fir-validation-release-20261029\\relocated skill\\assets\\tb_fixed_fir_iq.sv",
+      "sha256": "47ae7c58d5594d673d9753b9c179c93435e7963c5dd8f822a45fb048b5615056"
+    }
+  ],
+  "vectors_sha256": "41724cd96c066e30bc8603a014cc2f8f68bb9d7adf06e3f5d798a0a9ace8d3b3",
+  "self_checks": [
+    {
+      "case": "three-tap",
+      "taps": "3",
+      "accepted": "8",
+      "received": "8",
+      "valid_after_cycles": "4",
+      "handshake_min": "5",
+      "handshake_max": "5",
+      "output_stall_cycles": "0",
+      "input_wait_cycles": "35",
+      "reset_during_mac": "1",
+      "reset_stalled_output": "1",
+      "rounding_checks": "22",
+      "random_stalls": "0",
+      "default_coeff": "0"
+    },
+    {
+      "case": "three-tap",
+      "taps": "3",
+      "accepted": "8",
+      "received": "8",
+      "valid_after_cycles": "4",
+      "handshake_min": "5",
+      "handshake_max": "6",
+      "output_stall_cycles": "3",
+      "input_wait_cycles": "37",
+      "reset_during_mac": "1",
+      "reset_stalled_output": "1",
+      "rounding_checks": "22",
+      "random_stalls": "1",
+      "default_coeff": "0"
+    }
+  ]
+}

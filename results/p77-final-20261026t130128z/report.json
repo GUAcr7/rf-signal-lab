@@ -1,0 +1,10 @@
+{
+  "status": "passed_P77_recovery_unique_names_CRC_all_member_SHA",
+  "checkpoint": "results/p77-final-20261026T130128Z/checkpoint.zip",
+  "checkpoint_sha256": "fae6dfa74fdd2e5bf220c86eb7f1881753be945b287e679cca6e2a8c88deb205",
+  "checkpoint_bytes": 205601,
+  "verified_members": 32,
+  "acceptance": "results/p77-final-20261026T130128Z/acceptance.json",
+  "acceptance_sha256": "0b7e0e0038c97f0ccd4862a073776c1cb399f865a2da8830e14c1bcf108e5a97",
+  "true_power_cycle_verified": true
+}

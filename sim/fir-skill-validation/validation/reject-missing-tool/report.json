@@ -1,0 +1,28 @@
+{
+  "all_passed": false,
+  "scope": "integer_reference_and_RTL_simulation_only",
+  "hardware_accessed": false,
+  "timing_closed": false,
+  "runs": [],
+  "case": "three-tap",
+  "tap_count": 3,
+  "input_pairs": 6,
+  "output_pairs": 8,
+  "reference_saturated_components": 0,
+  "sources": [
+    {
+      "path": "C:\\Users\\project_user\\Downloads\\fir-validation-release-20261029\\relocated skill\\examples\\three-tap.json",
+      "sha256": "927d4d76c6ba7ae49fe671c9c4c3d80a2d2eec5ec0431b56965217f0660b7a11"
+    },
+    {
+      "path": "C:\\Users\\project_user\\Downloads\\fir-validation-release-20261029\\relocated skill\\assets\\fixed_fir_iq.v",
+      "sha256": "bfd540ae1bada5dae89fefd0d4f3f881d659473f0c522c4390f1ea9bef53660d"
+    },
+    {
+      "path": "C:\\Users\\project_user\\Downloads\\fir-validation-release-20261029\\relocated skill\\assets\\tb_fixed_fir_iq.sv",
+      "sha256": "47ae7c58d5594d673d9753b9c179c93435e7963c5dd8f822a45fb048b5615056"
+    }
+  ],
+  "vectors_sha256": "41724cd96c066e30bc8603a014cc2f8f68bb9d7adf06e3f5d798a0a9ace8d3b3",
+  "error": "FileNotFoundError: Icarus tools unavailable; install them or set --tool-root"
+}

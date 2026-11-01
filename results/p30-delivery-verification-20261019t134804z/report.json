@@ -1,0 +1,1199 @@
+{
+  "status": "passed",
+  "created_utc": "2026-10-19T13:48:04.114372+00:00",
+  "checks": [
+    {
+      "check": "active work matches saved delivery",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "delivery scope remains offline and not released",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "archived bytes merged-synth.dcp",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "archived bytes merged-route.dcp",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "archived bytes merged-bd.tcl",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "archived bytes create.tcl",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "archived bytes combined_bd.tcl",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "archived bytes clock-source.tcl",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "archived bytes synth.tcl",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "archived bytes implement.tcl",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "archived bytes audit.tcl",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "archived bytes hdl/ad_iobuf.v",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "archived bytes hdl/clock_generator_pll_7_to_1_diff_ddr.v",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "archived bytes hdl/clock_generator_pll_7_to_1_diff_sdr.v",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "archived bytes hdl/delay_controller_wrap.v",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "archived bytes hdl/dual_pixel_24bpp_lvds_mapping.v",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "archived bytes hdl/gearbox_4_to_7.v",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "archived bytes hdl/gearbox_4_to_7_slave.v",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "archived bytes hdl/lvds_n_x_7to1_sdr_tx.v",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "archived bytes hdl/n_x_serdes_1_to_7_mmcm_idelay_ddr.v",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "archived bytes hdl/n_x_serdes_1_to_7_mmcm_idelay_sdr.v",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "archived bytes hdl/n_x_serdes_7_to_1_diff_ddr.v",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "archived bytes hdl/n_x_serdes_7_to_1_diff_sdr.v",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "archived bytes hdl/rf_display_gpio.v",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "archived bytes hdl/rf_display_top.v",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "archived bytes hdl/serdes_1_to_7_mmcm_idelay_ddr.v",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "archived bytes hdl/serdes_1_to_7_mmcm_idelay_sdr.v",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "archived bytes hdl/serdes_1_to_7_slave_idelay_ddr.v",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "archived bytes hdl/serdes_1_to_7_slave_idelay_sdr.v",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "archived bytes hdl/serdes_7_to_1_diff_ddr.v",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "archived bytes hdl/serdes_7_to_1_diff_sdr.v",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "archived bytes constraints/display.xdc",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "archived bytes constraints/half_clock.xdc",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "archived bytes constraints/rf.xdc",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "archived bytes system.bd",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "archived bytes tools/p30_archive_smoke.py",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "archived bytes tools/p30_cdc_inventory.py",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "archived bytes tools/p30_close_stopped_vtc.py",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "archived bytes tools/p30_display_profile.py",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "archived bytes tools/p30_finalize.py",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "archived bytes tools/p30_finish_tx_restore.py",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "archived bytes tools/p30_fix_clock_source.py",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "archived bytes tools/p30_pin_primary_reference.py",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "archived bytes tools/p30_prepare_integration.py",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "archived bytes tools/p30_prepare_stages.py",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "archived bytes tools/p30_read_pinmux.py",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "archived bytes tools/p30_reconnect.py",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "archived bytes tools/p30_refine_xdc.py",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "archived bytes tools/p30_restore_tx_files.py",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "archived bytes tools/p30_run.py",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "archived bytes tools/p30_schematic_baseline.py",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "archived bytes tools/p30_verify_graph.py",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "archived bytes tools/p30_vtc_test.py",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "archived bytes tb_vtc_runtime.sv",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "archived bytes tb_rf_display_gpio.sv",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "current E work matches archive merged-synth.dcp",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "current E work matches archive merged-route.dcp",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "current E work matches archive merged-bd.tcl",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "E copy matches archive hdl/ad_iobuf.v",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "E copy matches archive hdl/clock_generator_pll_7_to_1_diff_ddr.v",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "E copy matches archive hdl/clock_generator_pll_7_to_1_diff_sdr.v",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "E copy matches archive hdl/delay_controller_wrap.v",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "E copy matches archive hdl/dual_pixel_24bpp_lvds_mapping.v",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "E copy matches archive hdl/gearbox_4_to_7.v",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "E copy matches archive hdl/gearbox_4_to_7_slave.v",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "E copy matches archive hdl/lvds_n_x_7to1_sdr_tx.v",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "E copy matches archive hdl/n_x_serdes_1_to_7_mmcm_idelay_ddr.v",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "E copy matches archive hdl/n_x_serdes_1_to_7_mmcm_idelay_sdr.v",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "E copy matches archive hdl/n_x_serdes_7_to_1_diff_ddr.v",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "E copy matches archive hdl/n_x_serdes_7_to_1_diff_sdr.v",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "E copy matches archive hdl/rf_display_gpio.v",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "E copy matches archive hdl/rf_display_top.v",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "E copy matches archive hdl/serdes_1_to_7_mmcm_idelay_ddr.v",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "E copy matches archive hdl/serdes_1_to_7_mmcm_idelay_sdr.v",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "E copy matches archive hdl/serdes_1_to_7_slave_idelay_ddr.v",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "E copy matches archive hdl/serdes_1_to_7_slave_idelay_sdr.v",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "E copy matches archive hdl/serdes_7_to_1_diff_ddr.v",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "E copy matches archive hdl/serdes_7_to_1_diff_sdr.v",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "E copy matches archive constraints/display.xdc",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "E copy matches archive constraints/half_clock.xdc",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "E copy matches archive constraints/rf.xdc",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "synthesis real tool exit",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "synthesis saved script hash",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "synthesis report hash merged-address.rpt",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "synthesis report hash merged-bd.tcl",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "synthesis report hash merged-ip-status.rpt",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "synthesis report hash merged-pin-net-map.txt",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "synthesis report hash merged-ps-config.txt",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "synthesis report hash merged-route-cdc.rpt",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "synthesis report hash merged-route-check-timing.rpt",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "synthesis report hash merged-route-clock-interaction.rpt",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "synthesis report hash merged-route-clocks.rpt",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "synthesis report hash merged-route-drc.rpt",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "synthesis report hash merged-route-io.rpt",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "synthesis report hash merged-route-status.rpt",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "synthesis report hash merged-route-timing.rpt",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "synthesis report hash merged-route-utilization.rpt",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "synthesis report hash merged-synth-bus-skew.rpt",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "synthesis report hash merged-synth-cdc.rpt",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "synthesis report hash merged-synth-check-timing.rpt",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "synthesis report hash merged-synth-clock-interaction.rpt",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "synthesis report hash merged-synth-clocks.rpt",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "synthesis report hash merged-synth-drc.rpt",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "synthesis report hash merged-synth-io.rpt",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "synthesis report hash merged-synth-methodology.rpt",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "synthesis report hash merged-synth-timing.rpt",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "synthesis report hash merged-synth-utilization.rpt",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "route real tool exit",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "route saved script hash",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "route report hash merged-address.rpt",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "route report hash merged-bd.tcl",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "route report hash merged-ip-status.rpt",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "route report hash merged-pin-net-map.txt",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "route report hash merged-ps-config.txt",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "route report hash merged-route-bus-skew.rpt",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "route report hash merged-route-cdc.rpt",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "route report hash merged-route-check-timing.rpt",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "route report hash merged-route-clock-interaction.rpt",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "route report hash merged-route-clocks.rpt",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "route report hash merged-route-drc.rpt",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "route report hash merged-route-io.rpt",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "route report hash merged-route-methodology.rpt",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "route report hash merged-route-status.rpt",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "route report hash merged-route-timing.rpt",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "route report hash merged-route-utilization.rpt",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "route report hash merged-synth-bus-skew.rpt",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "route report hash merged-synth-cdc.rpt",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "route report hash merged-synth-check-timing.rpt",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "route report hash merged-synth-clock-interaction.rpt",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "route report hash merged-synth-clocks.rpt",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "route report hash merged-synth-drc.rpt",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "route report hash merged-synth-io.rpt",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "route report hash merged-synth-methodology.rpt",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "route report hash merged-synth-timing.rpt",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "route report hash merged-synth-utilization.rpt",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "final route follows corrected synthesis",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "reported WNS and WHS match raw table",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "constrained timing acceptance present",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "no internal-clock primary override severe rule",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "graph applies to archived BD",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "actual VTC model remains tested bytes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "VTC testbench remains tested bytes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "GPIO test source matches tb_rf_display_gpio.sv",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "GPIO test source matches rf_display_gpio.v",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "GPIO used in candidate equals simulated module",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "pure declarative divider constraint matches candidate",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "saved raw IQ byte count and digest",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "sparse diagnostic is not labeled complete recording",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "RX record cannot be confused with TX board",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "machine status points to this delivery",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "current boot identities agree",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "current flags do not claim deployment or RF transmission",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "no bitstream file in candidate project",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "current handoff reference START-HERE.md",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "current handoff reference README.md",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "current handoff reference docs/handoff/RESUME-20261019.md",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "current handoff reference docs/experiments/EXP-HW-022-rf-display-integration.md",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "current handoff reference docs/design/rf-display-integration-20261019.md",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "current handoff reference fpga/integration/README.md",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all local Markdown links resolve",
+      "passed": true,
+      "detail": 57
+    },
+    {
+      "check": "Python syntax p30_archive_smoke.py",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Python syntax p30_cdc_inventory.py",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Python syntax p30_close_stopped_vtc.py",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Python syntax p30_display_profile.py",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Python syntax p30_end_state.py",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Python syntax p30_finalize.py",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Python syntax p30_finish_tx_restore.py",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Python syntax p30_fix_clock_source.py",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Python syntax p30_pin_primary_reference.py",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Python syntax p30_prepare_integration.py",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Python syntax p30_prepare_stages.py",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Python syntax p30_read_pinmux.py",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Python syntax p30_reconnect.py",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Python syntax p30_refine_xdc.py",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Python syntax p30_restore_tx_files.py",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Python syntax p30_run.py",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Python syntax p30_schematic_baseline.py",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Python syntax p30_verify_delivery.py",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Python syntax p30_verify_graph.py",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Python syntax p30_vtc_test.py",
+      "passed": true,
+      "detail": null
+    }
+  ],
+  "board_operations": false,
+  "scope": "Saved bytes, tool evidence, source correspondence and current documentation only; not hardware or CDC acceptance",
+  "delivery": "C:\\Users\\project_user\\Documents\\Codex\\2026-09-09\\2026-fpga-fmql30tai-fpai-python-c\\outputs\\rf-signal-lab\\results\\p30-delivery-20261019T134403Z\\report.json",
+  "delivery_sha256": "bc9d368f9f410a81175fc96d30655470994684c5e0c7207a89a5179e2c23ce6c",
+  "local_links": [
+    {
+      "document": "START-HERE.md",
+      "target": "docs/experiments/EXP-HW-022-rf-display-integration.md",
+      "exists": true
+    },
+    {
+      "document": "START-HERE.md",
+      "target": "docs/handoff/RESUME-20261019.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "docs/experiments/EXP-HW-022-rf-display-integration.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "docs/experiments/EXP-HW-021-vendor-migration-and-reconnect.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "docs/experiments/EXP-HW-020-vivado-enterprise-setup.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "docs/experiments/EXP-HW-019-memory-diagnostic-and-build-readiness.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "START-HERE.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "TX-SOURCE-STATUS.json",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "docs/experiments/EXP-HW-018-review-and-streaming.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "docs/experiments/EXP-TX-001.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "docs/experiments/EXP-HW-004.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "docs/experiments/EXP-AUTO-20261016.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "docs/design/two-board-rf-link.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "docs/experiments/EXP-AUTO-20261015.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "docs/lesson-p11-monitor.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "docs/project-learning-guide.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "docs/lesson-p07-fpga-fft.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "docs/implementation-guide.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "docs/experiments/EXP-AUTO-20261011.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "docs/roadmap.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "docs/implementation-guide.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "docs/experiments/EXP-P01.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "docs/experiments/EXP-P02.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "docs/experiments/EXP-P03.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "docs/experiments/EXP-HW-001.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "docs/experiments/EXP-HW-003.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "docs/experiments/EXP-HW-002.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "docs/lesson-02.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "docs/experiments/EXP-002.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "docs/platform-notes.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "docs/workflow.md",
+      "exists": true
+    },
+    {
+      "document": "docs/handoff/RESUME-20261019.md",
+      "target": "../experiments/EXP-HW-022-rf-display-integration.md",
+      "exists": true
+    },
+    {
+      "document": "docs/handoff/RESUME-20261019.md",
+      "target": "../../fpga/integration/README.md",
+      "exists": true
+    },
+    {
+      "document": "docs/handoff/RESUME-20261019.md",
+      "target": "../../results/p30-end-state-20261019T134633Z/report.json",
+      "exists": true
+    },
+    {
+      "document": "docs/experiments/EXP-HW-022-rf-display-integration.md",
+      "target": "EXP-HW-021-vendor-migration-and-reconnect.md",
+      "exists": true
+    },
+    {
+      "document": "docs/experiments/EXP-HW-022-rf-display-integration.md",
+      "target": "../../fpga/integration/README.md",
+      "exists": true
+    },
+    {
+      "document": "docs/experiments/EXP-HW-022-rf-display-integration.md",
+      "target": "../../results/p30-synth-20261019T133134Z/report.json",
+      "exists": true
+    },
+    {
+      "document": "docs/experiments/EXP-HW-022-rf-display-integration.md",
+      "target": "../../results/p30-implement-20261019T133527Z/report.json",
+      "exists": true
+    },
+    {
+      "document": "docs/experiments/EXP-HW-022-rf-display-integration.md",
+      "target": "../../results/p30-graph-verification-20261019T133631Z/report.json",
+      "exists": true
+    },
+    {
+      "document": "docs/experiments/EXP-HW-022-rf-display-integration.md",
+      "target": "../../results/p30-vtc-test-20261019T100408Z/report.json",
+      "exists": true
+    },
+    {
+      "document": "docs/experiments/EXP-HW-022-rf-display-integration.md",
+      "target": "../../results/p30-gpio-test-20261019T093658Z/report.json",
+      "exists": true
+    },
+    {
+      "document": "docs/experiments/EXP-HW-022-rf-display-integration.md",
+      "target": "../../results/p30-tx-file-verification-20261019T133248Z/report.json",
+      "exists": true
+    },
+    {
+      "document": "docs/experiments/EXP-HW-022-rf-display-integration.md",
+      "target": "../../results/p30-smoke-archive-20261019T132314Z/report.json",
+      "exists": true
+    },
+    {
+      "document": "docs/experiments/EXP-HW-022-rf-display-integration.md",
+      "target": "../../results/p29-source-verification-20261019T132730Z/report.json",
+      "exists": true
+    },
+    {
+      "document": "docs/experiments/EXP-HW-022-rf-display-integration.md",
+      "target": "../../results/p30-delivery-20261019T134403Z/report.json",
+      "exists": true
+    },
+    {
+      "document": "docs/experiments/EXP-HW-022-rf-display-integration.md",
+      "target": "../../results/p30-reconnect-20261019T132135Z/report.json",
+      "exists": true
+    },
+    {
+      "document": "docs/experiments/EXP-HW-022-rf-display-integration.md",
+      "target": "../../results/p30-schematic-20261019T093956Z/report.json",
+      "exists": true
+    },
+    {
+      "document": "docs/experiments/EXP-HW-022-rf-display-integration.md",
+      "target": "../../results/p30-display-profile-20261019T100223Z/report.json",
+      "exists": true
+    },
+    {
+      "document": "docs/experiments/EXP-HW-022-rf-display-integration.md",
+      "target": "../../results/p30-primary-reference-20261019T095413Z/report.json",
+      "exists": true
+    },
+    {
+      "document": "docs/experiments/EXP-HW-022-rf-display-integration.md",
+      "target": "../../results/p30-delivery-verification-20261019T134519Z/report.json",
+      "exists": true
+    },
+    {
+      "document": "docs/experiments/EXP-HW-022-rf-display-integration.md",
+      "target": "../../results/p30-end-state-20261019T134633Z/report.json",
+      "exists": true
+    },
+    {
+      "document": "docs/design/rf-display-integration-20261019.md",
+      "target": "../experiments/EXP-HW-022-rf-display-integration.md",
+      "exists": true
+    },
+    {
+      "document": "docs/design/rf-display-integration-20261019.md",
+      "target": "../../results/p29-integration-audit-20261019T084053Z/report.json",
+      "exists": true
+    },
+    {
+      "document": "docs/design/rf-display-integration-20261019.md",
+      "target": "../../results/p29-ps-generated-comparison-20261019T091727Z/report.json",
+      "exists": true
+    },
+    {
+      "document": "docs/design/rf-display-integration-20261019.md",
+      "target": "../../fpga/tb/tb_display_half_clock.sv",
+      "exists": true
+    },
+    {
+      "document": "docs/design/rf-display-integration-20261019.md",
+      "target": "../../fpga/constraints/display_lvds_half_clock.xdc",
+      "exists": true
+    },
+    {
+      "document": "docs/design/rf-display-integration-20261019.md",
+      "target": "../../results/p29-display-clock-20261019T091430Z/report.json",
+      "exists": true
+    }
+  ],
+  "ended_utc": "2026-10-19T13:48:04.549910+00:00",
+  "verifier_sha256": "dfe94577085f45e04ef15589dbe7aa5f655334c7dda8db36986cc9b465906c19"
+}

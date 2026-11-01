@@ -1,0 +1,7 @@
+{
+  "reason": "First ZIP validation rejected duplicate member from relative and absolute aliases of same file",
+  "failed_archive": "checkpoint-pack-failed.zip",
+  "failed_sha256": "083881164df27461ab03506cbbf0cf64840bb9fc9beead4a22f59c50d5f74b7b",
+  "fix": "Normalize absolute resolved paths before writing members; no board or RF changes",
+  "original_report_unchanged": true
+}

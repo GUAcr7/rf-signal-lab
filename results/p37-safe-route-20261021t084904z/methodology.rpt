@@ -1,0 +1,229 @@
+Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
+| Date         : Wed Oct 21 16:56:03 2026
+| Host         : LAPTOP-CLPF2QOU running 64-bit major release  (build 9200)
+| Command      : report_methodology -file C:/Users/project_user/Documents/Codex/2026-09-09/2026-fpga-fmql30tai-fpai-python-c/outputs/rf-signal-lab/results/p37-safe-route-20261021T084904Z/methodology.rpt
+| Design       : rf_display_top
+| Device       : xc7z100ffg900-2
+| Speed File   : -2
+| Design State : Fully Routed
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Report Methodology
+
+Table of Contents
+-----------------
+1. REPORT SUMMARY
+2. REPORT DETAILS
+
+1. REPORT SUMMARY
+-----------------
+            Netlist: netlist
+          Floorplan: impl_1
+      Design limits: <entire design considered>
+             Max violations: <unlimited>
+             Violations found: 38
++-----------+----------+------------------------------------------------------+------------+
+| Rule      | Severity | Description                                          | Violations |
++-----------+----------+------------------------------------------------------+------------+
+| CKBF-1    | Warning  | connects_I_driver_BUFR                               | 2          |
+| TIMING-9  | Warning  | Unknown CDC Logic                                    | 1          |
+| TIMING-10 | Warning  | Missing property on synchronizer                     | 1          |
+| TIMING-18 | Warning  | Missing input or output delay                        | 32         |
+| TIMING-28 | Warning  | Auto-derived clock referenced by a timing constraint | 2          |
++-----------+----------+------------------------------------------------------+------------+
+
+2. REPORT DETAILS
+-----------------
+CKBF-1#1 Warning
+connects_I_driver_BUFR  
+The BUFGCTRL cell i_system_wrapper/util_ad9361_divclk/inst/i_div_clk_gbuf I0 pin is driven by a BUFR cell i_system_wrapper/util_ad9361_divclk/inst/clk_divide_sel_0. For 7-Series devices, this is not a recommended clock topology. Please analyze your clock network and remove the BUFR to BUFGCTRL cascade.
+Related violations: <none>
+
+CKBF-1#2 Warning
+connects_I_driver_BUFR  
+The BUFGCTRL cell i_system_wrapper/util_ad9361_divclk/inst/i_div_clk_gbuf I1 pin is driven by a BUFR cell i_system_wrapper/util_ad9361_divclk/inst/clk_divide_sel_1. For 7-Series devices, this is not a recommended clock topology. Please analyze your clock network and remove the BUFR to BUFGCTRL cascade.
+Related violations: <none>
+
+TIMING-9#1 Warning
+Unknown CDC Logic  
+One or more asynchronous Clock Domain Crossing has been detected between 2 clock domains through a set_false_path or a set_clock_groups or set_max_delay -datapath_only constraint but no double-registers logic synchronizer has been found on the side of the capture clock. It is recommended to run report_cdc for a complete and detailed CDC coverage. Please consider using XPM_CDC to avoid Critical severities
+Related violations: <none>
+
+TIMING-10#1 Warning
+Missing property on synchronizer  
+One or more logic synchronizer has been detected between 2 clock domains but the synchronizer does not have the property ASYNC_REG defined on one or both registers. It is recommended to run report_cdc for a complete and detailed CDC coverage
+Related violations: <none>
+
+TIMING-18#1 Warning
+Missing input or output delay  
+An input delay is missing on rx_data_in_n[0] relative to clock(s) rx_clk
+Related violations: <none>
+
+TIMING-18#2 Warning
+Missing input or output delay  
+An input delay is missing on rx_data_in_n[1] relative to clock(s) rx_clk
+Related violations: <none>
+
+TIMING-18#3 Warning
+Missing input or output delay  
+An input delay is missing on rx_data_in_n[2] relative to clock(s) rx_clk
+Related violations: <none>
+
+TIMING-18#4 Warning
+Missing input or output delay  
+An input delay is missing on rx_data_in_n[3] relative to clock(s) rx_clk
+Related violations: <none>
+
+TIMING-18#5 Warning
+Missing input or output delay  
+An input delay is missing on rx_data_in_n[4] relative to clock(s) rx_clk
+Related violations: <none>
+
+TIMING-18#6 Warning
+Missing input or output delay  
+An input delay is missing on rx_data_in_n[5] relative to clock(s) rx_clk
+Related violations: <none>
+
+TIMING-18#7 Warning
+Missing input or output delay  
+An input delay is missing on rx_data_in_p[0] relative to clock(s) rx_clk
+Related violations: <none>
+
+TIMING-18#8 Warning
+Missing input or output delay  
+An input delay is missing on rx_data_in_p[1] relative to clock(s) rx_clk
+Related violations: <none>
+
+TIMING-18#9 Warning
+Missing input or output delay  
+An input delay is missing on rx_data_in_p[2] relative to clock(s) rx_clk
+Related violations: <none>
+
+TIMING-18#10 Warning
+Missing input or output delay  
+An input delay is missing on rx_data_in_p[3] relative to clock(s) rx_clk
+Related violations: <none>
+
+TIMING-18#11 Warning
+Missing input or output delay  
+An input delay is missing on rx_data_in_p[4] relative to clock(s) rx_clk
+Related violations: <none>
+
+TIMING-18#12 Warning
+Missing input or output delay  
+An input delay is missing on rx_data_in_p[5] relative to clock(s) rx_clk
+Related violations: <none>
+
+TIMING-18#13 Warning
+Missing input or output delay  
+An input delay is missing on rx_frame_in_n relative to clock(s) rx_clk
+Related violations: <none>
+
+TIMING-18#14 Warning
+Missing input or output delay  
+An input delay is missing on rx_frame_in_p relative to clock(s) rx_clk
+Related violations: <none>
+
+TIMING-18#15 Warning
+Missing input or output delay  
+An output delay is missing on enable relative to clock(s) rx_clk
+Related violations: <none>
+
+TIMING-18#16 Warning
+Missing input or output delay  
+An output delay is missing on tx_clk_out_n relative to clock(s) rx_clk
+Related violations: <none>
+
+TIMING-18#17 Warning
+Missing input or output delay  
+An output delay is missing on tx_clk_out_p relative to clock(s) rx_clk
+Related violations: <none>
+
+TIMING-18#18 Warning
+Missing input or output delay  
+An output delay is missing on tx_data_out_n[0] relative to clock(s) rx_clk
+Related violations: <none>
+
+TIMING-18#19 Warning
+Missing input or output delay  
+An output delay is missing on tx_data_out_n[1] relative to clock(s) rx_clk
+Related violations: <none>
+
+TIMING-18#20 Warning
+Missing input or output delay  
+An output delay is missing on tx_data_out_n[2] relative to clock(s) rx_clk
+Related violations: <none>
+
+TIMING-18#21 Warning
+Missing input or output delay  
+An output delay is missing on tx_data_out_n[3] relative to clock(s) rx_clk
+Related violations: <none>
+
+TIMING-18#22 Warning
+Missing input or output delay  
+An output delay is missing on tx_data_out_n[4] relative to clock(s) rx_clk
+Related violations: <none>
+
+TIMING-18#23 Warning
+Missing input or output delay  
+An output delay is missing on tx_data_out_n[5] relative to clock(s) rx_clk
+Related violations: <none>
+
+TIMING-18#24 Warning
+Missing input or output delay  
+An output delay is missing on tx_data_out_p[0] relative to clock(s) rx_clk
+Related violations: <none>
+
+TIMING-18#25 Warning
+Missing input or output delay  
+An output delay is missing on tx_data_out_p[1] relative to clock(s) rx_clk
+Related violations: <none>
+
+TIMING-18#26 Warning
+Missing input or output delay  
+An output delay is missing on tx_data_out_p[2] relative to clock(s) rx_clk
+Related violations: <none>
+
+TIMING-18#27 Warning
+Missing input or output delay  
+An output delay is missing on tx_data_out_p[3] relative to clock(s) rx_clk
+Related violations: <none>
+
+TIMING-18#28 Warning
+Missing input or output delay  
+An output delay is missing on tx_data_out_p[4] relative to clock(s) rx_clk
+Related violations: <none>
+
+TIMING-18#29 Warning
+Missing input or output delay  
+An output delay is missing on tx_data_out_p[5] relative to clock(s) rx_clk
+Related violations: <none>
+
+TIMING-18#30 Warning
+Missing input or output delay  
+An output delay is missing on tx_frame_out_n relative to clock(s) rx_clk
+Related violations: <none>
+
+TIMING-18#31 Warning
+Missing input or output delay  
+An output delay is missing on tx_frame_out_p relative to clock(s) rx_clk
+Related violations: <none>
+
+TIMING-18#32 Warning
+Missing input or output delay  
+An output delay is missing on txnrx relative to clock(s) rx_clk
+Related violations: <none>
+
+TIMING-28#1 Warning
+Auto-derived clock referenced by a timing constraint  
+The auto-derived clock clk_div_sel_0_s is referenced by name inside timing constraint (see constraint position 137 in the Timing Constraint window in Vivado IDE). It is recommended to reference an auto-derived clock by the pin name attached to the clock: get_clocks -of_objects [get_pins i_system_wrapper/util_ad9361_divclk/inst/clk_divide_sel_0/O]
+Related violations: <none>
+
+TIMING-28#2 Warning
+Auto-derived clock referenced by a timing constraint  
+The auto-derived clock clk_div_sel_1_s is referenced by name inside timing constraint (see constraint position 137 in the Timing Constraint window in Vivado IDE). It is recommended to reference an auto-derived clock by the pin name attached to the clock: get_clocks -of_objects [get_pins i_system_wrapper/util_ad9361_divclk/inst/clk_divide_sel_1/O]
+Related violations: <none>
+
+

@@ -1,0 +1,320 @@
+{
+  "status": "passed_controlled_real_RF_AI_and_live_LCD_checkpoint_ready",
+  "stages": [
+    {
+      "label": "final_both_boards_idle",
+      "exit_code": 0,
+      "report": "results/p46-preflight-20261024T081255Z/report.json",
+      "report_sha256": "cdff4fa7c30b8523002663a361771fd80a87208bf7f58a0f56683a5fa7c5ee44"
+    },
+    {
+      "label": "restore_P48_startup",
+      "exit_code": 0,
+      "report": "results/p43-enabled-20261024T081307Z/report.json",
+      "report_sha256": "3528fffba30eb5ab8a5562463bee6e8460b0f155417d30f8eaf85346a026594f"
+    },
+    {
+      "label": "final_startup_and_RX_status",
+      "exit_code": 0,
+      "report": "results/p43-status-20261024T081327Z/report.json",
+      "report_sha256": "9adfc3891cc9dae5f17bb6412fcfab52032a2eb5af9a681f24fca9660db907e2"
+    }
+  ],
+  "flow": "results/p55-live-flow-20261024T080314Z/report.json",
+  "flow_sha256": "5c14964440a40f8552044999dd2c1c9a2961068f972ae09e8a620b08643a8de3",
+  "board_power_removed": false,
+  "board_shutdown": false,
+  "independent_test": {
+    "fp32": {
+      "frames": 54,
+      "correct": 51,
+      "fraction_correct": 0.9444444444444444,
+      "per_class_fraction_correct": [
+        0.8888888888888888,
+        1.0,
+        0.9444444444444444
+      ],
+      "confusion_rows_truth_cols_prediction": [
+        [
+          16,
+          1,
+          1
+        ],
+        [
+          0,
+          18,
+          0
+        ],
+        [
+          0,
+          1,
+          17
+        ]
+      ]
+    },
+    "int8": {
+      "frames": 54,
+      "correct": 52,
+      "fraction_correct": 0.9629629629629629,
+      "per_class_fraction_correct": [
+        0.9444444444444444,
+        0.9444444444444444,
+        1.0
+      ],
+      "confusion_rows_truth_cols_prediction": [
+        [
+          17,
+          1,
+          0
+        ],
+        [
+          0,
+          17,
+          1
+        ],
+        [
+          0,
+          0,
+          18
+        ]
+      ]
+    }
+  },
+  "selected_mode": "int8",
+  "per_seed": {
+    "2026102313": {
+      "fp32": {
+        "frames": 18,
+        "correct": 16,
+        "fraction_correct": 0.8888888888888888,
+        "per_class_fraction_correct": [
+          0.6666666666666666,
+          1.0,
+          1.0
+        ],
+        "confusion_rows_truth_cols_prediction": [
+          [
+            4,
+            1,
+            1
+          ],
+          [
+            0,
+            6,
+            0
+          ],
+          [
+            0,
+            0,
+            6
+          ]
+        ]
+      },
+      "int8": {
+        "frames": 18,
+        "correct": 17,
+        "fraction_correct": 0.9444444444444444,
+        "per_class_fraction_correct": [
+          0.8333333333333334,
+          1.0,
+          1.0
+        ],
+        "confusion_rows_truth_cols_prediction": [
+          [
+            5,
+            1,
+            0
+          ],
+          [
+            0,
+            6,
+            0
+          ],
+          [
+            0,
+            0,
+            6
+          ]
+        ]
+      }
+    },
+    "2026102314": {
+      "fp32": {
+        "frames": 18,
+        "correct": 17,
+        "fraction_correct": 0.9444444444444444,
+        "per_class_fraction_correct": [
+          1.0,
+          1.0,
+          0.8333333333333334
+        ],
+        "confusion_rows_truth_cols_prediction": [
+          [
+            6,
+            0,
+            0
+          ],
+          [
+            0,
+            6,
+            0
+          ],
+          [
+            0,
+            1,
+            5
+          ]
+        ]
+      },
+      "int8": {
+        "frames": 18,
+        "correct": 17,
+        "fraction_correct": 0.9444444444444444,
+        "per_class_fraction_correct": [
+          1.0,
+          0.8333333333333334,
+          1.0
+        ],
+        "confusion_rows_truth_cols_prediction": [
+          [
+            6,
+            0,
+            0
+          ],
+          [
+            0,
+            5,
+            1
+          ],
+          [
+            0,
+            0,
+            6
+          ]
+        ]
+      }
+    },
+    "2026102315": {
+      "fp32": {
+        "frames": 18,
+        "correct": 18,
+        "fraction_correct": 1.0,
+        "per_class_fraction_correct": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "confusion_rows_truth_cols_prediction": [
+          [
+            6,
+            0,
+            0
+          ],
+          [
+            0,
+            6,
+            0
+          ],
+          [
+            0,
+            0,
+            6
+          ]
+        ]
+      },
+      "int8": {
+        "frames": 18,
+        "correct": 18,
+        "fraction_correct": 1.0,
+        "per_class_fraction_correct": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "confusion_rows_truth_cols_prediction": [
+          [
+            6,
+            0,
+            0
+          ],
+          [
+            0,
+            6,
+            0
+          ],
+          [
+            0,
+            0,
+            6
+          ]
+        ]
+      }
+    }
+  },
+  "training_frames": 108,
+  "validation_frames": 54,
+  "test_frames": 54,
+  "training_source_seeds": 6,
+  "validation_source_seeds": 3,
+  "test_source_seeds": 3,
+  "model_sha256": "bd571ef0d30b76cdb8138d3ebd90f55463eb5439bd4c78636555bc8800873457",
+  "quantized_model_sha256": "d900b28411275a3e080b896a3c0fd4f1aa82d978f09eb2aa8a0413f258d02582",
+  "ARM_benchmarks": [
+    {
+      "source": "bpsk",
+      "mode": "int8",
+      "repeats": 10,
+      "mean_block_ms": 22.5490607,
+      "max_block_ms": 22.680397,
+      "frames_per_block": 3,
+      "maxrss_kib": 2556,
+      "scope": "mix/FIR/decimation/DC/RMS/CNN; file IO excluded"
+    },
+    {
+      "source": "qpsk",
+      "mode": "int8",
+      "repeats": 10,
+      "mean_block_ms": 22.4626615,
+      "max_block_ms": 22.613716,
+      "frames_per_block": 3,
+      "maxrss_kib": 2612,
+      "scope": "mix/FIR/decimation/DC/RMS/CNN; file IO excluded"
+    },
+    {
+      "source": "qam16",
+      "mode": "int8",
+      "repeats": 10,
+      "mean_block_ms": 22.4574368,
+      "max_block_ms": 22.57269,
+      "frames_per_block": 3,
+      "maxrss_kib": 2512,
+      "scope": "mix/FIR/decimation/DC/RMS/CNN; file IO excluded"
+    }
+  ],
+  "ARM_full_frontend_CNN_matches_Python": true,
+  "heldout_RF_capture_boot": "4e7438d3-3e8f-470d-86a5-abf5f732bb71",
+  "ARM_execution_boot": "9734d483-07e3-44d3-9dd3-6582703ee77d",
+  "live": "results/p53-live-20261024T080707Z/report.json",
+  "live_sha256": "b240161ac9987239c95037d9607b74006e55c8fc849cc87db539250c24ecd65d",
+  "live_status": "passed_three_class_real_RF_live_ARM_AI_LCD_and_independent_archives",
+  "AI_accepted": true,
+  "live_AI_on_LCD_verified": true,
+  "ten_minute_whole_system_AI_trial": false,
+  "expected_boot": "cb8e6e0f-12b1-457c-977c-5200abc53683",
+  "TX_expected_boot": "7968dd1d-12b1-4236-8dc1-dae0973d94d8",
+  "TX_DMA_idle": true,
+  "DDS_zero_readback": true,
+  "RX_DMA_idle": true,
+  "serial_closed": true,
+  "startup_paused_for_archiving": false,
+  "P48_persistent_startup_restored": true,
+  "AI_persistent_autostart": false,
+  "scope": "BPSK/QPSK/16QAM at fixed 2450MHz LO, nominal IF960kHz, 240ksym/s, TX-10dB/peak256 and RX manual0dB; RF-test, ARM-execution and live-display boots recorded separately",
+  "signal_SNR_measured": false,
+  "unknown_rejection_accepted": false,
+  "ADC_gaps": "unknown",
+  "lossless_proven": false,
+  "physical_LCD_confirmation_this_trial": false,
+  "independent_cold_boot_generalization": false,
+  "checkpoint": "results/p52-checkpoint-20261024T081337072649Z/report.json"
+}

@@ -1,0 +1,4 @@
+# Intent list only. Resolve and lock tested versions during the first Python lab.
+numpy
+matplotlib
+pytest

@@ -1,0 +1,32 @@
+{
+  "candidate": "fixed8_phase_group_mean_logits_INT8_then_unchanged_3_of_3",
+  "phase_degrees": [
+    0,
+    45,
+    90,
+    135,
+    180,
+    225,
+    270,
+    315
+  ],
+  "aggregation": "arithmetic_mean_logits_per_frame",
+  "model_weights_fit": false,
+  "thresholds_changed": false,
+  "selection_data": "original P52 validation split only, no frame reshuffle",
+  "original_independent_test_read": false,
+  "validation_gate": {
+    "overall_accuracy_min": 0.9,
+    "each_class_accuracy_min": 0.8,
+    "no_overall_or_per_class_regression": true
+  },
+  "exposed_event_gate": {
+    "required_all_original_CLASSIFIED_preserved": true,
+    "uncertain_improvement_min_blocks": 1,
+    "accepted_wrong_allowed": 0
+  },
+  "no_deployment": true,
+  "limit": "validation and P73 events are exposed; no new independent accuracy claim",
+  "candidate_sha256": "7afebcc6c60dd7d8a13ab108366bd6e67a999072e396596e7bfa2bbb57cb4464",
+  "evaluator_sha256": "1a1e6027eecd3ad774b9437e6520ce2aa9c7e287558022ea73bfa2abdfde28fb"
+}

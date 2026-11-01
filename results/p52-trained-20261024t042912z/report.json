@@ -1,0 +1,86 @@
+{
+  "status": "trained_REAL_RF_validation_selected_test_not_acquired",
+  "dataset": "results/p54-plan-20261024T042837Z/dataset/report.json",
+  "dataset_sha256": "6be9a569674e5959227a90e4bc465249cf01c9aba4a9703070403391836b7a9f",
+  "plan": "results/p54-plan-20261024T042837Z/report.json",
+  "plan_sha256": "5db35c29f9114d113a81f658eb85d95dd308887abc1312bba13be7d07db69d49",
+  "class_order": [
+    "BPSK",
+    "QPSK",
+    "16QAM"
+  ],
+  "training_real_frames": 108,
+  "training_augmented_frames": 864,
+  "validation_real_frames": 54,
+  "test_real_frames": 0,
+  "architecture": "existing Conv8 kernel5 stride2 GAP Dense3; new trainable weights",
+  "parameters": 115,
+  "selected_epoch": 2991,
+  "validation_cross_entropy": 0.14413581788539886,
+  "validation": {
+    "fp32": {
+      "frames": 54,
+      "correct": 53,
+      "fraction_correct": 0.9814814814814815,
+      "per_class_fraction_correct": [
+        1.0,
+        0.9444444444444444,
+        1.0
+      ],
+      "confusion_rows_truth_cols_prediction": [
+        [
+          18,
+          0,
+          0
+        ],
+        [
+          0,
+          17,
+          1
+        ],
+        [
+          0,
+          0,
+          18
+        ]
+      ]
+    },
+    "int8": {
+      "frames": 54,
+      "correct": 53,
+      "fraction_correct": 0.9814814814814815,
+      "per_class_fraction_correct": [
+        1.0,
+        0.9444444444444444,
+        1.0
+      ],
+      "confusion_rows_truth_cols_prediction": [
+        [
+          18,
+          0,
+          0
+        ],
+        [
+          0,
+          17,
+          1
+        ],
+        [
+          0,
+          0,
+          18
+        ]
+      ]
+    }
+  },
+  "selected_mode": "int8",
+  "selected_mode_rule": "higher validation correct count; tie int8; selected before test capture",
+  "elapsed_s": 120.22764520000055,
+  "model_sha256": "bd571ef0d30b76cdb8138d3ebd90f55463eb5439bd4c78636555bc8800873457",
+  "quantized_model_sha256": "d900b28411275a3e080b896a3c0fd4f1aa82d978f09eb2aa8a0413f258d02582",
+  "quantization_calibration_split": "train_only",
+  "preprocessing_modulation_labels_used": false,
+  "independent_test_accuracy": "not_yet_measured",
+  "AI_accepted": false,
+  "board_operations": false
+}

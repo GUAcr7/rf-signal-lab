@@ -1,0 +1,239 @@
+{
+  "status": "passed_P79_screen_protocol_RF_AI_history_cleanup",
+  "archive": "results\\p59-p79-session-archive-20261027T142252005759Z\\report.json",
+  "archive_sha256": "39ee19faddb96b5e71bbc42e8182b9a9fd16c17329c3252768a310fc81195fca",
+  "gates": [
+    {
+      "name": "complete stopped archive",
+      "passed": true
+    },
+    {
+      "name": "unchanged completed screen control session",
+      "passed": true
+    },
+    {
+      "name": "archive SHA ai.json",
+      "passed": true
+    },
+    {
+      "name": "archive SHA ai-history.jsonl",
+      "passed": true
+    },
+    {
+      "name": "archive SHA metrics.json",
+      "passed": true
+    },
+    {
+      "name": "archive SHA metrics-history.jsonl",
+      "passed": true
+    },
+    {
+      "name": "archive SHA summary.json",
+      "passed": true
+    },
+    {
+      "name": "archive SHA progress.json",
+      "passed": true
+    },
+    {
+      "name": "archive SHA last-display-packed.bin",
+      "passed": true
+    },
+    {
+      "name": "archive SHA fb.raw",
+      "passed": true
+    },
+    {
+      "name": "complete paired history and stopped cleanup",
+      "passed": true
+    },
+    {
+      "name": "same boot and original model",
+      "passed": true
+    },
+    {
+      "name": "AI metrics source pairing",
+      "passed": true
+    },
+    {
+      "name": "invalid measurements clear numbers",
+      "passed": true
+    },
+    {
+      "name": "stop clears class and metrics",
+      "passed": true
+    },
+    {
+      "name": "unchanged job p59-p80-panel-check-20261027T141738551251Z",
+      "passed": true
+    },
+    {
+      "name": "unchanged job p59-p80-panel-run-20261027T141743587878Z",
+      "passed": true
+    },
+    {
+      "name": "native identity cleanup bpsk",
+      "passed": true
+    },
+    {
+      "name": "native source produced RX observations bpsk",
+      "passed": true
+    },
+    {
+      "name": "unchanged known-source gate bpsk",
+      "passed": true
+    },
+    {
+      "name": "unchanged job p59-p80-panel-check-20261027T141812985205Z",
+      "passed": true
+    },
+    {
+      "name": "unchanged job p59-p80-panel-run-20261027T141817962857Z",
+      "passed": true
+    },
+    {
+      "name": "native identity cleanup qam16",
+      "passed": true
+    },
+    {
+      "name": "native source produced RX observations qam16",
+      "passed": true
+    },
+    {
+      "name": "unchanged known-source gate qam16",
+      "passed": true
+    },
+    {
+      "name": "unchanged job p59-p80-panel-check-20261027T141916049586Z",
+      "passed": true
+    },
+    {
+      "name": "unchanged job p59-p80-panel-run-20261027T141921135524Z",
+      "passed": true
+    },
+    {
+      "name": "native identity cleanup qpsk",
+      "passed": true
+    },
+    {
+      "name": "native source produced RX observations qpsk",
+      "passed": true
+    },
+    {
+      "name": "unchanged known-source gate qpsk",
+      "passed": true
+    },
+    {
+      "name": "unchanged job p59-p80-panel-check-20261027T141946336417Z",
+      "passed": true
+    },
+    {
+      "name": "unchanged job p59-p80-panel-run-20261027T141951293932Z",
+      "passed": true
+    },
+    {
+      "name": "native identity cleanup qpsk",
+      "passed": true
+    },
+    {
+      "name": "native source produced RX observations qpsk",
+      "passed": true
+    },
+    {
+      "name": "unchanged known-source gate qpsk",
+      "passed": true
+    },
+    {
+      "name": "unchanged job p59-p80-panel-check-20261027T142159719234Z",
+      "passed": true
+    },
+    {
+      "name": "unchanged job p59-p80-panel-run-20261027T142208670069Z",
+      "passed": true
+    },
+    {
+      "name": "native identity cleanup qpsk",
+      "passed": true
+    },
+    {
+      "name": "actual in-flight stop qpsk",
+      "passed": true
+    },
+    {
+      "name": "three natural sources and screen-protocol STOP",
+      "passed": true
+    },
+    {
+      "name": "stop raw touch protocol packet present",
+      "passed": true
+    },
+    {
+      "name": "fresh advancing display updates",
+      "passed": true
+    },
+    {
+      "name": "same-source final FFT RMS",
+      "passed": true
+    },
+    {
+      "name": "actual stopped pixels State: STOPPED",
+      "passed": true
+    },
+    {
+      "name": "actual stopped pixels LO+center: unavailable",
+      "passed": true
+    },
+    {
+      "name": "actual stopped pixels 99% ROI BW: unavailable",
+      "passed": true
+    },
+    {
+      "name": "actual stopped pixels AI: STOPPED | controlled 3 classes",
+      "passed": true
+    }
+  ],
+  "groups": [
+    {
+      "signal": "bpsk",
+      "stable_updates": 16,
+      "accepted": 16,
+      "correct": 16,
+      "coverage": 1.0,
+      "conditional_accuracy": 1.0
+    },
+    {
+      "signal": "qam16",
+      "stable_updates": 16,
+      "accepted": 16,
+      "correct": 16,
+      "coverage": 1.0,
+      "conditional_accuracy": 1.0
+    },
+    {
+      "signal": "qpsk",
+      "stable_updates": 16,
+      "accepted": 16,
+      "correct": 16,
+      "coverage": 1.0,
+      "conditional_accuracy": 1.0
+    },
+    {
+      "signal": "qpsk",
+      "stable_updates": 16,
+      "accepted": 16,
+      "correct": 16,
+      "coverage": 1.0,
+      "conditional_accuracy": 1.0
+    }
+  ],
+  "board_operations": false,
+  "scope": "controlled competition demo integration; no new independent AI accuracy",
+  "display_updates": 802,
+  "elapsed_software_s": 479.668192,
+  "max_display_interval_s": 0.8593620999999985,
+  "direct_P201_UART": false,
+  "standalone_without_PC": false,
+  "new_independent_AI_accuracy": false,
+  "input_origin": "human_finger",
+  "human_three_preset_rehearsal": true
+}

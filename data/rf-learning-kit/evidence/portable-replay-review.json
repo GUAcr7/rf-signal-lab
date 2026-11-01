@@ -1,0 +1,138 @@
+{
+  "status": "passed_all_16_DMA_finite_replays_and_four_rendered_previews",
+  "rows": [
+    {
+      "key": "tone",
+      "block_zero_based": 0,
+      "frames": 64,
+      "state": "finished",
+      "last_peak_offset_hz": 990000.0,
+      "last_mean_power": 187247.0234375
+    },
+    {
+      "key": "tone",
+      "block_zero_based": 1,
+      "frames": 64,
+      "state": "finished",
+      "last_peak_offset_hz": 990000.0,
+      "last_mean_power": 187184.736328125
+    },
+    {
+      "key": "tone",
+      "block_zero_based": 2,
+      "frames": 64,
+      "state": "finished",
+      "last_peak_offset_hz": 990000.0,
+      "last_mean_power": 187309.42578125
+    },
+    {
+      "key": "tone",
+      "block_zero_based": 3,
+      "frames": 64,
+      "state": "finished",
+      "last_peak_offset_hz": 990000.0,
+      "last_mean_power": 187345.7158203125
+    },
+    {
+      "key": "bpsk",
+      "block_zero_based": 0,
+      "frames": 64,
+      "state": "finished",
+      "last_peak_offset_hz": 990000.0,
+      "last_mean_power": 75806.1064453125
+    },
+    {
+      "key": "bpsk",
+      "block_zero_based": 1,
+      "frames": 64,
+      "state": "finished",
+      "last_peak_offset_hz": 960000.0,
+      "last_mean_power": 80822.712890625
+    },
+    {
+      "key": "bpsk",
+      "block_zero_based": 2,
+      "frames": 64,
+      "state": "finished",
+      "last_peak_offset_hz": 990000.0,
+      "last_mean_power": 76123.1572265625
+    },
+    {
+      "key": "bpsk",
+      "block_zero_based": 3,
+      "frames": 64,
+      "state": "finished",
+      "last_peak_offset_hz": 960000.0,
+      "last_mean_power": 80618.568359375
+    },
+    {
+      "key": "qpsk",
+      "block_zero_based": 0,
+      "frames": 64,
+      "state": "finished",
+      "last_peak_offset_hz": 990000.0,
+      "last_mean_power": 83707.166015625
+    },
+    {
+      "key": "qpsk",
+      "block_zero_based": 1,
+      "frames": 64,
+      "state": "finished",
+      "last_peak_offset_hz": 900000.0,
+      "last_mean_power": 82631.1455078125
+    },
+    {
+      "key": "qpsk",
+      "block_zero_based": 2,
+      "frames": 64,
+      "state": "finished",
+      "last_peak_offset_hz": 990000.0,
+      "last_mean_power": 83676.158203125
+    },
+    {
+      "key": "qpsk",
+      "block_zero_based": 3,
+      "frames": 64,
+      "state": "finished",
+      "last_peak_offset_hz": 900000.0,
+      "last_mean_power": 82273.232421875
+    },
+    {
+      "key": "qam16",
+      "block_zero_based": 0,
+      "frames": 64,
+      "state": "finished",
+      "last_peak_offset_hz": 1020000.0,
+      "last_mean_power": 77608.767578125
+    },
+    {
+      "key": "qam16",
+      "block_zero_based": 1,
+      "frames": 64,
+      "state": "finished",
+      "last_peak_offset_hz": 1110000.0,
+      "last_mean_power": 39480.1884765625
+    },
+    {
+      "key": "qam16",
+      "block_zero_based": 2,
+      "frames": 64,
+      "state": "finished",
+      "last_peak_offset_hz": 1020000.0,
+      "last_mean_power": 77712.2373046875
+    },
+    {
+      "key": "qam16",
+      "block_zero_based": 3,
+      "frames": 64,
+      "state": "finished",
+      "last_peak_offset_hz": 1110000.0,
+      "last_mean_power": 39510.5400390625
+    }
+  ],
+  "board_operations": false,
+  "AI_inference": false,
+  "interactive_physical_clicks_verified": false,
+  "backend": "Agg",
+  "golden_reference_module": "C:\\Users\\project_user\\Documents\\Codex\\2026-09-09\\2026-fpga-fmql30tai-fpai-python-c\\outputs\\rf-signal-lab\\deliverables\\rf-learning-kit-20261022T130520Z\\rfsig\\replay_analysis.py"
+}

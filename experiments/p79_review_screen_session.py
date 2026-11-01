@@ -1,0 +1,96 @@
+"""Offline audit of physical screen dispatch, native lifecycle and full RX history."""
+from pathlib import Path
+from datetime import datetime,timezone
+import argparse,json,sys
+import numpy as np
+from PIL import Image
+ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT/'host'),str(ROOT/'src'),str(ROOT/'experiments')]
+import source_screen_rf as panel
+from p37_review_archives import decode_rx12
+from p48_verify_units import glyph_mask
+
+def read(p):return json.loads(Path(p).read_text('utf-8'))
+
+def main():
+    ap=argparse.ArgumentParser();ap.add_argument('--archive',type=Path,required=True);args=ap.parse_args()
+    archived=read(args.archive);out=ROOT/'results'/datetime.now(timezone.utc).strftime('p79-review-%Y%m%dT%H%M%SZ');out.mkdir()
+    r=dict(status='reviewing_P79',archive=str(args.archive.resolve().relative_to(ROOT)),
+           archive_sha256=panel.control.sha(args.archive),gates=[],groups=[],board_operations=False,
+           scope='controlled competition demo integration; no new independent AI accuracy')
+    def gate(name,passed):
+        r['gates'].append(dict(name=name,passed=bool(passed)))
+        if not passed:raise ValueError(name)
+    try:
+        gate('complete stopped archive',archived['status']=='passed_P79_stopped_RX_full_history_archived' and archived['serial_closed'])
+        p=ROOT/archived['screen_report'];screen=read(p)
+        gate('unchanged completed screen control session',panel.control.sha(p)==archived['screen_sha256'] and
+             screen['status'] in ('passed_P79_physical_screen_RF_presets_and_cleanup','passed_P79_protocol_replay_RF_presets_and_cleanup') and screen['serial_closed'])
+        files=args.archive.parent/'files'
+        for name,digest in archived['files_sha256'].items():gate('archive SHA '+name,panel.control.sha(files/name)==digest)
+        ai=[json.loads(x) for x in (files/'ai-history.jsonl').read_text().splitlines()]
+        metrics=[json.loads(x) for x in (files/'metrics-history.jsonl').read_text().splitlines()]
+        summary=read(files/'summary.json');progress=read(files/'progress.json')
+        gate('complete paired history and stopped cleanup',len(ai)==len(metrics)==summary['display_updates']+1
+             and summary['display_revision']=='p75' and summary['status']=='stopped'
+             and all(summary[k] for k in ('worker_joined','buffer_released','context_released','RF_after_matches'))
+             and not summary['cleanup_unconfirmed'])
+        gate('same boot and original model',all(x['boot_id']==archived['after_RX']['boot_id'] and
+             x['model_sha256']=='bd571ef0d30b76cdb8138d3ebd90f55463eb5439bd4c78636555bc8800873457' for x in ai))
+        gate('AI metrics source pairing',all(x['source_block_sequence']==m['source_block_sequence'] and
+             x['state']==m['AI_state'] and x['accepted_class']==m['accepted_class'] and
+             x['calibration_token']==m['calibration_token'] for x,m in zip(ai,metrics)))
+        gate('invalid measurements clear numbers',all(m['valid'] or all(m[k] is None for k in
+             ('LO_plus_center_hz','ROI_99_width_hz','ROI_power_counts_squared','center_offset_hz')) for m in metrics))
+        gate('stop clears class and metrics',ai[-1]['state']=='STOPPED' and ai[-1]['accepted_class']==-1 and not metrics[-1]['valid'])
+        stopped=[];natural=[]
+        for job in screen['jobs']:
+            path=ROOT/job['report'];record=read(path)
+            gate('unchanged job '+path.parent.name,panel.control.sha(path)==job['report_sha256'] and job['passed'])
+            if job['kind']!='run' or job.get('before_RF'):continue
+            receipt=record['supervisor_receipt'];sig=record['signal'];duration=record['seconds']
+            gate('native identity cleanup '+sig,panel.accepted_receipt(receipt,record['job_nonce'],record['boards']['TX']['boot_id'],sig,duration)
+                 and panel.cleanup_proven(record['TX_transcript'],record['TX_exit_code']) and record['TX_cleanup_verified'])
+            if job.get('cancelled'):
+                gate('actual in-flight stop '+sig,receipt['stop_seen'] and receipt['signal_sent'] and 'stop_signal=1' in record['TX_transcript'])
+                if job.get('cancel_reason')=='stop':stopped.append(job)
+                continue
+            natural.append(sig)
+            observed=record['AI_observations'];gate('native source produced RX observations '+sig,bool(observed))
+            start=observed[0]['elapsed_s'];token=record['boards']['RX']['AI']['calibration_token']
+            rows=[x for x in ai[:-1] if start+2<=x['elapsed_s']<=start+duration-3 and x['calibration_token']==token]
+            accepted=[x for x in rows if x['state']=='CLASSIFIED' and x['accepted_class']>=0]
+            expected={'bpsk':0,'qpsk':1,'qam16':2}[sig]
+            correct=sum(x['accepted_class']==expected for x in accepted)
+            coverage=len(accepted)/len(rows) if rows else 0
+            accuracy=correct/len(accepted) if accepted else 0
+            r['groups'].append(dict(signal=sig,stable_updates=len(rows),accepted=len(accepted),correct=correct,
+                                    coverage=coverage,conditional_accuracy=accuracy))
+            gate('unchanged known-source gate '+sig,len(rows)>=5 and coverage>=.70 and accuracy>=.90)
+        gate('three natural sources and screen-protocol STOP',set(('bpsk','qpsk','qam16'))<=set(natural)
+             and bool(stopped) and any(e['button']==7 and e['effect']=='stop' for e in screen['physical_events']))
+        raw=(p.parent/'UART/uart.rx.bin').read_bytes()
+        gate('stop raw touch protocol packet present',b'\x65\x00\x07\x00\xff\xff\xff' in raw)
+        times=np.array([x['elapsed_s'] for x in ai[:-1]]);seq=np.array([x['source_block_sequence'] for x in ai[:-1]])
+        gate('fresh advancing display updates',len(times)>2 and np.all(np.diff(times)>0) and np.all(np.diff(seq)>0) and np.max(np.diff(times))<2)
+        pair=decode_rx12((files/'last-display-packed.bin').read_bytes());x=pair[:8192,0].astype(float)+1j*pair[:8192,1]
+        window=(.5-.5*np.cos(2*np.pi*np.arange(1024)/1024)).astype(np.float32).astype(float)
+        power=np.mean(abs(np.fft.fft(x.reshape(8,1024)*window,axis=1))**2,axis=0)/(1024*np.sum(window*window))
+        peak=10*np.log10(max(power));rms=float(np.sqrt(np.mean(abs(x)**2)/2))
+        gate('same-source final FFT RMS',abs(peak-progress['peak_db'])<.002 and abs(rms-progress['rms_per_component_counts'])<1e-6)
+        pixels=np.fromfile(files/'fb.raw',dtype='<u4').reshape(480,800)
+        for y,label,color,left in ((286,'State: STOPPED',0xffdee6ee,456),(308,'LO+center: unavailable',0xff96a5b6,456),
+                                  (328,'99% ROI BW: unavailable',0xff96a5b6,456),(456,'AI: STOPPED | controlled 3 classes',0xff96a5b6,16)):
+            mask=glyph_mask(label,ROOT/'embedded/arm_panel/font8x12.h')
+            gate('actual stopped pixels '+label,np.array_equal(pixels[y:y+12,left:left+mask.shape[1]],np.where(mask,color,0xff0c0e12).astype('<u4')))
+        Image.frombytes('RGB',(800,480),(files/'fb.raw').read_bytes(),'raw','BGRX').save(out/'receiver-stopped.png')
+        r.update(status='passed_P79_screen_protocol_RF_AI_history_cleanup',display_updates=summary['display_updates'],
+                 elapsed_software_s=summary['elapsed_software_s'],max_display_interval_s=float(np.max(np.diff(times))),
+                 direct_P201_UART=False,standalone_without_PC=False,new_independent_AI_accuracy=False,
+                 input_origin=screen.get('input_origin','human_finger'),
+                 human_three_preset_rehearsal=screen.get('input_origin','human_finger')=='human_finger')
+    except Exception as error:r.update(status='failed_or_unconfirmed_P79_review',error=repr(error))
+    (out/'report.json').write_text(json.dumps(r,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+    print(out,flush=True);print(r['status'],flush=True)
+    return 0 if r['status'].startswith('passed_') else 1
+
+if __name__=='__main__':raise SystemExit(main())

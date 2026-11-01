@@ -1,0 +1,210 @@
+/dts-v1/;
+/plugin/;
+
+/ {
+
+	fragment@0 {
+		target = <&fpga_full>;
+
+		overlay0: __overlay__ {
+			#address-cells = <0x01>;
+			#size-cells = <0x01>;
+			firmware-name = "system_wrapper.bin";
+			linux,phandle = <0x07>;
+			phandle = <0x07>;
+		};
+	};
+
+	fragment@1 {
+		target = <&amba>;
+
+		overlay1: __overlay__ {
+			linux,phandle = <0x08>;
+			phandle = <0x08>;
+
+			axi_vdma_0: dma@43000000 {
+				#dma-cells = <0x01>;
+				clock-names = "s_axi_lite_aclk", "m_axi_mm2s_aclk", "m_axi_mm2s_aclk", "m_axi_s2mm_aclk", "m_axi_s2mm_aclk";
+				clocks = <&clkc>, <0x10>, <&clkc>, <0x10>, <&clkc>, <0x10>, <&clkc>, <0x10>, <&clkc>, <0x10>;
+				compatible = "xlnx,axi-vdma-1.00.a";
+				interrupt-parent = <&intc>;
+				interrupts = <0x00 0x1d 0x04 0x00 0x1e 0x04>;
+				reg = <0x43000000 0x10000>;
+				xlnx,addrwidth = <0x20>;
+				xlnx,flush-fsync = <0x01>;
+				xlnx,num-fstores = <0x03>;
+				linux,phandle = <0x05>;
+				phandle = <0x05>;
+
+				dma-channel@43000000 {
+					compatible = "xlnx,axi-vdma-mm2s-channel";
+					interrupts = <0x00 0x1d 0x04>;
+					xlnx,datawidth = <0x20>;
+					xlnx,device-id = <0x00>;
+					xlnx,genlock-mode;
+				};
+
+				dma-channel@43000030 {
+					compatible = "xlnx,axi-vdma-s2mm-channel";
+					interrupts = <0x00 0x1e 0x04>;
+					xlnx,datawidth = <0x20>;
+					xlnx,device-id = <0x00>;
+					xlnx,genlock-mode;
+				};
+			};
+
+			clk_wiz_0: clk_wiz@43c10000 {
+				clock-output-names = "clk_out1";
+				compatible = "xlnx,clocking-wizard";
+				reg = <0x43c10000 0x10000>;
+				clock-names = "clk_in1", "s_axi_aclk";
+				clocks = <&clkc>, <0x0f>, <&clkc>, <0x0f>;
+				#clock-cells = <0x01>;
+				linux,phandle = <0x04>;
+				phandle = <0x04>;
+			};
+
+			v_tc_0: v_tc@43c20000 {
+				compatible = "xlnx,v-tc-5.01.a";
+				interrupt-parent = <&intc>;
+				interrupts = <0x00 0x1f 0x04>;
+				reg = <0x43c20000 0x10000>;
+				linux,phandle = <0x01>;
+				phandle = <0x01>;
+			};
+
+			video_timings: lcd_800x480 {
+				clock-frequency = <0x80e8>;
+				hactive = <0x320>;
+				hsync_start = <0x348>;
+				hsync_end = <0x3c8>;
+				htotal = <0x420>;
+				vactive = <0x1e0>;
+				vsync_start = <0x1e0>;
+				vsync_end = <0x1e4>;
+				vtotal = <0x210>;
+				vrefresh = <0x3c>;
+				hsync-active = <0x01>;
+				vsync-active = <0x01>;
+				linux,phandle = <0x02>;
+				phandle = <0x02>;
+			};
+
+			drm_encoder_0: drm_encoder {
+				compatible = "xlnx,drm-encoder-slave";
+				linux,phandle = <0x03>;
+				phandle = <0x03>;
+			};
+
+			xilinx_drm_0: xilinx_drm {
+				compatible = "xlnx,drm";
+				xlnx,vtc = <&v_tc_0>;
+				display-timings = <&video_timings>;
+				xlnx,connector-type = "VGA";
+				xlnx,encoder-slave = <&drm_encoder_0>;
+				clocks = <&clk_wiz_0>, <0x00>;
+				linux,phandle = <0x09>;
+				phandle = <0x09>;
+
+				planes {
+					xlnx,pixel-format = "argb8888";
+
+					plane0 {
+						dmas = <&axi_vdma_0>, <0x01>;
+						dma-names = "dma";
+					};
+				};
+			};
+
+			ttc0_pwm: ttc_pwm@0 {
+				compatible = "xlnx,ps7-ttc-1.00.a";
+				reg = <0xf8001000 0x1000>;
+				#pwm-cells = <0x02>;
+				clock-frequency = <0x69f6bcb>;
+				clock-frequency-timer0 = <0x69f6bcb>;
+				clock-frequency-timer1 = <0x69f6bcb>;
+				clock-frequency-timer2 = <0x69f6bcb>;
+				xlnx,ttc-clk0-clksrc = <0x00>;
+				xlnx,ttc-clk0-freq-hz = <0x69f6bcb>;
+				xlnx,ttc-clk1-clksrc = <0x00>;
+				xlnx,ttc-clk1-freq-hz = <0x69f6bcb>;
+				xlnx,ttc-clk2-clksrc = <0x00>;
+				xlnx,ttc-clk2-freq-hz = <0x69f6bcb>;
+				linux,phandle = <0x06>;
+				phandle = <0x06>;
+			};
+		};
+	};
+
+	fragment@2 {
+		target-path = "/";
+
+		overlay2: __overlay__ {
+			linux,phandle = <0x0a>;
+			phandle = <0x0a>;
+
+			lcd_bl: backlight {
+				compatible = "pwm-backlight";
+				pwms = <&ttc0_pwm>, <0x00 0xc350>;
+				brightness-levels = <0x00 0x1f 0x3f 0x5f 0x7f 0x9f 0xbf 0xdf 0xff>;
+				default-brightness-level = <0x08>;
+				linux,phandle = <0x0b>;
+				phandle = <0x0b>;
+			};
+		};
+	};
+
+	__symbols__ {
+		overlay0 = "/fragment@0/__overlay__";
+		overlay1 = "/fragment@1/__overlay__";
+		axi_vdma_0 = "/fragment@1/__overlay__/dma@43000000";
+		clk_wiz_0 = "/fragment@1/__overlay__/clk_wiz@43c10000";
+		v_tc_0 = "/fragment@1/__overlay__/v_tc@43c20000";
+		video_timings = "/fragment@1/__overlay__/lcd_800x480";
+		drm_encoder_0 = "/fragment@1/__overlay__/drm_encoder";
+		xilinx_drm_0 = "/fragment@1/__overlay__/xilinx_drm";
+		ttc0_pwm = "/fragment@1/__overlay__/ttc_pwm@0";
+		overlay2 = "/fragment@2/__overlay__";
+		lcd_bl = "/fragment@2/__overlay__/backlight";
+	};
+
+	__fixups__ {
+		fpga_full = "/fragment@0:target:0";
+		amba = "/fragment@1:target:0";
+		clkc = "/fragment@1/__overlay__/dma@43000000:clocks:0", "/fragment@1/__overlay__/dma@43000000:clocks:8", "/fragment@1/__overlay__/dma@43000000:clocks:16", "/fragment@1/__overlay__/dma@43000000:clocks:24", "/fragment@1/__overlay__/dma@43000000:clocks:32", "/fragment@1/__overlay__/clk_wiz@43c10000:clocks:0", "/fragment@1/__overlay__/clk_wiz@43c10000:clocks:8";
+		intc = "/fragment@1/__overlay__/dma@43000000:interrupt-parent:0", "/fragment@1/__overlay__/v_tc@43c20000:interrupt-parent:0";
+	};
+
+	__local_fixups__ {
+
+		fragment@1 {
+
+			__overlay__ {
+
+				xilinx_drm {
+					xlnx,vtc = <0x00>;
+					display-timings = <0x00>;
+					xlnx,encoder-slave = <0x00>;
+					clocks = <0x00>;
+
+					planes {
+
+						plane0 {
+							dmas = <0x00>;
+						};
+					};
+				};
+			};
+		};
+
+		fragment@2 {
+
+			__overlay__ {
+
+				backlight {
+					pwms = <0x00>;
+				};
+			};
+		};
+	};
+};

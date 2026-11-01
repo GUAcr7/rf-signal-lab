@@ -1,0 +1,27 @@
+Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
+| Date         : Sun Oct 11 12:00:09 2026
+| Host         : LAPTOP-CLPF2QOU running 64-bit major release  (build 9200)
+| Command      : report_utilization -hierarchical -file E:/FPGA_Tools/Work/p07-fir-ooc-20261011-115930-d17039/reports/utilization_hierarchical.rpt
+| Design       : fixed_fir_iq
+| Device       : 7z020clg400-2
+| Design State : Synthesized
+---------------------------------------------------------------------------------------------------------------------------------------------------
+
+Utilization Design Information
+
+Table of Contents
+-----------------
+1. Utilization by Hierarchy
+
+1. Utilization by Hierarchy
+---------------------------
+
++--------------+--------+------------+------------+---------+------+------+--------+--------+------------+
+|   Instance   | Module | Total LUTs | Logic LUTs | LUTRAMs | SRLs |  FFs | RAMB36 | RAMB18 | DSP Blocks |
++--------------+--------+------------+------------+---------+------+------+--------+--------+------------+
+| fixed_fir_iq |  (top) |        731 |        731 |       0 |    0 | 1631 |      0 |      0 |          2 |
++--------------+--------+------------+------------+---------+------+------+--------+--------+------------+
+
+

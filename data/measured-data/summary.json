@@ -1,0 +1,348 @@
+{
+  "P52_independent_test": {
+    "status": "passed_independent_controlled_REAL_RF_classification_and_host_C_parity",
+    "test_real_frames": 54,
+    "independent_source_seeds": 3,
+    "source_groups_disjoint": true,
+    "frame_random_split": false,
+    "class_order": [
+      "BPSK",
+      "QPSK",
+      "16QAM"
+    ],
+    "evaluation": {
+      "fp32": {
+        "frames": 54,
+        "correct": 51,
+        "fraction_correct": 0.9444444444444444,
+        "per_class_fraction_correct": [
+          0.8888888888888888,
+          1.0,
+          0.9444444444444444
+        ],
+        "confusion_rows_truth_cols_prediction": [
+          [
+            16,
+            1,
+            1
+          ],
+          [
+            0,
+            18,
+            0
+          ],
+          [
+            0,
+            1,
+            17
+          ]
+        ]
+      },
+      "int8": {
+        "frames": 54,
+        "correct": 52,
+        "fraction_correct": 0.9629629629629629,
+        "per_class_fraction_correct": [
+          0.9444444444444444,
+          0.9444444444444444,
+          1.0
+        ],
+        "confusion_rows_truth_cols_prediction": [
+          [
+            17,
+            1,
+            0
+          ],
+          [
+            0,
+            17,
+            1
+          ],
+          [
+            0,
+            0,
+            18
+          ]
+        ]
+      }
+    },
+    "by_seed": {
+      "2026102313": {
+        "fp32": {
+          "frames": 18,
+          "correct": 16,
+          "fraction_correct": 0.8888888888888888,
+          "per_class_fraction_correct": [
+            0.6666666666666666,
+            1.0,
+            1.0
+          ],
+          "confusion_rows_truth_cols_prediction": [
+            [
+              4,
+              1,
+              1
+            ],
+            [
+              0,
+              6,
+              0
+            ],
+            [
+              0,
+              0,
+              6
+            ]
+          ]
+        },
+        "int8": {
+          "frames": 18,
+          "correct": 17,
+          "fraction_correct": 0.9444444444444444,
+          "per_class_fraction_correct": [
+            0.8333333333333334,
+            1.0,
+            1.0
+          ],
+          "confusion_rows_truth_cols_prediction": [
+            [
+              5,
+              1,
+              0
+            ],
+            [
+              0,
+              6,
+              0
+            ],
+            [
+              0,
+              0,
+              6
+            ]
+          ]
+        }
+      },
+      "2026102314": {
+        "fp32": {
+          "frames": 18,
+          "correct": 17,
+          "fraction_correct": 0.9444444444444444,
+          "per_class_fraction_correct": [
+            1.0,
+            1.0,
+            0.8333333333333334
+          ],
+          "confusion_rows_truth_cols_prediction": [
+            [
+              6,
+              0,
+              0
+            ],
+            [
+              0,
+              6,
+              0
+            ],
+            [
+              0,
+              1,
+              5
+            ]
+          ]
+        },
+        "int8": {
+          "frames": 18,
+          "correct": 17,
+          "fraction_correct": 0.9444444444444444,
+          "per_class_fraction_correct": [
+            1.0,
+            0.8333333333333334,
+            1.0
+          ],
+          "confusion_rows_truth_cols_prediction": [
+            [
+              6,
+              0,
+              0
+            ],
+            [
+              0,
+              5,
+              1
+            ],
+            [
+              0,
+              0,
+              6
+            ]
+          ]
+        }
+      },
+      "2026102315": {
+        "fp32": {
+          "frames": 18,
+          "correct": 18,
+          "fraction_correct": 1.0,
+          "per_class_fraction_correct": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "confusion_rows_truth_cols_prediction": [
+            [
+              6,
+              0,
+              0
+            ],
+            [
+              0,
+              6,
+              0
+            ],
+            [
+              0,
+              0,
+              6
+            ]
+          ]
+        },
+        "int8": {
+          "frames": 18,
+          "correct": 18,
+          "fraction_correct": 1.0,
+          "per_class_fraction_correct": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "confusion_rows_truth_cols_prediction": [
+            [
+              6,
+              0,
+              0
+            ],
+            [
+              0,
+              6,
+              0
+            ],
+            [
+              0,
+              0,
+              6
+            ]
+          ]
+        }
+      }
+    },
+    "scope": "single controlled IF/symbol-rate/gains; no measured SNR, arbitrary signal, unknown rejection or frame-independent CI claim"
+  },
+  "P76_demo": {
+    "status": "passed_P76_installed_10min_RF_history_FFT_pixels_cleanup",
+    "groups": [
+      {
+        "source": "tone",
+        "updates": 17,
+        "accepted": 0,
+        "correct": 0,
+        "coverage": 0.0,
+        "conditional_accuracy": 0,
+        "passed": true
+      },
+      {
+        "source": "bpsk",
+        "updates": 40,
+        "accepted": 40,
+        "correct": 40,
+        "coverage": 1.0,
+        "conditional_accuracy": 1.0,
+        "passed": true
+      },
+      {
+        "source": "qpsk",
+        "updates": 40,
+        "accepted": 40,
+        "correct": 40,
+        "coverage": 1.0,
+        "conditional_accuracy": 1.0,
+        "passed": true
+      },
+      {
+        "source": "qam16",
+        "updates": 40,
+        "accepted": 40,
+        "correct": 40,
+        "coverage": 1.0,
+        "conditional_accuracy": 1.0,
+        "passed": true
+      }
+    ],
+    "elapsed_software_s": 666.487863,
+    "display_updates": 1153,
+    "maximum_update_interval_s": 0.8567280000000039,
+    "new_independent_accuracy_claimed": false
+  },
+  "P81_human_demo": {
+    "status": "passed_P81_human_screen_RF_rehearsal_saved",
+    "latency": {
+      "check": {
+        "samples": 5,
+        "median_s": 3.5904040336608887,
+        "minimum_s": 3.371217966079712,
+        "maximum_s": 6.6455419063568115
+      },
+      "start": {
+        "samples": 5,
+        "median_s": 5.350183963775635,
+        "minimum_s": 5.276916980743408,
+        "maximum_s": 7.062442064285278
+      },
+      "stop": {
+        "samples": 1,
+        "median_s": 2.4415488243103027,
+        "minimum_s": 2.4415488243103027,
+        "maximum_s": 2.4415488243103027
+      }
+    },
+    "RF_groups": [
+      {
+        "signal": "bpsk",
+        "stable_updates": 16,
+        "accepted": 16,
+        "correct": 16,
+        "coverage": 1.0,
+        "conditional_accuracy": 1.0
+      },
+      {
+        "signal": "qam16",
+        "stable_updates": 16,
+        "accepted": 16,
+        "correct": 16,
+        "coverage": 1.0,
+        "conditional_accuracy": 1.0
+      },
+      {
+        "signal": "qpsk",
+        "stable_updates": 16,
+        "accepted": 16,
+        "correct": 16,
+        "coverage": 1.0,
+        "conditional_accuracy": 1.0
+      },
+      {
+        "signal": "qpsk",
+        "stable_updates": 16,
+        "accepted": 16,
+        "correct": 16,
+        "coverage": 1.0,
+        "conditional_accuracy": 1.0
+      }
+    ],
+    "display_updates": 802,
+    "elapsed_software_s": 479.668192,
+    "direct_P201_UART": false,
+    "standalone_without_PC": false,
+    "new_independent_AI_accuracy": false
+  }
+}

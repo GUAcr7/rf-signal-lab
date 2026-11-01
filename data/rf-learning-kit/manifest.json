@@ -1,0 +1,271 @@
+{
+  "schema": "rfsig.rf_learning_kit.v1",
+  "created_utc": "2026-10-22T13:05:20.850577+00:00",
+  "source": "REAL_RF_SAVED",
+  "hardware_required": false,
+  "AI_inference": false,
+  "independent_ML_benchmark_eligible": false,
+  "split": "unassigned_learning_only",
+  "ADC_gaps": "unknown",
+  "lossless_proven": false,
+  "records": [
+    {
+      "key": "tone",
+      "label": "TONE",
+      "npz": "cases/tone.npz",
+      "metadata": "cases/tone.json",
+      "original_packed": "originals/tone.bin"
+    },
+    {
+      "key": "bpsk",
+      "label": "BPSK",
+      "npz": "cases/bpsk.npz",
+      "metadata": "cases/bpsk.json",
+      "original_packed": "originals/bpsk.bin"
+    },
+    {
+      "key": "qpsk",
+      "label": "QPSK",
+      "npz": "cases/qpsk.npz",
+      "metadata": "cases/qpsk.json",
+      "original_packed": "originals/qpsk.bin"
+    },
+    {
+      "key": "qam16",
+      "label": "16QAM",
+      "npz": "cases/qam16.npz",
+      "metadata": "cases/qam16.json",
+      "original_packed": "originals/qam16.bin"
+    }
+  ],
+  "verified_python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+  "verified_dependencies": {
+    "numpy": "2.5.3",
+    "matplotlib": "3.11.1"
+  },
+  "raw_original_bytes": 4194304,
+  "decoded_complex_samples": 1048576,
+  "files": [
+    {
+      "path": "__init__.py",
+      "bytes": 73,
+      "sha256": "8aef3d6ac5a6b0b48121ea8ee2e79a321fffb60857fa80e88a859ef5e65fe40b"
+    },
+    {
+      "path": "cases/bpsk.json",
+      "bytes": 8093,
+      "sha256": "8eb44937c7f98d35fa516de3e2bed5a26c04dcbdf204b89eed6fc1c16668e874"
+    },
+    {
+      "path": "cases/bpsk.npz",
+      "bytes": 1708775,
+      "sha256": "7d30a314a1994eafd4b04a9a31d3884e8b7923ed3e6d0dcf030b16403ad4a1b2"
+    },
+    {
+      "path": "cases/qam16.json",
+      "bytes": 8105,
+      "sha256": "21a0459e807f7d2fe989758ca11f08c219100e15df6b7438b32c4c5e8ffcde62"
+    },
+    {
+      "path": "cases/qam16.npz",
+      "bytes": 1683354,
+      "sha256": "fc279c8031085557b1f608d0d43675e54245efac47457e03dc518addbd86af52"
+    },
+    {
+      "path": "cases/qpsk.json",
+      "bytes": 8103,
+      "sha256": "3b9e5a9c8c44e66db2d659e037ddb5de4e61f43c8ceabb6b2fdcbf89265d9978"
+    },
+    {
+      "path": "cases/qpsk.npz",
+      "bytes": 1699780,
+      "sha256": "bc98f9dd2a24cba516f83302309bc89be54e8d53778f197945644d8109fe0752"
+    },
+    {
+      "path": "cases/tone.json",
+      "bytes": 6828,
+      "sha256": "84bbe543e2d8113101c78dc50f909dd1d0c8dd4e47edcadc90173686dd949ecd"
+    },
+    {
+      "path": "cases/tone.npz",
+      "bytes": 1671843,
+      "sha256": "ef8d3540a7a245d8dd7798614a737b8b58c75e3db837bd67ce9f3100be1546d5"
+    },
+    {
+      "path": "data_api.py",
+      "bytes": 4222,
+      "sha256": "959c064508baea881039f8b1616d0a20b81f79f70442c97baf92f8415ff3e53c"
+    },
+    {
+      "path": "evidence/analysis-report.json",
+      "bytes": 17747,
+      "sha256": "24d216770b53acec35fac7d6a4f8e7cc85c8cbdf7247316c7a4912a28e804aec"
+    },
+    {
+      "path": "evidence/archive-bpsk.json",
+      "bytes": 55723,
+      "sha256": "d87383e2cc9e8491ceadd5f7fcbd5f28bbea6b271d43c876257e5725e23b955f"
+    },
+    {
+      "path": "evidence/archive-qam16.json",
+      "bytes": 55732,
+      "sha256": "d8c199d5e3f108cfc555685ecc15e940743bf9ff6ffd5136ab55b79d23d41d0a"
+    },
+    {
+      "path": "evidence/archive-qpsk.json",
+      "bytes": 55723,
+      "sha256": "ef040072a7217c6266079bc7314fd1ff55896199b8a2f7432a1b999c60ef4e3e"
+    },
+    {
+      "path": "evidence/archive-tone.json",
+      "bytes": 55631,
+      "sha256": "4ec0aef41c70b552428a3cb9bed0f25fe6ecb68f2744df2707abd0e6455d7513"
+    },
+    {
+      "path": "evidence/archives-report.json",
+      "bytes": 1864,
+      "sha256": "b9823857aae10d2712980c37a6f797fb0b0f742147f6ef7680c68eb6e105bf32"
+    },
+    {
+      "path": "evidence/builder.py",
+      "bytes": 14122,
+      "sha256": "9833527c8193ba6a898cf415cb8e944267445f8352f25e947e4841a1605fb9fd"
+    },
+    {
+      "path": "evidence/controls-and-integrity.xml",
+      "bytes": 1267,
+      "sha256": "cd466275e0a7b663334c12baddf00a813ed4ac5aa9d51ab96e40e613daf8229c"
+    },
+    {
+      "path": "evidence/portable-replay-review.json",
+      "bytes": 3631,
+      "sha256": "2cbcda9ebb6f4a5cbdf0f8caa83ae5d1033daa96d323122a753ad038358d3d99"
+    },
+    {
+      "path": "evidence/source-report.json",
+      "bytes": 27864,
+      "sha256": "62f491f33c44bfd8aaf39c28ca7de56019ab21eb0902c744a45b7eabe91e79a6"
+    },
+    {
+      "path": "evidence/trial-report.json",
+      "bytes": 242291,
+      "sha256": "1a92891529f2fe5d146905115ae1bb790ee856387fa4e05486c5917056c8fea4"
+    },
+    {
+      "path": "example_read.py",
+      "bytes": 699,
+      "sha256": "3de6ce1b239ac00e75b6b5dbf937768e8bcdc38aeb336c67109676b6d4862e5c"
+    },
+    {
+      "path": "index.csv",
+      "bytes": 4473,
+      "sha256": "4ec72c2c660775479efbc8d6d6fd1e990b70f7e49c29dc118c2a0e76167e4e1a"
+    },
+    {
+      "path": "originals/bpsk.bin",
+      "bytes": 1048576,
+      "sha256": "d2c59b5d9da1ae2b06bdf3881c1e6163179bda9497c8a8f7ab02915450d09ff1"
+    },
+    {
+      "path": "originals/qam16.bin",
+      "bytes": 1048576,
+      "sha256": "3f9a5c0f2dafc1e101f89310cc0928639ee37fcdaf8d07eb61a6a042a92653bc"
+    },
+    {
+      "path": "originals/qpsk.bin",
+      "bytes": 1048576,
+      "sha256": "c6b2945c4d6bd3079ab8b5b5f67f2cd4fe11c48810ce31d9471a9de231e85b37"
+    },
+    {
+      "path": "originals/tone.bin",
+      "bytes": 1048576,
+      "sha256": "87e575209ba9f5267843abc9767e1cb25b1078289c1ada917e716833a2ed6095"
+    },
+    {
+      "path": "previews/bpsk.png",
+      "bytes": 227576,
+      "sha256": "b6fb68fcc600c5f45ba2283018464734890f9d1c79bb727a44650d930033b3c8"
+    },
+    {
+      "path": "previews/qam16.png",
+      "bytes": 227521,
+      "sha256": "12526bed47975bcbec332da05e25246cf10f50a536cf3ffdfa2c49ef57a0d17e"
+    },
+    {
+      "path": "previews/qpsk.png",
+      "bytes": 229658,
+      "sha256": "1bf6950db9bbf31bdf4f6cefd49a7169303115dbf954868166cfe0f825f71172"
+    },
+    {
+      "path": "previews/tone.png",
+      "bytes": 231476,
+      "sha256": "b3f8107681a2cfc049621047aac9a78f16f55d1d0e8af19f490cf7fbcb04c757"
+    },
+    {
+      "path": "README.md",
+      "bytes": 3575,
+      "sha256": "daf2eb140100e95097be15e2f1d5a25432b3e0a01c0de49e5530101b24b3f471"
+    },
+    {
+      "path": "requirements.txt",
+      "bytes": 34,
+      "sha256": "32ad6ad4c962f09b35b90f241df946f1d90dc555df13f3a8d166c0cf5ea362b5"
+    },
+    {
+      "path": "rfsig/__init__.py",
+      "bytes": 125,
+      "sha256": "e036ce2470a7af3f278c923799d545a9996f729733a80776ebb13cbe2aaf240d"
+    },
+    {
+      "path": "rfsig/bandwidth.py",
+      "bytes": 7710,
+      "sha256": "5b02f1b2ba4ae24991401559ddfd293a82fc89b3e6f09790e34814e4fee33887"
+    },
+    {
+      "path": "rfsig/bpsk.py",
+      "bytes": 949,
+      "sha256": "20c50d3fb436b8e9344438238371ef9ba6ff34d71c4070689b0a518294a2fbe8"
+    },
+    {
+      "path": "rfsig/power.py",
+      "bytes": 2235,
+      "sha256": "0194ed58c5d125b0f75b21f46360b4616cc8018479c51dc2ffe5196e6146f2fe"
+    },
+    {
+      "path": "rfsig/replay_analysis.py",
+      "bytes": 6983,
+      "sha256": "45fabb54265ae4e6647fe8006d54100292e65bcb72781749d776840151ae3aac"
+    },
+    {
+      "path": "rfsig/spectrum.py",
+      "bytes": 5519,
+      "sha256": "633dd4ac2924e633f27d4a40b2da9eba05822486db3ac109880bb2cf43ff60a8"
+    },
+    {
+      "path": "rfsig/waterfall.py",
+      "bytes": 5109,
+      "sha256": "11aa5a4f89474d8b171283679470b6511eaae6ec4a292e14626b3d1885e5427e"
+    },
+    {
+      "path": "run-demo.cmd",
+      "bytes": 429,
+      "sha256": "abab3d996d9b5fbaa28515572043ce4492a5eb75b89ab0ac82db7f97694dde0b"
+    },
+    {
+      "path": "run_demo.py",
+      "bytes": 594,
+      "sha256": "4b7d9230ea29faf6b6fb436d63acd78cb649448b13f91816701189f4599a5e94"
+    },
+    {
+      "path": "setup.cmd",
+      "bytes": 469,
+      "sha256": "63763c3e14f2dfab7175e63b25f71f966a7c53d8479d677807f5a9d58729df31"
+    },
+    {
+      "path": "viewer.py",
+      "bytes": 13591,
+      "sha256": "9f51faacb76caa1f454a787ca8023fbb2d5617865aff147396d52c34e5ad9fe7"
+    }
+  ],
+  "publication_note": "Windows user-directory strings redacted; this manifest hashes the published copy. Original ADC files and numeric arrays unchanged."
+}

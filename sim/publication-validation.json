@@ -1,0 +1,35 @@
+{
+  "hardware_accessed": false,
+  "rtl_simulation_rerun": false,
+  "checks": [
+    {
+      "name": "published_file_hashes",
+      "files": 2211,
+      "passed": true
+    },
+    {
+      "name": "active_python_syntax",
+      "files": 680,
+      "passed": true
+    },
+    {
+      "name": "fir_fraction_oracle_and_boundaries",
+      "output_pairs": 201,
+      "saturated_components": 132,
+      "passed": true
+    },
+    {
+      "name": "original_rx12_and_npz_identity",
+      "waveforms": 4,
+      "dma_blocks": 16,
+      "complex_samples": 1048576,
+      "passed": true
+    }
+  ],
+  "all_passed": true,
+  "source_code_coverage": {
+    "archive_code_members": 3952,
+    "unique_source_code_contents": 1336,
+    "all_included": true
+  }
+}

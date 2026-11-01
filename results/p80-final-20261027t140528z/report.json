@@ -1,0 +1,89 @@
+{
+  "schema": "rfsig.source_screen.latency_release.v1",
+  "status": "passed_P80_fast_screen_control_saved",
+  "created_utc": "2026-10-27T14:05:28.433137+00:00",
+  "review": {
+    "report": "results/p80-latency-review-20261027T140407Z/report.json",
+    "sha256": "e54b57da8e244b27819ca1986ab36c29e7348f8d9574bb097a7bf0ffeb614a1c"
+  },
+  "RF_review": {
+    "report": "results/p79-review-20261027T140355Z/report.json",
+    "sha256": "7b4725dff33f7b39fb565228fa9ca945b2f96134e22d79cb9e024fa4c80c96c4"
+  },
+  "archive": {
+    "report": "results/p59-p79-session-archive-20261027T140104645600Z/report.json",
+    "sha256": "67f326ddbf78dc3f97feca510530391163e81f695ffda267853fab6d65a9b7c9"
+  },
+  "timings": {
+    "check": {
+      "samples": 4,
+      "old_median_s": 9.814260959625244,
+      "new_median_s": 3.4798319339752197,
+      "new_min_s": 3.388685941696167,
+      "new_max_s": 3.557223081588745,
+      "reduction_percent": 64.54310774605594
+    },
+    "start": {
+      "samples": 4,
+      "old_median_s": 18.4704931974411,
+      "new_median_s": 5.291455507278442,
+      "new_min_s": 5.272634983062744,
+      "new_max_s": 5.309085845947266,
+      "reduction_percent": 71.35184507140546
+    },
+    "stop": {
+      "samples": 1,
+      "old_median_s": 6.4132750034332275,
+      "new_median_s": 2.5847740173339844,
+      "new_min_s": 2.5847740173339844,
+      "new_max_s": 2.5847740173339844,
+      "reduction_percent": 59.69650426731625
+    }
+  },
+  "RF_groups": [
+    {
+      "signal": "bpsk",
+      "stable_updates": 16,
+      "accepted": 16,
+      "correct": 16,
+      "coverage": 1.0,
+      "conditional_accuracy": 1.0
+    },
+    {
+      "signal": "qpsk",
+      "stable_updates": 16,
+      "accepted": 16,
+      "correct": 16,
+      "coverage": 1.0,
+      "conditional_accuracy": 1.0
+    },
+    {
+      "signal": "qam16",
+      "stable_updates": 16,
+      "accepted": 16,
+      "correct": 16,
+      "coverage": 1.0,
+      "conditional_accuracy": 1.0
+    }
+  ],
+  "tests_passed": 120,
+  "entry": "run-source-screen.cmd",
+  "rollback": "omit --fast-control when invoking host/source_screen_rf.py; original path retained",
+  "parent_checkpoint": {
+    "report": "results/p79-final-20261027T133028Z/report.json",
+    "sha256": "dbee099e05479cdb43d381e68831797f978c04ecb243fedc3f614f36c70d72d6"
+  },
+  "receiver_selection_sha256": "191b2e1c54ec8973d831fb6cb713703ef29f1e68518499e480168f42204fff5d",
+  "RX_stopped": true,
+  "TX_stopped": true,
+  "serial_closed": true,
+  "boards_powered_not_shutdown": true,
+  "input_origin": "screen_generated_protocol_replay",
+  "human_latency_rehearsal": false,
+  "direct_P201_UART_verified": false,
+  "PL_changes": false,
+  "persistent_board_files_changed": false,
+  "new_independent_AI_accuracy": false,
+  "checkpoint": "results/p80-final-20261027T140528Z/checkpoint.zip",
+  "acceptance": "results/p80-final-20261027T140528Z/acceptance.json"
+}

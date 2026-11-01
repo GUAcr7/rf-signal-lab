@@ -1,0 +1,154 @@
+{
+  "all_passed": true,
+  "scope": "integer_reference_and_RTL_simulation_only",
+  "hardware_accessed": false,
+  "timing_closed": false,
+  "runs": [
+    {
+      "stage": "tool-version",
+      "tool_returncode": 0,
+      "command": [
+        "E:\\FPGA_Tools\\IcarusVerilog13.0\\ucrt64\\bin\\iverilog.exe",
+        "-B",
+        "E:\\FPGA_Tools\\IcarusVerilog13.0\\ucrt64\\lib\\ivl",
+        "-V"
+      ]
+    },
+    {
+      "stage": "compile-0",
+      "tool_returncode": 0,
+      "command": [
+        "E:\\FPGA_Tools\\IcarusVerilog13.0\\ucrt64\\bin\\iverilog.exe",
+        "-B",
+        "E:\\FPGA_Tools\\IcarusVerilog13.0\\ucrt64\\lib\\ivl",
+        "-g2012",
+        "-Wall",
+        "-s",
+        "tb_fixed_fir_iq",
+        "-P",
+        "tb_fixed_fir_iq.N_TAPS=5",
+        "-P",
+        "tb_fixed_fir_iq.RANDOM_STALLS=0",
+        "-o",
+        "C:\\Users\\project_user\\Downloads\\fir-validation-release-20261029\\five-tap\\fir-0.vvp",
+        "C:\\Users\\project_user\\Downloads\\fir-validation-release-20261029\\relocated skill\\assets\\fixed_fir_iq.v",
+        "C:\\Users\\project_user\\Downloads\\fir-validation-release-20261029\\relocated skill\\assets\\tb_fixed_fir_iq.sv"
+      ]
+    },
+    {
+      "stage": "simulate-0",
+      "tool_returncode": 0,
+      "command": [
+        "E:\\FPGA_Tools\\IcarusVerilog13.0\\ucrt64\\bin\\vvp.exe",
+        "-M",
+        "E:\\FPGA_Tools\\IcarusVerilog13.0\\ucrt64\\lib\\ivl",
+        "C:\\Users\\project_user\\Downloads\\fir-validation-release-20261029\\five-tap\\fir-0.vvp",
+        "+CASE=five-tap",
+        "+INPUT_COUNT=19",
+        "+OUTPUT_COUNT=23",
+        "+COEFF=C:\\Users\\project_user\\Downloads\\fir-validation-release-20261029\\five-tap\\COEFF.hex",
+        "+I=C:\\Users\\project_user\\Downloads\\fir-validation-release-20261029\\five-tap\\I.hex",
+        "+EI=C:\\Users\\project_user\\Downloads\\fir-validation-release-20261029\\five-tap\\EI.hex",
+        "+SI=C:\\Users\\project_user\\Downloads\\fir-validation-release-20261029\\five-tap\\SI.hex",
+        "+Q=C:\\Users\\project_user\\Downloads\\fir-validation-release-20261029\\five-tap\\Q.hex",
+        "+EQ=C:\\Users\\project_user\\Downloads\\fir-validation-release-20261029\\five-tap\\EQ.hex",
+        "+SQ=C:\\Users\\project_user\\Downloads\\fir-validation-release-20261029\\five-tap\\SQ.hex"
+      ]
+    },
+    {
+      "stage": "compile-1",
+      "tool_returncode": 0,
+      "command": [
+        "E:\\FPGA_Tools\\IcarusVerilog13.0\\ucrt64\\bin\\iverilog.exe",
+        "-B",
+        "E:\\FPGA_Tools\\IcarusVerilog13.0\\ucrt64\\lib\\ivl",
+        "-g2012",
+        "-Wall",
+        "-s",
+        "tb_fixed_fir_iq",
+        "-P",
+        "tb_fixed_fir_iq.N_TAPS=5",
+        "-P",
+        "tb_fixed_fir_iq.RANDOM_STALLS=1",
+        "-o",
+        "C:\\Users\\project_user\\Downloads\\fir-validation-release-20261029\\five-tap\\fir-1.vvp",
+        "C:\\Users\\project_user\\Downloads\\fir-validation-release-20261029\\relocated skill\\assets\\fixed_fir_iq.v",
+        "C:\\Users\\project_user\\Downloads\\fir-validation-release-20261029\\relocated skill\\assets\\tb_fixed_fir_iq.sv"
+      ]
+    },
+    {
+      "stage": "simulate-1",
+      "tool_returncode": 0,
+      "command": [
+        "E:\\FPGA_Tools\\IcarusVerilog13.0\\ucrt64\\bin\\vvp.exe",
+        "-M",
+        "E:\\FPGA_Tools\\IcarusVerilog13.0\\ucrt64\\lib\\ivl",
+        "C:\\Users\\project_user\\Downloads\\fir-validation-release-20261029\\five-tap\\fir-1.vvp",
+        "+CASE=five-tap",
+        "+INPUT_COUNT=19",
+        "+OUTPUT_COUNT=23",
+        "+COEFF=C:\\Users\\project_user\\Downloads\\fir-validation-release-20261029\\five-tap\\COEFF.hex",
+        "+I=C:\\Users\\project_user\\Downloads\\fir-validation-release-20261029\\five-tap\\I.hex",
+        "+EI=C:\\Users\\project_user\\Downloads\\fir-validation-release-20261029\\five-tap\\EI.hex",
+        "+SI=C:\\Users\\project_user\\Downloads\\fir-validation-release-20261029\\five-tap\\SI.hex",
+        "+Q=C:\\Users\\project_user\\Downloads\\fir-validation-release-20261029\\five-tap\\Q.hex",
+        "+EQ=C:\\Users\\project_user\\Downloads\\fir-validation-release-20261029\\five-tap\\EQ.hex",
+        "+SQ=C:\\Users\\project_user\\Downloads\\fir-validation-release-20261029\\five-tap\\SQ.hex"
+      ]
+    }
+  ],
+  "case": "five-tap",
+  "tap_count": 5,
+  "input_pairs": 19,
+  "output_pairs": 23,
+  "reference_saturated_components": 0,
+  "sources": [
+    {
+      "path": "C:\\Users\\project_user\\Downloads\\fir-validation-release-20261029\\relocated skill\\examples\\five-tap.json",
+      "sha256": "369e5f4e150d7dc5b97c6c2b7447782d93159f9ca0b2097b5990c45ecc3d3b9b"
+    },
+    {
+      "path": "C:\\Users\\project_user\\Downloads\\fir-validation-release-20261029\\relocated skill\\assets\\fixed_fir_iq.v",
+      "sha256": "bfd540ae1bada5dae89fefd0d4f3f881d659473f0c522c4390f1ea9bef53660d"
+    },
+    {
+      "path": "C:\\Users\\project_user\\Downloads\\fir-validation-release-20261029\\relocated skill\\assets\\tb_fixed_fir_iq.sv",
+      "sha256": "47ae7c58d5594d673d9753b9c179c93435e7963c5dd8f822a45fb048b5615056"
+    }
+  ],
+  "vectors_sha256": "8f62e93085d8edccde49f17a0db10220bd4d3a19a49a6ae6f439ee8b30fa3799",
+  "self_checks": [
+    {
+      "case": "five-tap",
+      "taps": "5",
+      "accepted": "23",
+      "received": "23",
+      "valid_after_cycles": "6",
+      "handshake_min": "7",
+      "handshake_max": "7",
+      "output_stall_cycles": "0",
+      "input_wait_cycles": "154",
+      "reset_during_mac": "1",
+      "reset_stalled_output": "1",
+      "rounding_checks": "22",
+      "random_stalls": "0",
+      "default_coeff": "0"
+    },
+    {
+      "case": "five-tap",
+      "taps": "5",
+      "accepted": "23",
+      "received": "23",
+      "valid_after_cycles": "6",
+      "handshake_min": "7",
+      "handshake_max": "8",
+      "output_stall_cycles": "5",
+      "input_wait_cycles": "159",
+      "reset_during_mac": "1",
+      "reset_stalled_output": "1",
+      "rounding_checks": "22",
+      "random_stalls": "1",
+      "default_coeff": "0"
+    }
+  ]
+}

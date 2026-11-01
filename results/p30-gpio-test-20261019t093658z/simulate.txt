@@ -1,0 +1,14 @@
+
+****** xsim v2021.1 (64-bit)
+  **** SW Build 3247384 on Thu Jun 10 19:36:33 MDT 2021
+  **** IP Build 3246043 on Fri Jun 11 00:30:35 MDT 2021
+    ** Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+
+source xsim.dir/p30_gpio/xsim_script.tcl
+# xsim {p30_gpio} -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+P30_GPIO_TB_PASS checks=352
+$finish called at time : 352 ns : File "E:/p30c-1019-173651/gpio_sim/tb_rf_display_gpio.sv" Line 47
+exit
+INFO: [Common 17-206] Exiting xsim at Mon Oct 19 17:37:13 2026...

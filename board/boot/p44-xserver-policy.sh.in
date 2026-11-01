@@ -1,0 +1,33 @@
+#!/bin/sh
+# Keep the standalone framebuffer terminal out of X/desktop DPMS ownership.
+PATH=/sbin:/bin:/usr/sbin:/usr/bin
+export PATH
+D=@@DIRECTORY@@
+ORIGINAL_SHA=@@ORIGINAL_SHA@@
+AWAKE_SHA=@@AWAKE_SHA@@
+fail() { echo "p44-display: FAILED: $*" >&2; exit 1; }
+hash_is() {
+    digest=$(sha256sum "$1") || return 1
+    [ "${digest%% *}" = "$2" ]
+}
+hash_is "$D/xserver-original" "$ORIGINAL_SHA" || fail 'original X init hash'
+panel_owns_display() {
+    boot=$(cat /proc/sys/kernel/random/boot_id) || return 1
+    [ "$(cat /run/p43-init-boot 2>/dev/null)" = "$boot" ] || return 1
+    grep -Fx 'p43: PERSISTENT_MONITOR_READY' /run/p43-boot.log >/dev/null 2>&1 || return 1
+    [ -f /run/p42-000043/data/progress.json ]
+}
+case "${1:-}" in
+    start|restart)
+        if panel_owns_display; then
+            hash_is "$D/awake" "$AWAKE_SHA" || fail 'awake helper hash'
+            # This is the service's own graceful stop, never a driver unbind.
+            "$D/xserver-original" stop || fail 'desktop stop'
+            sh "$D/awake" || fail 'display wake'
+            echo 'p44-display: RF panel owns display; Xserver startup skipped'
+            echo 'RF_PANEL_NO_X_DPMS' > /run/p44-display-policy
+            exit 0
+        fi
+        ;;
+esac
+exec "$D/xserver-original" "$@"

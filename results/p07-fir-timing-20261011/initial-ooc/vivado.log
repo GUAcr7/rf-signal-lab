@@ -1,0 +1,372 @@
+#-----------------------------------------------------------
+# Vivado v2021.1 (64-bit)
+# SW Build 3247384 on Thu Jun 10 19:36:33 MDT 2021
+# IP Build 3246043 on Fri Jun 11 00:30:35 MDT 2021
+# Start of session at: Sun Oct 11 11:53:45 2026
+# Process ID: 37928
+# Current directory: E:/FPGA_Tools/Work/p07-fir-ooc-20261011-115342-9930c6
+# Command line: vivado.exe -mode batch -source synth_fir.tcl -log vivado.log -journal vivado.jou
+# Log file: E:/FPGA_Tools/Work/p07-fir-ooc-20261011-115342-9930c6/vivado.log
+# Journal file: E:/FPGA_Tools/Work/p07-fir-ooc-20261011-115342-9930c6\vivado.jou
+#-----------------------------------------------------------
+source synth_fir.tcl
+# proc p07_synth_only {} {
+#   if {[version -short] ne "2021.1"} { error "P07 requires exactly Vivado 2021.1" }
+#   set part "xc7z020clg400-2"
+#   if {[llength [get_parts -quiet $part]] != 1} { error "P07 required device is unavailable: $part" }
+#   set root [file normalize [file dirname [info script]]]
+#   if {[file normalize [pwd]] ne $root} { error "Run from the prepared short workspace root" }
+#   set reports [file join $root reports]
+#   file mkdir $reports
+#   foreach name {utilization.rpt utilization_hierarchical.rpt timing_summary.rpt internal_setup.rpt internal_hold.rpt check_timing.rpt clocks.rpt unconstrained_io.rpt synth.dcp internal_metrics.tsv} {
+#     if {[file exists [file join $reports $name]]} { error "Refusing to overwrite an existing result: $name" }
+#   }
+#   set coefficient_file [file join $root fpga ip fir63_q17.hex]
+#   set handle [open $coefficient_file r]
+#   set coefficients [split [string trim [read $handle]] "\n"]
+#   close $handle
+#   if {[llength $coefficients] != 63} { error "Exactly 63 coefficients are required" }
+#   foreach word $coefficients {
+#     if {![regexp {^[0-3][[:xdigit:]]{4}$} [string trim $word]]} { error "Invalid 18-bit coefficient word" }
+#   }
+#   if {![regexp {[1-9a-fA-F]} [join $coefficients ""]]} { error "All coefficients are zero" }
+#   # These overrides are irrelevant to this independent RTL flow and must be absent.
+#   foreach name {ADI_HDL_DIR ADI_GHDL_DIR ADI_IGNORE_VERSION_CHECK ADI_USE_OOC_SYNTHESIS ADI_USE_INCR_COMP ADI_POWER_OPTIMIZATION ADI_NO_BITSTREAM_COMPRESSION ADI_GENERATE_UTILIZATION ADI_GENERATE_XPA ADI_MAX_OOC_JOBS ADI_VIVADO_IP_LIBRARY ADI_DISABLE_MESSAGE_SUPPRESION} {
+#     if {[info exists ::env($name)]} { error "Unexpected optional environment override: $name" }
+#   }
+#   if {![info exists ::env(REQUIRED_VIVADO_VERSION)] || $::env(REQUIRED_VIVADO_VERSION) ne "2021.1"} { error "Required version environment must equal 2021.1" }
+#   puts "P07_TOOL_VERSION [version -short]"
+#   puts "P07_DEVICE $part"
+#   puts "P07_SCOPE standalone OOC synthesis; no placement, routing, bitstream or board"
+#   # This parameter affects only this Vivado process, not saved/global settings.
+#   set_param general.maxThreads 1
+#   create_project -in_memory p07_fir_ooc -part $part
+#   read_verilog [file join $root fpga rtl fixed_fir_iq.v]
+#   read_xdc [file join $root fir_internal_100mhz.xdc]
+#   # Preserve the original COEFF_FILE default, resolved against this root.
+#   synth_design -top fixed_fir_iq -part $part -mode out_of_context -generic N_TAPS=63
+#   if {[get_property PART [current_design]] ne $part} { error "Synthesized device mismatch" }
+#   if {[llength [get_cells -quiet -hierarchical -filter {IS_BLACKBOX == 1}]] != 0} { error "Unresolved synthesis black box" }
+#   set clock [get_clocks -quiet fir_clk]
+#   if {[llength $clock] != 1 || abs([get_property PERIOD $clock]-10.0) > 0.000001} { error "Missing 10 ns clock constraint" }
+#   if {[llength [all_registers]] == 0} { error "Synthesis removed every register; refusing a vacuous timing result" }
+#   set data_ports [get_ports -quiet {m_i* m_q*}]
+#   if {[llength $data_ports] != 32} { error "Expected both 16-bit data output ports" }
+#   foreach port $data_ports {
+#     set drivers [get_pins -quiet -of_objects [get_nets -quiet -of_objects $port] -filter {DIRECTION == OUT}]
+#     if {[llength $drivers] == 0} { error "Undriven data output: $port" }
+#     foreach cell [get_cells -quiet -of_objects $drivers] {
+#       if {[get_property REF_NAME $cell] in {GND VCC}} { error "Constant data output: $port; inspect coefficient initialization" }
+#     }
+#   }
+#   set setup [get_timing_paths -from $clock -to $clock -delay_type max -max_paths 1]
+#   set hold [get_timing_paths -from $clock -to $clock -delay_type min -max_paths 1]
+#   if {[llength $setup] != 1 || [llength $hold] != 1} { error "No internal clock-to-clock timing path" }
+#   report_utilization -file [file join $reports utilization.rpt]
+#   report_utilization -hierarchical -file [file join $reports utilization_hierarchical.rpt]
+#   report_timing_summary -delay_type min_max -max_paths 10 -report_unconstrained -file [file join $reports timing_summary.rpt]
+#   report_timing -from $clock -to $clock -delay_type max -max_paths 10 -file [file join $reports internal_setup.rpt]
+#   report_timing -from $clock -to $clock -delay_type min -max_paths 10 -file [file join $reports internal_hold.rpt]
+#   check_timing -verbose -file [file join $reports check_timing.rpt]
+#   report_clocks -file [file join $reports clocks.rpt]
+#   set handle [open [file join $reports unconstrained_io.rpt] w]
+#   puts $handle "Scope: synthesis internal register timing at 100 MHz only."
+#   puts $handle "Input/output delays and external reset/handshake timing are intentionally unspecified."
+#   puts $handle "No timing exceptions, external drive/load, pin assignments, board or ADC timing assumptions."
+#   puts $handle "check_timing/timing_summary may therefore report unconstrained I/O; inspect them explicitly."
+#   close $handle
+#   write_checkpoint [file join $reports synth.dcp]
+#   set setup_slack [get_property SLACK [lindex $setup 0]]
+#   set hold_slack [get_property SLACK [lindex $hold 0]]
+#   set handle [open [file join $reports internal_metrics.tsv] w]
+#   foreach {key value} [list tool_version [version -short] part $part top fixed_fir_iq taps 63 clock_period_ns 10.0 setup_slack_ns $setup_slack hold_slack_ns $hold_slack internal_setup_estimate_nonnegative [expr {$setup_slack >= 0}] internal_hold_estimate_nonnegative [expr {$hold_slack >= 0}] register_cells [llength [all_registers]] placed false routed false timing_closed false board_accessed false] {
+#     puts $handle "$key\t$value"
+#   }
+#   close $handle
+#   puts "P07_SYNTHESIS_REPORTS_COMPLETE setup_estimate_ns=$setup_slack hold_estimate_ns=$hold_slack"
+#   puts "P07_NOT_IMPLEMENTED estimated slack is not routed timing or measured board performance"
+# }
+# if {[catch {p07_synth_only} problem options]} {
+#   puts stderr "P07_SYNTHESIS_FAILED $problem"
+#   if {[dict exists $options -errorinfo]} { puts stderr [dict get $options -errorinfo] }
+#   exit 1
+# }
+P07_TOOL_VERSION 2021.1
+P07_DEVICE xc7z020clg400-2
+P07_SCOPE standalone OOC synthesis; no placement, routing, bitstream or board
+Command: synth_design -top fixed_fir_iq -part xc7z020clg400-2 -mode out_of_context -generic N_TAPS=63
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Device 21-403] Loading part xc7z020clg400-2
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 1 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 38732
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 1098.219 ; gain = 0.000
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'fixed_fir_iq' [E:/FPGA_Tools/Work/p07-fir-ooc-20261011-115342-9930c6/fpga/rtl/fixed_fir_iq.v:7]
+	Parameter N_TAPS bound to: 63 - type: integer 
+INFO: [Synth 8-3876] $readmem data file 'fpga/ip/fir63_q17.hex' is read successfully [E:/FPGA_Tools/Work/p07-fir-ooc-20261011-115342-9930c6/fpga/rtl/fixed_fir_iq.v:71]
+INFO: [Synth 8-6155] done synthesizing module 'fixed_fir_iq' (1#1) [E:/FPGA_Tools/Work/p07-fir-ooc-20261011-115342-9930c6/fpga/rtl/fixed_fir_iq.v:7]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1098.219 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1098.219 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1098.219 ; gain = 0.000
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.012 . Memory (MB): peak = 1098.219 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [E:/FPGA_Tools/Work/p07-fir-ooc-20261011-115342-9930c6/fir_internal_100mhz.xdc]
+Finished Parsing XDC File [E:/FPGA_Tools/Work/p07-fir-ooc-20261011-115342-9930c6/fir_internal_100mhz.xdc]
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1134.023 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.019 . Memory (MB): peak = 1134.023 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:08 ; elapsed = 00:00:10 . Memory (MB): peak = 1134.023 ; gain = 35.805
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z020clg400-2
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:08 ; elapsed = 00:00:10 . Memory (MB): peak = 1134.023 ; gain = 35.805
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 1134.023 ; gain = 35.805
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'fixed_fir_iq'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    IDLE |                              001 |                               00
+                     MAC |                              010 |                               01
+                  OUTPUT |                              100 |                               10
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'fixed_fir_iq'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 1134.023 ; gain = 35.805
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   37 Bit       Adders := 2     
+	   2 Input   21 Bit       Adders := 2     
+	   2 Input   20 Bit       Adders := 2     
+	   2 Input    6 Bit       Adders := 1     
++---Registers : 
+	               36 Bit    Registers := 2     
+	               16 Bit    Registers := 2     
+	               12 Bit    Registers := 126   
+	                6 Bit    Registers := 1     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 3     
++---Muxes : 
+	   2 Input   37 Bit        Muxes := 2     
+	   3 Input   36 Bit        Muxes := 2     
+	   2 Input   21 Bit        Muxes := 2     
+	   2 Input   20 Bit        Muxes := 2     
+	   2 Input   17 Bit        Muxes := 4     
+	   3 Input    6 Bit        Muxes := 1     
+	   4 Input    2 Bit        Muxes := 1     
+	   2 Input    1 Bit        Muxes := 2     
+	   5 Input    1 Bit        Muxes := 2     
+	   3 Input    1 Bit        Muxes := 5     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 220 (col length:60)
+BRAMs: 280 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+DSP Report: Generating DSP next_i, operation Mode is: C'+A*B.
+DSP Report: register accumulator_i_reg is absorbed into DSP next_i.
+DSP Report: operator next_i is absorbed into DSP next_i.
+DSP Report: operator product_i is absorbed into DSP next_i.
+DSP Report: Generating DSP next_q, operation Mode is: C'+A*B.
+DSP Report: register accumulator_q_reg is absorbed into DSP next_q.
+DSP Report: operator next_q is absorbed into DSP next_q.
+DSP Report: operator product_q is absorbed into DSP next_q.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 1134.023 ; gain = 35.805
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+ROM: Preliminary Mapping Report
++-------------+------------+---------------+----------------+
+|Module Name  | RTL Object | Depth x Width | Implemented As | 
++-------------+------------+---------------+----------------+
+|fixed_fir_iq | p_0_out    | 64x16         | LUT            | 
+|fixed_fir_iq | p_0_out    | 64x16         | LUT            | 
++-------------+------------+---------------+----------------+
+
+
+DSP: Preliminary Mapping Report (see note below)
++-------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name  | DSP Mapping | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++-------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|fixed_fir_iq | C'+A*B      | 18     | 12     | 36     | -      | 36     | 0    | 0    | 1    | -    | -     | 0    | 0    | 
+|fixed_fir_iq | C'+A*B      | 18     | 12     | 36     | -      | 36     | 0    | 0    | 1    | -    | -     | 0    | 0    | 
++-------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 1147.633 ; gain = 49.414
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:18 ; elapsed = 00:00:20 . Memory (MB): peak = 1270.523 ; gain = 172.305
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:19 ; elapsed = 00:00:21 . Memory (MB): peak = 1270.523 ; gain = 172.305
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 1270.523 ; gain = 172.305
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 1270.523 ; gain = 172.305
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 1270.523 ; gain = 172.305
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 1270.523 ; gain = 172.305
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 1270.523 ; gain = 172.305
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 1270.523 ; gain = 172.305
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+--------+------+
+|      |Cell    |Count |
++------+--------+------+
+|1     |CARRY4  |    42|
+|2     |DSP48E1 |     2|
+|3     |LUT1    |    73|
+|4     |LUT2    |    89|
+|5     |LUT3    |   110|
+|6     |LUT4    |    10|
+|7     |LUT5    |    63|
+|8     |LUT6    |   508|
+|9     |MUXF7   |   166|
+|10    |MUXF8   |    24|
+|11    |FDRE    |  1563|
+|12    |FDSE    |     1|
++------+--------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 1270.523 ; gain = 172.305
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:15 ; elapsed = 00:00:21 . Memory (MB): peak = 1270.523 ; gain = 136.500
+Synthesis Optimization Complete : Time (s): cpu = 00:00:20 ; elapsed = 00:00:23 . Memory (MB): peak = 1270.523 ; gain = 172.305
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.010 . Memory (MB): peak = 1270.523 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 234 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+WARNING: [Netlist 29-101] Netlist 'fixed_fir_iq' is not ideal for floorplanning, since the cellview 'fixed_fir_iq' contains a large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [E:/FPGA_Tools/Work/p07-fir-ooc-20261011-115342-9930c6/fir_internal_100mhz.xdc]
+Finished Parsing XDC File [E:/FPGA_Tools/Work/p07-fir-ooc-20261011-115342-9930c6/fir_internal_100mhz.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1270.523 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Synth Design complete, checksum: 78c68a97
+INFO: [Common 17-83] Releasing license: Synthesis
+19 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:23 ; elapsed = 00:00:29 . Memory (MB): peak = 1270.523 ; gain = 172.305
+INFO: [Common 17-600] The following parameters have non-default value.
+general.maxThreads
+WARNING: [Timing 38-242] The property HD.CLK_SRC of clock port "clk" is not set. In out-of-context mode, this prevents timing estimation for clock delay/skew
+Resolution: Set the HD.CLK_SRC property of the out-of-context port to the location of the clock buffer instance in the top-level design
+INFO: [Timing 38-78] ReportTimingParams: -from_pins  -to_pins  -max_paths 10 -nworst 1 -delay_type max -sort_by slack.
+INFO: [Timing 38-78] ReportTimingParams: -from_pins  -to_pins  -max_paths 10 -nworst 1 -delay_type min -sort_by slack.
+INFO: [Timing 38-480] Writing timing data to binary archive.
+INFO: [Common 17-1381] The checkpoint 'E:/FPGA_Tools/Work/p07-fir-ooc-20261011-115342-9930c6/reports/synth.dcp' has been generated.
+P07_SYNTHESIS_REPORTS_COMPLETE setup_estimate_ns=-5.153 hold_estimate_ns=0.252
+P07_NOT_IMPLEMENTED estimated slack is not routed timing or measured board performance
+# exit 0
+INFO: [Common 17-206] Exiting Vivado at Sun Oct 11 11:54:25 2026...

@@ -1,0 +1,9 @@
+{
+  "status": "passed_P81_checkpoint_CRC_unique_entries_SHA256",
+  "files": 168,
+  "zip_bytes": 2326600,
+  "zip_sha256": "b0562a8a8f9bcc63f31543054456f9eb76706693039a6e9ec48ae6d2ec25a66f",
+  "manifest_sha256": "1925a12d583a2f1d459cd5f6eae638f7b4df7dd17aa764c1da66ff66af2be57f",
+  "parent_checkpoint_required": true,
+  "hardware_operations": false
+}

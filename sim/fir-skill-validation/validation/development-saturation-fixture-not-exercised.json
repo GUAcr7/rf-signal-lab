@@ -1,0 +1,45 @@
+{
+  "all_passed": false,
+  "checks": [
+    {
+      "name": "three-tap",
+      "expected_pass": true,
+      "actual_exit": 0,
+      "passed": true,
+      "error": null
+    },
+    {
+      "name": "three-tap independent Fraction oracle",
+      "passed": true,
+      "output_pairs": 8,
+      "saturated_components": 0
+    },
+    {
+      "name": "five-tap",
+      "expected_pass": true,
+      "actual_exit": 0,
+      "passed": true,
+      "error": null
+    },
+    {
+      "name": "five-tap independent Fraction oracle",
+      "passed": true,
+      "output_pairs": 23,
+      "saturated_components": 0
+    },
+    {
+      "name": "nine-tap-saturation",
+      "expected_pass": true,
+      "actual_exit": 0,
+      "passed": true,
+      "error": null
+    },
+    {
+      "name": "nine-tap-saturation independent Fraction oracle",
+      "passed": true,
+      "output_pairs": 56,
+      "saturated_components": 0
+    }
+  ],
+  "error": ""
+}

@@ -1,0 +1,3891 @@
+{
+  "schema": "rfsig.tx_source_status.v5",
+  "updated": "2026-10-28T11:34:05.216210+00:00",
+  "updated_note": "P83 observed BPSK and visual feedback saved; missing QPSK/16QAM/STOP preserved; TX/RX stopped.",
+  "status": "saved_P83_BPSK_visual_demo_partial_coverage",
+  "status_note": "本轮BPSK通过并已停止保存；三类及STOP完整验收仍引用P81，本轮不冒充。",
+  "record": "docs/experiments/EXP-P51-stability-and-ai-input.md",
+  "record_superseded": [
+    "docs/experiments/EXP-TX-001.md",
+    "docs/experiments/EXP-TX-SOURCE-20261016.md"
+  ],
+  "two_board_plan": "docs/design/rx-input-budget-20261017.md",
+  "instrument_guide": "docs/design/rf-spectrum-analyzer-setup.md",
+  "delivery": "results\\p12-source-delivery-20261016T051524098482Z",
+  "board_session_bundle": "results\\p13-upload-bundle-20261017T025802Z\\board-session-bundle.tar",
+  "board_session_bundle_sha256": "9af83ce980e9aa78214b6d50b170229564cf4e14940b1919d04a311c04afde9e",
+  "board_session_bundle_note": "CR-free 修正版，板端 sha256sum -c 8/8 OK。上一版 p13-upload-bundle-20261016T160206Z 的 SHA256SUMS 为 CRLF 缺陷版，不得再用。",
+  "source_sha256": "b9ba90d3ec85359e5b584704702e80d544ffb26e1fd28c271563316d1e41dd30",
+  "arm_elf_sha256": "0a188e1e1c0c19a165231c1d5589ff5d72adbf284d98d2bdf39cfc6a65b1163b",
+  "source_sha256_note": "实际发射使用的版本。13:17 交付包内的旧版 626f5797… 要求非空 hw_serial，而本板 hw_serial 为空，会自拒发射。",
+  "superseded": {
+    "source_sha256": "626f57971c8a409fb3e4d751b798af2eb4c89794eb88c5e641ef462ea419e01f",
+    "python_tests": 646,
+    "native_mock_cases": 34,
+    "RF_transmitted": false,
+    "RF_frequency_verified": false,
+    "RF_power_verified": false
+  },
+  "python_tests": 885,
+  "python_tests_evidence": "results/p27-verification-20261018/pytest.log",
+  "python_tests_note": "885 after adding 11 panel-render tests.",
+  "native_mock_cases": 43,
+  "native_mock_evidence": "results/p12-native-mock-20261017T110500/report.json",
+  "offline_waveform_checks": 15,
+  "RF_transmitted": true,
+  "RF_transmit_count": null,
+  "RF_transmit_scope": "Whole historical count not re-audited. HW-018 added two bounded 30-second runs; HW-019 added one bounded 30-second BPSK run. No RF attributes changed in these runs. Native cleanup verified; physical silence remains unmeasured.",
+  "RF_frequency_verified": true,
+  "RF_power_verified": true,
+  "measured_tx_frequency_hz": 2450962500,
+  "measured_tx_frequency_error_hz": -2286,
+  "measured_tx_frequency_error_ppm_note": "the earlier 1.02 ppm figure came from a 12.5 kHz marker grid and is NOT resolvable at that grid; see marker_grid_retraction",
+  "measured_tx_peak_dbm": -24.57,
+  "measurement_conditions": "RIGOL RSA3030, Center 2.45 GHz, Span 10 MHz, RBW 25.114 kHz, Attn 20 dB, Ref Level 0 dBm, Max Hold；TX1 经 50 ohm SMA 直连 RF Input。",
+  "measurement_evidence": "results/p13-session2-peak-20261017T0100/marker-on-main-peak.jpg (sha256 844909957bf782bd0001d756d6562121bfdda17de6f6b4d3ce3b3a285c022944)",
+  "frequency_verified_scope": "Observed only: three analyser OBW-centre readings were -1.829 / -4.767 / -0.262 kHz (mean -2.29 kHz, peak-to-peak 4.5 kHz). This is the scatter of the estimator on this signal, NOT a calibrated accuracy bound; the analyser frequency reference is uncalibrated and board-versus-instrument contributions cannot be separated.",
+  "RF_evidence_gap": null,
+  "transmitted_waveforms": [
+    "tone-positive (+960 kHz -> 2.45096 GHz)",
+    "tone-negative (-960 kHz -> 2.44904 GHz)",
+    "tone-double-offset (+1.92 MHz -> 2.45192 GHz)",
+    "bpsk (RRC beta=0.35, Rs=240 ksym/s)",
+    "qpsk (RRC beta=0.35, Rs=240 ksym/s)",
+    "qam16 (RRC beta=0.35, Rs=240 ksym/s)"
+  ],
+  "occupancy_bandwidth_measured": true,
+  "occupancy_bandwidth_theory_hz": 324000,
+  "occupancy_bandwidth_note": "Three modulations agree with the digital computation within 1.08%. Theory Rs*(1+beta)=324 kHz is the SUPPORT; the 99% containment is 279,998 Hz.",
+  "methodology_notes": [
+    "对调制信号，Peak Search 给出的是带内随机最高点，不是中心频率；中心频率须用谱质心或 99% OBW 中点。16QAM 实测 Marker 落在 2.450875000 GHz，偏中心 -85 kHz。",
+    "频谱仪不能区分 BPSK/QPSK/16QAM：三者占用带宽同为 324 kHz，区别在相位结构；必须接收 IQ 后做星座/AI。",
+    "包顶 dBm 是带内功率密度（受 RBW 影响），不等于信号平均功率，不能用来排序三类调制的平均功率。",
+    "A digital-amplitude step is a cleaner known power change than an attenuator: no tolerance and no frequency response, and it is exactly computable from the bytes.",
+    "A damage threshold is not a usability criterion. docs/design/two-board-rf-link.md already forbade using the 2.5 dBm absolute max as a recommended target; EXP-TX-002 violated that and the violation went unnoticed until review."
+  ],
+  "physical_dependencies": [
+    "保持已核验的供电、端口及 256 档/手动 0 dB 配置；不推广到其他电平。",
+    "新板 RF/display 模式需要重启切换；同时工作需要 PL 集成或另行设计显示路径。",
+    "绝对频率/功率指标仍需独立参考与标定。"
+  ],
+  "marker_grid_retraction": "The +2.5 kHz LO-offset claim is RETRACTED. The tone photos used span 10 MHz with 801 points = 12.5 kHz marker grid; +/-960 kHz is +/-76.8 grid steps, so the analyser displays +/-962.5 kHz and a 1.925 MHz separation even with ZERO LO offset. Reproduced by experiments/p13_marker_grid_analysis.py. Frequency resolution of those photos is +/-6.25 kHz (+/-2.6 ppm), not 1 ppm.",
+  "measured_tx_frequency_error_source": "RIGOL OBW centre field, span 1 MHz / 801 pts (1.25 kHz grid); supersedes the 2500 Hz value that came from a 12.5 kHz marker grid",
+  "measured_tx_frequency_error_resolution_hz": 1250,
+  "occupancy_bandwidth_instrument_hz": {
+    "bpsk": 279648,
+    "qpsk": 282229,
+    "qam16": 279192
+  },
+  "occupancy_bandwidth_digital_hz": {
+    "bpsk": 282710,
+    "qpsk": 282380,
+    "qam16": 280300
+  },
+  "occupancy_bandwidth_max_deviation_pct": 1.08,
+  "occupancy_bandwidth_evidence": "results/p13-session2-obw-bpsk3-20261017T0320/ , results/p13-session2-obw-qpsk-20261017T0340/ , results/p13-session2-obw-qam16-20261017T0350/",
+  "measured_tx_frequency_error_hz_note": "mean of three OBW-centre readings (-1829, -4767, -262 Hz); peak-to-peak spread 4.5 kHz shows the estimator has kHz-level noise",
+  "relative_power_verified": true,
+  "relative_power_evidence": "amplitude steps 512/256/128 at digital_peak_counts; measured -24.50/-30.51/-36.54 dBm; steps -6.01/-6.03 dB vs digital predictions -6.0167/-6.0211; total 12 dB step deviation 0.002 dB",
+  "relative_power_evidence_photos": [
+    "results/p13-pwr-512d-20261017T0605/level-512-minus2450dBm.jpg",
+    "results/p13-pwr-256c-20261017T0635/level-256-minus3051dBm.jpg",
+    "results/p13-pwr-128b-20261017T0655/level-128-minus3654dBm.jpg"
+  ],
+  "relative_power_scope": "Verifies TX chain linearity over 12 dB. Does NOT verify the receive-side power estimator on real IQ, and is not an absolute dBm calibration.",
+  "task2_subitems": {
+    "centre_frequency": "verified_method_and_rf_to_+/-5kHz",
+    "occupied_bandwidth": "verified_digital_and_rf_within_1.08pct",
+    "relative_power": "verified_tx_linearity_within_0.01dB_over_12dB"
+  },
+  "RF_transmit_count_basis": "Unique archived primary run outputs with CYCLIC_PUSH_SUBMITTED and TX_SOFTWARE_DEADLINE_END; not a count of all possible physical transmissions.",
+  "new_board": {
+    "model": "TLZ7xH-EVM",
+    "device": "XC7Z100",
+    "device_evidence": "shipped /lib/firmware/system_wrapper.bin sha256 65b44449... identical to ad_fmcomms3_ebz_xc7z100.bin",
+    "kernel": "4.9.0-rt1-xilinx",
+    "boot_medium": "SD (mmcblk0 type=SD, root=/dev/mmcblk0p2)",
+    "pl_configured": true,
+    "pl_design_preinstalled": "AD9361 (pl.dtbo has ad9361-phy + cf-ad9361 + axi-dmac; no display nodes)",
+    "display_bitstream_on_board": true,
+    "libiio": "0.20",
+    "iio_tools": [
+      "iio_info",
+      "iio_readdev",
+      "iio_attr"
+    ],
+    "serial_port": "COM8 (observed this run, re-enumerate after reconnect)",
+    "root_login_free": true,
+    "display": {
+      "working": true,
+      "evidence_status": "archived",
+      "evidence": "results/p16e-autostart-20261017/transcript.json",
+      "readings": {
+        "fpga_state": "operating",
+        "dev_fb0": "present",
+        "gpio914_direction": "out",
+        "dmesg": "Console: switching to colour frame buffer device 100x30; xilinx-drm fb0: frame buffer device"
+      }
+    },
+    "fan": {
+      "control": "PS MIO8 gpio 914",
+      "speed_control": false,
+      "autostart": "/etc/rcS.d/S99board",
+      "persistent": true,
+      "readback_unreliable_note": "value reads 0 because the NPN base clamps the pin; judge by physical airflow"
+    },
+    "boot_autostart": {
+      "script": "/etc/rcS.d/S99board",
+      "deployed_sha256": "2bfc9e5f8cb7f7fde15f40ee9eb69ad24e4c0f6b5a8c30fed0410a7da25a915a",
+      "mode_driven": true,
+      "mode_file": "/etc/board-mode",
+      "mode_tool": "/usr/bin/board-mode",
+      "verified_after_reboot": true,
+      "checks": "17 return-code checks; fan first, then bitstream+overlay pair, then per-mode acceptance",
+      "evidence": "results/p17-roundtrip-1-display-20261017/transcript.json"
+    },
+    "current_mode": "rf (2026-10-19 readback; factory overlay recovered after boot retries exhausted)",
+    "touch": {
+      "working": true,
+      "driver": "ads7846 / XPT2046",
+      "root_cause_of_initial_failure": "evdev calibration was degenerate (2915,2915,2759,2662), loaded from /etc/pointercal.xinput",
+      "reboot_verified": true,
+      "evidence": "results/p16e-touch-final-20261017/transcript.json",
+      "readings_after_reboot": {
+        "243_inversion": "0, 1",
+        "244_calibration": "0, 4095, 0, 4095",
+        "divide_by_zero_in_Xsession_log": 0,
+        "Xorg_alive": true
+      },
+      "persisted_by": [
+        "/etc/pointercal.xinput (primary, loaded by X every session)",
+        "/etc/X11/Xsession.d/99touch (fallback, runs last in ls -X order)"
+      ],
+      "manual_tap_test": "CONFIRMED BY USER: tap is accurate"
+    },
+    "desktop": "XFCE (corrected: earlier records said LXDE, which was wrong)",
+    "mode_switch": {
+      "verified": true,
+      "round_trip": "display -> rf -> display",
+      "requires_reboot": true,
+      "evidence": [
+        "results/p17-roundtrip-1-display-20261017/",
+        "results/p17-roundtrip-2-rf-20261017/",
+        "results/p17-roundtrip-3-display-20261017/"
+      ],
+      "record": "docs/experiments/EXP-HW-008-mode-round-trip.md",
+      "observations": {
+        "display_leg": "state=operating, /dev/fb0 present, iio devices=1 (xadc only)",
+        "rf_leg": "state=operating, iio devices=4 (xadc + ad9361-phy + cf-ad9361-lpc + dds)",
+        "return_leg": "state=operating, /dev/fb0 back, iio devices back to 1",
+        "fan": "out in all three legs; PS MIO8 is bitstream independent",
+        "staging": "already-current when unchanged, copied-and-verified when switching"
+      },
+      "hot_switch": "NOT implemented - board-mode only writes the mode file and requires a reboot"
+    },
+    "iq_capture": {
+      "verified": true,
+      "scope": "Actual known-source BPSK/QPSK/16QAM snapshots; validated source correlation, known-symbol EVM and data transfer.",
+      "record": "docs/experiments/EXP-HW-009-new-board-iq-capture.md",
+      "format": {
+        "channel_type": "le:S12/16>>0",
+        "dma_channels": 4,
+        "layout": "I1, Q1, I2, Q2",
+        "bytes_per_frame": 8,
+        "trap": "parsing a 4-channel dump as 2-channel does not raise - it silently halves the sample count and mixes channels"
+      },
+      "characterisation": {
+        "bytes": 8192,
+        "frames": 1024,
+        "sha256": "4b2e3d1202b0873b4eb9488fe8809ccc84bf495b51c210a97a871c61f72674f4",
+        "sha256_matched_board": true,
+        "raw_word_min": -650,
+        "raw_word_max": 677,
+        "rms": 146.34,
+        "peak_abs": 221,
+        "crest_factor_db": 3.57,
+        "endpoint_fraction": 0.0,
+        "full_scale_assumed": 2048
+      },
+      "interrupt_recovery": {
+        "interrupted_bytes": 73760768,
+        "expected_bytes": 160000000,
+        "recovered_capture_bytes": 8192,
+        "note": "an earlier timeout-5 attempt at -s 100000 completed in 3 ms and did NOT interrupt anything; redone with -s 20000000 under timeout 1"
+      },
+      "evidence": "results/p18-capture-decoded-20261017/characterisation.json",
+      "historical_first_capture_config": {
+        "sampling_frequency": 30720000,
+        "rf_bandwidth": 18000000,
+        "gain_control_mode": "slow_attack",
+        "rx_lo_written": 2450960000,
+        "rx_lo_readback": 2450960000
+      },
+      "config_readback": {
+        "sampling_frequency": 30720000,
+        "rf_bandwidth": 18000000,
+        "gain_control_mode": "manual",
+        "hardwaregain_db": 0,
+        "rx_lo": 2450000000,
+        "rf_port": "A_BALANCED"
+      },
+      "latest_record": "docs/experiments/EXP-HW-014-dma-continuity-resolution.md",
+      "single_dma_buffer_samples": 65536,
+      "adc_time_scope": "2.133 ms snapshots; cross-buffer/long-stream continuity not verified"
+    }
+  },
+  "new_board_record": "docs/experiments/EXP-HW-005-TLZ7xH-bringup.md",
+  "new_board_record_2": "docs/experiments/EXP-HW-006-TLZ7xH-display-and-fan.md",
+  "resume_doc": "docs/design/NEW-BOARD-RESUME.md",
+  "two_board_link": {
+    "status": "connected_and_measured",
+    "attenuator": "not used - direct cable measured, with a documented amplitude ceiling",
+    "record": "docs/experiments/EXP-HW-011-two-board-link.md",
+    "physical": "old board TX1 -> new board RX1A (J110), direct, no attenuator",
+    "tx_config": {
+      "port": "A",
+      "hardwaregain_db": -10.0,
+      "lo_hz": 2450000000,
+      "rf_bandwidth_hz": 18000000,
+      "sampling_hz": 30720000
+    },
+    "rx_config": {
+      "gain_control_mode": "manual",
+      "hardwaregain_db": 0.0,
+      "lo_hz": 2450000000,
+      "rf_bandwidth_hz": 18000000
+    },
+    "measurements": [
+      {
+        "peak": 64,
+        "power": 13243.2,
+        "rms": 115.08,
+        "crest_db": 1.59,
+        "dbfs": -25.0
+      },
+      {
+        "peak": 128,
+        "power": 51353.0,
+        "rms": 226.61,
+        "crest_db": 0.82,
+        "dbfs": -19.1,
+        "step_db": 5.886,
+        "verdict": "linear"
+      },
+      {
+        "peak": 256,
+        "power": 192362.3,
+        "rms": 438.59,
+        "crest_db": 0.5,
+        "dbfs": -13.4,
+        "step_db": 5.736,
+        "verdict": "linear"
+      },
+      {
+        "peak": 512,
+        "power": 636867.9,
+        "rms": 798.04,
+        "crest_db": 0.26,
+        "dbfs": -8.2,
+        "step_db": 5.199,
+        "verdict": "compressing"
+      }
+    ],
+    "baseline_no_tx": {
+      "power": 227.0,
+      "rms": 15.07,
+      "crest_db": 6.3
+    },
+    "verdict": "non_linear",
+    "first_non_linear_step": 2,
+    "safe_ceiling": "peak 256 or below at RX 0 dB manual gain; peak 512 compresses",
+    "not_adc_clipping": "endpoint fraction 0.0 at every step, peak 823 of 2048 full scale",
+    "compression_side": "unknown - could be TX or RX analogue chain; needs a spectrum analyser to localise",
+    "evidence": "results/p20-saturation-verdict-20261017/saturation.json"
+  },
+  "rf_flags": {
+    "defect": "p06_arm_serial_run.ps1 hardcoded rf_operations=false; 25 archived reports that did transmit were labelled as having no RF operations",
+    "fixed_in_script": true,
+    "recomputed_index": "results/rf-flags-recomputed-20261017T104507Z.json",
+    "archived_reports_left_unmodified": true,
+    "report_count_with_wrong_flag": 25,
+    "runs_that_wrote_rf_settings": 0
+  },
+  "errata": {
+    "review_round": "2026-10-17 independent review",
+    "record": "docs/experiments/EXP-ERRATA-20261017.md",
+    "rx_input_budget": "docs/design/rx-input-budget-20261017.md",
+    "board_artifacts": "board/README.md",
+    "items_closed": [
+      "complex_psd_doubling",
+      "overclaims_0.01dB_and_5kHz",
+      "rf_operations_flag",
+      "board_artifacts_archived",
+      "recovery_command_hash_and_exec_bit"
+    ],
+    "items_pending_board_access": [
+      "mode_switch_round_trip",
+      "old_board_five_step_recovery",
+      "new_board_config_readback_and_real_iq",
+      "touch_persistence_after_reboot",
+      "two_board_connection"
+    ]
+  },
+  "status_note_supersedes": "the previous note said \"9 timed transmissions\" and \"second board RX not connected\"; both were stale.",
+  "measured_tx_frequency_error_ppm_observed": -0.93,
+  "measured_tx_frequency_error_ppm_scope": "-0.93 ppm is the observed mean offset, not a ppm-level accuracy claim. See EXP-P13-OBW sections 6.4 and 10.2.",
+  "two_board_plan_superseded": "docs/design/two-board-rf-link.md (kept for history; its step 2 warning about not using the 2.5 dBm absolute max is the rule that was violated)",
+  "pending_verification": [
+    "continuity beyond 16 buffers and under sustained running; lossless_proven is false everywhere so far",
+    "a hardware sample counter or sequence number before any gap-free claim",
+    "real RF dataset with SNR labels and train/validation/test split",
+    "which side compresses (TX or RX analogue chain) - needs a spectrum analyser tap",
+    "measured confirmation of --full-scale 2048 with a known-amplitude signal",
+    "screen UI and simultaneous display + RF on one bitstream",
+    "whether a missing /etc/pointercal lets auto-calibration overwrite pointercal.xinput again"
+  ],
+  "saturation_tool": {
+    "module": "src/rfsig/saturation.py",
+    "cli": "experiments/p16_check_saturation.py",
+    "tests": "tests/test_saturation.py",
+    "rule": "each amplitude doubling must give +6.0206 dB; smaller increment means compression",
+    "selftest": {
+      "linear": "results/p16-saturation-selftest-linear-20261017/saturation.json",
+      "compressed": "results/p16-saturation-selftest-compressed-20261017/saturation.json",
+      "result": "tool separates the two by construction-known fixtures"
+    },
+    "full_scale_note": "--full-scale 2048 is an assumption for AD9361 12-bit RX and must be confirmed on the board before interpreting endpoint_fraction",
+    "channels_default": 4,
+    "channels_note": "the CLI defaulted to 2-channel pairing while the real device emits 4; fixed to 4 with --channels, and the fixtures now also write 4 channels"
+  },
+  "power_step_bundle_4": {
+    "bundle": "results/p13-power-steps-20261017T110944Z/power-steps.tar",
+    "bytes": 2101760,
+    "sha256": "2ab0db9aa0b2d6f9120d75b986185630a8a8ab85ec7cd43a8b7fc71c9df7b66b",
+    "peaks": [
+      512,
+      256,
+      128,
+      64
+    ],
+    "note": "64 added for the amplitude-reduction step; older 3-peak bundle retained for the archived measurements"
+  },
+  "x_session_findings": {
+    "session_client": "xinit /etc/X11/Xsession -- Xorg (from /etc/init.d/xserver-nodm)",
+    "hooks_are_sourced": "/etc/X11/Xsession sources every executable file in Xsession.d; an `exit` there kills the whole session",
+    "xinit_d_is_inert": "/etc/X11/Xinit.d is only used by /etc/X11/Xinit, which this boot path does not invoke",
+    "exec_bit_required": "Xsession only sources files that are executable; base64 uploads land as 644 and are silently skipped",
+    "calibration_file": "/etc/pointercal.xinput is loaded by X every session; it held degenerate values written by the vendor auto-calibration scripts",
+    "record": "docs/experiments/EXP-HW-007-touch-persistence.md"
+  },
+  "old_board_recovery": {
+    "verified": true,
+    "transmitted": false,
+    "record": "docs/experiments/EXP-HW-010-old-board-recovery.md",
+    "steps": {
+      "1_upload": "UPLOAD_PASS sha256=9af83ce980e9aa78214b6d50b170229564cf4e14940b1919d04a311c04afde9e",
+      "2_exec_bit_and_payload": "chmod +x applied; sha256sum -c -> 8/8 OK, exit 0",
+      "3_inspect": "exit 0; six RF attributes match: sampling 30720000, tx gain -10.000000 dB, tx_lo 2450000000, bw 18000000",
+      "4_waveform_checks": "6/6 INPUT_CHECK_PASS; mean_I2_Q2 identical to historical values",
+      "5_boot_id": "ea863ecc-1935-4d1e-92dc-a26ba4877199, matches tx_guard_identity"
+    },
+    "defects_confirmed_live": [
+      "archive stores arm-tx-source as 0666, so chmod +x is mandatory",
+      "the documented ExpectedSha256 had been the deprecated CRLF bundle hash"
+    ],
+    "evidence": [
+      "results/p19-oldboard-upload-20261017/",
+      "results/p19-oldboard-recovery-20261017/",
+      "results/p19-oldboard-inspect-20261017/",
+      "results/p19-oldboard-waveform-checks-20261017/"
+    ]
+  },
+  "RF_transmit_count_previous_summary": 25,
+  "modulated_reception_historical_superseded": {
+    "verified": true,
+    "record": "docs/experiments/EXP-HW-012-modulated-reception.md",
+    "scope": "all three modulations received over the real two-board link and separated by simple features",
+    "amplitude": "peak 256, chosen because EXP-HW-011 measured compression at 512",
+    "control": "regenerating the peak-512 waveforms reproduced the archived sha256 byte for byte, so only amplitude changed",
+    "waveforms": {
+      "bpsk": {
+        "sha256": "167d99034316c7e28c3da46ab3974f883ad457303e836178692cfa451c26217f",
+        "peak_abs": 4096.0
+      },
+      "qpsk": {
+        "sha256": "f2a0319737a651454e4fcb767c24aaff31c093b53acdbfe73c7df3aa63074b61",
+        "peak_abs": 4105.4
+      },
+      "qam16": {
+        "sha256": "8b9e9c5ea82f8fc9204e5d14c454b66f7717ec474f8c11eb1fc486f696451236",
+        "peak_abs": 4106.2
+      }
+    },
+    "features": {
+      "bpsk": {
+        "crest_db": 3.97,
+        "quadrature_suppression_db": 11.26,
+        "phase_clusters_deg": [
+          0,
+          180
+        ],
+        "amplitude_cv": 0.214
+      },
+      "qpsk": {
+        "crest_db": 3.35,
+        "quadrature_suppression_db": -0.67,
+        "phase_clusters_deg": [
+          0,
+          90,
+          -90
+        ],
+        "amplitude_cv": 0.253
+      },
+      "qam16": {
+        "crest_db": 4.91,
+        "quadrature_suppression_db": 1.53,
+        "phase_clusters_deg": [
+          65,
+          165,
+          -65,
+          -165
+        ],
+        "amplitude_cv": 0.416
+      }
+    },
+    "separation": "quadrature suppression separates BPSK (11.26 dB) from QPSK/-16QAM (-0.67/+1.53 dB); amplitude CV separates 16QAM (0.416) from QPSK (0.253)",
+    "lo_offset_observation": "carrier search landed at -86 to +215 kHz from the nominal 960 kHz offset, i.e. tens of ppm; the three estimates disagree, so this is an order-of-magnitude observation, not a measured offset",
+    "limitations": [
+      "still only 64 symbols per block",
+      "no symbol synchronisation loop",
+      "no EVM or symbol error rate",
+      "only 8 blocks per class",
+      "one 50 s transmission per class"
+    ],
+    "block_wise": {
+      "method": "split each 65,536-sample capture into 8 blocks of 8,192; estimate the carrier, symbol phase and features independently per block",
+      "why": "a single carrier estimate across 512 symbols made the constellation WORSE (+5.97 dB) than across 64 symbols (+11.26 dB): the boards use independent crystals, so the carrier drifts inside a long block",
+      "method_fixes": [
+        "replaced the 500 Hz grid search with modulation-stripped FFT plus parabolic interpolation; the moment peak is about 470 Hz wide, narrower than the grid step, so the search walked to its window edge and reported -206 kHz",
+        "widened the per-block moment search to the full span; the narrow band excluded the real peak near 2 x 1 MHz and produced carrier estimates scattered over 33-361 kHz"
+      ],
+      "features": {
+        "bpsk": {
+          "quadrature_suppression_db": [
+            26.08,
+            16.14
+          ],
+          "amplitude_cv": [
+            0.36,
+            0.215
+          ]
+        },
+        "qpsk": {
+          "quadrature_suppression_db": [
+            0.17,
+            1.31
+          ],
+          "amplitude_cv": [
+            0.137,
+            0.085
+          ]
+        },
+        "qam16": {
+          "quadrature_suppression_db": [
+            -0.17,
+            0.67
+          ],
+          "amplitude_cv": [
+            0.393,
+            0.057
+          ]
+        }
+      },
+      "separability": {
+        "bpsk_vs_rest": "quadrature suppression min +9.04 dB (BPSK) vs max +2.94 dB (others): a 6.1 dB gap with no overlap",
+        "qpsk_vs_qam16": "amplitude CV max 0.294 (QPSK) vs min 0.346 (16QAM): a 0.052 gap, about 15 percent relative - much tighter than the BPSK line"
+      },
+      "carrier_offset": "987-994 kHz across three independent captures, i.e. +28 to +34 kHz from the 960 kHz nominal, about 11-14 ppm at 2450 MHz; consistent enough to treat as a measurement",
+      "evidence": [
+        "results/p21-bpsk-blocks2/blocks.json",
+        "results/p21-qpsk-blocks/blocks.json",
+        "results/p21-qam16-blocks/blocks.json"
+      ],
+      "remaining": [
+        "still only 64 symbols per block",
+        "no symbol synchronisation loop",
+        "no EVM or symbol error rate",
+        "only 8 blocks per class",
+        "one 50 s transmission per class"
+      ]
+    },
+    "separability": {
+      "bpsk_vs_rest": "quadrature suppression min +9.04 dB (BPSK) vs max +2.94 dB (others): a 6.1 dB gap with no overlap",
+      "qpsk_vs_qam16": "amplitude CV max 0.294 (QPSK) vs min 0.346 (16QAM): a 0.052 gap, about 15 percent relative - much tighter than the BPSK line"
+    }
+  },
+  "modulated_reception": {
+    "verified": true,
+    "scope": "known-source finite snapshots, not blind AI",
+    "frames_per_snapshot": 65536,
+    "valid_symbols_after_filter_guard": 502,
+    "rf_runs_this_round": 3,
+    "tx_seconds_per_run": 30,
+    "per_modulation": {
+      "bpsk": {
+        "small_buffer_gap_boundaries": 12,
+        "large_buffer_evm_db": [
+          -37.823211544887236,
+          -37.74259820644095
+        ],
+        "large_buffer_gap_boundaries": [
+          0,
+          0
+        ],
+        "checked_symbols": 502,
+        "symbol_errors": 0,
+        "evidence": "results/p22-buffer-validation-bpsk-20261017T131651Z/report.json"
+      },
+      "qpsk": {
+        "small_buffer_gap_boundaries": 12,
+        "large_buffer_evm_db": [
+          -38.06656512863285,
+          -37.96381052402839
+        ],
+        "large_buffer_gap_boundaries": [
+          0,
+          0
+        ],
+        "checked_symbols": 502,
+        "symbol_errors": 0,
+        "evidence": "results/p22-buffer-validation-qpsk-20261017T132245Z/report.json"
+      },
+      "qam16": {
+        "small_buffer_gap_boundaries": 12,
+        "large_buffer_evm_db": [
+          -37.22651484069254,
+          -37.29564719895969
+        ],
+        "large_buffer_gap_boundaries": [
+          0,
+          0
+        ],
+        "checked_symbols": 502,
+        "symbol_errors": 0,
+        "evidence": "results/p22-buffer-validation-qam16-20261017T132723Z/report.json"
+      }
+    },
+    "old_feature_threshold_claims": "superseded; original files include DMA gaps and supplied modulation-dependent processing",
+    "continuous_recapture": {
+      "why": "the separability figures in EXP-HW-012 came from captures that contained DMA buffer jumps, and EXP-HW-014 did not re-derive them",
+      "measured_with": "experiments/p21_track_and_measure.py --dma-buffer-samples 65536",
+      "results": {
+        "bpsk": {
+          "quadrature_suppression_db": [
+            44.58,
+            45.2
+          ],
+          "amplitude_cv": [
+            0.0118,
+            0.0118
+          ]
+        },
+        "qpsk": {
+          "quadrature_suppression_db": [
+            -0.11,
+            0.37
+          ],
+          "amplitude_cv": [
+            0.0082,
+            0.0085
+          ]
+        },
+        "qam16": {
+          "quadrature_suppression_db": [
+            0.01,
+            0.04
+          ],
+          "amplitude_cv": [
+            0.3379,
+            0.3455
+          ]
+        }
+      },
+      "separability_corrected": {
+        "note": "Amplitude CV is rotation invariant; I/Q ratio is axis dependent. QAM fourth ensemble moment is meaningful. See HW-018, no blind accuracy claimed."
+      },
+      "evidence": [
+        "results/p23-continuous-bpsk-big1/tracking.json",
+        "results/p23-continuous-bpsk-big2/tracking.json",
+        "results/p23-continuous-qpsk-big1/tracking.json",
+        "results/p23-continuous-qpsk-big2/tracking.json",
+        "results/p23-continuous-qam16-big1/tracking.json",
+        "results/p23-continuous-qam16-big2/tracking.json"
+      ],
+      "caveats": [
+        "502 symbols per snapshot, two archived P22 repetitions per modulation; not independent AI test.",
+        "No long-stream acceptance."
+      ],
+      "historical_feature_results_note": "Superseded by HW-018 feature output; supplied modulation alignment is not blind separation."
+    }
+  },
+  "carrier_tracking_historical_superseded": {
+    "implemented": true,
+    "module": "src/rfsig/carrier_tracking.py",
+    "tests": "tests/test_carrier_tracking.py (13 tests)",
+    "cli": "experiments/p21_track_and_measure.py",
+    "ideal_limit": {
+      "amplitude_cv": 0.0338,
+      "evm_db": -29.43,
+      "quadrature_suppression_db": 77.91,
+      "note": "measured by running the transmit-side waveform through the same receive chain"
+    },
+    "evm_metric_fixes": [
+      "decisions were taken on the raw signal against a unit-power table; scaling by 3.7 made inner 16QAM points map onto outer ones (-6.17 dB EVM for a noise-free signal). Now normalises to unit mean power first.",
+      "the EVM floor was absolute, so a perfect constellation read -300 dB at one scale and -309 dB at another, breaking the gain invariance the metric is supposed to have. Now relative."
+    ],
+    "evm_semantics": "the gain fit is complex, so a CONSTANT phase rotation counts as gain and is invisible in EVM. EVM therefore cannot be used to prove a static carrier offset was corrected; check the converged loop phase instead. Only time-varying phase shows in EVM.",
+    "real_capture_result": {
+      "bpsk": [
+        -2.32,
+        -2.95
+      ],
+      "qpsk": [
+        -3.72,
+        -7.28
+      ],
+      "qam16": [
+        -10.01,
+        -10.78
+      ],
+      "note": "EVM before -> after tracking in dB; improvements are small"
+    },
+    "timing_metric_fix": "the symbol timing was chosen by maximising |<unit^2>|, which normalises away amplitude and can peak at a wrong offset for a constant-modulus signal. Maximising mean output power instead improved the best blocks from -28.25 to -38.79 dB."
+  },
+  "carrier_tracking": {
+    "implemented": true,
+    "scope": "phase tracking within contiguous symbols only",
+    "adc_gain_invariant": true,
+    "phase_alignment": "accounts for nominal constellation moment",
+    "reference_evm": "known aligned symbols, one complex gain fit",
+    "decision_evm": "phase must already be aligned; arbitrary-rotation invariance is not guaranteed",
+    "real_snapshot_integration_evidence": [
+      "results/p22-tracker-integration-bpsk-20261017/tracking.json",
+      "results/p22-tracker-integration-qpsk-20261017/tracking.json",
+      "results/p22-tracker-integration-qam16-20261017/tracking.json"
+    ]
+  },
+  "previous_blocker_historical_superseded": {
+    "summary": "received constellation quality varies from block to block by more than 20 dB, and the cause is not identified",
+    "observed": "per 8192-sample block, EVM ranges from -38.79 dB to -6.36 dB on one continuous BPSK capture",
+    "ruled_out": [
+      "carrier estimate choice (long-block, sub-block median and phase regression all give -2 to +1 dB without tracking)",
+      "residual frequency (phase regression corrections are -2 to 210 Hz and do not improve the bad blocks)",
+      "integer timing quantisation (fractional 0.1-sample search leaves block 2 at CV 0.513)",
+      "interference or fading (1024-point sliding power is flat to 0.9 dB across the whole capture; spectrum is normal)",
+      "the receive chain itself (the transmit waveform through the same chain reaches -29.43 dB EVM)",
+      "clock drift (14 ppm over 2.13 ms accumulates under one sample, not the 30-80 sample jumps observed)"
+    ],
+    "best_symbol_timing_per_block": [
+      37,
+      38,
+      35,
+      4,
+      80,
+      115,
+      43,
+      35
+    ],
+    "needed_to_continue": [
+      "a one-second continuous capture with a time-frequency map, to see whether the degradation is periodic, bursty or continuous",
+      "a spectrum analyser tap at 2450 MHz to rule the receive side out independently",
+      "a transmit-side loopback on the old board, to confirm the transmitted signal has no intermittent defect",
+      "captures at different points in the transmission (10 s, 20 s, 30 s) to see whether it depends on elapsed time"
+    ],
+    "impact": "the modulation separability result in EXP-HW-012 is unaffected (it averages over 8 blocks), but AI modulation recognition must not start while input quality varies this much, and no real-link EVM figure can be quoted yet",
+    "record": "docs/experiments/EXP-HW-013-carrier-tracking.md"
+  },
+  "capture_continuity_resolution": {
+    "status": "verified_single_buffer_fix",
+    "record": "docs/experiments/EXP-HW-014-dma-continuity-resolution.md",
+    "original_data_diagnosis": "results/p22-gap-resolution-20261017T131247Z/report.json",
+    "source_period_samples": 131072,
+    "old_dma_buffer_samples": 4096,
+    "new_dma_buffer_samples": 65536,
+    "per_modulation": {
+      "bpsk": {
+        "small_buffer_gap_boundaries": 12,
+        "large_buffer_evm_db": [
+          -37.823211544887236,
+          -37.74259820644095
+        ],
+        "large_buffer_gap_boundaries": [
+          0,
+          0
+        ],
+        "checked_symbols": 502,
+        "symbol_errors": 0,
+        "evidence": "results/p22-buffer-validation-bpsk-20261017T131651Z/report.json"
+      },
+      "qpsk": {
+        "small_buffer_gap_boundaries": 12,
+        "large_buffer_evm_db": [
+          -38.06656512863285,
+          -37.96381052402839
+        ],
+        "large_buffer_gap_boundaries": [
+          0,
+          0
+        ],
+        "checked_symbols": 502,
+        "symbol_errors": 0,
+        "evidence": "results/p22-buffer-validation-qpsk-20261017T132245Z/report.json"
+      },
+      "qam16": {
+        "small_buffer_gap_boundaries": 12,
+        "large_buffer_evm_db": [
+          -37.22651484069254,
+          -37.29564719895969
+        ],
+        "large_buffer_gap_boundaries": [
+          0,
+          0
+        ],
+        "checked_symbols": 502,
+        "symbol_errors": 0,
+        "evidence": "results/p22-buffer-validation-qam16-20261017T132723Z/report.json"
+      }
+    },
+    "mechanism_limit": "Specific driver/scheduling overflow mechanism unproven; missing advances modulo source period only.",
+    "rf_settings_written_this_round": false,
+    "rf_transmissions_this_round": 3
+  },
+  "blocker_resolved": {
+    "id": "block-to-block constellation quality variation",
+    "root_cause": "samples from separate 4096-sample DMA buffers were concatenated as if continuous; 12 source-time jumps of roughly 2000-6300 samples",
+    "found_by": "EXP-HW-014, by correlating each 4096-point subwindow against the known transmit waveform (correlation 0.9985, nmse -25 dB)",
+    "fix": "capture one 65536-sample buffer instead of refilling many small ones; jump count 12 -> 0",
+    "my_inferences_that_were_wrong": [
+      "flat power and normal spectrum do not rule out concatenation gaps - a concatenated stream keeps both",
+      "an ideal gapless reference through the same chain does not prove the chain handles gapped input",
+      "my claim that a complex gain fit makes EVM invariant to constant rotation was over-generalised: decision-directed EVM is not rotation invariant when rotation changes nearest-point decisions; use reference_evm_db for that"
+    ],
+    "record": "docs/experiments/EXP-HW-014-dma-continuity-resolution.md + errata section E1-E5 in EXP-HW-013"
+  },
+  "qam16_run_difference": {
+    "verdict": "known-source big1/big2 -37.23/-37.30 dB; previous gap was a metrology issue",
+    "fix": "separate nominal TX and received carrier; physically align axes; batch decision-directed slope fit avoids short causal PLL acquisition transient",
+    "evidence": "results/p26-known-modulation-features-20261018T121600Z/features.json",
+    "blind_ai_verified": false
+  },
+  "cold_start_reproduction": {
+    "date": "2026-10-18",
+    "record": "docs/experiments/EXP-HW-016-cold-start-reproduction.md",
+    "verified": true,
+    "results": [
+      {
+        "source": "results\\p24-rx-bpsk-decoded\\segment.bin",
+        "sha256": "0d06610cd1a50d5d11c846edbb649e4465d21ae85bc54102a47ffe682c853f3b",
+        "carrier_hz": 993213.7679174391,
+        "source_start": 34767,
+        "reference_correlation": 0.9984324494897168,
+        "timing_offset": 49,
+        "reference_evm_db": -37.18894596079991,
+        "valid_symbols": 502,
+        "checked_symbols": 251,
+        "symbol_errors": 0,
+        "amplitude_cv": 0.012713745051309382,
+        "quadrature_suppression_after_alignment_db": 45.31397512702996,
+        "modulation_supplied": "bpsk",
+        "transport_board_hash_verified": true
+      },
+      {
+        "source": "results\\p24-rx-qpsk-decoded\\segment.bin",
+        "sha256": "d24026928e338b3618d9170e055a8d8394ddda4c50c4c50fdf0ac81cc07ae1a2",
+        "carrier_hz": 993457.2212170508,
+        "source_start": 48121,
+        "reference_correlation": 0.9985435695680235,
+        "timing_offset": 7,
+        "reference_evm_db": -37.96808191299302,
+        "valid_symbols": 502,
+        "checked_symbols": 251,
+        "symbol_errors": 0,
+        "amplitude_cv": 0.008276338845638543,
+        "quadrature_suppression_after_alignment_db": 0.013568355973268876,
+        "modulation_supplied": "qpsk",
+        "transport_board_hash_verified": true
+      },
+      {
+        "source": "results\\p24-rx-qam16-decoded\\segment.bin",
+        "sha256": "d8e4f729b262f8dae52f644420e2260da00f86f9b121f6cc09f0cc54fbbb73b6",
+        "carrier_hz": 993608.6603535174,
+        "source_start": 100316,
+        "reference_correlation": 0.9978864721564922,
+        "timing_offset": 36,
+        "reference_evm_db": -37.643041781539594,
+        "valid_symbols": 502,
+        "checked_symbols": 251,
+        "symbol_errors": 0,
+        "amplitude_cv": 0.34473017577283627,
+        "quadrature_suppression_after_alignment_db": 0.12230418151519601,
+        "modulation_supplied": "qam16",
+        "transport_board_hash_verified": true
+      }
+    ],
+    "capture_sha256": {
+      "bpsk": "0d06610cd1a50d5d11c846edbb649e4465d21ae85bc54102a47ffe682c853f3b",
+      "qpsk": "d24026928e338b3618d9170e055a8d8394ddda4c50c4c50fdf0ac81cc07ae1a2",
+      "qam16": "d8e4f729b262f8dae52f644420e2260da00f86f9b121f6cc09f0cc54fbbb73b6"
+    },
+    "separability": {
+      "bpsk_quad_gap_db": 45.2,
+      "qpsk_vs_qam16_cv_ratio": 41.5
+    },
+    "note": "Raw transport/board hashes verified independently; known-source EVM uses full-block carrier/source fit. Not independent BER/AI.",
+    "historical_decision_pipeline_results": {
+      "bpsk": {
+        "carrier_hz": 993213.6,
+        "timing": 49,
+        "evm_db": -37.18,
+        "quadrature_suppression_db": 45.27,
+        "amplitude_cv": 0.0127
+      },
+      "qpsk": {
+        "carrier_hz": 993455.6,
+        "timing": 7,
+        "evm_db": -37.07,
+        "quadrature_suppression_db": -0.02,
+        "amplitude_cv": 0.0083
+      },
+      "qam16": {
+        "carrier_hz": 993654.7,
+        "timing": 36,
+        "evm_db": -37.04,
+        "quadrature_suppression_db": 0.05,
+        "amplitude_cv": 0.3447
+      }
+    }
+  },
+  "ad9361_probe_retry": {
+    "problem": "at boot the AD9361 probe returned PRODUCT_ID 0xFF and the rf-mode check aborted the bring-up, leaving the board with no RF",
+    "evidence": "first probe at spi32765 returned 0xFF; after re-applying the overlay a probe at spi32764 reported AD936x Rev 2 successfully initialized and the ADC/DDS cores probed - same power cycle",
+    "fix": "verify actual PHY/ADC/DDS names; check removal failure; bounded three attempts",
+    "deployed": true,
+    "deployed_note": "Reviewed sha256 2a5533091321e1fe6329f8ac95ad63a0fc07f13407d865a37d1cda97484afb3e; mode 755, atomic install, one warm reboot success",
+    "evidence_policy": "results/p26-boot-verification-20261018T123023Z/report.json",
+    "retry_branch_exercised": false,
+    "retry_branch_note": "Mock driver covers attempt 2/3 and failures. Ordinary hardware reboot reached attempt 1; real failure branch unverified.",
+    "what_is_proven": {
+      "manual_recovery": "one earlier PRODUCT_ID 0xFF recovered after rebind, root cause not proven",
+      "reviewed_boot": "hash persisted, boot ID changed, PHY/ADC/DDS and bring-up log accepted",
+      "simulated_retry": true
+    },
+    "what_is_not_proven": {
+      "retry_loop": "the attempt 2/3 branch has never executed on hardware",
+      "how_to_force_it": "cannot be triggered on demand; needs either a real intermittent boot failure or a way to make the first probe fail deterministically"
+    }
+  },
+  "carrier_must_be_reestimated": {
+    "observation": "today 993,213-993,655 Hz; yesterday 994,448-994,639 Hz; about 1.2 kHz between power cycles",
+    "implies": "Re-estimate each capture. 1200 Hz / 2450 MHz = 0.49 ppm, not 40 ppm; does not measure SCO or identify either oscillator."
+  },
+  "multibuffer_continuity": {
+    "record": "docs/experiments/EXP-HW-018-review-and-streaming.md",
+    "answer": "long_stream_not_accepted",
+    "cases": [
+      {
+        "source": "results\\p22-transfer-20261017T131327Z\\small.bin",
+        "channels": 4,
+        "buffer_samples": 4096,
+        "assessment": {
+          "status": "detected_jumps",
+          "boundaries": [
+            {
+              "from_window": 0,
+              "to_window": 1,
+              "status": "modulo_consistent",
+              "extra_advance_modulo_period": 0
+            },
+            {
+              "from_window": 1,
+              "to_window": 2,
+              "status": "modulo_consistent",
+              "extra_advance_modulo_period": 0
+            },
+            {
+              "from_window": 2,
+              "to_window": 3,
+              "status": "modulo_consistent",
+              "extra_advance_modulo_period": 0
+            },
+            {
+              "from_window": 3,
+              "to_window": 4,
+              "status": "detected_jump",
+              "extra_advance_modulo_period": 2000
+            },
+            {
+              "from_window": 4,
+              "to_window": 5,
+              "status": "detected_jump",
+              "extra_advance_modulo_period": 6293
+            },
+            {
+              "from_window": 5,
+              "to_window": 6,
+              "status": "detected_jump",
+              "extra_advance_modulo_period": 5602
+            },
+            {
+              "from_window": 6,
+              "to_window": 7,
+              "status": "detected_jump",
+              "extra_advance_modulo_period": 5773
+            },
+            {
+              "from_window": 7,
+              "to_window": 8,
+              "status": "detected_jump",
+              "extra_advance_modulo_period": 5595
+            },
+            {
+              "from_window": 8,
+              "to_window": 9,
+              "status": "detected_jump",
+              "extra_advance_modulo_period": 5740
+            },
+            {
+              "from_window": 9,
+              "to_window": 10,
+              "status": "detected_jump",
+              "extra_advance_modulo_period": 5760
+            },
+            {
+              "from_window": 10,
+              "to_window": 11,
+              "status": "detected_jump",
+              "extra_advance_modulo_period": 5536
+            },
+            {
+              "from_window": 11,
+              "to_window": 12,
+              "status": "detected_jump",
+              "extra_advance_modulo_period": 5814
+            },
+            {
+              "from_window": 12,
+              "to_window": 13,
+              "status": "detected_jump",
+              "extra_advance_modulo_period": 5719
+            },
+            {
+              "from_window": 13,
+              "to_window": 14,
+              "status": "detected_jump",
+              "extra_advance_modulo_period": 5653
+            },
+            {
+              "from_window": 14,
+              "to_window": 15,
+              "status": "detected_jump",
+              "extra_advance_modulo_period": 5597
+            }
+          ],
+          "detected_jump_count": 12,
+          "unverified_boundary_count": 0,
+          "usable_windows": 16,
+          "total_windows": 16,
+          "tolerance_samples": 1,
+          "minimum_correlation": 0.99,
+          "lossless_proven": false,
+          "limit": "Source positions are modulo period. Whole-period losses and unobserved internal events remain unverified."
+        }
+      },
+      {
+        "source": "results\\p25-rx-2buf-raw\\two.bin",
+        "channels": 4,
+        "buffer_samples": 65536,
+        "assessment": {
+          "status": "modulo_consistent",
+          "boundaries": [
+            {
+              "from_window": 0,
+              "to_window": 1,
+              "status": "modulo_consistent",
+              "extra_advance_modulo_period": 1
+            }
+          ],
+          "detected_jump_count": 0,
+          "unverified_boundary_count": 0,
+          "usable_windows": 2,
+          "total_windows": 2,
+          "tolerance_samples": 1,
+          "minimum_correlation": 0.99,
+          "lossless_proven": false,
+          "limit": "Source positions are modulo period. Whole-period losses and unobserved internal events remain unverified."
+        }
+      },
+      {
+        "source": "results\\p26-chunk-transfer-20261018T120112Z\\buffers4.bin",
+        "channels": 4,
+        "buffer_samples": 65536,
+        "assessment": {
+          "status": "modulo_consistent",
+          "boundaries": [
+            {
+              "from_window": 0,
+              "to_window": 1,
+              "status": "modulo_consistent",
+              "extra_advance_modulo_period": 1
+            },
+            {
+              "from_window": 1,
+              "to_window": 2,
+              "status": "modulo_consistent",
+              "extra_advance_modulo_period": 1
+            },
+            {
+              "from_window": 2,
+              "to_window": 3,
+              "status": "modulo_consistent",
+              "extra_advance_modulo_period": 1
+            }
+          ],
+          "detected_jump_count": 0,
+          "unverified_boundary_count": 0,
+          "usable_windows": 4,
+          "total_windows": 4,
+          "tolerance_samples": 1,
+          "minimum_correlation": 0.99,
+          "lossless_proven": false,
+          "limit": "Source positions are modulo period. Whole-period losses and unobserved internal events remain unverified."
+        }
+      },
+      {
+        "source": "results\\p26-chunk-transfer-20261018T120112Z\\buffers16.bin",
+        "channels": 4,
+        "buffer_samples": 65536,
+        "assessment": {
+          "status": "detected_jumps",
+          "boundaries": [
+            {
+              "from_window": 0,
+              "to_window": 1,
+              "status": "modulo_consistent",
+              "extra_advance_modulo_period": 1
+            },
+            {
+              "from_window": 1,
+              "to_window": 2,
+              "status": "modulo_consistent",
+              "extra_advance_modulo_period": 1
+            },
+            {
+              "from_window": 2,
+              "to_window": 3,
+              "status": "modulo_consistent",
+              "extra_advance_modulo_period": 1
+            },
+            {
+              "from_window": 3,
+              "to_window": 4,
+              "status": "modulo_consistent",
+              "extra_advance_modulo_period": 1
+            },
+            {
+              "from_window": 4,
+              "to_window": 5,
+              "status": "detected_jump",
+              "extra_advance_modulo_period": 64175
+            },
+            {
+              "from_window": 5,
+              "to_window": 6,
+              "status": "detected_jump",
+              "extra_advance_modulo_period": -29724
+            },
+            {
+              "from_window": 6,
+              "to_window": 7,
+              "status": "detected_jump",
+              "extra_advance_modulo_period": -34890
+            },
+            {
+              "from_window": 7,
+              "to_window": 8,
+              "status": "detected_jump",
+              "extra_advance_modulo_period": -28825
+            },
+            {
+              "from_window": 8,
+              "to_window": 9,
+              "status": "detected_jump",
+              "extra_advance_modulo_period": -34773
+            },
+            {
+              "from_window": 9,
+              "to_window": 10,
+              "status": "detected_jump",
+              "extra_advance_modulo_period": -29976
+            },
+            {
+              "from_window": 10,
+              "to_window": 11,
+              "status": "detected_jump",
+              "extra_advance_modulo_period": -34499
+            },
+            {
+              "from_window": 11,
+              "to_window": 12,
+              "status": "detected_jump",
+              "extra_advance_modulo_period": -30099
+            },
+            {
+              "from_window": 12,
+              "to_window": 13,
+              "status": "detected_jump",
+              "extra_advance_modulo_period": -33925
+            },
+            {
+              "from_window": 13,
+              "to_window": 14,
+              "status": "detected_jump",
+              "extra_advance_modulo_period": -31528
+            },
+            {
+              "from_window": 14,
+              "to_window": 15,
+              "status": "detected_jump",
+              "extra_advance_modulo_period": -33797
+            }
+          ],
+          "detected_jump_count": 11,
+          "unverified_boundary_count": 0,
+          "usable_windows": 16,
+          "total_windows": 16,
+          "tolerance_samples": 1,
+          "minimum_correlation": 0.99,
+          "lossless_proven": false,
+          "limit": "Source positions are modulo period. Whole-period losses and unobserved internal events remain unverified."
+        }
+      },
+      {
+        "source": "results\\p26-chunk-transfer-20261018T122135Z\\buffers16.bin",
+        "channels": 2,
+        "buffer_samples": 65536,
+        "assessment": {
+          "status": "modulo_consistent",
+          "boundaries": [
+            {
+              "from_window": 0,
+              "to_window": 1,
+              "status": "modulo_consistent",
+              "extra_advance_modulo_period": 1
+            },
+            {
+              "from_window": 1,
+              "to_window": 2,
+              "status": "modulo_consistent",
+              "extra_advance_modulo_period": 1
+            },
+            {
+              "from_window": 2,
+              "to_window": 3,
+              "status": "modulo_consistent",
+              "extra_advance_modulo_period": 1
+            },
+            {
+              "from_window": 3,
+              "to_window": 4,
+              "status": "modulo_consistent",
+              "extra_advance_modulo_period": 1
+            },
+            {
+              "from_window": 4,
+              "to_window": 5,
+              "status": "modulo_consistent",
+              "extra_advance_modulo_period": 1
+            },
+            {
+              "from_window": 5,
+              "to_window": 6,
+              "status": "modulo_consistent",
+              "extra_advance_modulo_period": 1
+            },
+            {
+              "from_window": 6,
+              "to_window": 7,
+              "status": "modulo_consistent",
+              "extra_advance_modulo_period": 0
+            },
+            {
+              "from_window": 7,
+              "to_window": 8,
+              "status": "modulo_consistent",
+              "extra_advance_modulo_period": 1
+            },
+            {
+              "from_window": 8,
+              "to_window": 9,
+              "status": "modulo_consistent",
+              "extra_advance_modulo_period": 1
+            },
+            {
+              "from_window": 9,
+              "to_window": 10,
+              "status": "modulo_consistent",
+              "extra_advance_modulo_period": 1
+            },
+            {
+              "from_window": 10,
+              "to_window": 11,
+              "status": "modulo_consistent",
+              "extra_advance_modulo_period": 1
+            },
+            {
+              "from_window": 11,
+              "to_window": 12,
+              "status": "modulo_consistent",
+              "extra_advance_modulo_period": 1
+            },
+            {
+              "from_window": 12,
+              "to_window": 13,
+              "status": "modulo_consistent",
+              "extra_advance_modulo_period": 1
+            },
+            {
+              "from_window": 13,
+              "to_window": 14,
+              "status": "modulo_consistent",
+              "extra_advance_modulo_period": 1
+            },
+            {
+              "from_window": 14,
+              "to_window": 15,
+              "status": "modulo_consistent",
+              "extra_advance_modulo_period": 1
+            }
+          ],
+          "detected_jump_count": 0,
+          "unverified_boundary_count": 0,
+          "usable_windows": 16,
+          "total_windows": 16,
+          "tolerance_samples": 1,
+          "minimum_correlation": 0.99,
+          "lossless_proven": false,
+          "limit": "Source positions are modulo period. Whole-period losses and unobserved internal events remain unverified."
+        }
+      }
+    ],
+    "lossless_proven": false,
+    "evidence": "results/p26-independent-audit-20261018T122935Z/report.json",
+    "limits": "Periodic source cannot exclude whole-period loss. Four channels 16 windows: 11 detected boundaries. RX1 outcome in cases."
+  },
+  "RF_transmit_count_prior_index": 38,
+  "review_p26": {
+    "evidence": "results/p26-independent-audit-20261018T122935Z/report.json",
+    "rx1_jump_count": 0,
+    "boot": "results/p26-boot-verification-20261018T123023Z/report.json",
+    "new_rf_runs": 2,
+    "capture_RF_settings_written": false,
+    "tests": 840,
+    "rx_profile_restore": "results/p26-rx-profile-restore-20261018T123231Z/report.json",
+    "final_rx_attributes": {
+      "in_voltage_sampling_frequency": "30720000",
+      "in_voltage_rf_bandwidth": "18000000",
+      "in_voltage0_rf_port_select": "A_BALANCED",
+      "in_voltage0_gain_control_mode": "manual",
+      "in_voltage0_hardwaregain": "0.000000 dB",
+      "out_altvoltage0_RX_LO_frequency": "2450000000"
+    },
+    "RX_attributes_written_after_reboot": [
+      "in_voltage0_gain_control_mode",
+      "in_voltage0_hardwaregain",
+      "out_altvoltage0_RX_LO_frequency"
+    ],
+    "rx1_symbol_quality": {
+      "evidence": "results/p26-rx1-symbol-quality-20261018T123837Z/report.json",
+      "valid_symbols": 8032,
+      "checked_symbols": 4016,
+      "symbol_errors": 0,
+      "reference_evm_range_db": [
+        -38.07934415777557,
+        -37.04044801206411
+      ]
+    }
+  },
+  "independent_review_20261018": {
+    "my_errors_found_by_review": [
+      "HW-016: 1.2 kHz was called about 40 ppm; relative to the 2450 MHz LO it is 0.49 ppm. 39 ppm would only be correct relative to the 30.72 MHz sample clock, and CFO cannot be converted into SCO or blamed on a specific board.",
+      "HW-017: 'two buffers continuous, so long captures are feasible' was too strong. A 16-buffer four-channel capture shows 11 jumps, and lossless_proven is false for every configuration including my two-buffer one.",
+      "HW-017 code: dropping windows that failed to align before calling modulo_gaps turned adjacent comparisons into non-adjacent ones.",
+      "align_rotation minimised blind EVM, whose complex gain absorbs a residual rotation, so the chosen angle did not prove the axes were aligned.",
+      "S99board checked only that iio:device1 existed, not that PHY, ADC and DDS were all present, and it swallowed rmdir failures so a failed rebind looked like a retry.",
+      "P23 known-source reference mixed the TX nominal offset with the RX measured carrier, which is the root cause of the +33.97 dB nonsense figure."
+    ],
+    "verified_from_review": [
+      "840 tests pass (measured)",
+      "the five-configuration continuity table matches the audit JSON field for field",
+      "the 0.49 ppm figure is correct for the 2450 MHz reference",
+      "the deployed S99board (sha256 2a553309...) checks all three device names and no longer swallows rmdir errors"
+    ]
+  },
+  "p27_native_diagnostic": {
+    "analysis": "results/p27-analysis-20261018T130033Z/report.json",
+    "acquisition": "results/p27-acquisition-20261018T125410Z/report.json",
+    "status": "passed_with_limits",
+    "buffers": 512,
+    "saved_sample_fraction": 0.015625,
+    "lossless_proven": false,
+    "complete_stream_saved": false,
+    "drain_MB_s": 122.86547309257806,
+    "maxrss_kib": 4168,
+    "new_RF_runs": 1,
+    "RF_attributes_written": false,
+    "diag_only_data": "results/p27-chunk-transfer-20261018T125555Z/prefixes512.bin"
+  },
+  "new_board_build_readiness": {
+    "evidence": "results/p29-delivery-20261019T092133Z/report.json",
+    "status": "independent_RF_display_synthesis_verified_with_gaps",
+    "part": "xc7z100ffg900-2",
+    "tool": "E:\\FPGA_Tools\\Xilinx\\Vivado\\2021.1\\bin\\vivado.bat",
+    "same_PC_usable": true,
+    "checkout_attempted": true,
+    "evaluation_license_compatibility": "verified_via_Vivado_2021.1_exact_target_synthesis",
+    "license_type": "node_locked_60_day_evaluation",
+    "license_expiration": "2026-12-17",
+    "license_path": "C:\\Users\\project_user\\AppData\\Roaming\\XilinxLicense\\Xilinx.lic",
+    "license_sha256": "c6eeac76063a2b8297cc6c8c06777a742f5b20c1823ecaf42bbb1fcd4f29419c",
+    "upgrade_evidence": "results/p28-device-upgrade-20261018T141010Z/report.json",
+    "user_has_lab_license": false,
+    "rf_display_integration_verified": false,
+    "bitstream_generated": false
+  },
+  "build_readiness_before_p28": {
+    "evidence": "results/p27-fpga-readiness-20261018T130433Z/report.json",
+    "status": "XC7Z100_not_available_in_current_tool",
+    "part": "xc7z100ffg900-2",
+    "user_has_lab_license": false,
+    "checkout_attempted": false,
+    "same_PC_usable": true,
+    "evaluation_license_compatibility": "not_yet_verified",
+    "official_support": "https://docs.amd.com/r/2021.1-English/ug973-vivado-release-notes-install-license/Supported-Devices"
+  },
+  "p28_tool_setup": {
+    "record": "docs/experiments/EXP-HW-020-vivado-enterprise-setup.md",
+    "license_install": "results/p28-license-install-20261018T140518Z/report.json",
+    "upgrade": "results/p28-device-upgrade-20261018T141010Z/report.json",
+    "synthesis": "results/p28-target-verification-20261018T141412Z/report.json",
+    "board_operations": false,
+    "full_python_regression_rerun": false
+  },
+  "p29_vendor_migration": {
+    "created_utc": "2026-10-19T09:21:33.802363+00:00",
+    "status": "independent_builds_verified_with_release_gaps",
+    "work": "E:\\FPGA_Tools\\Work\\p29-vendor-20261019T082112Z",
+    "part": "xc7z100ffg900-2",
+    "tool": "Vivado 2021.1",
+    "evidence": {
+      "rf_synthesis": "results/p29-rf-synth-20261019T083419Z/report.json",
+      "display_synthesis": "results/p29-display-synth-20261019T090335Z/report.json",
+      "display_upgrade": "results/p29-display-upgrade-20261019T084235Z/report.json",
+      "adi_package": "results/p29-package-20261019T082556Z/report.json",
+      "sources": "results/p29-source-verification-20261019T092044Z/report.json",
+      "compiled_audit": "results/p29-audit-20261019T091015Z/report.json",
+      "rx_readback": "results/p29-smoke-archive-20261019T084543Z/report.json",
+      "integration": "results/p29-integration-audit-20261019T084053Z/report.json",
+      "hls_vendor_patch": "results/p29-hls-patch-install-20261019T090333Z/report.json",
+      "boot_package_comparison": "results/p29-ps-boot-baseline-20261019T085558Z/report.json",
+      "display_clock_refinement": "results/p29-display-clock-20261019T091430Z/report.json",
+      "display_clock_self_check": "results/p29-display-clock-test-20261019T091238Z/report.json",
+      "PS_readback": "results/p29-ps-readback-20261019T090944Z/report.json",
+      "PS_generated_comparison": "results/p29-ps-generated-comparison-20261019T091727Z/report.json"
+    },
+    "display_project": "E:\\p29d-1019\\axi_video_display.xpr",
+    "resources": {
+      "rf": {
+        "Slice LUTs": 10581.0,
+        "Slice Registers": 19790.0,
+        "Block RAM Tile": 4.0,
+        "DSPs": 60.0,
+        "Bonded IOB": 53.0
+      },
+      "display": {
+        "Slice LUTs": 11037.0,
+        "Slice Registers": 15623.0,
+        "Block RAM Tile": 8.5,
+        "DSPs": 9.0,
+        "Bonded IOB": 74.0
+      }
+    },
+    "synthesis_timing": {
+      "rf": {
+        "synthesis_only": true,
+        "WNS_ns": 1.294,
+        "TNS_ns": 0.0,
+        "WHS_ns": -0.095,
+        "checks": {
+          "no_clock": 0,
+          "constant_clock": 0,
+          "pulse_width_clock": 0,
+          "unconstrained_internal_endpoints": 0,
+          "no_input_delay": 7,
+          "no_output_delay": 10,
+          "multiple_clock": 0,
+          "generated_clocks": 0,
+          "loops": 0,
+          "partial_input_delay": 0,
+          "partial_output_delay": 0,
+          "latch_loops": 0
+        },
+        "post_route_timing_verified": false,
+        "hardware_function_verified": false
+      },
+      "display": {
+        "synthesis_only": true,
+        "WNS_ns": 1.2,
+        "TNS_ns": 0.0,
+        "WHS_ns": -0.095,
+        "checks": {
+          "no_clock": 21,
+          "constant_clock": 0,
+          "pulse_width_clock": 0,
+          "unconstrained_internal_endpoints": 65,
+          "no_input_delay": 0,
+          "no_output_delay": 56,
+          "multiple_clock": 0,
+          "generated_clocks": 0,
+          "loops": 0,
+          "partial_input_delay": 0,
+          "partial_output_delay": 0,
+          "latch_loops": 0
+        },
+        "post_route_timing_verified": false,
+        "hardware_function_verified": false
+      }
+    },
+    "RF_transmitted": false,
+    "refined_display_clock_timing": {
+      "synthesis_only": true,
+      "WNS_ns": 1.2,
+      "TNS_ns": 0.0,
+      "WHS_ns": -1.221,
+      "checks": {
+        "no_clock": 0,
+        "constant_clock": 0,
+        "pulse_width_clock": 0,
+        "unconstrained_internal_endpoints": 0,
+        "no_input_delay": 0,
+        "no_output_delay": 56,
+        "multiple_clock": 0,
+        "generated_clocks": 0,
+        "loops": 0,
+        "partial_input_delay": 0,
+        "partial_output_delay": 0,
+        "latch_loops": 0
+      },
+      "post_route_timing_verified": false,
+      "hardware_function_verified": false
+    },
+    "cdc_summary": {
+      "rf": {
+        "CDC-1": {
+          "severity": "Critical",
+          "count": 51
+        },
+        "CDC-2": {
+          "severity": "Warning",
+          "count": 4
+        },
+        "CDC-3": {
+          "severity": "Info",
+          "count": 79
+        },
+        "CDC-5": {
+          "severity": "Warning",
+          "count": 4
+        },
+        "CDC-6": {
+          "severity": "Warning",
+          "count": 16
+        },
+        "CDC-8": {
+          "severity": "Warning",
+          "count": 4
+        },
+        "CDC-10": {
+          "severity": "Critical",
+          "count": 4
+        },
+        "CDC-12": {
+          "severity": "Critical",
+          "count": 2
+        },
+        "CDC-13": {
+          "severity": "Critical",
+          "count": 2
+        },
+        "CDC-15": {
+          "severity": "Warning",
+          "count": 1726
+        },
+        "CDC-17": {
+          "severity": "Warning",
+          "count": 21
+        }
+      },
+      "display": {
+        "CDC-3": {
+          "severity": "Info",
+          "count": 5
+        },
+        "CDC-6": {
+          "severity": "Warning",
+          "count": 2
+        }
+      }
+    },
+    "new_bitstream_programmed": false,
+    "project_bitstream_generated": false,
+    "RF_display_integrated": false,
+    "display_functional_upgrade_verified": false,
+    "real_AI_verified": false,
+    "lossless_stream_verified": false,
+    "python_regression_rerun": false,
+    "previous_python_regression_passed": 864,
+    "board_mode": "rf",
+    "old_TX_package_restored": false,
+    "board_operations": [
+      "documented old-board login",
+      "one factory overlay rebind after startup failure",
+      "restore previously reviewed RX manual/0dB/2450MHz profile",
+      "receive-only sparse 16-buffer smoke and checksum readback",
+      "read-only ten SLCR words; no register writes"
+    ],
+    "source_hash_validation": "passed",
+    "backup": "results/p29-before-20261019T092133Z"
+  },
+  "board_runtime_asof_20261019": {
+    "evidence": "results/p29-smoke-archive-20261019T084543Z/report.json",
+    "old_TX_active": false,
+    "old_TX_temporary_package_restored": false,
+    "new_RX_profile": "manual/0dB/2450MHz/30.72MSps/18MHz/A_BALANCED",
+    "cold_start_issue_resolved": false,
+    "actual_boot_retry_attempts_2_and_3_exercised": true,
+    "all_three_boot_attempts_failed": true,
+    "postboot_factory_overlay_rebind_recovered": true,
+    "RX_native_binary": "/tmp/p27-rx-diag-082709",
+    "serial_ports_released": true
+  },
+  "historical_field_note": "p32_current describes the 2026-10-20 active session. session_stop and p31_current are historical 2026-10-19 records; do not interpret them as current power state.",
+  "p30_integration": {
+    "delivery": "results/p30-delivery-20261019T134403Z/report.json",
+    "evidence": {
+      "synthesis": "results/p30-synth-20261019T133134Z/report.json",
+      "route": "results/p30-implement-20261019T133527Z/report.json",
+      "graph": "results/p30-graph-verification-20261019T133631Z/report.json",
+      "vtc": "results/p30-vtc-test-20261019T100408Z/report.json",
+      "gpio": "results/p30-gpio-test-20261019T093658Z/report.json",
+      "tx_restore": "results/p30-tx-file-verification-20261019T133248Z/report.json",
+      "sparse_rx": "results/p30-smoke-archive-20261019T132314Z/report.json",
+      "vendor_sources": "results/p29-source-verification-20261019T132730Z/report.json"
+    },
+    "route_timing": {
+      "wns_ns": 0.449,
+      "tns_ns": 0.0,
+      "setup_failing_endpoints": 0,
+      "setup_total_endpoints": 96232,
+      "whs_ns": 0.013,
+      "ths_ns": 0.0,
+      "hold_failing_endpoints": 0,
+      "hold_total_endpoints": 95905,
+      "wpws_ns": 0.0,
+      "tpws_ns": 0.0,
+      "pulse_width_failing_endpoints": 0,
+      "pulse_width_total_endpoints": 42532
+    },
+    "bus_skew": {
+      "reported_constraints": 43,
+      "worst_slack_ns": 4.004,
+      "failing_constraints": 0
+    },
+    "route_nets": {
+      "logical nets": 86063,
+      "nets not needing routing": 33512,
+      "internally routed nets": 32669,
+      "nets with no loads": 843,
+      "routable nets": 52551,
+      "fully routed nets": 52551,
+      "nets with routing errors": 0
+    },
+    "external_timing_missing": {
+      "no_clock": 0,
+      "constant_clock": 0,
+      "pulse_width_clock": 0,
+      "unconstrained_internal_endpoints": 0,
+      "no_input_delay": 7,
+      "no_output_delay": 66,
+      "multiple_clock": 0,
+      "generated_clocks": 0,
+      "loops": 0,
+      "partial_input_delay": 0,
+      "partial_output_delay": 0,
+      "latch_loops": 0
+    },
+    "CDC_critical": 58,
+    "new_design_programmed": false,
+    "RF_transmitted_this_round": false,
+    "tx_recovery_directory": "/tmp/p12-source-stage-p30-132637",
+    "tx_boot_id": "6d5cb873-e976-4c91-9d37-3227445de891",
+    "rx_boot_id": "b638a03f-2638-4288-b663-9b8c86e58c7e",
+    "delivery_verification": "results/p30-delivery-verification-20261019T134804Z/report.json",
+    "end_state": "results/p30-end-state-20261019T134633Z/report.json",
+    "end_state_scope": "Read-only boot identity, original RF mode, RX configuration and disabled buffers; serial ports closed; no physical RF silence measurement"
+  },
+  "p31_current": {
+    "updated_utc": "2026-10-19T14:53:46.786172+00:00",
+    "experiment": "docs/experiments/EXP-HW-023-device-tree-cdc-and-kernel-recovery.md",
+    "tx_boot_id": "6d5cb873-e976-4c91-9d37-3227445de891",
+    "rx_boot_id": "ebce10b9-e464-4b4c-b586-d4fd8d116e06",
+    "tx_recovery_directory": "/tmp/p12-source-stage-p30-132637",
+    "board_mode": "rf",
+    "kernel_tainted": 0,
+    "RX_profile": "manual/0dB/2450MHz/30.72MSps/18MHz/A_BALANCED",
+    "RX_native_binary": "/tmp/p27-rx-diag-144510",
+    "RX_buffer_enable": 0,
+    "RX_scan_enable": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "no_experiment_TX_or_RX_process_observed": true,
+    "serial_handles_closed": true,
+    "TX_application_started": false,
+    "physical_RF_silence_measured": false,
+    "candidate_DT_target_test_passed": false,
+    "candidate_DT_applied_to_board": false,
+    "original_overlay_hot_unload_crashed": true,
+    "kernel_root_cause_fixed": false,
+    "direct_NULL_driver_owner_fault_binary_pinned": true,
+    "exact_dirty_kernel_source_reproduced": false,
+    "factory_RF_recovered_after_user_power_cycle": true,
+    "hot_unload_experiment_disabled": true,
+    "boot_overlay_removal_retries_enabled": false,
+    "guarded_boot_script_installed": true,
+    "guarded_script_full_warm_boot_tested": true,
+    "guarded_failure_path_hardware_tested": false,
+    "cold_start_0xFF_root_cause_fixed": false,
+    "boot_script_sha256": "89183f1fe397f8bc20bd0c39544f5d30c37a8f1ca4e440c8cce6841d9b1247f2",
+    "boot_script_backup": "/etc/p31-S99board-before-20261019T143146Z",
+    "offline_DT_checks": 240,
+    "independent_BD_checks": 30,
+    "negative_fixtures_detected": 4,
+    "FIFO_digital_checked_beats": 36005,
+    "AXIS_arbiter_descriptors": 256,
+    "AXIS_arbiter_checked_beats": 10878,
+    "CDC_critical_remaining": 58,
+    "exact_FIFO_MM_endpoints_tested": false,
+    "external_IO_timing_complete": false,
+    "combined_bitstream_generated": false,
+    "combined_bitstream_programmed": false,
+    "RF_display_concurrent_hardware_accepted": false,
+    "lossless_stream_verified": false,
+    "real_AI_verified": false,
+    "evidence": {
+      "timing_sources": "results/p31-timing-sources-20261019T140648Z/report.json",
+      "factory_contract": "results/p31-board-contract-20261019T135528Z/report.json",
+      "dtc_tools": "results/p31-dtc-tools-20261019T135813Z/report.json",
+      "overlay": "results/p31-overlay-20261019T141549Z/report.json",
+      "contract": "results/p31-contract-verification-20261019T143056Z/report.json",
+      "fifo": "results/p31-fifo-test-20261019T140637Z/report.json",
+      "arbiter": "results/p31-arbiter-test-20261019T141159Z/report.json",
+      "failed_hot_unload": "results/p31-rf-driver-test-20261019T141834Z/report.json",
+      "console_observation": "results/p31-oops-observation-20261019T142127Z/report.json",
+      "failed_sysrq": "results/p31-sysrq-recovery-20261019T142254Z/report.json",
+      "repowered": "results/p31-repowered-20261019T142539Z/report.json",
+      "initial_RX_restore": "results/p26-rx-profile-restore-20261019T143009Z/report.json",
+      "initial_sparse_smoke": "results/p27-smoke-20261019T143227Z/report.json",
+      "initial_sparse_bytes": "results/p30-smoke-archive-20261019T143355Z/report.json",
+      "initial_end_state": "results/p31-end-state-20261019T143602Z/report.json",
+      "boot_guard_tests": "results/p31-boot-guard-20261019T142948Z/report.json",
+      "boot_guard_deploy": "results/p31-boot-guard-deploy-20261019T143146Z/report.json",
+      "guard_full_boot": "results/p31-guard-boot-20261019T144337Z/report.json",
+      "RX_profile_restore": "results/p26-rx-profile-restore-20261019T144504Z/report.json",
+      "sparse_smoke": "results/p27-smoke-20261019T144510Z/report.json",
+      "rejected_whole_transfer": "results/p30-smoke-archive-20261019T144633Z/report.json",
+      "sparse_bytes": "results/p31-sparse-archive-20261019T145054Z/report.json",
+      "vendor_kernel": "results/p31-vendor-kernel-20261019T143355Z/report.json",
+      "kernel_image": "results/p31-kernel-image-20261019T144415Z/report.json",
+      "fault_instructions": "results/p31-remove-fault-20261019T144938Z/report.json",
+      "end_state": "results/p31-end-state-20261019T145151Z/report.json"
+    },
+    "checkpoint": "results/p31-checkpoint-20261019T145346Z/report.json",
+    "runtime_observation_scope": "Last active RF session before normal shutdown; see session_stop for current halted state"
+  },
+  "session_stop": {
+    "active": false,
+    "board_shutdown_issued": false,
+    "halt_observed": false,
+    "superseded_by": "p50_current"
+  },
+  "display_identification_evidence": {
+    "photo": "board/display-identification/panel-back-20261019.jpg",
+    "record": "board/display-identification/identification-20261019.json",
+    "confirmed_adapter_model": "Tronlong TL-70RESLCD-B2",
+    "bare_LCD_model_confirmed": false,
+    "electrical_timing_verified": false,
+    "board_operations": false,
+    "existing_user_documents_only": true
+  },
+  "authoritative_current_field": "p80_current",
+  "p32_current": {
+    "date_local": "2026-10-20",
+    "timezone": "Asia/Shanghai",
+    "current_state": "both_boards_powered_on_idle_original_RF_restored",
+    "boards": {
+      "COM9": {
+        "identity": "uname -a\r\nLinux pzp201 5.10.0-98231-g9dfba10b795d-dirty #14 SMP PREEMPT Wed Mar 15 18:41:33 PDT 2023 armv7l GNU/Linux\r\n# echo __P32_30958266__:$?\r\n__P32_30958266__:0\r\n# ",
+        "boot_id": "d11f69a8-cf03-4b3e-b4c5-0afb8d5d7ff9",
+        "tainted": "0",
+        "experiment_process_observed": false,
+        "names": {
+          "cho __P32_2b623078__:$?": "/sys/bus/iio/devices/iio:device0",
+          "xadc": "/sys/bus/iio/devices/iio:device1",
+          "cf-ad9361-dds-core-lpc": "/sys/bus/iio/devices/iio:device2",
+          "cf-ad9361-lpc": "/sys/bus/iio/devices/iio:device3"
+        },
+        "status": "identified_current_boot"
+      },
+      "COM8": {
+        "identity": "uname -a\r\nLinux Zynq-Tronlong 4.9.0-rt1-xilinx-g0e07141-dirty #4 SMP PREEMPT Tue Sep 1 17:20:08 CST 2020 armv7l armv7l armv7l GNU/Linux\r\nroot@Zynq-Tronlong:/sys/bus/iio/devices/iio:device2# echo __P32_b5975eed__:$?\r\n__P32_b5975eed__:0\r\n",
+        "boot_id": "5cb0b3a6-c099-4df2-a526-86c41da9921a",
+        "tainted": "0",
+        "experiment_process_observed": false,
+        "names": {
+          "xadc": "/sys/bus/iio/devices/iio:device0",
+          "ad9361-phy": "/sys/bus/iio/devices/iio:device1",
+          "cf-ad9361-lpc": "/sys/bus/iio/devices/iio:device2",
+          "cf-ad9361-dds-core-lpc": "/sys/bus/iio/devices/iio:device3"
+        },
+        "mode": "rf",
+        "fabric": "operating",
+        "guard_matches": true,
+        "rf_ready": true,
+        "RX_attributes": {
+          "in_voltage_sampling_frequency": "30720000",
+          "in_voltage_rf_bandwidth": "18000000",
+          "out_altvoltage0_RX_LO_frequency": "2450000000",
+          "in_voltage0_gain_control_mode": "manual",
+          "in_voltage0_hardwaregain": "0.000000 dB",
+          "in_voltage0_rf_port_select": "A_BALANCED"
+        },
+        "buffer_enable": "0",
+        "scan_enable": [
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        "status": "identified_current_boot"
+      }
+    },
+    "TX_application_started": false,
+    "old_TX_RAM_tools_restored_by_this_turn": false,
+    "factory_guard_restored": true,
+    "hot_overlay_removal": false,
+    "DMA4K": {
+      "both_drivers_probe_verified": true,
+      "RX_finite_transfer_verified": true,
+      "TX_transfer_verified": false,
+      "original_factory_PL_and_clocks_only": true,
+      "merged_clock_hardware_verified": false
+    },
+    "PWM2": {
+      "candidate_project": "E:/p32-pwm2-105934/project/combined.xpr",
+      "BD_validation": true,
+      "new_synthesis_route": false,
+      "physical_hardware_verified": false
+    },
+    "merged_candidate_source": "fpga/integration/rf-display-p32-pwm2.dts",
+    "merged_bitstream_generated": false,
+    "merged_firmware_loaded": false,
+    "unresolved_CDC_critical": 58,
+    "full_continuous_IQ_verified": false,
+    "real_AI_accepted": false,
+    "handoff": "docs/handoff/RESUME-20261020.md",
+    "experiment": "docs/experiments/EXP-HW-024-dma4k-pwm-and-cdc.md",
+    "evidence": {
+      "runtime": "results/p32-dma4k-resume-20261020T105719Z/report.json",
+      "first_preapply_failure": "results/p32-dma4k-runtime-20261020T105431Z/report.json",
+      "PWM2_project": "results/p32-pwm2-project-20261020T105934Z/report.json",
+      "paired_overlay": "results/p32-paired-overlay-20261020T110125Z/report.json",
+      "FIFO_MM": "results/p32-fifo-mm-20261020T110537Z/report.json",
+      "CDC": "results/p32-final-cdc-20261020T105847Z/report.json",
+      "final_end_state": "results/p32-preflight-20261020T111006Z/report.json",
+      "delivery_check": "results/p32-delivery-check-20261020T111312Z/report.json"
+    },
+    "checkpoint": "results/p32-checkpoint-20261020T111604Z/report.json"
+  },
+  "p34_panel_render": {
+    "date": "2026-10-20",
+    "record": "docs/experiments/P34-panel-ui.md",
+    "purpose": "task 1 (show spectrum and constellation on the screen), previously blank",
+    "implemented": {
+      "renderer": "src/rfsig/panel_render.py",
+      "cli": "experiments/p34_render_panel.py",
+      "tests": "tests/test_panel_render.py (11 tests)"
+    },
+    "panel": {
+      "pixels": [
+        800,
+        480
+      ],
+      "framebuffer_bytes": 1536000,
+      "pixel_format": "bgra32",
+      "gzip_bytes": {
+        "bpsk": 22262,
+        "qpsk": 21725,
+        "qam16": 22423
+      },
+      "test_pattern_gzip_bytes": 7119
+    },
+    "results": {
+      "bpsk": {
+        "evm_db": -37.18,
+        "quadrature_suppression_db": 45.27,
+        "amplitude_cv": 0.0127
+      },
+      "qpsk": {
+        "evm_db": -37.07,
+        "quadrature_suppression_db": -0.02,
+        "amplitude_cv": 0.0083
+      },
+      "qam16": {
+        "evm_db": -37.04,
+        "quadrature_suppression_db": -0.12,
+        "amplitude_cv": 0.3447
+      }
+    },
+    "evm_matches_hw016": true,
+    "self_inflicted_errors_fixed": [
+      "16QAM was drawn as rings because the CLI used the M-th power alignment, which is only valid for constant modulus. Fixed by tracking the carrier and searching the rotation; EVM moved from -14.96 to -37.04 dB.",
+      "the spectrum spanned the full 30.72 MHz and compressed the 240 kHz signal to a spike; it is now zoomed to +/-2 MHz around the CARRIER, not around the PSD peak, because a spurious line made the axis asymmetrical."
+    ],
+    "not_verified": [
+      "never displayed on the panel - would need display mode and interrupt RF work",
+      "bgra32 is inferred from xilinx-drm; the channel order must be confirmed with the test pattern",
+      "no live refresh; that needs the merged bitstream so RF and display can coexist",
+      "no touch interaction"
+    ],
+    "evidence": [
+      "results/p34-panel-bpsk-v4/",
+      "results/p34-panel-qpsk-v4/",
+      "results/p34-panel-qam16-v4/",
+      "results/p34-panel-testpattern/"
+    ]
+  },
+  "p34_xc7z100_license": {
+    "date": "2026-10-20",
+    "question": "can this machine synthesise for xc7z100ffg900-2?",
+    "answer": "yes, once XILINXD_LICENSE_FILE points at the license file",
+    "previous_conclusion": {
+      "where": "EXP-HW-019 section 4 and START-HERE",
+      "claim": "XC7Z100 rebuild blocked by missing tool support and licensing",
+      "status": "superseded",
+      "why_it_looked_blocked": [
+        "the installed license copy at %APPDATA%\\XilinxLicense\\Xilinx.lic is gone; only the original download survived",
+        "LM_LICENSE_FILE points at D:\\modelsim\\LICENSE.TXT, which does not carry the Xilinx features"
+      ]
+    },
+    "probe_result": {
+      "tool": "Vivado 2021.1",
+      "part_enumerable": "P27_PART_COUNT 1, twelve xc7z100 variants listed",
+      "with_license": "INFO [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z100' and P27_SYNTHESIS_CAPABILITY_PASS",
+      "without_license": "ERROR [Common 17-345] a valid license was not found; exit 4"
+    },
+    "license": {
+      "path": "E:/FPGA_Tools/Downloads/Xilinx.lic",
+      "bytes": 3012,
+      "features": [
+        "Vivado_Enterprise_Package",
+        "Vivado_ML_Enterprise_Edition",
+        "Vivado_Simulation",
+        "ISE_Embedded_Edition"
+      ],
+      "start": "17-Oct-2026",
+      "expires": "17-dec-2026 (60-day evaluation)",
+      "hostid": "40c2ba523054 (node locked)"
+    },
+    "fix_applied": "user environment variable XILINXD_LICENSE_FILE set to E:/FPGA_Tools/Downloads/Xilinx.lic; LM_LICENSE_FILE left untouched",
+    "merged_design_status": {
+      "checkpoint": "E:/p30c-1019-174235/merged-route.dcp",
+      "bytes": 28854850,
+      "device": "7z100-ffg900",
+      "timing": {
+        "WNS_ns": 0.449,
+        "WHS_ns": 0.013,
+        "failing_endpoints": 0,
+        "report": "All user specified timing constraints are met."
+      },
+      "utilization_percent": {
+        "LUT": 7.87,
+        "FF": 6.93,
+        "BRAM": 1.66,
+        "DSP": 3.42
+      },
+      "bitstream_generated": true,
+      "caveats": [
+        "58 CDC critical items still open",
+        "the routed checkpoint predates the TTC0 channel 2 backlight fix, which lives in the unsynthesised p32-pwm2 project",
+        "WHS margin of 13 ps is very thin and deserves a hold-path look before deployment"
+      ],
+      "bitstream": {
+        "path": "E:/FPGA_Tools/Work/p34-bitstream-20261020/rf_display_top.bit",
+        "bytes": 5037020,
+        "sha256": "688475a33a284bb18ea9bcb32d19e694829e773a363e9db03bed42726b83ab67",
+        "compressed": true,
+        "compression_saved_bits": 99035584,
+        "uncompressed_approx_bytes": 17400000,
+        "drc": {
+          "errors": 0,
+          "warnings": 24,
+          "advisories": 58
+        },
+        "drc_warning_kinds": {
+          "REQP-1839 RAMB36 async control": 20,
+          "DPIP-1 DSP input pipelining": 2,
+          "RTSTAT-10 no routable loads": 1,
+          "CHECK-3 rule limit": 1
+        },
+        "elapsed_seconds": 48,
+        "peak_memory_mb": 2967,
+        "deployable_today": false,
+        "not_deployable_because": [
+          "58 CDC advisories not yet reviewed and closed",
+          "this checkpoint predates the TTC0 channel 2 backlight fix",
+          "WHS margin is only 13 ps"
+        ]
+      },
+      "pwm2_candidate": {
+        "bitstream": "E:/p32-pwm2-105934/project/combined.runs/impl_1/rf_display_top.bit",
+        "bytes": 5034572,
+        "sha256_prefix": "96c5d8f3a5fb8cd0",
+        "built": true,
+        "backlight_fix_verified": "system.bd line 5493-5494 wires sys_ps7/TTC0_WAVE2_OUT to lcd_pwm_backlight; dts pwms selects channel 2",
+        "timing": {
+          "WNS_ns": 0.449,
+          "WHS_ns": 0.013,
+          "failing": 0,
+          "identical_to_baseline": true
+        },
+        "utilization_percent": {
+          "LUT": 7.87,
+          "FF": 6.93,
+          "BRAM": 1.66,
+          "DSP": 3.42
+        },
+        "drc": {
+          "errors": 0,
+          "warnings": 24,
+          "advisories": 58
+        },
+        "firmware_name_expected": "rf-display-p32.bin",
+        "dts": "fpga/integration/rf-display-p32-pwm2.dts",
+        "deploy_blockers": [
+          "58 CDC advisories open",
+          "WHS 13 ps thin",
+          "dtbo not yet compiled or installed"
+        ]
+      }
+    },
+    "evidence": [
+      "E:/FPGA_Tools/Work/p34-part-probe-20261020/probe4.log",
+      "E:/p30c-1019-174235/merged-route-timing.rpt",
+      "E:/p30c-1019-174235/merged-route-utilization.rpt"
+    ],
+    "record": "docs/experiments/P34-bitstream-generated.md"
+  },
+  "vision_capability_correction": {
+    "claim_that_was_wrong": "RF and display could not work simultaneously because the XC7Z100 rebuild was blocked by tool support and licensing",
+    "reality": "the licence is valid until 2026-12-17 and the part enumerates; synthesis and write_bitstream both succeed once XILINXD_LICENSE_FILE is set",
+    "what_actually_blocks_deployment": [
+      "58 open CDC advisories",
+      "the backlight TTC0 channel fix is not in the routed checkpoint",
+      "WHS margin 13 ps"
+    ],
+    "conclusion": "this is an engineering wrap-up, not an external dependency. The earlier 'cannot do it' judgement should not be used for planning any more."
+  },
+  "p34_board_panel": {
+    "date": "2026-10-20",
+    "record": "docs/experiments/P34-board-panel-program.md",
+    "what": "arm_panel: reads interleaved int16 I/Q, Hann window, in-place radix-2 FFT, averages frames into a dB spectrum and draws straight into /dev/fb0",
+    "source": "embedded/arm_panel/arm_panel.c",
+    "font": "embedded/arm_panel/font8x12.h generated by experiments/p34_make_font.py",
+    "cross_check": {
+      "reference": "experiments/p34_arm_panel_reference.py (numpy, same algorithm)",
+      "board": {
+        "peak_db": 106.2,
+        "peak_offset_bins": 33.0,
+        "rms": 203.0
+      },
+      "numpy": {
+        "peak_db": 106.232469,
+        "peak_offset_bins": 33.0,
+        "rms": 203.02902
+      },
+      "agreement": "matches to the printed precision"
+    },
+    "frame_timing": {
+      "iterations": 60,
+      "mean_ms": 2.344,
+      "worst_ms": 3.498,
+      "equivalent_fps": 426.63,
+      "note": "8x1024 FFT plus a full 800x480 redraw costs 2.3 ms, so at 30 fps the budget is 33 ms and there is 14x headroom. Compute and drawing are not the bottleneck; ADC capture will dominate."
+    },
+    "build": {
+      "toolchain": "arm-linux-gnueabihf-gcc 8.3.0",
+      "bytes": 22848,
+      "elf": "ELF32 ARM EXEC",
+      "needed": [
+        "libc.so.6",
+        "libm.so.6"
+      ],
+      "max_glibc_symbol": "GLIBC_2.4"
+    },
+    "not_done": [
+      "live RF input: display mode has no AD9361 and RF mode has no /dev/fb0 until the merged bitstream is deployed",
+      "continuous acquisition without dropping samples",
+      "constellation panel on board (this round is spectrum only)",
+      "touch interaction"
+    ],
+    "drop_in_point": "load_iq() is where the libiio capture block goes, using the dlopen pattern proven by arm_rx_diagnostic.c",
+    "evidence": [
+      "results/p34-arm-panel-timing-20261020/",
+      "results/p34-arm-panel-run-20261020/",
+      "results/p34-arm-panel/reference.json"
+    ]
+  },
+  "p34_deploy_package": {
+    "date": "2026-10-20",
+    "directory": "results/p34-deploy-package/",
+    "files": {
+      "rf-display-p32.bin": {
+        "bytes": 5034572,
+        "sha256": "96c5d8f3a5fb8cd070e94568871c77eec6c69203212c9ed25587c3c1a885b13c"
+      },
+      "rf-display-p32.dtbo": {
+        "bytes": 11544,
+        "sha256": "826756c5fb3326224a2560e4d20541bc2478718b82c71da4cfad9914532b1acf"
+      }
+    },
+    "dtc": "dtc 1.8.1 at E:/FPGA_Tools/Utilities/dtc-1.8.1-ucrt64/ucrt64/bin/dtc.exe",
+    "overlay_structure_checked": {
+      "__symbols__": 10,
+      "__fixups__": [
+        "amba",
+        "intc",
+        "clkc",
+        "spi1",
+        "gpio0",
+        "fpga_full"
+      ],
+      "__local_fixups__": "includes fragment@5 backlight:pwms, so the cross-fragment phandle is relocated",
+      "note": "the pwms = <0x00> seen on decompile is a local-fixup placeholder, not a broken property"
+    },
+    "never_loaded_on_board": false,
+    "risks": [
+      "58 CDC advisories open",
+      "WHS +0.013 ns, met but thin, no custom OCV derate",
+      "dtc reg_format warnings judged benign because amba is 1/1 on Zynq; confirm by IIO probe on first boot",
+      "overlay needs base-tree symbols spi1/gpio0/clkc/intc/amba/fpga_full",
+      "no simulation was run; first boot is the first real test"
+    ],
+    "rollback": "No hot unload. Use verified one-shot boot hold and normal reboot to hash-verified factory files; U-Boot recovery only when required.",
+    "deployment_allowed": false,
+    "deprecated": true,
+    "format_correction": "Original .bin is a .bit container; payload equals native raw only after parsed header extraction.",
+    "notice": "results/p34-deploy-package/DEPLOYMENT-BLOCKED.json"
+  },
+  "p34_merged_board_attempt": {
+    "date": "2026-10-20",
+    "record": "docs/experiments/P34-merged-bitstream-hang.md",
+    "result": "FAILED - the board hangs with no output when the merged overlay is applied",
+    "installed": {
+      "bitstream": "/lib/firmware/rf-display-p32.bin (5,034,572 B, sha256 96c5d8f3...), kept on the card for retries",
+      "overlay_as": "/lib/firmware/d480p.dtbo (replaced, vendor backed up)",
+      "vendor_backup": "/lib/firmware/d480p.dtbo.vendor-backup, sha256 7e740c42..."
+    },
+    "hang_point": "board-init: staged bitstream already current, then silence - i.e. inside the overlay apply that reconfigures the PL",
+    "failure_class": "bus-level lockup: no panic, no oops, no watchdog reset, serial completely dead",
+    "recovery": "U-Boot autoboot interrupted with SPACE (bootdelay=1), then ext4load + ext4write restored the vendor overlay and reset",
+    "recovery_verified": {
+      "mode": "display",
+      "d480p_sha256": "7e740c420973a09630575c416f7acf8ab74ff91a9fd058e6227e09eccd4d03f5",
+      "fb0": true,
+      "iio": [
+        "iio:device0"
+      ]
+    },
+    "what_this_invalidates": [
+      "timing closure plus 0 DRC errors plus 7.87% LUT is NOT sufficient evidence to deploy",
+      "the 58 CDC advisories are not a theoretical risk: they are consistent with a hard lockup",
+      "whole-payload swap must be replaced by staged bring-up"
+    ],
+    "next_experiment": {
+      "what": "load the bitstream through fpga_manager WITHOUT applying the overlay",
+      "command": "echo rf-display-p32.bin > /sys/class/fpga_manager/fpga0/firmware",
+      "bisects": "hang -> the PL itself (CDC/AXI/clocks); alive -> the reconstructed device tree nodes",
+      "cost": "no upload needed, the 5 MB file is already on the board"
+    },
+    "lesson": "before touching /lib/firmware/d480p.dtbo again, confirm U-Boot ext4write works: removing the SD card and using Windows cannot write ext4, so U-Boot is the only reliable recovery path"
+  },
+  "p34_bisect": {
+    "date": "2026-10-20",
+    "record": "docs/experiments/P34-bisect-bitstream-vs-overlay.md",
+    "result": "the merged bitstream is GOOD; the board hang is caused by our device tree overlay",
+    "evidence": {
+      "bitstream_plus_vendor_dt": "boots: fpga_manager state=operating, xilinx-vdma probed, drm fb0 800x480, backlight present",
+      "bitstream_plus_our_dt": "hard hang right after \"staged bitstream already current\""
+    },
+    "format_trap_fixed": "the first board test was invalid: a .bit with its 124-byte ASCII header was fed to PCAP. Regenerated with -bin_file; derived on board with tail -c +125 and verified by sha256 34eeb736... so no 5 MB re-upload was needed",
+    "ruled_out": [
+      "bitstream format (fixed, still hangs)",
+      "AXI address mismatch (the BD address map matches the DTS)",
+      "fpga_full fragment structure (equivalent to the vendor overlay)",
+      "the PL design itself (boots and runs with the vendor device tree)"
+    ],
+    "remaining_suspect": "the RF-side nodes: ad9361-phy on spi1, dma@7c400000/7c420000, cf-ad9361-lpc@79020000. They depend on PS SPI/GPIO setup, and the RF and display projects had different PS init (UART1 MIO 48-49 vs 12-13, EMIO width 64 vs 1, FCLK2 50 vs 250 MHz)",
+    "next_experiment": "rf mode with our bitstream and the vendor RF overlay: back up ad9361.bin, cp p32.raw ad9361.bin, board-mode rf, reboot",
+    "board_state_now": {
+      "pl": "our merged bitstream",
+      "device_tree": "vendor display overlay",
+      "consequence": "display works, no AD9361",
+      "restore": "cp display.bin.vb display.bin; cp system_wrapper.bin.vb system_wrapper.bin; reboot"
+    },
+    "historical_claims_superseded_by": "p35_current"
+  },
+  "p34_bisect_rf_half": {
+    "date": "2026-10-20",
+    "result": "the merged bitstream is good for BOTH halves: with the vendor RF overlay AD9361 initialises and four IIO devices appear; with the vendor display overlay DRM and fb0 800x480 come up. Only our hand-built combined overlay hangs the board.",
+    "bisect_table": {
+      "bitstream + vendor display dt": "boots, display OK",
+      "bitstream + vendor rf dt": "boots, ad9361-phy + cf-ad9361-lpc + dds probed",
+      "bitstream + our combined dt": "hard hang, no output"
+    },
+    "cdc_hypothesis": "ruled out for this hang: the same bitstream runs stably under both vendor trees",
+    "fix_route": "stop rebuilding the overlay from understanding; concatenate the two factory DTS verbatim, renumber fragments, let dtc -@ regenerate symbols/fixups, change only firmware-name. experiments/p31_build_overlay.py already has clean_body() for this.",
+    "board_state_now": {
+      "mode": "rf",
+      "pl": "our merged bitstream (state=operating)",
+      "device_tree": "vendor pl.dtbo",
+      "rf": "working: iio:device1 ad9361-phy, iio:device2 cf-ad9361-lpc, iio:device3 dds",
+      "display": "absent in rf mode, expected"
+    },
+    "evidence": [
+      "results/p34-rf-mode-prep-20261020/",
+      "results/p34-bisect2-rf-verify-20261020/"
+    ],
+    "historical_claims_superseded_by": "p35_current"
+  },
+  "p34_session_close": {
+    "date": "2026-10-20",
+    "worklog": "docs/handoff/WORKLOG-20261020-P34.md",
+    "start_here_updated": true,
+    "board_state_at_stop": {
+      "responsive": false,
+      "detail": "after the last serial batch the board stopped answering: CH340 present, port opens, zero bytes returned. Power cycle required before the next session.",
+      "unconfirmed": "the vendor file restore (display.bin / system_wrapper.bin / ad9361.bin from .vb, board-mode back to display) was in flight and did not finish visibly",
+      "how_to_check": "sha256sum display.bin system_wrapper.bin ad9361.bin; cat /etc/board-mode",
+      "artifacts_kept_on_board": [
+        "/lib/firmware/p32.raw",
+        "/lib/firmware/p32-test.dtbo"
+      ]
+    },
+    "headline": "the merged bitstream was proven good on hardware: AD9361 initialises and four IIO devices appear under the vendor RF tree, DRM and fb0 come up under the vendor display tree. Only our hand-built combined overlay hangs the board.",
+    "remaining_work": {
+      "immediate": [
+        {
+          "task": "rebuild the combined device tree by concatenating the two factory DTS files",
+          "why": "the bitstream works with either vendor overlay; only our hand-built overlay hangs the board",
+          "effort": "1-2 hours, route already written down",
+          "blocks": "everything about RF plus display at the same time"
+        },
+        {
+          "task": "verify RF and display come up in a single boot",
+          "why": "that is the actual goal of the merged bitstream",
+          "effort": "a few boots",
+          "blocks": "live spectrum on the board LCD"
+        }
+      ],
+      "then": [
+        {
+          "task": "add live libiio capture to the on-board panel program",
+          "why": "arm_panel now reads a file; live RF needs the capture block dropped into load_iq()",
+          "effort": "about 1 day",
+          "note": "capture pattern already proven by arm_rx_diagnostic.c (dlopen libiio, 0.20 compatible)"
+        },
+        {
+          "task": "refresh loop and boot integration",
+          "why": "one frame per run today; needs a continuous loop and start-at-boot",
+          "effort": "half a day",
+          "note": "2.34 ms per frame already measured, so the budget is not the problem"
+        },
+        {
+          "task": "constellation and waterfall on the board",
+          "why": "the panel currently draws spectrum only",
+          "effort": "about 1 day",
+          "note": "host-side layout and demodulation already validated"
+        }
+      ],
+      "still_open_from_before": [
+        {
+          "task": "58 CDC advisories review",
+          "why": "not the cause of tonight's hang, but still unreviewed and the design is unchanged",
+          "owner": "the other session (P33 documents)"
+        },
+        {
+          "task": "WHS margin of 13 ps and no custom OCV derate",
+          "why": "met, but thin; a derated run would say whether it is real",
+          "effort": "half a day"
+        },
+        {
+          "task": "continuous IQ without dropped samples",
+          "why": "every tested configuration still has lossless_proven=false",
+          "effort": "unknown, needs capture-path work"
+        },
+        {
+          "task": "real AI dataset with SNR labels and a train/validation/test split",
+          "why": "modulation recognition is still a baseline on synthetic or recorded segments",
+          "effort": "several days"
+        },
+        {
+          "task": "touch interaction on the panel",
+          "why": "no code reads the touchscreen today",
+          "effort": "half a day"
+        },
+        {
+          "task": "restore and re-verify the old board RAM TX package",
+          "why": "not restored this session; required before any transmission from the old board",
+          "effort": "under an hour"
+        }
+      ],
+      "not_blocking_but_worth_closing": [
+        "abort and independent-reset tests for the DMA paths",
+        "external IO timing verification",
+        "simulation before the next bitstream deployment (tonight proved static checks are not enough)"
+      ]
+    },
+    "remaining_count": {
+      "immediate": 2,
+      "then": 3,
+      "still_open_from_before": 6,
+      "total_items": 11
+    },
+    "historical_claims_superseded_by": "p35_current"
+  },
+  "p35_current": {
+    "updated_utc": "2026-10-20T16:30:00.437393+00:00",
+    "record": "docs/experiments/EXP-HW-025-review-corrections-and-ttl.md",
+    "status": "summary_checkpoint_TTL33_bin_ready_not_programmed_no_background_trial",
+    "board_readback": "results/p35-firmware-readback-20261020T155937Z/report.json",
+    "vendor_file_restore": "results/p35-restore-vendor-files-20261020T160202Z/report.json",
+    "RX_configuration": "results/p35-finite-rx-prep-20261020T160650Z/report.json",
+    "RX_cancel_recreate": "results/p33-rx-cancel-board-20261020T160708Z/report.json",
+    "RX_finite_sparse": "results/p27-smoke-20261020T160826Z/report.json",
+    "new_board": {
+      "port": "COM8",
+      "boot_id": "8033ec3f-0588-4e7a-8572-e440c547cf43",
+      "running_fabric": "P32 PWM2 merged design from P34; not TTL33",
+      "running_overlay": "factory RF pl.dtbo",
+      "framebuffer_present": false,
+      "disk_default_firmware": "restored hash-verified factory originals; no reboot yet",
+      "mode": "rf",
+      "RX_LO_Hz": 2450000000,
+      "RX_gain_mode": "manual",
+      "RX_gain_dB": 0,
+      "latest_cancel_postcheck": {
+        "tainted": 0,
+        "buffer_enable": 0,
+        "scan_enable": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "serial_closed": true,
+      "latest_idle_check": "results/p35-interrupt-close-20261020T162845Z/report.json"
+    },
+    "old_board": {
+      "port": "COM9",
+      "boot_id": "182e235d-a1d2-4964-856c-feb7ecf5873f",
+      "TX_app_observed": false
+    },
+    "TTL33_candidate": {
+      "project": "E:/p33-ttl-114312/project/combined.xpr",
+      "build": "results/p35-ttl-route-20261020T161703Z/report.json",
+      "status": "native_bin_exported_not_programmed",
+      "ADI_sync_id_patch_applied": false,
+      "hardware_tested": false,
+      "bitstream_report": "results/p35-ttl-bin-20261020T162454Z/report.json",
+      "bitstream_sha256": "9af156ead2ab43564cdbdce3f0cad780d58cdf27aab437ba62a38fa29a1fb347",
+      "bitstream_bytes": 5709252,
+      "WNS_ns": 0.49,
+      "WHS_ns": 0.054,
+      "CDC_Critical_remaining": 58,
+      "external_input_delay_missing": 7,
+      "external_output_delay_missing": 29
+    },
+    "explicit_overlay": "results/p35-explicit-overlay-20261020T160459Z/report.json",
+    "package_format": "results/p35-package-format-audit-20261020T160521Z/report.json",
+    "conclusions": {
+      "combined_RF_display_verified": false,
+      "CDC_closed": false,
+      "hang_root_cause_verified": false,
+      "continuous_lossless_IQ": false,
+      "real_AI_verified": false
+    },
+    "serial_protocol": "One owner per port; short commands with actual exit markers; no hot unload/reconfigure under bound drivers",
+    "interruption_close": "results/p35-interrupt-close-20261020T162845Z/report.json",
+    "partial_trial": "results/p35-once-merged-20261020T162656Z/report.json",
+    "panel_host": "results/p35-arm-panel-check-20261020T161014Z/report.json",
+    "panel_ARM_known_fixture_test": "results/p35-panel-board-20261020T161445Z/report.json",
+    "sparse_raw_archive": "results/p31-sparse-archive-20261020T162105Z/report.json",
+    "no_background_trial": true,
+    "next_task": "Reidentify current boot, repeat fresh upload into new timestamp, controlled one-shot fresh boot + explicit PL load + no-firmware overlay; then finite RX/display/parallel tests"
+  },
+  "p36_current": {
+    "updated_utc": "2026-10-21T08:17:05.138657+00:00",
+    "record": "docs/experiments/EXP-HW-026-fresh-boot-ttl33.md",
+    "status": "current_board_state_unconfirmed_COM8_no_response_clock_overflow_fix_not_built",
+    "last_verified_boot": "1263532f-8a39-4a37-9217-e290d0025553",
+    "current_boot_confirmed": false,
+    "latest_connection_check": "results/p36-file-archive-20261021T081445Z/report.json",
+    "serial_closed": true,
+    "merged_trial": "results/p35-once-merged-20261021T030101Z/report.json",
+    "RX_cancel": "results/p33-rx-cancel-board-20261021T031013Z/report.json",
+    "panel_draw": "results/p36-panel-snapshot-20261021T031301Z/report.json",
+    "screen_archive": "results/p36-file-archive-20261021T031834Z/report.json",
+    "screen_png": "results/p36-file-archive-20261021T031834Z/screen.png",
+    "clock_readback": "results/p36-clockwiz-readback-20261021T031935Z/report.json",
+    "clock_32bit_rate_overflow_diagnosed": true,
+    "clock_fix_built": false,
+    "clock_fix_hardware_verified": false,
+    "physical_PCLK_verified": false,
+    "full_RX_board_report": "results/p36-full-rx-board-20261021T032307Z/report.json",
+    "full_RX_raw_bytes": 4194304,
+    "full_RX_host_archive_complete": false,
+    "partial_host_archive": "results/p36-file-archive-20261021T032458Z/report.json",
+    "host_verified_chunks": 15,
+    "host_expected_chunks": 53,
+    "lossless_proven": false,
+    "real_AI_verified": false,
+    "TX_started_this_round": false,
+    "next_task": "Reidentify board and boot; finish or redo full IQ archival; build independent safe-clock candidate; fresh boot before PL changes; repeat RF/display/clock verification"
+  },
+  "p37_current": {
+    "updated_utc": "2026-10-21T09:24:25+00:00",
+    "record": "docs/experiments/EXP-HW-027-safe-clock32.md",
+    "status": "clock_overflow_fixed_finite_RX_archived_LCD_visibility_user_confirmed",
+    "last_identified_boot": "92bd78be-43f1-48c0-b390-b6841cb82111",
+    "initial_factory_board_identity_report": "results/p32-preflight-20261021T082123Z/report.json",
+    "pre_trial_factory_board_identity_report": "results/p32-preflight-20261021T090015Z/report.json",
+    "latest_board_identity_report": "results/p36-display-readback-20261021T092145Z/report.json",
+    "factory_firmware_readback": "results/p35-firmware-readback-20261021T082634Z/report.json",
+    "serial_last_check_responsive": true,
+    "initial_factory_RF_ready": false,
+    "initial_factory_RF_failure": "Unsupported PRODUCT_ID 0xFF; remains a cold-start issue",
+    "pre_trial_factory_RF_ready": true,
+    "new_board_tainted_last_read": 0,
+    "TX_started_this_round": false,
+    "safe_clock_prepare_report": "results/p37-safe-clock-prepare-20261021T082321Z/report.json",
+    "safe_clock_work": "E:/p37-clock-082321",
+    "safe_clock_synthesis_report": "results/p37-safe-synth-20261021T084321Z/report.json",
+    "new_candidate_programmed": true,
+    "clock_fix_hardware_verified": true,
+    "lossless_proven": false,
+    "next_task": "Reidentify boot before further board work; controlled repeated-boot/0xFF diagnosis, bounded RX/display parallel stability, known-source quality and continuity evidence, then rollback-capable standalone startup/live display/AI",
+    "video_cache_copy": "results/p37-video-cache-copy-20261021T084321Z/report.json",
+    "clock_verdict_scope": "driver_register_consistency_fixed_configuration_this_boot",
+    "physical_external_PCLK_measured": false,
+    "merged_RF_ready": true,
+    "clock_acceptance_report": "results/p37-clock-accept-20261021T090640Z/report.json",
+    "trial": "results/p35-once-merged-20261021T090121Z/report.json",
+    "safe_clock_route_report": "results/p37-safe-route-20261021T084904Z/report.json",
+    "safe_clock_bin_report": "results/p37-safe-bin-20261021T085630Z/report.json",
+    "safe_clock_native_bin_sha256": "1b0fac1aec86e4efeb003f9ea8d1a98d0e339e649633e31034d59e0990064405",
+    "safe_clock_native_bin_bytes": 4911716,
+    "explicit_overlay_report": "results/p37-safe-bin-20261021T085630Z/overlay-report.json",
+    "RX_configuration_report": "results/p35-finite-rx-prep-20261021T090641Z/report.json",
+    "RX_cancel_recreate_report": "results/p33-rx-cancel-board-20261021T090718Z/report.json",
+    "RX_sparse_report": "results/p36-sparse-smoke-20261021T090842Z/report.json",
+    "RX_full_returned_buffers_report": "results/p36-full-rx-board-20261021T091156Z/report.json",
+    "RX_full_host_archive_report": "results/p36-file-archive-20261021T091318Z/report.json",
+    "RX_full_host_archive_complete": true,
+    "RX_raw_bytes": 4194304,
+    "RX_frames": 1048576,
+    "RX_raw_sha256": "41f3cd24573aa5c8e1428e2ecacf859e6bca28c8446b94b675f224bbce977f6f",
+    "RX_layout": "RX1 I/Q le:S12/16>>0; high4 undefined; all 16 returned buffers saved, ADC gaps unknown",
+    "panel_draw_report": "results/p36-panel-snapshot-20261021T091016Z/report.json",
+    "screen_snapshot_report": "results/p36-fb-snapshot-20261021T092022Z/report.json",
+    "screen_host_archive_report": "results/p36-file-archive-20261021T092121Z/report.json",
+    "offline_archive_review": "results/p37-archive-review-20261021T092318Z/report.json",
+    "screen_png": "results/p37-archive-review-20261021T092318Z/screen.png",
+    "physical_LCD_visibility_user_confirmed": true,
+    "physical_LCD_confirmation": "results/p37-human-panel-confirmation-20261021T092425Z/report.json",
+    "display_scope": "Frozen saved sparse IQ snapshot, not live RF or AI",
+    "serial_closed": true,
+    "no_background_trial": true,
+    "power_action_this_checkpoint": "none; left powered in current merged state",
+    "running_mode": "rf",
+    "default_factory_startup_and_firmware_preserved": true,
+    "original_guard_restored_before_PL_load": true,
+    "next_ordinary_reboot": "factory RF-only; merged PL and panel application do not automatically resume; reidentify boot first",
+    "RX_idle_after_capture_and_archive": true,
+    "RX_LO_Hz": 2450000000,
+    "RX_sample_rate_Hz": 30720000,
+    "RX_bandwidth_Hz": 18000000,
+    "RX_gain_mode": "manual",
+    "RX_gain_dB": 0,
+    "RX_port": "A_BALANCED",
+    "real_AI_verified": false,
+    "known_target_proven": false,
+    "CDC_Critical_remaining": 58,
+    "external_input_delay_missing": 7,
+    "external_output_delay_missing": 29,
+    "factory_cold_start_PRODUCT_ID_FF_root_cause_closed": false,
+    "resume_record": "docs/handoff/RESUME-P37-20261021.md",
+    "software_checkpoint_superseded_by": "p38_current"
+  },
+  "p38_current": {
+    "updated_utc": "2026-10-21T09:56:00Z",
+    "status": "periodic_board_RX_analysis_LCD_updates_verified_64_cycles_stopped_normally",
+    "record": "docs/experiments/EXP-HW-028-periodic-RX-LCD.md",
+    "resume_record": "docs/handoff/RESUME-P38-20261021.md",
+    "hardware_baseline": "p37_current",
+    "last_identified_boot": "92bd78be-43f1-48c0-b390-b6841cb82111",
+    "identity_report": "results/p32-preflight-20261021T093313Z/report.json",
+    "build_report": "results/p38-build-20261021T093743Z/report.json",
+    "binary_sha256": "6dc2d4f79d9baab8711c30e7fde7b1df5b09bc3d6136a94ef7fa3019523368ef",
+    "binary_bytes": 46700,
+    "native_mock_tests_passed": 12,
+    "runner_archive_gate_tests_passed": 4,
+    "short_trial_report": "results/p38-board-20261021T094240Z/report.json",
+    "periodic_trial_report": "results/p38-board-20261021T094451Z/report.json",
+    "completed_updates": 64,
+    "elapsed_software_s": 66.5409397,
+    "interval_ms_requested": 1000,
+    "distinct_cycle_raw_hashes": 64,
+    "frames_per_returned_buffer": 65536,
+    "analysed_prefix_frames_per_cycle": 8192,
+    "all_cycle_metadata_and_hashes_on_host": true,
+    "all_cycle_raw_IQ_on_host": true,
+    "other_63_raw_cycles_RAM_only": false,
+    "last_IQ_prepare_report": "results/p38-last-archive-20261021T094725Z/report.json",
+    "last_IQ_host_archive_report": "results/p36-file-archive-20261021T094920Z/report.json",
+    "last_IQ_raw_bytes": 262144,
+    "last_IQ_raw_sha256": "9a80ddb29b692f09f41cd2819858f7bf9dc72b7c03fb6f200108fd2a34322266",
+    "screen_readback_report": "results/p36-fb-snapshot-20261021T094959Z/report.json",
+    "screen_archive_report": "results/p36-file-archive-20261021T095055Z/report.json",
+    "independent_review_report": "results/p38-offline-review-20261021T095207Z/report.json",
+    "screen_png": "results/p38-offline-review-20261021T095207Z/screen.png",
+    "last_cycle_NumPy_checks_passed": true,
+    "physical_LCD_static_visibility_confirmed_in_P37": true,
+    "physical_LCD_animation_confirmed_in_P38": false,
+    "physical_external_PCLK_measured": false,
+    "RX_idle_after_trial_and_archival": true,
+    "kernel_tainted_last_read": 0,
+    "RF_configuration_unchanged": true,
+    "RX_LO_Hz": 2450000000,
+    "RX_sample_rate_Hz": 30720000,
+    "RX_bandwidth_Hz": 18000000,
+    "RX_gain_mode": "manual",
+    "RX_gain_dB": 0,
+    "RX_port": "A_BALANCED",
+    "PL_programming_this_round": false,
+    "startup_files_written_this_round": false,
+    "TX_started_this_round": false,
+    "serial_closed": true,
+    "no_background_trial": true,
+    "native_completion_unconfirmed": false,
+    "screen_end_state": "RX STOPPED | last snapshot",
+    "continuous_RX": false,
+    "lossless_proven": false,
+    "known_target_proven": false,
+    "real_AI_verified": false,
+    "hardware_gaps": "unknown",
+    "long_term_stability_verified": false,
+    "factory_cold_start_PRODUCT_ID_FF_root_cause_closed": false,
+    "CDC_Critical_remaining": 58,
+    "external_input_delay_missing": 7,
+    "external_output_delay_missing": 29,
+    "default_factory_startup_and_firmware_preserved": true,
+    "next_ordinary_reboot": "factory RF-only; reidentify fresh boot, controlled P37 merged initialization and same-boot clock acceptance before P38 application",
+    "next_task": "Controlled repeated-boot/0xFF diagnosis; longer bounded periodic monitoring and recovery; continuous latest-frame receive/display with explicit gap policy; rollback-capable standalone startup; known-source quality and AI",
+    "save_checkpoint_utc": "2026-10-21T10:26:48.325211+00:00",
+    "short_trial_all_raw_IQ_on_host": true,
+    "all_64_cycle_raw_archive": "results/p36-file-archive-20261021T100701Z/report.json",
+    "all_8_cycle_raw_archive": "results/p36-file-archive-20261021T102329Z/report.json",
+    "all_64_cycle_byte_manifest": "results\\p38-stop-20261021T102648Z\\cycles-64.json",
+    "all_8_cycle_byte_manifest": "results\\p38-stop-20261021T102648Z\\cycles-8.json",
+    "stop_checkpoint": "results\\p38-stop-20261021T102648Z\\report.json",
+    "stop_record": "docs/handoff/STOP-P38-20261021.md",
+    "latest_stop_preflight": "results/p32-preflight-20261021T102548Z/report.json",
+    "board_stop_state_readback_confirmed": true,
+    "poweroff_issued_by_this_save": false,
+    "software_checkpoint_superseded_by": "p39_current"
+  },
+  "p39_current": {
+    "updated_utc": "2026-10-21T14:36:30.556205+00:00",
+    "status": "single_RX_buffer_latest_prefix_monitor_120s_and_physical_motion_confirmed_UI_stop_label_corrected",
+    "record": "docs/experiments/EXP-HW-029-latest-prefix-RX-LCD.md",
+    "resume_record": "docs/handoff/RESUME-P39-20261021.md",
+    "checkpoint_report": "results/p39-checkpoint-20261021T143630550744Z/report.json",
+    "hardware_baseline": "p37_current",
+    "last_identified_boot": "3c107af6-dcab-4ab0-8269-7f0f3a050390",
+    "fresh_factory_identification": "results/p32-preflight-20261021T135359Z/report.json",
+    "controlled_merged_trial": "results/p35-once-merged-20261021T135711Z/report.json",
+    "clock_acceptance": "results/p37-clock-accept-20261021T140135Z/report.json",
+    "build_report": "results/p39-build-20261021T142930Z/report.json",
+    "binary_sha256": "777b93620f211f4e516c5a17a1bc703c6da06663a9afeff9c9a1c3fe72f4c925",
+    "binary_bytes": 50904,
+    "native_mock_tests_passed": 18,
+    "final_trial_report": "results/p39-board-20261021T143048Z/report.json",
+    "final_native_summary": {
+      "schema": "rfsig.latest_panel.v1",
+      "status": "pass",
+      "reason": "duration_complete",
+      "duration_ms_requested": 3000,
+      "UI_interval_ms_requested": 500,
+      "elapsed_software_s": 3.00143017,
+      "published_prefixes": 1406,
+      "consumed_prefixes": 6,
+      "last_display_sequence": 1204,
+      "UI_overwritten_prefixes": 1399,
+      "pending_prefixes_at_stop": 1,
+      "display_updates": 6,
+      "retained_prefix_bytes": 32768,
+      "prefix_frames": 8192,
+      "frames_per_refill": 65536,
+      "source_format": "le:S12/16>>0",
+      "worker_started": true,
+      "worker_joined": true,
+      "refill_error": 0,
+      "buffer_created": true,
+      "buffer_released": true,
+      "context_released": true,
+      "cleanup_unconfirmed": false,
+      "RF_before_valid": true,
+      "RF_after_matches": true,
+      "RF_attributes_written": false,
+      "TX_API_loaded": false,
+      "lossless_proven": false,
+      "ADC_gaps": "unknown",
+      "analyse_only": false,
+      "maxrss_kib": 2564
+    },
+    "longest_duration_test": "results/p39-board-20261021T142055Z/report.json",
+    "longest_duration_test_software_s": 120.006055,
+    "longest_duration_display_updates": 235,
+    "longest_test_binary": "85b227471ca6ec86f2c8e8b35d2751d6d185c9871ca3a4cbf8ebb9b93b5611fc",
+    "final_binary_hardware_duration_ms": 3000,
+    "cancellation_trial": "results/p39-board-20261021T141438Z/report.json",
+    "all_five_retained_displayed_prefixes_host_archived_and_NumPy_checked": true,
+    "full_IQ_stream_archived": false,
+    "retention_policy": "only last displayed 8192-frame prefix per session; full refills and overwritten UI prefixes are not retained",
+    "source_frames_per_refill": 65536,
+    "displayed_prefix_frames": 8192,
+    "UI_interval_ms_requested": 500,
+    "UI_overwrites_are_not_hardware_loss_counts": true,
+    "ADC_gaps": "unknown",
+    "lossless_proven": false,
+    "single_context_and_buffer_per_session": true,
+    "physical_LCD_dynamic_picture_user_confirmed": true,
+    "human_observation": "results/p39-checkpoint-20261021T143630550744Z/human-observation.json",
+    "measured_LCD_FPS": false,
+    "screen_png": "results/p39-offline-review-20261021T143615206174Z/screen.png",
+    "final_independent_review": "results/p39-offline-review-20261021T143615206174Z/report.json",
+    "RX_idle_after_trial_and_archival": true,
+    "RF_configuration_unchanged_during_monitor": true,
+    "RX_LO_Hz": 2450000000,
+    "RX_sample_rate_Hz": 30720000,
+    "RX_bandwidth_Hz": 18000000,
+    "RX_gain_mode": "manual",
+    "RX_gain_dB": 0,
+    "RX_port": "A_BALANCED",
+    "kernel_tainted_last_read": 0,
+    "serial_closed": true,
+    "no_background_trial": true,
+    "native_completion_unconfirmed": false,
+    "screen_end_state": "RX STOPPED in top and bottom status lines; last displayed prefix retained",
+    "TX_started_this_round": false,
+    "default_factory_startup_and_firmware_preserved": true,
+    "original_guard_restored_before_PL_load": true,
+    "controlled_reboots_this_round": 1,
+    "PL_programming_this_round": 1,
+    "overlay_applications_this_round": 1,
+    "running_mode": "rf",
+    "autostart_implemented": false,
+    "poweroff_issued": false,
+    "next_ordinary_reboot": "factory RF-only; reidentify fresh boot then controlled P37 merged initialization and same-boot clock validation",
+    "factory_cold_start_PRODUCT_ID_FF_root_cause_closed": false,
+    "physical_external_PCLK_measured": false,
+    "CDC_Critical_remaining": 58,
+    "external_input_delay_missing": 7,
+    "external_output_delay_missing": 29,
+    "long_term_stability_verified": false,
+    "known_target_proven": false,
+    "real_AI_verified": false,
+    "next_tasks": [
+      "repeat-boot and PRODUCT_ID_FF diagnosis",
+      "longer bounded receive/display plus fault recovery",
+      "rollback-capable standalone startup",
+      "known-source RF quality and real AI integration"
+    ],
+    "software_checkpoint_superseded_by": "p40_current"
+  },
+  "p40_current": {
+    "updated_utc": "2026-10-21T15:35:52.102885+00:00",
+    "record": "docs/experiments/EXP-HW-030-boot-recovery-and-cold-observation.md",
+    "resume_record": "docs/handoff/RESUME-P40-20261021.md",
+    "status": "two_fresh_boot_recovery_suites_and_one_user_reported_cold_cycle_verified_P41_trial_in_progress",
+    "final_completed_suite": "results/p40-recovery-suite-20261021T151149Z/report.json",
+    "previous_suite": "results/p40-recovery-suite-20261021T145145Z/report.json",
+    "last_completed_boot": "cebdb199-ca75-4df5-9d4c-9c4f94e9f08f",
+    "cold_factory_boot": "224b7c4a-5ff4-404d-bb38-56274893858b",
+    "cold_preflight": "results/p32-preflight-20261021T150823Z/report.json",
+    "cold_human_evidence": "results/p40-record-20261021T153552Z/human-power-cycle.json",
+    "factory_PRODUCT_ID_FF_seen_this_power_cycle": false,
+    "PRODUCT_ID_FF_root_cause_closed": false,
+    "software_reboots_before_P41": 3,
+    "latest_completed_clock_acceptance": "results/p37-clock-accept-20261021T151206Z/report.json",
+    "latest_completed_monitor": "results/p39-board-20261021T151437Z/report.json",
+    "latest_native_summary": {
+      "schema": "rfsig.latest_panel.v1",
+      "status": "pass",
+      "reason": "duration_complete",
+      "duration_ms_requested": 120000,
+      "UI_interval_ms_requested": 500,
+      "elapsed_software_s": 120.006313,
+      "published_prefixes": 56252,
+      "consumed_prefixes": 235,
+      "last_display_sequence": 56027,
+      "UI_overwritten_prefixes": 56016,
+      "pending_prefixes_at_stop": 1,
+      "display_updates": 235,
+      "retained_prefix_bytes": 32768,
+      "prefix_frames": 8192,
+      "frames_per_refill": 65536,
+      "source_format": "le:S12/16>>0",
+      "worker_started": true,
+      "worker_joined": true,
+      "refill_error": 0,
+      "buffer_created": true,
+      "buffer_released": true,
+      "context_released": true,
+      "cleanup_unconfirmed": false,
+      "RF_before_valid": true,
+      "RF_after_matches": true,
+      "RF_attributes_written": false,
+      "TX_API_loaded": false,
+      "lossless_proven": false,
+      "ADC_gaps": "unknown",
+      "analyse_only": false,
+      "maxrss_kib": 2688
+    },
+    "native_build": "results/p39-build-20261021T142930Z/report.json",
+    "native_binary_sha256": "777b93620f211f4e516c5a17a1bc703c6da06663a9afeff9c9a1c3fe72f4c925",
+    "latest_IQ_and_screen_review": "results/p39-offline-review-20261021T151747017877Z/report.json",
+    "screen_png": "results/p39-offline-review-20261021T151747017877Z/screen.png",
+    "source_audit": "results/p40-reset-source-20261021T145244Z/report.json",
+    "reset_before_cycle": "results/p40-reset-readback-20261021T145951Z/report.json",
+    "reset_after_cycle": "results/p40-reset-readback-20261021T150910Z/report.json",
+    "physical_LCD_motion_evidence": "P39 direct user confirmation; no new P40 human FPS/whole-session observation",
+    "active_trial_report": "results/p41-autonomous-once-20261021T153301Z/report.json",
+    "active_trial_is_not_accepted": false,
+    "do_not_replay_last_completed_boot": true,
+    "TX_started": false,
+    "persistent_autostart_enabled": false,
+    "lossless_proven": false,
+    "known_target_proven": false,
+    "real_AI_verified": false,
+    "CDC_Critical_remaining": 58,
+    "external_input_delay_missing": 7,
+    "external_output_delay_missing": 29,
+    "active_trial_completed": true,
+    "software_checkpoint_superseded_by": "p41_current"
+  },
+  "p41_current": {
+    "updated_utc": "2026-10-21T15:46:30.953043+00:00",
+    "status": "one_shot_autonomous_init_and_120s_monitor_accepted_stopped_normally",
+    "record": "docs/experiments/EXP-HW-031-autonomous-once-startup.md",
+    "resume_record": "docs/handoff/RESUME-P41-20261021.md",
+    "trial_report": "results/p41-autonomous-once-20261021T153301Z/report.json",
+    "post_review": "results/p41-review-20261021T153805Z/report.json",
+    "last_identified_boot": "e879f99c-bffa-4fa6-b3fd-af56ab9e996e",
+    "clock_acceptance": "results/p37-clock-accept-20261021T153822Z/report.json",
+    "final_NumPy_review": "results/p39-offline-review-20261021T153853020136Z/report.json",
+    "screen_png": "results/p39-offline-review-20261021T153853020136Z/screen.png",
+    "native_summary": {
+      "schema": "rfsig.latest_panel.v1",
+      "status": "pass",
+      "reason": "duration_complete",
+      "duration_ms_requested": 120000,
+      "UI_interval_ms_requested": 500,
+      "elapsed_software_s": 120.005748,
+      "published_prefixes": 56248,
+      "consumed_prefixes": 235,
+      "last_display_sequence": 56056,
+      "UI_overwritten_prefixes": 56012,
+      "pending_prefixes_at_stop": 1,
+      "display_updates": 235,
+      "retained_prefix_bytes": 32768,
+      "prefix_frames": 8192,
+      "frames_per_refill": 65536,
+      "source_format": "le:S12/16>>0",
+      "worker_started": true,
+      "worker_joined": true,
+      "refill_error": 0,
+      "buffer_created": true,
+      "buffer_released": true,
+      "context_released": true,
+      "cleanup_unconfirmed": false,
+      "RF_before_valid": true,
+      "RF_after_matches": true,
+      "RF_attributes_written": false,
+      "TX_API_loaded": false,
+      "lossless_proven": false,
+      "ADC_gaps": "unknown",
+      "analyse_only": false,
+      "maxrss_kib": 2640
+    },
+    "native_build": "results/p39-build-20261021T142930Z/report.json",
+    "native_binary_sha256": "777b93620f211f4e516c5a17a1bc703c6da06663a9afeff9c9a1c3fe72f4c925",
+    "board_init_loaded_merged_PL_and_launched_monitor": true,
+    "host_sent_PL_or_overlay_commands_after_boot": false,
+    "host_launched_monitor_after_boot": false,
+    "startup_launch_uptime_log": "7.76 s before launch, from /proc/uptime; not measured time-to-first-visible-frame",
+    "original_guard_restored_before_PL": true,
+    "fresh_empty_bindings_verified": true,
+    "software_reboots_in_P41": 1,
+    "PL_programming_attempts": 1,
+    "overlay_apply_attempts": 1,
+    "default_firmware_replaced": false,
+    "BOOT_or_base_DTB_modified": false,
+    "mode_modified": false,
+    "installed_dormant_directory": "/etc/p41-20261021T153301Z",
+    "persistent_autostart_enabled": false,
+    "infinite_duration_monitor_implemented": false,
+    "automatic_fault_recovery_verified": false,
+    "next_ordinary_reboot": "factory RF-only with original S99board; does not automatically repeat P41",
+    "RX_idle": true,
+    "RF_configuration": {
+      "sample_rate_Hz": 30720000,
+      "bandwidth_Hz": 18000000,
+      "LO_Hz": 2450000000,
+      "gain_mode": "manual",
+      "gain_dB": 0,
+      "port": "A_BALANCED"
+    },
+    "last_kernel_taint": 0,
+    "serial_closed": true,
+    "no_background_monitor": true,
+    "native_completion_unconfirmed": false,
+    "screen_end_state": "RX STOPPED; last displayed prefix",
+    "physical_stopped_picture_user_confirmed": true,
+    "physical_dynamic_update_confirmed_in_P41": false,
+    "human_observation": "results/p41-checkpoint-20261021T154630949661Z/human-observation.json",
+    "previous_P39_physical_motion_confirmation_retained": true,
+    "measured_LCD_FPS": false,
+    "user_reported_cold_power_cycle_in_P40": true,
+    "cold_autonomous_P41_profile_verified": false,
+    "factory_PRODUCT_ID_FF_root_cause_closed": false,
+    "long_term_stability_verified": false,
+    "lossless_proven": false,
+    "ADC_gaps": "unknown",
+    "full_stream_saved": false,
+    "known_target_proven": false,
+    "real_AI_verified": false,
+    "TX_started": false,
+    "CDC_Critical_remaining": 58,
+    "external_input_delay_missing": 7,
+    "external_output_delay_missing": 29,
+    "checkpoint_report": "results/p41-checkpoint-20261021T154630949661Z/report.json",
+    "parent_checkpoint": "results/p39-checkpoint-20261021T143630550744Z/report.json",
+    "next_tasks": [
+      "controlled long-running monitor with bounded logs and safe stop",
+      "rollback-capable persistent startup and cold-start testing",
+      "PRODUCT_ID_FF failure/success evidence pairing",
+      "known-source quality and real AI integration"
+    ],
+    "session_stopped": true,
+    "poweroff_record": "results/p41-session-stop-20261021T155249Z/report.json",
+    "runtime_state": "both boards normally halted; physical power may now be disconnected"
+  },
+  "p42_current": {
+    "status": "passed_short_until_signal_stop_restart_10min_and_archived_review",
+    "expected_boot": "eceb52df-5184-4bcf-ba61-238569e8bbd6",
+    "suite_report": "results/p42-suite-20261022T023816Z/report.json",
+    "suite_report_sha256": "d786f9c77efe788093ef953727c5a0adab9ec1e084a3f9a18ca53221715b34f2",
+    "record": "docs/experiments/EXP-HW-032-long-running-RX-LCD.md",
+    "resume": "docs/handoff/RESUME-P42-20261022.md",
+    "native_build": "results/p42-build-20261022T022745Z/report.json",
+    "fresh_merged_trial": "results/p35-once-merged-20261022T022336Z/report.json",
+    "recovery_baseline": "results/p40-recovery-suite-20261022T022826Z/report.json",
+    "persistent_autostart_enabled": false,
+    "PRODUCT_ID_FF_root_cause_closed": false,
+    "ADC_gaps": "unknown",
+    "lossless_proven": false,
+    "physical_LCD_animation_confirmed_this_round": false,
+    "old_board_TX_started_this_round": false,
+    "updated_utc": "2026-10-22T02:52:23.948641+00:00",
+    "long_report": "results/p42-board-20261022T023916Z/report.json",
+    "long_report_sha256": "c5bd895f030a0ff35a2f4afd9e06ae116f3dc8d38c1162bcfe5327552813510c",
+    "final_review": "results/p42-review-20261022T024946Z/report.json",
+    "screen_png": "results/p39-offline-review-20261022T025041824575Z/screen.png",
+    "native_summary": {
+      "program_version": "p42",
+      "telemetry_mode": "latest_atomic_progress_and_last_frame_only",
+      "progress_commits": 1176,
+      "schema": "rfsig.latest_panel.v1",
+      "status": "pass",
+      "reason": "duration_complete",
+      "duration_ms_requested": 600000,
+      "UI_interval_ms_requested": 500,
+      "elapsed_software_s": 600.002203,
+      "published_prefixes": 281250,
+      "consumed_prefixes": 1175,
+      "last_display_sequence": 281142,
+      "UI_overwritten_prefixes": 280074,
+      "pending_prefixes_at_stop": 1,
+      "display_updates": 1175,
+      "retained_prefix_bytes": 32768,
+      "prefix_frames": 8192,
+      "frames_per_refill": 65536,
+      "source_format": "le:S12/16>>0",
+      "worker_started": true,
+      "worker_joined": true,
+      "refill_error": 0,
+      "buffer_created": true,
+      "buffer_released": true,
+      "context_released": true,
+      "cleanup_unconfirmed": false,
+      "RF_before_valid": true,
+      "RF_after_matches": true,
+      "RF_attributes_written": false,
+      "TX_API_loaded": false,
+      "lossless_proven": false,
+      "ADC_gaps": "unknown",
+      "analyse_only": false,
+      "maxrss_kib": 2572
+    },
+    "RX_idle": true,
+    "serial_closed": true,
+    "board_shutdown_issued": false,
+    "progress_snapshots": 57,
+    "native_log_bytes": 701,
+    "runtime_readback": "results/p42-runtime-readback-20261022T024946Z/report.json",
+    "runtime_allocated_KiB": 128,
+    "checkpoint": "results/p42-checkpoint-20261022T025223969800Z/report.json"
+  },
+  "p43_current": {
+    "status": "superseded_by_P44_warm_boot_sleep_fix_cold_retest_pending",
+    "updated_utc": "2026-10-22T03:41:46.676805+00:00",
+    "enable_report": "results/p43-enabled-20261022T033907Z/report.json",
+    "enable_report_sha256": "579598e950a227163c147bdf10a3dae9c245c240e795e1db60f5957c8de47206",
+    "status_report": "results/p43-status-20261022T034008Z/report.json",
+    "status_report_sha256": "357b27bf7b76b8be0e9cf8f7d2c429423ac489cddf1728cdfcefc35fe3a27563",
+    "expected_boot": "f65eb741-88fc-44c1-9cb7-8fced08ac86a",
+    "installed_directory": "/etc/p43-20261022T030856Z",
+    "record": "docs/experiments/EXP-HW-033-persistent-startup.md",
+    "resume": "docs/handoff/RESUME-P43-20261022.md",
+    "checkpoint": "results/p43-checkpoint-20261022T034146675785Z/report.json",
+    "persistent_autostart_enabled": true,
+    "wrapper_sha256": "4aa3538e7596fad8598e27ac4f876798a080d34c13b5013aab2435b274e265af",
+    "original_guard_sha256": "89183f1fe397f8bc20bd0c39544f5d30c37a8f1ca4e440c8cce6841d9b1247f2",
+    "RX_idle": true,
+    "serial_closed": true,
+    "board_shutdown_issued": false,
+    "true_power_cycle_verified": false,
+    "failure_fallback_verified_on_real_board": false,
+    "PRODUCT_ID_FF_root_cause_closed": false,
+    "native_duration_ms": 0,
+    "safety_limit_seconds": 86400,
+    "ADC_gaps": "unknown",
+    "lossless_proven": false,
+    "physical_LCD_animation_confirmed_this_round": false,
+    "TX_started_this_round": false,
+    "cycles": [
+      "results/p43-boot-cycle-20261022T030856Z/report.json",
+      "results/p43-boot-cycle-20261022T031333Z/report.json"
+    ],
+    "reviews": [
+      "results/p42-review-20261022T031116Z/report.json",
+      "results/p42-review-20261022T031538Z/report.json"
+    ],
+    "cold_cycle": "results/p43-cold-cycle-20261022T033344Z/report.json",
+    "cold_review": "results/p42-review-20261022T033710Z/report.json",
+    "cold_clock": "results/p43-cold-clock-20261022T033710Z/report.json",
+    "cold_native_summary": {
+      "program_version": "p42",
+      "telemetry_mode": "latest_atomic_progress_and_last_frame_only",
+      "progress_commits": 651,
+      "schema": "rfsig.latest_panel.v1",
+      "status": "stopped",
+      "reason": "signal_requested_stop",
+      "duration_ms_requested": 0,
+      "UI_interval_ms_requested": 500,
+      "elapsed_software_s": 331.939351,
+      "published_prefixes": 155587,
+      "consumed_prefixes": 650,
+      "last_display_sequence": 155417,
+      "UI_overwritten_prefixes": 154936,
+      "pending_prefixes_at_stop": 1,
+      "display_updates": 650,
+      "retained_prefix_bytes": 32768,
+      "prefix_frames": 8192,
+      "frames_per_refill": 65536,
+      "source_format": "le:S12/16>>0",
+      "worker_started": true,
+      "worker_joined": true,
+      "refill_error": 0,
+      "buffer_created": true,
+      "buffer_released": true,
+      "context_released": true,
+      "cleanup_unconfirmed": false,
+      "RF_before_valid": true,
+      "RF_after_matches": true,
+      "RF_attributes_written": false,
+      "TX_API_loaded": false,
+      "lossless_proven": false,
+      "ADC_gaps": "unknown",
+      "analyse_only": false,
+      "maxrss_kib": 2636
+    },
+    "poweroff_interval_measured_by_computer": false,
+    "user_power_cycle_observed": true,
+    "cold_RX_auto_start_verified": true,
+    "physical_LCD_cold_start_accepted": false,
+    "physical_LCD_failure_report": "results/p44-human-display-failure-20261022.json",
+    "current_boot_superseded": true
+  },
+  "p44_current": {
+    "status": "superseded_by_P45_controlled_cold_verification",
+    "updated_utc": "2026-10-22T04:26:51.578942+00:00",
+    "expected_boot": "4a6b80d6-bbb5-499b-90ae-e403d1492a6e",
+    "installed_directory": "/etc/p43-20261022T030856Z",
+    "display_policy_directory": "/etc/p44-20261022T040536Z",
+    "display_policy_sha256": {
+      "awake": "8e5d23f5e27ba0c74bae76c3ef87bc6f49274e08bd01218fc8fa4f9a12edc300",
+      "boot": "4307e31dc8931aa204f889b6a27aa338c79c23e2a52f39628eb40f60657f575c",
+      "xserver-original": "d5804c8b6d84ec05f4204df35837d5e5fb6b830e5b90859aec2aacc19c61ebea"
+    },
+    "reports": {
+      "cycle": {
+        "path": "results/p43-boot-cycle-20261022T041103Z/report.json",
+        "sha256": "8f5d84b52e96840f2ced7f8bbe34cb97e8b6be252425f4de60967c0d21b6e2bc"
+      },
+      "review": {
+        "path": "results/p42-review-20261022T042442Z/report.json",
+        "sha256": "30c90475e8c066e05622dfa9849d140e2ad65a86f702ba24b9d7c7ed32b2fb9d"
+      },
+      "verification": {
+        "path": "results/p44-verified-20261022T042548Z/report.json",
+        "sha256": "d6e99a2eb3683b4b7c3ae31209785cb1100b19156ac7eefc4b5cda734828e916"
+      },
+      "enable": {
+        "path": "results/p43-enabled-20261022T042604Z/report.json",
+        "sha256": "44eaf235fb35c54df9488c8742a897ec03892190e83d6f973c0abd07ae96f9f1"
+      },
+      "status": {
+        "path": "results/p43-status-20261022T043056Z/report.json",
+        "sha256": "9dcc4c6314cfed580ee84d39e6f7b2eaedaa100a628f16189f8501e3526ae947"
+      }
+    },
+    "record": "docs/experiments/EXP-HW-034-display-sleep-policy.md",
+    "resume": "docs/handoff/RESUME-P44-20261022.md",
+    "checkpoint": "results/p44-checkpoint-20261022T042651578942Z/report.json",
+    "persistent_autostart_enabled": true,
+    "RX_idle": true,
+    "serial_closed": true,
+    "board_shutdown_issued": false,
+    "physical_wake_confirmed": true,
+    "physical_visibility_after_600s_confirmed": true,
+    "new_cold_boot_after_fix_verified": true,
+    "PRODUCT_ID_FF_root_cause_closed": false,
+    "failure_fallback_verified_on_real_board": false,
+    "ADC_gaps": "unknown",
+    "lossless_proven": false,
+    "TX_started_this_round": false,
+    "session_paused": true,
+    "session_save": "results/p44-session-save-20261022T043209387383Z/report.json"
+  },
+  "p45_current": {
+    "status": "controlled_cold_boot_RX_and_physical_display_over_600s_verified",
+    "updated_utc": "2026-10-22T10:54:31.296545+00:00",
+    "expected_boot": "343afe82-88e6-4a03-a5d4-c09ee6929e36",
+    "installed_directory": "/etc/p43-20261022T030856Z",
+    "reports": {
+      "cycle": {
+        "path": "results/p43-cold-cycle-20261022T104726Z/report.json",
+        "sha256": "e8d64fadf5b2fecdb53e747efbe2bab2e73ef8c00990e06ce836065eb78604bf"
+      },
+      "review": {
+        "path": "results/p42-review-20261022T105059Z/report.json",
+        "sha256": "a521ee55607bdd2920d6fd1f78f008ba8d6eaf5c7db3a458848a2c153f648be8"
+      },
+      "clock": {
+        "path": "results/p43-cold-clock-20261022T105246Z/report.json",
+        "sha256": "134482924cd0f36249641926d928579224dcbc6714d900ee3cd6c7240b5cc9f5"
+      },
+      "verification": {
+        "path": "results/p44-verified-20261022T105257Z/report.json",
+        "sha256": "236a59be4688cc6de130497c034485025ec342bd465dfb37cc1162d60ec902b7"
+      },
+      "enable": {
+        "path": "results/p43-enabled-20261022T105320Z/report.json",
+        "sha256": "064c5cc54a1df139c977ca4ea402256839fc56be470d2e56edaedfc152871e99"
+      },
+      "status": {
+        "path": "results/p43-status-20261022T105408Z/report.json",
+        "sha256": "bbd64595b7e655f1238a0dfa030e2d5077cc796839886475d0078c5723173568"
+      },
+      "human_display": {
+        "path": "results/p45-human-display-after-600s-20261022.json",
+        "sha256": "834dba693212eead40de73ac9b535a8e808ec6a88d8d357fd0f712698bd3c776"
+      }
+    },
+    "record": "docs/experiments/EXP-HW-035-cold-display-verification.md",
+    "resume": "docs/handoff/RESUME-P45-20261022.md",
+    "checkpoint": "results/p45-checkpoint-20261022T105431296545Z/report.json",
+    "RX_idle": true,
+    "serial_closed": true,
+    "board_shutdown_issued": false,
+    "persistent_autostart_enabled": true,
+    "cold_machine_boot_verified": true,
+    "physical_visibility_after_600s_confirmed": true,
+    "physical_updates_after_600s_confirmed": true,
+    "new_cold_boot_after_fix_verified": true,
+    "PRODUCT_ID_FF_root_cause_closed": false,
+    "failure_fallback_verified_on_real_board": false,
+    "ADC_gaps": "unknown",
+    "lossless_proven": false,
+    "TX_started_this_round": false,
+    "hardware_reboots_issued_by_host": 0,
+    "physical_poweroff_interval_instrument_measured": false
+  },
+  "p46_current": {
+    "status": "known_RF_quality_and_tone_LCD_numerically_verified",
+    "updated_utc": "2026-10-22T12:22:02.235876+00:00",
+    "expected_boot": "343afe82-88e6-4a03-a5d4-c09ee6929e36",
+    "TX_expected_boot": "79ec21ce-b1d7-4069-83d7-50f540732849",
+    "reports": {
+      "trial": {
+        "path": "results/p46-known-20261022T114115Z/report.json",
+        "sha256": "b812694c1a0c4a2dc998c92f50c13bf0a44b0bceae3dc0941d767baaa7eff1d7"
+      },
+      "archives": {
+        "path": "results/p46-archives-20261022T114430Z/report.json",
+        "sha256": "cb9f9817a31da10052bb9e2533a0910c7bf532627ae9d18cae143ff0ff4cf719"
+      },
+      "analysis": {
+        "path": "results/p46-analysis-20261022T115205Z/report.json",
+        "sha256": "1453943caef92f02fac4552300c1209949c46b04b859336ea8a7fa45c02c8248"
+      },
+      "panel": {
+        "path": "results/p46-panel-20261022T120816Z/report.json",
+        "sha256": "ec50d4b00118e4101ee2e3bbd6440e278d0104752773dc98657a26a62b89ce4d"
+      },
+      "panel_review": {
+        "path": "results/p42-review-20261022T120918Z/report.json",
+        "sha256": "0d4ecabb90b682d03220a45ffe6289f138efd84439ab5bc63b52b80661908af8"
+      },
+      "enable": {
+        "path": "results/p43-enabled-20261022T121047Z/report.json",
+        "sha256": "1c18a5b2a6aca91e1c83d9d5ee38e098da58170b368fcbdd4e8a54a652e30aa1"
+      },
+      "status": {
+        "path": "results/p43-status-20261022T121209Z/report.json",
+        "sha256": "765459549a6cc983d62c6f4584ca188231b7b97b9dab33a0b724adb3c0f8f05e"
+      },
+      "baseline_archive": {
+        "path": "results/p36-file-archive-20261022T115205Z/report.json",
+        "sha256": "0c65d9b4642b5070f5fa53b448d8b58f2193289931b9116e21ab79fbab3e1198"
+      },
+      "prepared_sources": {
+        "path": "results/p46-source-20261022T121954Z/report.json",
+        "sha256": "bf3e060ef855e32995812529045ac0626a5990c863a0a6e60ec8f788764a99d9"
+      }
+    },
+    "record": "docs/experiments/EXP-HW-036-merged-known-RF-quality.md",
+    "resume": "docs/handoff/RESUME-P46-20261022.md",
+    "checkpoint": "results/p46-checkpoint-20261022T122202235876Z/report.json",
+    "RX_idle": true,
+    "serial_closed": true,
+    "COM8_owned_by_archive": false,
+    "all_TX_native_cleanup_verified": true,
+    "TX_sessions_this_phase": 5,
+    "source_peak_component_counts": 256,
+    "complete_quality_raw_bytes": 4194304,
+    "complete_quality_DMA_buffers": 16,
+    "reference_EVM_db": {
+      "bpsk": {
+        "min": -37.964471577908846,
+        "max": -37.43166331539535
+      },
+      "qpsk": {
+        "min": -38.55331010735766,
+        "max": -38.04146560960036
+      },
+      "qam16": {
+        "min": -37.59824157981117,
+        "max": -36.74927620720521
+      }
+    },
+    "checked_symbols": 3012,
+    "symbol_errors": 0,
+    "known_tone_display_peak_hz": 990000,
+    "known_tone_LCD_updates": 16,
+    "known_tone_physical_LCD_confirmation": false,
+    "persistent_autostart_enabled": true,
+    "persistent_profile_rearm_pending": false,
+    "startup_selection_temporarily_original": false,
+    "board_shutdown_issued": false,
+    "hardware_reboots_issued_by_host": 0,
+    "lossless_proven": false,
+    "ADC_gaps": "unknown",
+    "blind_AI_verified": false,
+    "absolute_power_calibrated": false,
+    "absolute_frequency_calibrated": false,
+    "PRODUCT_ID_FF_root_cause_closed": false,
+    "historical_large_block_quality_fluctuation_root_cause_closed": false,
+    "historical_fluctuation_reproduced_this_phase": false,
+    "failure_fallback_verified_on_real_board": false,
+    "recovery_host_package_exactly_reproduced": true,
+    "recovery_generalized_upload_board_retest": false
+  },
+  "p47_current": {
+    "status": "portable_real_RF_learning_kit_and_offline_demo_delivered",
+    "updated_utc": "2026-10-22T13:11:03.543090+00:00",
+    "report": "results/p47-delivery-20261022T131103543090Z/report.json",
+    "directory": "C:\\Users\\project_user\\Documents\\Codex\\2026-09-09\\2026-fpga-fmql30tai-fpai-python-c\\outputs\\rf-signal-lab\\deliverables\\rf-learning-kit-20261022T130520Z",
+    "archive": {
+      "path": "C:\\Users\\project_user\\Documents\\Codex\\2026-09-09\\2026-fpga-fmql30tai-fpai-python-c\\outputs\\rf-signal-lab\\results\\p47-kit-20261022T130520Z\\rf-learning-kit.zip",
+      "bytes": 10802463,
+      "sha256": "e8e04e83c973c1c119e485611eef5ecb185c42849692d1e0ce8969f08113c82e"
+    },
+    "launcher": "run-rf-learning-demo.cmd",
+    "record": "docs/experiments/EXP-P47-learning-kit.md",
+    "resume": "docs/handoff/RESUME-P47-20261022.md",
+    "reports": {
+      "build": {
+        "path": "results/p47-kit-20261022T130520Z/report.json",
+        "sha256": "4b4e64a3b47b21c18a782ad62ff1b6fded16a4cbc7f52ee89d1b3d27a1ae1d73"
+      },
+      "gui": {
+        "path": "results/p47-gui-launch-20261022T1308/report.json",
+        "sha256": "f009261e2b6272177415dd01ca48527d2a9648adf56daf0a3da1a656f6181b35"
+      },
+      "tests": {
+        "path": "results/p47-final-controls-and-integrity-20261022.xml",
+        "sha256": "358c01bb733172d0f833d6231f70e5acca84cdfce112ebd978d399ac359e8acd"
+      }
+    },
+    "records": 4,
+    "DMA_buffers": 16,
+    "raw_original_bytes": 4194304,
+    "decoded_complex_samples": 1048576,
+    "controller_tests_passed": 8,
+    "all_DMA_replays_verified": true,
+    "actual_Tk_event_loop_verified": true,
+    "extracted_package_independent_of_project_files": true,
+    "board_operations": false,
+    "AI_inference": false,
+    "independent_ML_benchmark_eligible": false,
+    "hardware_state_last_verified_by": "p46_current",
+    "hardware_state_not_rechecked_this_phase": true
+  },
+  "p48_current": {
+    "status": "P48_frequency_units_candidate_board_verified_persistent_migration_pending",
+    "updated_utc": "2026-10-22T13:44:30.334243+00:00",
+    "expected_boot": "343afe82-88e6-4a03-a5d4-c09ee6929e36",
+    "reports": {
+      "suite": {
+        "path": "results/p48-suite-20261022T133549Z/report.json",
+        "sha256": "ec6d5507d4d7e6f9555b6fdbf076cf2e2f17a9537e9a99701a82f57451170d33"
+      },
+      "profile": {
+        "path": "results/p48-profile-20261022T134048Z/report.json",
+        "sha256": "ab25d5c1de4aed592c57947eeaca2bb930b214bb6d323c6f7aab7673407c6621"
+      }
+    },
+    "record": "docs/experiments/EXP-P48-display-units.md",
+    "resume": "docs/handoff/RESUME-P48-20261022.md",
+    "checkpoint": "results/p48-checkpoint-20261022T134430334243Z/report.json",
+    "RX_idle": true,
+    "serial_closed": true,
+    "board_shutdown_issued": false,
+    "TX_operations": false,
+    "RF_attribute_writes": false,
+    "PL_changes": false,
+    "reboots_issued": 0,
+    "persistent_autostart_enabled": true,
+    "current_last_display_revision": "p48",
+    "default_startup_display_revision": "p42",
+    "persistent_native_replaced": false,
+    "persistent_P48_migration_complete": false,
+    "prepared_profile": "results/p48-profile-20261022T134048Z/report.json",
+    "screen_png": "C:\\Users\\project_user\\Documents\\Codex\\2026-09-09\\2026-fpga-fmql30tai-fpai-python-c\\outputs\\rf-signal-lab\\results\\p39-offline-review-20261022T133716638076Z\\screen.png",
+    "displayed_units": {
+      "peak_offset": "+30.0 kHz",
+      "sample_rate": "30.720 MS/s",
+      "FFT_spacing": "30.0 kHz"
+    },
+    "native_tests_passed": 32,
+    "software_engine": "p42",
+    "physical_P48_screen_confirmation": false,
+    "warm_boot_P48_verified": false,
+    "cold_boot_P48_verified": false,
+    "PRODUCT_ID_FF_root_cause_closed": false,
+    "ADC_gaps": "unknown",
+    "lossless_proven": false,
+    "AI_inference": false,
+    "current_enable": "results/p43-enabled-20261022T133718Z/report.json",
+    "current_status": "results/p43-status-20261022T133737Z/report.json"
+  },
+  "p49_current": {
+    "status": "P49_P48_persistent_profile_verified_two_warm_boots_cold_test_pending",
+    "updated_utc": "2026-10-23T13:11:43.646042+00:00",
+    "reports": {
+      "cycle_one": {
+        "path": "results/p43-boot-cycle-20261023T130008Z/report.json",
+        "sha256": "4ec7d3300e3fde123988c101c931a65f3aef04c693e5ff2cdc18e0c538f809e8"
+      },
+      "review_one": {
+        "path": "results/p42-review-20261023T130237Z/report.json",
+        "sha256": "4ec164f49cd63f04c82e15b3ff5f2485fbbe601db02ce0a24046047ef0e365c3"
+      },
+      "units_one": {
+        "path": "results/p48-unit-review-20261023T130435Z/report.json",
+        "sha256": "c703ca2a17fc4694be2d55d6c7408fbf21dd673dc48d0dac1a1160731c89a0d8"
+      },
+      "cycle_two": {
+        "path": "results/p43-boot-cycle-20261023T130524Z/report.json",
+        "sha256": "d2b48c471f939b19ee48ebef6840e17b825025028a590a679a60873eca4970a4"
+      },
+      "review_two": {
+        "path": "results/p42-review-20261023T130838Z/report.json",
+        "sha256": "5cf9610d06634f7635912f8a917d2835f131b8b999c1bffb6b57b2dde5b9c744"
+      },
+      "units_two": {
+        "path": "results/p48-unit-review-20261023T130948Z/report.json",
+        "sha256": "592f2c56eff7a640cc0bd6ef97ceabea931d489b1351e2c7004bf3f81a11f113"
+      },
+      "enable": {
+        "path": "results/p43-enabled-20261023T131002Z/report.json",
+        "sha256": "ee7f4bcb7b6e6e6cf0a33fcc1f4665f457f247c52e82fc472538a4b9f4b7b9d6"
+      },
+      "status": {
+        "path": "results/p43-status-20261023T131108Z/report.json",
+        "sha256": "aada0c84e65e2535d8f7d16d5f023c1d0965e251ed3bd7ef566114f5b1b7e696"
+      },
+      "observation": {
+        "path": "results/p43-observed-cycle-20261023T125441Z/report.json",
+        "sha256": "b9037f5875db73a24f77978104eae696342a602b45d0e781d30adf6f6bdd5fe5"
+      },
+      "observation_review": {
+        "path": "results/p42-review-20261023T125616Z/report.json",
+        "sha256": "5c54e4de3ab68e6a949147d2045300e69954b1b2fafdf728450c1a6d4198e7a9"
+      },
+      "preflight": {
+        "path": "results/p49-migration-preflight-20261023T125916Z/report.json",
+        "sha256": "2b10c6d5f378624c8d42f33bb4b319ba9ced1746cd3b115062717251d11fc55a"
+      },
+      "tests": {
+        "path": "results/p49-host-and-native-tests.xml",
+        "sha256": "b133c0736add7a33b3aab57ea652341afef2de0c7afd116e511467d0c7852c6b"
+      },
+      "timing_retest": {
+        "path": "results/p49-native-timing-retest.xml",
+        "sha256": "3bef80398ce9bc190ed79cfa1c3dec48a3bb8b31c9e74ee6c3adf892eaad88fa"
+      },
+      "human_event": {
+        "path": "results/p49-human-20261023T130931Z/report.json",
+        "sha256": "f9c0c837ecbe346cd9fc7446f40569fcb5591e1d8eb3ce1b704f1fad63f1e28f"
+      }
+    },
+    "record": "docs/experiments/EXP-P49-persistent-units.md",
+    "resume": "docs/handoff/RESUME-P49-20261023.md",
+    "checkpoint": "results/p49-checkpoint-20261023T131143646042Z/report.json",
+    "expected_boot": "1d26653d-8f3e-4d51-a8a1-3e4d59fd0bc6",
+    "current_enable": "results/p43-enabled-20261023T131002Z/report.json",
+    "current_status": "results/p43-status-20261023T131108Z/report.json",
+    "installed_directory": "/etc/p43-20261023T130008Z",
+    "binary_sha256": "07a35338c6f87950e15126eefccc1d940f4e7fec5dafa4ba1b51247f1ad28b76",
+    "current_last_display_revision": "p48",
+    "default_startup_display_revision": "p48",
+    "persistent_native_replaced": true,
+    "original_profile_preserved": "/etc/p43-20261022T030856Z",
+    "persistent_autostart_enabled": true,
+    "warm_boot_P48_verified": true,
+    "warm_boot_count": 2,
+    "cold_boot_P48_verified": false,
+    "physical_P48_units_confirmation": true,
+    "physical_P48_animation_confirmation": false,
+    "RX_idle": true,
+    "serial_closed": true,
+    "board_shutdown_issued": false,
+    "TX_operations": false,
+    "RF_attribute_writes": false,
+    "reboots_issued": 2,
+    "PL_changes": "same accepted safe design loaded once per new boot; no hot load",
+    "initial_host_tests": {
+      "total": 93,
+      "passed": 92,
+      "failed": 1
+    },
+    "targeted_timing_retest_passed": true,
+    "timing_test_flakiness_root_cause_closed": false,
+    "PRODUCT_ID_FF_root_cause_closed": false,
+    "historical_EVM_variation_root_cause_closed": false,
+    "ADC_gaps": "unknown",
+    "lossless_proven": false,
+    "AI_inference": false
+  },
+  "p50_current": {
+    "status": "P50_P48_controlled_cold_RX_units_and_physical_display_over_660s_verified",
+    "updated_utc": "2026-10-23T13:44:20.296054+00:00",
+    "expected_boot": "a5313ffa-483a-4f9e-b0a4-dbe9a22234fc",
+    "installed_directory": "/etc/p43-20261023T130008Z",
+    "reports": {
+      "cycle": {
+        "path": "results/p43-cold-cycle-20261023T133740Z/report.json",
+        "sha256": "c776cc54e23a46b1a846daea21a4baa8626491a22bdf4c833df57c1ff0e36621"
+      },
+      "review": {
+        "path": "results/p42-review-20261023T133835Z/report.json",
+        "sha256": "765ae4c079579cfdc629b91fe0130a8a03d750d118980bb40b9297105692ee18"
+      },
+      "clock": {
+        "path": "results/p43-cold-clock-20261023T134105Z/report.json",
+        "sha256": "34714f3ecfb35dd60d454900770c0b306ef723bff4ff6a0be81175b465ff51e0"
+      },
+      "units": {
+        "path": "results/p48-unit-review-20261023T134003Z/report.json",
+        "sha256": "6c0f8ffaf8d20fe0230353443dcf7ecd8b09d40458355f1da1e7312714debdab"
+      },
+      "verification": {
+        "path": "results/p44-verified-20261023T134127Z/report.json",
+        "sha256": "92a1236f09c6ac72139672b006bd96c72399065781104c7f7b843e9bf6c9d5f9"
+      },
+      "enable": {
+        "path": "results/p43-enabled-20261023T134150Z/report.json",
+        "sha256": "aba5706fd4c26cd1430ca090ce64b39e040e0de577107ebee25c20ef359ae8a1"
+      },
+      "status": {
+        "path": "results/p43-status-20261023T134241Z/report.json",
+        "sha256": "5721becd6a0b85b57fc860f4973fa930d0cf1063c5058762439ce59048e78f0e"
+      },
+      "watch": {
+        "path": "results/p50-watch-20261023T132702Z/report.json",
+        "sha256": "a1b4c36e113c42b1d46f6e4643adbafcb18a36f41226ac388f37b1f69df1e690"
+      },
+      "tests": {
+        "path": "results/p50-final-gates-20261023.xml",
+        "sha256": "be5778e56173d91d22cf13abd75186ce8a0905148cb54741e5cce437e47950eb"
+      },
+      "human_display": {
+        "path": "results/p50-human-display-20261023T133740Z/report.json",
+        "sha256": "a7495cd31d12e4edbc7cd5220f7a158a2aa6e926af4c7257d4266d2bd5a6ee7e"
+      }
+    },
+    "record": "docs/experiments/EXP-P50-cold-units.md",
+    "resume": "docs/handoff/RESUME-P50-20261023.md",
+    "checkpoint": "results/p50-checkpoint-20261023T134420296054Z/report.json",
+    "current_enable": "results/p43-enabled-20261023T134150Z/report.json",
+    "current_status": "results/p43-status-20261023T134241Z/report.json",
+    "default_startup_display_revision": "p48",
+    "current_last_display_revision": "p48",
+    "RX_idle": true,
+    "serial_closed": true,
+    "board_shutdown_issued": false,
+    "persistent_autostart_enabled": true,
+    "warm_boot_P48_verified": true,
+    "cold_boot_P48_verified": true,
+    "controlled_power_cycles_this_round": 1,
+    "physical_visibility_after_600s_confirmed": true,
+    "physical_updates_after_600s_confirmed": true,
+    "elapsed_software_s": 756.332301,
+    "display_updates": 1481,
+    "display_units": {
+      "peak_offset": "+30.0 kHz",
+      "sample_rate": "30.720 MS/s",
+      "FFT_spacing": "30.0 kHz"
+    },
+    "native_binary_sha256": "07a35338c6f87950e15126eefccc1d940f4e7fec5dafa4ba1b51247f1ad28b76",
+    "host_tests_passed": 95,
+    "host_reboots_issued": 0,
+    "TX_operations": false,
+    "RF_attribute_writes": false,
+    "hot_PL_changes": false,
+    "PRODUCT_ID_FF_root_cause_closed": false,
+    "historical_EVM_variation_root_cause_closed": false,
+    "ADC_gaps": "unknown",
+    "lossless_proven": false,
+    "AI_inference": false,
+    "absolute_RF_frequency_calibrated": false,
+    "physical_poweroff_interval_instrument_measured": false,
+    "physical_PCLK_measured": false
+  },
+  "p51_current": {
+    "status": "P51_thirty_minute_RX_LCD_verified_real_AI_diagnostic_not_accepted",
+    "updated_utc": "2026-10-23T15:55:47.145507+00:00",
+    "expected_boot": "a5313ffa-483a-4f9e-b0a4-dbe9a22234fc",
+    "reports": {
+      "trial": {
+        "path": "results/p51-board-20261023T151444Z/report.json",
+        "sha256": "e8510cc1cd37eb8cd057943117452606b4df5c3dcb26c0a7223669e375a9678c"
+      },
+      "review": {
+        "path": "results/p42-review-20261023T154613Z/report.json",
+        "sha256": "32ea7b60c3d3b0168cf8b9c97548d0651fe097ee163fe24c87de88f6781a2b30"
+      },
+      "units": {
+        "path": "results/p48-unit-review-20261023T154918Z/report.json",
+        "sha256": "12ecc93078ee652c50d071b6cc31005f8828aca830e314a89532f1350c8470ed"
+      },
+      "clock": {
+        "path": "results/p43-cold-clock-20261023T155314Z/report.json",
+        "sha256": "043ca832e7d280f0f73c2ca2a86afd81a7d4304becda0c69ff251aa6bfc367e6"
+      },
+      "enable": {
+        "path": "results/p43-enabled-20261023T155333Z/report.json",
+        "sha256": "d404b6f7b2b5763a6f0d8c0a592ffc280939df9fa0f5aa6d6a364f5d1f4f5c36"
+      },
+      "status": {
+        "path": "results/p43-status-20261023T155422Z/report.json",
+        "sha256": "55d2a80f48f42863de44fe1f73d96b726abca2a90dc1cb430697b5426a4bcd78"
+      },
+      "nominal_ai": {
+        "path": "results/p51-ai-diagnostic-20261023T152314Z/report.json",
+        "sha256": "11b170822ba975757d8b1a416cf9518dc0e03a23f789dbf5f49a23a11615f67f"
+      },
+      "calibrated_ai": {
+        "path": "results/p51-ai-tone-diagnostic-20261023T153342Z/report.json",
+        "sha256": "e347ff5ddf6f3869e4c538ae4fd6278fbbb5474a87903022713e548c3188c488"
+      },
+      "tone_calibration": {
+        "path": "results/p51-tone-calibration-20261023T153226Z/report.json",
+        "sha256": "881a07bb28c3843a60c121c45f6d6abdc0ba033fedf98463b180c9ce83243bdc"
+      },
+      "source_bank": {
+        "path": "results/p51-rf-bank-20261023T152633Z/report.json",
+        "sha256": "1d3a8e6076220489c91e379a6803b8c0ea7d3a62e0cf8fd24749f4584f5b109d"
+      },
+      "tests": {
+        "path": "results/p51-acceptance-tests-20261023.xml",
+        "sha256": "7102f18e4f1dc24a2cd04c16a534ef4dd6ad90d24bbc18faf5810f957b06a15f"
+      },
+      "screen_observation": {
+        "path": "results/p51-screen-feedback-20261023T155509Z/report.json",
+        "sha256": "21d8ee5e552065692598dcb22daca4a3660a72479b10a972eb6274d5feb0b998"
+      }
+    },
+    "record": "docs/experiments/EXP-P51-stability-and-ai-input.md",
+    "resume": "docs/handoff/RESUME-P51-20261023.md",
+    "checkpoint": "results/p51-checkpoint-20261023T155547145507Z/report.json",
+    "current_enable": "results/p43-enabled-20261023T155333Z/report.json",
+    "current_status": "results/p43-status-20261023T155422Z/report.json",
+    "default_startup_display_revision": "p48",
+    "persistent_autostart_enabled": true,
+    "RX_idle": true,
+    "serial_closed": true,
+    "board_shutdown_issued": false,
+    "stability": {
+      "elapsed_software_s": 1800.00112,
+      "display_updates": 3523,
+      "software_updates_per_s": 1.9572210043958196,
+      "first_polled_maxrss_kib": 2504,
+      "last_maxrss_kib": 2624,
+      "observed_maxrss_growth_kib": 120,
+      "running_polled_maxrss_max_kib": 2504,
+      "running_polled_maxrss_growth_kib": 0,
+      "memory_leak_root_cause_excluded": false,
+      "progress_samples": 169,
+      "physical_refresh_rate_measured": false,
+      "ADC_gaps": "unknown",
+      "lossless_proven": false
+    },
+    "screen_observation": {
+      "status": "user_confirmed_finished_screen_after_completed_trial",
+      "recorded_utc": "2026-10-23T15:55:09.398479+00:00",
+      "timestamp_kind": "recorded_at_not_observation_time",
+      "trial": "results/p51-board-20261023T151444Z/report.json",
+      "trial_sha256": "e8510cc1cd37eb8cd057943117452606b4df5c3dcb26c0a7223669e375a9678c",
+      "source": "direct_user_conversation_reply",
+      "initial_answer": "亮着，但不再变化",
+      "followup_question": "刚才“亮着但不再变化”是现在看到的吗？半小时程序已正常结束。请看屏幕顶部文字，更接近哪一种？",
+      "followup_answer": "现在看到 RX FINISHED／RX STOPPED 等结束提示",
+      "illuminated_finished_screen_confirmed": true,
+      "active_period_motion_confirmed": false,
+      "active_period_motion_status": "not_independently_observed_in_this_trial",
+      "interpretation": "Stopped counters match completed trial; no inference of physical motion during active period.",
+      "board_operations": false
+    },
+    "tests_passed": 141,
+    "known_RF_diagnostic_frames": 36,
+    "nominal_diagnostic": {
+      "fp32": {
+        "diagnostic_frames": 36,
+        "correct": 31,
+        "descriptive_fraction_correct": 0.8611111111111112,
+        "confusion_rows_truth_cols_prediction": [
+          [
+            12,
+            0,
+            0
+          ],
+          [
+            0,
+            12,
+            0
+          ],
+          [
+            0,
+            5,
+            7
+          ]
+        ],
+        "host_C_Python_logits_and_predictions_match": true,
+        "calibrated_confidence": false
+      },
+      "int8": {
+        "diagnostic_frames": 36,
+        "correct": 34,
+        "descriptive_fraction_correct": 0.9444444444444444,
+        "confusion_rows_truth_cols_prediction": [
+          [
+            12,
+            0,
+            0
+          ],
+          [
+            0,
+            12,
+            0
+          ],
+          [
+            0,
+            2,
+            10
+          ]
+        ],
+        "host_C_Python_logits_and_predictions_match": true,
+        "calibrated_confidence": false
+      }
+    },
+    "tone_calibrated_diagnostic": {
+      "fp32": {
+        "diagnostic_frames": 36,
+        "correct": 29,
+        "descriptive_fraction_correct": 0.8055555555555556,
+        "confusion_rows_truth_cols_prediction": [
+          [
+            9,
+            3,
+            0
+          ],
+          [
+            1,
+            10,
+            1
+          ],
+          [
+            0,
+            2,
+            10
+          ]
+        ],
+        "host_C_Python_logits_and_predictions_match": true,
+        "calibrated_confidence": false
+      },
+      "int8": {
+        "diagnostic_frames": 36,
+        "correct": 29,
+        "descriptive_fraction_correct": 0.8055555555555556,
+        "confusion_rows_truth_cols_prediction": [
+          [
+            9,
+            3,
+            0
+          ],
+          [
+            0,
+            10,
+            2
+          ],
+          [
+            0,
+            2,
+            10
+          ]
+        ],
+        "host_C_Python_logits_and_predictions_match": true,
+        "calibrated_confidence": false
+      }
+    },
+    "common_calibrated_IF_hz": 993839.8703689112,
+    "independent_real_RF_accuracy": "not_measured",
+    "RF_model_accepted": false,
+    "live_AI_on_LCD": false,
+    "model_weights_modified": false,
+    "new_RF_training_samples": 0,
+    "PC_only_new_source_packages": 12,
+    "PC_only_modulated_waveforms": 36,
+    "TX_operations": false,
+    "RF_attribute_writes": false,
+    "PL_changes": false,
+    "reboots_issued": 0,
+    "PRODUCT_ID_FF_root_cause_closed": false,
+    "historical_EVM_variation_root_cause_closed": false,
+    "lossless_proven": false
+  },
+  "p52_current": {
+    "report": "results/p52-final-20261024T081254Z/report.json",
+    "status": "passed_controlled_real_RF_AI_and_live_LCD_checkpoint_ready",
+    "updated_utc": "2026-10-24T08:13:37.076725+00:00",
+    "expected_boot": "cb8e6e0f-12b1-457c-977c-5200abc53683",
+    "TX_expected_boot": "7968dd1d-12b1-4236-8dc1-dae0973d94d8",
+    "serial_closed": true,
+    "RX_idle": true,
+    "TX_idle": true,
+    "startup_paused_for_archiving": false,
+    "P48_persistent_startup_restored": true,
+    "AI_model_accepted": true,
+    "live_AI_on_LCD_verified": true,
+    "AI_persistent_autostart": false,
+    "checkpoint": "results/p52-checkpoint-20261024T081337072649Z/report.json",
+    "final_enable": "results/p43-enabled-20261024T081307Z/report.json",
+    "final_status": "results/p43-status-20261024T081327Z/report.json"
+  },
+  "p55_current": {
+    "report": "results/p55-live-flow-20261024T080314Z/report.json",
+    "read_status_from_report": true,
+    "expected_boot_at_stage_start": "cb8e6e0f-12b1-457c-977c-5200abc53683",
+    "host_independent_test": "results/p52-test-20261024T045844Z/report.json",
+    "frozen_model": "results/p52-export-20261024T043113Z/report.json",
+    "rule": "do not open serial while referenced task is running; all old boot identities are historical",
+    "record": "docs/experiments/EXP-P52-real-RF-AI.md"
+  },
+  "p53_current": {
+    "report": "results/p53-live-20261024T080707Z/report.json",
+    "status": "passed_three_class_real_RF_live_ARM_AI_LCD_and_independent_archives",
+    "serial_closed": true,
+    "expected_boot": "cb8e6e0f-12b1-457c-977c-5200abc53683",
+    "startup_paused_for_archiving": true,
+    "AI_test_accepted": true,
+    "live_AI_finally_accepted": false
+  },
+  "p56_current": {
+    "status": "passed_runtime_AI_10minute_controlled_demo_checkpoint_ready",
+    "report": "results/p56-final-20261024T091604Z/report.json",
+    "report_sha256": "50495ce2616dc9ea2f16f460f6d963bf3b452b6c417c7d65d8a259285eb94217",
+    "review": "results/p56-review-20261024T091539Z/report.json",
+    "review_sha256": "7f7e3fd99d709743dfc5b3eb5d24bc0d6a33be1dec3d4c41ad1118b7e3645b8b",
+    "expected_boot": "cb8e6e0f-12b1-457c-977c-5200abc53683",
+    "TX_expected_boot": "7968dd1d-12b1-4236-8dc1-dae0973d94d8",
+    "stable_P48_startup_restored": true,
+    "persistent_AI_default": false,
+    "serial_closed": true,
+    "RX_and_TX_idle": true,
+    "board_powered_not_shutdown": true,
+    "checkpoint": "results/p56-checkpoint-20261024T091604478418Z/report.json"
+  },
+  "p57_current": {
+    "status": "receiver_halted_checkpoint_verified_awaiting_manual_power_cycle",
+    "report": "results/p57-poweroff-20261024T095307Z/report.json",
+    "report_sha256": "c51df17ef94ce06dabf5eea2a142248c92f85053387a62dca98d27b9e867d2c1",
+    "boot": "results/p57-boot-20261024T094321Z/report.json",
+    "expected_boot": "27b9a4d2-b828-472c-acb7-bd0cdfb7f606",
+    "TX_expected_boot": "7968dd1d-12b1-4236-8dc1-dae0973d94d8",
+    "selection": "results/p57-selection-20261024T095126Z/report.json",
+    "persistent_AI_selected": true,
+    "RX_and_TX_idle": true,
+    "serial_closed": true,
+    "board_shutdown": true,
+    "true_power_cycle_verified": false,
+    "checkpoint": "results/p57-checkpoint-20261024T095114718202Z/report.json",
+    "halt_observed": true,
+    "poweroff_record": "results/p57-poweroff-20261024T095307Z/report.json",
+    "new_boot_must_be_identified": true
+  },
+  "p58_current": {
+    "status": "passed_P58_user_power_cycle_autonomous_AI_RF_LCD_10min_checkpoint_ready",
+    "report": "results/p58-final-20261024T101036Z/report.json",
+    "report_sha256": "b5e7860d0c5bbccffbe54c054dec5e21087d35a7b2cd781435f78d12074a7b42",
+    "boot": "results/p58-cold-20261024T095834Z/report.json",
+    "expected_boot": "e405ca27-600f-47e9-937c-2d65e9e58a40",
+    "TX_expected_boot": "7968dd1d-12b1-4236-8dc1-dae0973d94d8",
+    "selection": "results/p57-selection-20261024T101048Z/report.json",
+    "persistent_AI_selected": true,
+    "true_power_cycle_verified": true,
+    "RX_and_TX_idle": true,
+    "serial_closed": true,
+    "board_shutdown": false,
+    "physical_screen_updates_confirmed": true,
+    "human_visual": "results/p58-visual-20261024T100220Z/human-event.json",
+    "human_visual_sha256": "88ed2f32922055bb80fe6480fb8c151027ca17aba86dbc8b0b0a8f442b02c856",
+    "checkpoint": "results/p58-checkpoint-20261024T101036196778Z/report.json"
+  },
+  "p59_current": {
+    "status": "passed_P59_fixed_PC_control_short_RF_demo_archived_P60_review_pending_UART_deploy",
+    "report": "results/p59-final-20261025T030227Z/report.json",
+    "report_sha256": "6de536010f297b722d3f7ef295f479aad2372a5614153b74d13b61982d9f6800",
+    "expected_boot": "48a30fb3-e240-4fee-824d-a46f975d5358",
+    "TX_expected_boot": "97f90856-4479-4846-bd04-a39a6978384d",
+    "RX_and_TX_idle": true,
+    "serial_closed": true,
+    "board_shutdown": false,
+    "persistent_AI_selected": true,
+    "workflow": "docs/WORKFLOW-NEXT-20261024.md",
+    "handoff": "docs/handoff/RESUME-P59-20261025.md",
+    "checkpoint": "results/p59-checkpoint-20261025T030227Z/report.json",
+    "UART_deployed": false,
+    "screen_model_pending": true
+  },
+  "p65_current": {
+    "status": "passed_P65_COM10_control_source_restore_RX_stop_editor_ready",
+    "report": "results/p65-final-20261025T125828Z/report.json",
+    "handoff": "docs/handoff/RESUME-P65-20261025.md",
+    "hardware_status": "results/p59-p65-archive-stopped-20261025T122532907857Z/report.json",
+    "TX_boot": "71c3d762-75d7-492e-9205-72d960cd8dff",
+    "RX_boot": "41f3a915-cf52-4f66-8442-5768a6ad3cdc",
+    "TX_stopped": true,
+    "RX_stopped": true,
+    "serial_closed": true,
+    "powered_off": false,
+    "HMI_compiled": false,
+    "TFT_downloaded": false,
+    "RF_transmissions": 0
+  },
+  "p70_current": {
+    "status": "P70_warm_startup_verified_halted_cold_pending_AI_issue_open",
+    "report": "results/p70-final-20261026T033553Z/acceptance.json",
+    "report_sha256": "a98b5c0b60917b79c36cc8230ae037b7659ba09ad6f447910499312e4e615c84",
+    "handoff": "docs/handoff/RESUME-P70-20261026.md",
+    "checkpoint": "results/p70-final-20261026T033553Z/checkpoint.zip",
+    "RX_running": false,
+    "RX_halted": true,
+    "true_power_cycle_verified": false
+  },
+  "p71_current": {
+    "status": "passed_P71_cold_autonomous_measurement_display_10min_AI_issue_open",
+    "report": "results/p71-final-20261026T041452Z/acceptance.json",
+    "report_sha256": "2b57bf3b21cb3f2cfa178a3946590f62d02cc0b041b26546c3be67b6563436bd",
+    "handoff": "docs/handoff/RESUME-P71-20261026.md",
+    "checkpoint": "results/p71-final-20261026T041452Z/checkpoint.zip",
+    "RX_stopped": true,
+    "RX_halted": false,
+    "true_power_cycle_verified": true,
+    "ten_minute_duration_verified": true,
+    "serial_closed": true
+  },
+  "p72_current": {
+    "status": "saved_P72_diagnostic_pause_AI_issue_open",
+    "report": "results/p72-final-20261026T043517Z/acceptance.json",
+    "report_sha256": "06358bc7310f351cce5c66a5f82777e53b7f9023d93edeac9877b058f96a4782",
+    "handoff": "docs/handoff/RESUME-P72-20261026.md",
+    "checkpoint": "results/p72-final-20261026T043517Z/checkpoint.zip",
+    "TX_stopped": true,
+    "RX_stopped": true,
+    "RX_halted": false,
+    "serial_closed": true
+  },
+  "p74_current": {
+    "status": "saved_P74_offline_native_ARM_candidate_passed_fresh_RF_pending",
+    "report": "results/p74-final-20261026T095803Z/acceptance.json",
+    "report_sha256": "40c38233edd9cf92a4d1da2e2247dcad2afe0306b8ab65f2117e814fa6271614",
+    "handoff": "docs/handoff/RESUME-P74-20261026.md",
+    "checkpoint": "results/p74-final-20261026T095803Z/checkpoint.zip",
+    "TX_stopped": true,
+    "RX_stopped": true,
+    "RX_halted": false,
+    "serial_closed": true,
+    "classification_fix_deployed": false
+  },
+  "p75_current": {
+    "status": "passed_P75_new_seed_live_phase_candidate_RF_RAM_checkpoint",
+    "report": "results/p75-final-20261026T102330Z/acceptance.json",
+    "report_sha256": "5132f864682e1d941e3c7317c792373e21134a9d23dbcb427531cfb9100de676",
+    "handoff": "docs/handoff/RESUME-P75-20261026.md",
+    "checkpoint": "results/p75-final-20261026T102330Z/checkpoint.zip",
+    "TX_stopped": true,
+    "RX_stopped": true,
+    "serial_closed": true,
+    "RX_halted": false,
+    "candidate_persistent_installed": false
+  },
+  "p76_current": {
+    "status": "saved_P76_installed_10min_passed_halted_waiting_actual_power_cycle",
+    "report": "results/p76-final-20261026T125153Z/acceptance.json",
+    "report_sha256": "4abcc617425bf0233573b14028ec0a6be847d0235a03e144224730e897486ff3",
+    "handoff": "docs/handoff/RESUME-P76-20261026.md",
+    "checkpoint": "results/p76-final-20261026T125153Z/checkpoint.zip",
+    "RX_halted": true,
+    "RX_running": false,
+    "TX_stopped": true,
+    "true_power_cycle_verified": false,
+    "persistent_selected": true,
+    "passive_listener": "results/p76-passive-20261026T124857Z/report.json",
+    "listener_exec_session_id": 43532
+  },
+  "p77_current": {
+    "status": "passed_P77_actual_power_cycle_confirmation_demo_receiver_finalized",
+    "report": "results/p77-final-20261026T130128Z/acceptance.json",
+    "report_sha256": "0b7e0e0038c97f0ccd4862a073776c1cb399f865a2da8830e14c1bcf108e5a97",
+    "handoff": "docs/handoff/RESUME-P77-20261026.md",
+    "checkpoint": "results/p77-final-20261026T130128Z/checkpoint.zip",
+    "true_power_cycle_verified": true,
+    "physical_LCD_confirmed": true,
+    "RX_running_at_last_check": true,
+    "RX_halted": false,
+    "TX_stopped": true,
+    "serial_closed": true,
+    "passive_listener_closed": true,
+    "persistent_selected": true,
+    "updated_utc": "2026-10-26T13:01:28.201843+00:00"
+  },
+  "p79_current": {
+    "status": "passed_P79_computer_mediated_screen_protocol_RF_integration",
+    "report": "results/p79-final-20261027T133028Z/report.json",
+    "report_sha256": "dbee099e05479cdb43d381e68831797f978c04ecb243fedc3f614f36c70d72d6",
+    "handoff": "docs/handoff/RESUME-P79-20261027.md",
+    "checkpoint": "results/p79-final-20261027T133028Z/checkpoint.zip",
+    "acceptance": "results/p79-final-20261027T133028Z/acceptance.json"
+  },
+  "p80_current": {
+    "status": "passed_P80_fast_screen_control_saved",
+    "report": "results/p80-final-20261027T140528Z/report.json",
+    "report_sha256": "0bb9af421f74413852da7bf61dfc59ab4294dfe752c958d650938ff1675d854f",
+    "handoff": "docs/handoff/RESUME-P80-20261027.md",
+    "checkpoint": "results/p80-final-20261027T140528Z/checkpoint.zip",
+    "acceptance": "results/p80-final-20261027T140528Z/acceptance.json"
+  },
+  "p81_current": {
+    "status": "passed_P81_human_screen_RF_rehearsal_saved",
+    "report": "results/p81-final-20261027T142631Z/report.json",
+    "report_sha256": "4e1c47bb94f737f9552e8379e9106c06d6f2e060cce11cd9108de1476711132f",
+    "handoff": "docs/handoff/RESUME-P81-20261027.md",
+    "checkpoint": "results/p81-final-20261027T142631Z/checkpoint.zip",
+    "acceptance": "results/p81-final-20261027T142631Z/acceptance.json"
+  },
+  "p83_current": {
+    "status": "saved_P83_BPSK_visual_demo_partial_coverage",
+    "report": "results/p83-final-20261028T113405Z/report.json",
+    "report_sha256": "c3be0633a4bcbda1e75e8d3452d0d6fbb8960936c29282f929c15ca3242cfbbe",
+    "handoff": "docs/handoff/RESUME-P83-20261028.md",
+    "checkpoint": "results/p83-final-20261028T113405Z/checkpoint.zip",
+    "acceptance": "results/p83-final-20261028T113405Z/acceptance.json"
+  }
+}

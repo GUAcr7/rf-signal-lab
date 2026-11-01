@@ -1,0 +1,35 @@
+#!/bin/sh
+# Single fresh-boot hold. Restore the known guard BEFORE returning to init.
+# No PL load, overlay apply/removal, RF writes, or automatic reboot here.
+case "$1" in
+    ""|start) ;;
+    stop) exit 0 ;;
+    *) exit 2 ;;
+esac
+GUARD=@@GUARD@@
+GUARD_SHA=@@GUARD_SHA@@
+ARMED_BOOT=@@ARMED_BOOT@@
+INSTALL=/etc/rcS.d/S99board
+RESTORE=/etc/rcS.d/.p32-restore
+fail() { echo "p32-hold: FAILED: $*" >&2; exit 1; }
+CURRENT=$(cat /proc/sys/kernel/random/boot_id) || fail "boot identity unreadable"
+[ -n "$CURRENT" ] && [ "$CURRENT" != "$ARMED_BOOT" ] \
+    || fail "fresh boot required; refusing execution in armed session"
+actual=$(sha256sum "$GUARD") || fail "guard unreadable"
+[ "${actual%% *}" = "$GUARD_SHA" ] || fail "guard hash mismatch"
+if [ ! -d /sys/class/gpio/gpio914 ]; then
+    echo 914 > /sys/class/gpio/export 2>/dev/null
+fi
+echo out > /sys/class/gpio/gpio914/direction || fail "fan direction"
+echo 1 > /sys/class/gpio/gpio914/value || fail "fan value"
+cp "$GUARD" "$RESTORE" || fail "restore copy"
+chmod 755 "$RESTORE" || fail "restore mode"
+actual=$(sha256sum "$RESTORE") || fail "restore hash read"
+[ "${actual%% *}" = "$GUARD_SHA" ] || fail "restore hash mismatch"
+mv "$RESTORE" "$INSTALL" || fail "restore rename"
+sync || fail "restore sync"
+actual=$(sha256sum "$INSTALL") || fail "installed guard unreadable"
+[ "${actual%% *}" = "$GUARD_SHA" ] || fail "installed guard mismatch"
+echo "$CURRENT" > /run/p32-hold-boot || fail "hold marker"
+echo "p32-hold: RESTORED_GUARD_AND_HELD boot=$CURRENT"
+exit 0

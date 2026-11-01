@@ -1,0 +1,20 @@
+#!/bin/sh
+# Turn on the heatsink fan at boot.
+#
+# The TLZ7xH-EVM switches the fan with PS MIO8, exposed as gpio 914 on this
+# kernel (gpiochip base 906 + 8). Per the evaluation-board hardware manual
+# section 26 the circuit is a plain on/off switch driven by that pin: there is
+# no speed control, and the manual explicitly advises against trying to PWM it.
+#
+# MIO8 is a PS pin, so this works regardless of which PL bitstream is loaded.
+# Without this script the pin resets to input/low on every boot and the fan
+# stays off.
+
+if [ ! -d /sys/class/gpio/gpio914 ]; then
+    echo 914 > /sys/class/gpio/export
+fi
+
+# The kernel leaves the exported pin as an input; writing value only works
+# once it is an output.
+echo out > /sys/class/gpio/gpio914/direction
+echo 1 > /sys/class/gpio/gpio914/value

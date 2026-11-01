@@ -1,0 +1,8 @@
+{
+  "all_passed": false,
+  "scope": "integer_reference_and_RTL_simulation_only",
+  "hardware_accessed": false,
+  "timing_closed": false,
+  "runs": [],
+  "error": "ValueError: expected signed 12-bit integer, got 2048"
+}

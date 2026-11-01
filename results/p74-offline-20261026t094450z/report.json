@@ -1,0 +1,1007 @@
+{
+  "status": "passed_P74_offline_candidate_requires_native_parity_fresh_RF",
+  "protocol": {
+    "candidate": "fixed8_phase_group_mean_logits_INT8_then_unchanged_3_of_3",
+    "phase_degrees": [
+      0,
+      45,
+      90,
+      135,
+      180,
+      225,
+      270,
+      315
+    ],
+    "aggregation": "arithmetic_mean_logits_per_frame",
+    "model_weights_fit": false,
+    "thresholds_changed": false,
+    "selection_data": "original P52 validation split only, no frame reshuffle",
+    "original_independent_test_read": false,
+    "validation_gate": {
+      "overall_accuracy_min": 0.9,
+      "each_class_accuracy_min": 0.8,
+      "no_overall_or_per_class_regression": true
+    },
+    "exposed_event_gate": {
+      "required_all_original_CLASSIFIED_preserved": true,
+      "uncertain_improvement_min_blocks": 1,
+      "accepted_wrong_allowed": 0
+    },
+    "no_deployment": true,
+    "limit": "validation and P73 events are exposed; no new independent accuracy claim",
+    "candidate_sha256": "7afebcc6c60dd7d8a13ab108366bd6e67a999072e396596e7bfa2bbb57cb4464",
+    "evaluator_sha256": "1a1e6027eecd3ad774b9437e6520ce2aa9c7e287558022ea73bfa2abdfde28fb"
+  },
+  "protocol_sha256": "02b8926584d9b9ec82ed6a9d24b1c81e88e47d76996587ab33c28a3b340d462a",
+  "board_operations": false,
+  "production_changed": false,
+  "gates": [
+    {
+      "name": "frozen SHA results/p52-trained-20261024T042912Z/cnn-model.npz",
+      "passed": true
+    },
+    {
+      "name": "frozen SHA results/p52-trained-20261024T042912Z/quantized-model.npz",
+      "passed": true
+    },
+    {
+      "name": "frozen SHA results/p52-trained-20261024T042912Z/report.json",
+      "passed": true
+    },
+    {
+      "name": "frozen SHA results/p54-plan-20261024T042837Z/report.json",
+      "passed": true
+    },
+    {
+      "name": "frozen SHA results/p54-plan-20261024T042837Z/dataset/report.json",
+      "passed": true
+    },
+    {
+      "name": "frozen SHA results/p52-export-20261024T043113Z/real-rf-host.exe",
+      "passed": true
+    },
+    {
+      "name": "frozen SHA results/p52-export-20261024T043113Z/real-rf-arm",
+      "passed": true
+    },
+    {
+      "name": "frozen SHA results/p52-export-20261024T043113Z/bundle/trained_model.h",
+      "passed": true
+    },
+    {
+      "name": "frozen SHA results/p52-export-20261024T043113Z/bundle/rf_frontend.h",
+      "passed": true
+    },
+    {
+      "name": "frozen SHA results/p52-export-20261024T043113Z/bundle/trained_cnn_infer.c",
+      "passed": true
+    },
+    {
+      "name": "frozen SHA results/p52-export-20261024T043113Z/bundle/real_rf_infer.c",
+      "passed": true
+    },
+    {
+      "name": "frozen SHA embedded/tiny_cnn_probe/real_rf_infer.c",
+      "passed": true
+    },
+    {
+      "name": "frozen SHA src/rfsig/rf_ai_input.py",
+      "passed": true
+    },
+    {
+      "name": "frozen SHA src/rfsig/rf_ai_calibration.py",
+      "passed": true
+    },
+    {
+      "name": "frozen SHA src/rfsig/trainable_cnn.py",
+      "passed": true
+    },
+    {
+      "name": "frozen SHA src/rfsig/cnn_quantization.py",
+      "passed": true
+    },
+    {
+      "name": "frozen SHA experiments/p52_make_dataset.py",
+      "passed": true
+    },
+    {
+      "name": "frozen SHA src/rfsig/real_rf_learning.py",
+      "passed": true
+    },
+    {
+      "name": "frozen SHA experiments/p52_train_real.py",
+      "passed": true
+    },
+    {
+      "name": "frozen SHA experiments/p52_export_real.py",
+      "passed": true
+    },
+    {
+      "name": "frozen SHA experiments/p52_evaluate_real.py",
+      "passed": true
+    },
+    {
+      "name": "frozen SHA experiments/p52_arm_verify.py",
+      "passed": true
+    },
+    {
+      "name": "frozen SHA experiments/p52_ram.py",
+      "passed": true
+    },
+    {
+      "name": "original dataset SHA",
+      "passed": true
+    },
+    {
+      "name": "validation-only 54 frames balanced and seed-disjoint",
+      "passed": true
+    },
+    {
+      "name": "all 8 group rotations preserve validation predictions",
+      "passed": true
+    },
+    {
+      "name": "normalization control preserves predictions",
+      "passed": true
+    },
+    {
+      "name": "P73 actual events reviewed",
+      "passed": true
+    },
+    {
+      "name": "P73 trial SHA",
+      "passed": true
+    },
+    {
+      "name": "P73 raw SHA event-01",
+      "passed": true
+    },
+    {
+      "name": "P73 frozen replay event-01",
+      "passed": true
+    },
+    {
+      "name": "P73 raw SHA event-02",
+      "passed": true
+    },
+    {
+      "name": "P73 frozen replay event-02",
+      "passed": true
+    },
+    {
+      "name": "P73 raw SHA event-03",
+      "passed": true
+    },
+    {
+      "name": "P73 frozen replay event-03",
+      "passed": true
+    },
+    {
+      "name": "P73 raw SHA event-04",
+      "passed": true
+    },
+    {
+      "name": "P73 frozen replay event-04",
+      "passed": true
+    },
+    {
+      "name": "P73 raw SHA event-05",
+      "passed": true
+    },
+    {
+      "name": "P73 frozen replay event-05",
+      "passed": true
+    },
+    {
+      "name": "P73 raw SHA event-06",
+      "passed": true
+    },
+    {
+      "name": "P73 frozen replay event-06",
+      "passed": true
+    },
+    {
+      "name": "P73 raw SHA event-07",
+      "passed": true
+    },
+    {
+      "name": "P73 frozen replay event-07",
+      "passed": true
+    },
+    {
+      "name": "P73 raw SHA event-08",
+      "passed": true
+    },
+    {
+      "name": "P73 frozen replay event-08",
+      "passed": true
+    },
+    {
+      "name": "P73 raw SHA event-09",
+      "passed": true
+    },
+    {
+      "name": "P73 frozen replay event-09",
+      "passed": true
+    },
+    {
+      "name": "P73 raw SHA event-10",
+      "passed": true
+    },
+    {
+      "name": "P73 frozen replay event-10",
+      "passed": true
+    },
+    {
+      "name": "P73 raw SHA event-11",
+      "passed": true
+    },
+    {
+      "name": "P73 frozen replay event-11",
+      "passed": true
+    },
+    {
+      "name": "P73 raw SHA event-12",
+      "passed": true
+    },
+    {
+      "name": "P73 frozen replay event-12",
+      "passed": true
+    }
+  ],
+  "dataset_report_keys": [
+    "baseline_test_data_included",
+    "batch",
+    "batch_sha256",
+    "board_operations",
+    "calibrations",
+    "class_order",
+    "frame_file_sha256",
+    "frame_index_not_independent_RF_trials",
+    "frame_random_split",
+    "frame_records",
+    "measured_SNR_db",
+    "new_holdout_seeds",
+    "new_protocol",
+    "old_P46_frames_included",
+    "parent_dataset",
+    "parent_dataset_sha256",
+    "real_frames",
+    "split_unit",
+    "status",
+    "test_frames",
+    "training_frames",
+    "validation_frames"
+  ],
+  "baseline_wall_s": 0.008333899999797723,
+  "candidate_wall_s": 0.0735674000002291,
+  "validation": {
+    "baseline": {
+      "correct": 53,
+      "total": 54,
+      "accuracy": 0.9814814814814815,
+      "confusion": [
+        [
+          18,
+          0,
+          0
+        ],
+        [
+          0,
+          17,
+          1
+        ],
+        [
+          0,
+          0,
+          18
+        ]
+      ],
+      "each_class_accuracy": [
+        1.0,
+        0.9444444444444444,
+        1.0
+      ],
+      "predictions": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    "candidate": {
+      "correct": 54,
+      "total": 54,
+      "accuracy": 1.0,
+      "confusion": [
+        [
+          18,
+          0,
+          0
+        ],
+        [
+          0,
+          18,
+          0
+        ],
+        [
+          0,
+          0,
+          18
+        ]
+      ],
+      "each_class_accuracy": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "predictions": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    "seeds": [
+      2026102307,
+      2026102307,
+      2026102307,
+      2026102307,
+      2026102307,
+      2026102307,
+      2026102307,
+      2026102307,
+      2026102307,
+      2026102307,
+      2026102307,
+      2026102307,
+      2026102307,
+      2026102307,
+      2026102307,
+      2026102307,
+      2026102307,
+      2026102307,
+      2026102308,
+      2026102308,
+      2026102308,
+      2026102308,
+      2026102308,
+      2026102308,
+      2026102308,
+      2026102308,
+      2026102308,
+      2026102308,
+      2026102308,
+      2026102308,
+      2026102308,
+      2026102308,
+      2026102308,
+      2026102308,
+      2026102308,
+      2026102308,
+      2026102309,
+      2026102309,
+      2026102309,
+      2026102309,
+      2026102309,
+      2026102309,
+      2026102309,
+      2026102309,
+      2026102309,
+      2026102309,
+      2026102309,
+      2026102309,
+      2026102309,
+      2026102309,
+      2026102309,
+      2026102309,
+      2026102309,
+      2026102309
+    ]
+  },
+  "validation_candidate_gate_passed": true,
+  "phase_group_control": [
+    {
+      "degrees": 0,
+      "max_logit_difference": 0.0,
+      "predictions_identical": true
+    },
+    {
+      "degrees": 45,
+      "max_logit_difference": 1.7763568394002505e-15,
+      "predictions_identical": true
+    },
+    {
+      "degrees": 90,
+      "max_logit_difference": 1.7763568394002505e-15,
+      "predictions_identical": true
+    },
+    {
+      "degrees": 135,
+      "max_logit_difference": 1.7763568394002505e-15,
+      "predictions_identical": true
+    },
+    {
+      "degrees": 180,
+      "max_logit_difference": 1.7763568394002505e-15,
+      "predictions_identical": true
+    },
+    {
+      "degrees": 225,
+      "max_logit_difference": 1.7763568394002505e-15,
+      "predictions_identical": true
+    },
+    {
+      "degrees": 270,
+      "max_logit_difference": 1.7763568394002505e-15,
+      "predictions_identical": true
+    },
+    {
+      "degrees": 315,
+      "max_logit_difference": 1.7763568394002505e-15,
+      "predictions_identical": true
+    }
+  ],
+  "affine_control": {
+    "max_logit_difference": 0.0,
+    "predictions_identical": true
+  },
+  "review": "results/p73-review-20261026T093740Z/report.json",
+  "review_sha256": "d8bf3bcb4b4d482a868a713155791f6c332a5a77076bf30865f086d634f0775b",
+  "events": [
+    {
+      "event": "event-01",
+      "original_state": "CLASSIFIED",
+      "baseline": {
+        "predictions": [
+          2,
+          2,
+          2
+        ],
+        "accepted_class": 2
+      },
+      "candidate": {
+        "predictions": [
+          2,
+          2,
+          2
+        ],
+        "accepted_class": 2
+      },
+      "candidate_logits": [
+        [
+          -4.859599697804527,
+          -1.016868380235557,
+          1.5068068914012027
+        ],
+        [
+          -3.6668185705770426,
+          -0.740245526342522,
+          0.29185922381021356
+        ],
+        [
+          -1.5770136882216828,
+          -2.1811157205699825,
+          0.49946260036068924
+        ]
+      ]
+    },
+    {
+      "event": "event-02",
+      "original_state": "CLASSIFIED",
+      "baseline": {
+        "predictions": [
+          2,
+          2,
+          2
+        ],
+        "accepted_class": 2
+      },
+      "candidate": {
+        "predictions": [
+          2,
+          2,
+          2
+        ],
+        "accepted_class": 2
+      },
+      "candidate_logits": [
+        [
+          -4.773055951860358,
+          -0.846837494467584,
+          1.3086970220637104
+        ],
+        [
+          -3.1537758376609752,
+          -1.0671220988230596,
+          0.26025653881507194
+        ],
+        [
+          -1.7262711248874432,
+          -2.194022301373132,
+          0.6768277018866427
+        ]
+      ]
+    },
+    {
+      "event": "event-03",
+      "original_state": "CLASSIFIED",
+      "baseline": {
+        "predictions": [
+          2,
+          2,
+          2
+        ],
+        "accepted_class": 2
+      },
+      "candidate": {
+        "predictions": [
+          2,
+          2,
+          2
+        ],
+        "accepted_class": 2
+      },
+      "candidate_logits": [
+        [
+          -4.76738525096145,
+          -2.3532403405571327,
+          2.7177842488975092
+        ],
+        [
+          -3.2700374980703018,
+          -1.4554503852355472,
+          0.9971567454391059
+        ],
+        [
+          -1.5684379823102566,
+          -2.9631520840598897,
+          1.092993229561543
+        ]
+      ]
+    },
+    {
+      "event": "event-04",
+      "original_state": "UNCERTAIN",
+      "baseline": {
+        "predictions": [
+          0,
+          2,
+          2
+        ],
+        "accepted_class": -1
+      },
+      "candidate": {
+        "predictions": [
+          2,
+          2,
+          2
+        ],
+        "accepted_class": 2
+      },
+      "candidate_logits": [
+        [
+          -0.09530543340216058,
+          -3.3240118886614827,
+          0.52961892884043
+        ],
+        [
+          -2.2338562179210357,
+          -2.738278473196627,
+          1.3436922940128224
+        ],
+        [
+          -5.1240780737608835,
+          -0.8098099482078809,
+          1.4895612410518508
+        ]
+      ]
+    },
+    {
+      "event": "event-05",
+      "original_state": "UNCERTAIN",
+      "baseline": {
+        "predictions": [
+          2,
+          2,
+          1
+        ],
+        "accepted_class": -1
+      },
+      "candidate": {
+        "predictions": [
+          2,
+          2,
+          2
+        ],
+        "accepted_class": 2
+      },
+      "candidate_logits": [
+        [
+          -4.02485121938366,
+          -1.761164262526158,
+          1.5368157161003357
+        ],
+        [
+          -2.5046731591162725,
+          -1.1896280859447672,
+          0.07603660881811192
+        ],
+        [
+          -3.075238269141998,
+          -0.9476522311855216,
+          0.25898636737095204
+        ]
+      ]
+    },
+    {
+      "event": "event-06",
+      "original_state": "UNCERTAIN",
+      "baseline": {
+        "predictions": [
+          2,
+          1,
+          2
+        ],
+        "accepted_class": -1
+      },
+      "candidate": {
+        "predictions": [
+          2,
+          2,
+          2
+        ],
+        "accepted_class": 2
+      },
+      "candidate_logits": [
+        [
+          -3.7955033271753056,
+          -1.6545681970738573,
+          1.363506968541087
+        ],
+        [
+          -2.7224583938559,
+          -1.062746153331706,
+          0.025934491338456045
+        ],
+        [
+          -2.851257875616858,
+          -1.5905433616357552,
+          0.7176206918790746
+        ]
+      ]
+    },
+    {
+      "event": "event-07",
+      "original_state": "CLASSIFIED",
+      "baseline": {
+        "predictions": [
+          2,
+          2,
+          2
+        ],
+        "accepted_class": 2
+      },
+      "candidate": {
+        "predictions": [
+          2,
+          2,
+          2
+        ],
+        "accepted_class": 2
+      },
+      "candidate_logits": [
+        [
+          -2.808612893712355,
+          -1.2929053163334014,
+          0.24608388389504143
+        ],
+        [
+          -2.1671066598689355,
+          -2.0305512365149507,
+          0.8328621178058664
+        ],
+        [
+          -4.1082809966261165,
+          -1.9690093813837408,
+          1.9468434475710716
+        ]
+      ]
+    },
+    {
+      "event": "event-08",
+      "original_state": "CLASSIFIED",
+      "baseline": {
+        "predictions": [
+          2,
+          2,
+          2
+        ],
+        "accepted_class": 2
+      },
+      "candidate": {
+        "predictions": [
+          2,
+          2,
+          2
+        ],
+        "accepted_class": 2
+      },
+      "candidate_logits": [
+        [
+          -2.5045953098987295,
+          -2.1063722770744073,
+          1.066885060394028
+        ],
+        [
+          -3.1787982151101293,
+          -2.021655939078875,
+          1.325266613418611
+        ],
+        [
+          -2.0595477225154477,
+          -2.385219979658271,
+          0.86907429594499
+        ]
+      ]
+    },
+    {
+      "event": "event-09",
+      "original_state": "CLASSIFIED",
+      "baseline": {
+        "predictions": [
+          2,
+          2,
+          2
+        ],
+        "accepted_class": 2
+      },
+      "candidate": {
+        "predictions": [
+          2,
+          2,
+          2
+        ],
+        "accepted_class": 2
+      },
+      "candidate_logits": [
+        [
+          -2.79332986311053,
+          -1.4851682997007047,
+          0.5000485181558798
+        ],
+        [
+          -3.37823152114585,
+          -1.843774574320796,
+          1.4131501853699644
+        ],
+        [
+          -3.918894336980658,
+          -1.927019971837493,
+          1.7942180079147751
+        ]
+      ]
+    },
+    {
+      "event": "event-10",
+      "original_state": "UNCERTAIN",
+      "baseline": {
+        "predictions": [
+          0,
+          2,
+          2
+        ],
+        "accepted_class": -1
+      },
+      "candidate": {
+        "predictions": [
+          2,
+          2,
+          2
+        ],
+        "accepted_class": 2
+      },
+      "candidate_logits": [
+        [
+          -0.15396686748428667,
+          -3.0153110598135715,
+          0.4023108741945025
+        ],
+        [
+          -3.5178602387997358,
+          -2.1722572990790585,
+          1.6711629789430291
+        ],
+        [
+          -3.7839529616882963,
+          -1.9885044643873557,
+          1.5682094374062834
+        ]
+      ]
+    },
+    {
+      "event": "event-11",
+      "original_state": "UNCERTAIN",
+      "baseline": {
+        "predictions": [
+          2,
+          0,
+          2
+        ],
+        "accepted_class": -1
+      },
+      "candidate": {
+        "predictions": [
+          2,
+          2,
+          2
+        ],
+        "accepted_class": 2
+      },
+      "candidate_logits": [
+        [
+          -5.777835316049198,
+          -1.177737642296913,
+          2.2506028997686345
+        ],
+        [
+          -0.4596807447748975,
+          -2.9764520082779926,
+          0.5365311198927838
+        ],
+        [
+          -3.256127072093573,
+          -2.0934534042895403,
+          1.4374760171884726
+        ]
+      ]
+    },
+    {
+      "event": "event-12",
+      "original_state": "UNCERTAIN",
+      "baseline": {
+        "predictions": [
+          2,
+          0,
+          2
+        ],
+        "accepted_class": -1
+      },
+      "candidate": {
+        "predictions": [
+          2,
+          2,
+          2
+        ],
+        "accepted_class": 2
+      },
+      "candidate_logits": [
+        [
+          -5.7089387585238125,
+          -1.3894301514320062,
+          2.359657361564392
+        ],
+        [
+          -0.4653678349827617,
+          -2.8011765436439777,
+          0.4123902992026771
+        ],
+        [
+          -3.585363705063829,
+          -1.930887848751199,
+          1.459302479391133
+        ]
+      ]
+    }
+  ],
+  "exposed_event_summary": {
+    "original_uncertain": 6,
+    "now_correct_consensus": 6,
+    "now_uncertain": 0,
+    "original_classified_preserved": 6,
+    "original_classified": 6,
+    "wrong_accepted": 0
+  },
+  "exposed_event_gate_passed": true,
+  "next_step": "native C parity and latency, then prospectively frozen new RF sessions; no production change"
+}

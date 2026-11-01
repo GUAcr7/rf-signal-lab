@@ -1,0 +1,473 @@
+{
+  "remote_directory": "/tmp/p35-p46u-113416",
+  "expected_boot": "79ec21ce-b1d7-4069-83d7-50f540732849",
+  "RX_expected_boot": "343afe82-88e6-4a03-a5d4-c09ee6929e36",
+  "source_report": "C:\\Users\\project_user\\Documents\\Codex\\2026-09-09\\2026-fpga-fmql30tai-fpai-python-c\\outputs\\rf-signal-lab\\results\\p46-source-20261022T112638Z\\report.json",
+  "source_report_sha256": "4447802d022b1de9b99b27f47d06d14b1167db2d80d6425bae93b181d49629bd",
+  "files_sha256": {
+    "guard": "0a188e1e1c0c19a165231c1d5589ff5d72adbf284d98d2bdf39cfc6a65b1163b",
+    "source.c": "b9ba90d3ec85359e5b584704702e80d544ffb26e1fd28c271563316d1e41dd30",
+    "tone": "fa20e4b5a5c39776d6cee634501ee5d7fe3e236699db45bbd7640fea1ea70732",
+    "bpsk": "167d99034316c7e28c3da46ab3974f883ad457303e836178692cfa451c26217f",
+    "qpsk": "f2a0319737a651454e4fcb767c24aaff31c093b53acdbfe73c7df3aa63074b61",
+    "qam16": "8b9e9c5ea82f8fc9204e5d14c454b66f7717ec474f8c11eb1fc486f696451236",
+    "sums": "0bb87b68c99daa8036ea5233ad5d138c4eb68bb3dd5d12de1312d55e88bb0ac2"
+  },
+  "references": {
+    "tone": {
+      "schema": "rfsig.cyclic-tx.v1",
+      "modulation": "tone",
+      "sample_rate_hz": 30720000,
+      "sample_count": 131072,
+      "period_seconds": 0.004266666666666667,
+      "samples_per_symbol": null,
+      "symbol_count": null,
+      "symbol_rate_hz": null,
+      "bits_per_symbol": 0,
+      "seed": 20261016,
+      "offset_hz": 960000.0,
+      "carrier_cycles_per_buffer": 4096,
+      "frequency_bin_hz": 234.375,
+      "nyquist_margin_hz": 14400000.0,
+      "rrc_rolloff": null,
+      "rrc_span_symbols": null,
+      "rrc_tap_count": 0,
+      "rrc_convolution": null,
+      "theoretical_rrc_support_hz": null,
+      "support_definition": "one coherent tone bin before integer quantization",
+      "digital_peak_counts": 256,
+      "digital_peak_definition": "maximum absolute individual I or Q logical DAC component",
+      "logical_dac_bits": 12,
+      "storage_bits": 16,
+      "storage_left_shift": 4,
+      "storage_peak_counts": 4096,
+      "packing": "little-endian signed int16, interleaved I0,Q0,I1,Q1; low 4 bits zero",
+      "quantizer": "nearest ties-to-even, no clipping",
+      "logical_counts_per_float_unit": 256.0,
+      "logical_mean_i2_plus_q2": 65584.0,
+      "rf_power_dbm": null,
+      "rf_power_note": "digital DAC codes do not specify RF output power; board-specific calibration is required"
+    },
+    "bpsk": {
+      "schema": "rfsig.cyclic-tx.v1",
+      "modulation": "BPSK",
+      "sample_rate_hz": 30720000,
+      "sample_count": 131072,
+      "period_seconds": 0.004266666666666667,
+      "samples_per_symbol": 128,
+      "symbol_count": 1024,
+      "symbol_rate_hz": 240000.0,
+      "bits_per_symbol": 1,
+      "seed": 20261016,
+      "offset_hz": 960000.0,
+      "carrier_cycles_per_buffer": 4096,
+      "frequency_bin_hz": 234.375,
+      "nyquist_margin_hz": 14238000.0,
+      "rrc_rolloff": 0.35,
+      "rrc_span_symbols": 10,
+      "rrc_tap_count": 1281,
+      "rrc_convolution": "centered periodic circular",
+      "theoretical_rrc_support_hz": [
+        798000.0,
+        1122000.0
+      ],
+      "support_definition": "infinite-RRC theoretical support; finite-tap leakage exists; not measured 99% OBW",
+      "digital_peak_counts": 256,
+      "digital_peak_definition": "maximum absolute individual I or Q logical DAC component",
+      "logical_dac_bits": 12,
+      "storage_bits": 16,
+      "storage_left_shift": 4,
+      "storage_peak_counts": 4096,
+      "packing": "little-endian signed int16, interleaved I0,Q0,I1,Q1; low 4 bits zero",
+      "quantizer": "nearest ties-to-even, no clipping",
+      "logical_counts_per_float_unit": 1833.5360549177883,
+      "logical_mean_i2_plus_q2": 26265.917892456055,
+      "rf_power_dbm": null,
+      "rf_power_note": "digital DAC codes do not specify RF output power; board-specific calibration is required"
+    },
+    "qpsk": {
+      "schema": "rfsig.cyclic-tx.v1",
+      "modulation": "QPSK",
+      "sample_rate_hz": 30720000,
+      "sample_count": 131072,
+      "period_seconds": 0.004266666666666667,
+      "samples_per_symbol": 128,
+      "symbol_count": 1024,
+      "symbol_rate_hz": 240000.0,
+      "bits_per_symbol": 2,
+      "seed": 20261016,
+      "offset_hz": 960000.0,
+      "carrier_cycles_per_buffer": 4096,
+      "frequency_bin_hz": 234.375,
+      "nyquist_margin_hz": 14238000.0,
+      "rrc_rolloff": 0.35,
+      "rrc_span_symbols": 10,
+      "rrc_tap_count": 1281,
+      "rrc_convolution": "centered periodic circular",
+      "theoretical_rrc_support_hz": [
+        798000.0,
+        1122000.0
+      ],
+      "support_definition": "infinite-RRC theoretical support; finite-tap leakage exists; not measured 99% OBW",
+      "digital_peak_counts": 256,
+      "digital_peak_definition": "maximum absolute individual I or Q logical DAC component",
+      "logical_dac_bits": 12,
+      "storage_bits": 16,
+      "storage_left_shift": 4,
+      "storage_peak_counts": 4096,
+      "packing": "little-endian signed int16, interleaved I0,Q0,I1,Q1; low 4 bits zero",
+      "quantizer": "nearest ties-to-even, no clipping",
+      "logical_counts_per_float_unit": 1890.9723392545243,
+      "logical_mean_i2_plus_q2": 27924.839729309082,
+      "rf_power_dbm": null,
+      "rf_power_note": "digital DAC codes do not specify RF output power; board-specific calibration is required"
+    },
+    "qam16": {
+      "schema": "rfsig.cyclic-tx.v1",
+      "modulation": "16QAM",
+      "sample_rate_hz": 30720000,
+      "sample_count": 131072,
+      "period_seconds": 0.004266666666666667,
+      "samples_per_symbol": 128,
+      "symbol_count": 1024,
+      "symbol_rate_hz": 240000.0,
+      "bits_per_symbol": 4,
+      "seed": 20261016,
+      "offset_hz": 960000.0,
+      "carrier_cycles_per_buffer": 4096,
+      "frequency_bin_hz": 234.375,
+      "nyquist_margin_hz": 14238000.0,
+      "rrc_rolloff": 0.35,
+      "rrc_span_symbols": 10,
+      "rrc_tap_count": 1281,
+      "rrc_convolution": "centered periodic circular",
+      "theoretical_rrc_support_hz": [
+        798000.0,
+        1122000.0
+      ],
+      "support_definition": "infinite-RRC theoretical support; finite-tap leakage exists; not measured 99% OBW",
+      "digital_peak_counts": 256,
+      "digital_peak_definition": "maximum absolute individual I or Q logical DAC component",
+      "logical_dac_bits": 12,
+      "storage_bits": 16,
+      "storage_left_shift": 4,
+      "storage_peak_counts": 4096,
+      "packing": "little-endian signed int16, interleaved I0,Q0,I1,Q1; low 4 bits zero",
+      "quantizer": "nearest ties-to-even, no clipping",
+      "logical_counts_per_float_unit": 1533.050842548313,
+      "logical_mean_i2_plus_q2": 18231.13500213623,
+      "rf_power_dbm": null,
+      "rf_power_note": "digital DAC codes do not specify RF output power; board-specific calibration is required"
+    }
+  },
+  "source_peak_component_counts": 256,
+  "status": "guard_and_peak256_sources_restored_inspected_checked_no_TX",
+  "stages": [
+    {
+      "port": "COM9",
+      "stage": "wake",
+      "output": "\r\n# "
+    },
+    {
+      "port": "COM9",
+      "command": "a=/proc/sys/kernel/random/boot_id",
+      "output": "a=/proc/sys/kernel/random/boot_id\r\n# printf '\\n__P46_0b94cab0__:%s\\n' \"$?\"\r\n\r\n__P46_0b94cab0__:0\r\n# ",
+      "exit_code": 0,
+      "utc": "2026-10-22T11:39:38.817429+00:00"
+    },
+    {
+      "port": "COM9",
+      "command": "echo __VALUE__$(cat $a)__END__",
+      "output": "echo __VALUE__$(cat $a)__END__\r\n_:%s\\n' \"$?\"\r\n__VALUE__79ec21ce-b1d7-4069-83d7-50f540732849__END__\r\n# printf '\\n__P46_7295c2d0__:%s\\n' \"$?\"\r\n\r\n__P46_7295c2d0__:0\r\n# ",
+      "exit_code": 0,
+      "utc": "2026-10-22T11:39:38.849150+00:00"
+    },
+    {
+      "port": "COM9",
+      "command": "a=/proc/sys/kernel/tainted",
+      "output": "a=/proc/sys/kernel/tainted\r\n# printf '\\n__P46_f8387722__:%s\\n' \"$?\"\r\n\r\n__P46_f8387722__:0\r\n# ",
+      "exit_code": 0,
+      "utc": "2026-10-22T11:39:38.864717+00:00"
+    },
+    {
+      "port": "COM9",
+      "command": "echo __VALUE__$(cat $a)__END__",
+      "output": "echo __VALUE__$(cat $a)__END__\r\n_:%s\\n' \"$?\"\r\n__VALUE__0__END__\r\n# printf '\\n__P46_1c1eec6e__:%s\\n' \"$?\"\r\n\r\n__P46_1c1eec6e__:0\r\n# ",
+      "exit_code": 0,
+      "utc": "2026-10-22T11:39:38.897117+00:00"
+    },
+    {
+      "port": "COM9",
+      "command": "uname -a",
+      "output": "uname -a\r\nLinux pzp201 5.10.0-98231-g9dfba10b795d-dirty #14 SMP PREEMPT Wed Mar 15 18:41:33 PDT 2023 armv7l GNU/Linux\r\n# printf '\\n__P46_0370efaf__:%s\\n' \"$?\"\r\n\r\n__P46_0370efaf__:0\r\n# ",
+      "exit_code": 0,
+      "utc": "2026-10-22T11:39:38.930448+00:00"
+    },
+    {
+      "port": "COM9",
+      "command": "d=/tmp/p35-p46u-113416",
+      "output": "d=/tmp/p35-p46u-113416\r\n\"$?\"\r\n# printf '\\n__P46_03bb05dd__:%s\\n' \"$?\"\r\n\r\n__P46_03bb05dd__:0\r\n# ",
+      "exit_code": 0,
+      "utc": "2026-10-22T11:39:38.961258+00:00"
+    },
+    {
+      "port": "COM9",
+      "command": "command -v gzip gunzip zcat tar || true",
+      "output": "command -v gzip gunzip zcat tar || true\r\n/bin/gzip\r\n# printf '\\n__P46_6c13dd26__:%s\\n' \"$?\"\r\n\r\n__P46_6c13dd26__:0\r\n# ",
+      "exit_code": 0,
+      "utc": "2026-10-22T11:39:38.992307+00:00"
+    },
+    {
+      "port": "COM9",
+      "command": "f=/tmp/p35-p46u-113416/pkg.gz",
+      "output": "f=/tmp/p35-p46u-113416/pkg.gz\r\n# printf '\\n__P46_9e5bfb60__:%s\\n' \"$?\"\r\n\r\n__P46_9e5bfb60__:0\r\n# ",
+      "exit_code": 0,
+      "utc": "2026-10-22T11:39:39.008364+00:00"
+    },
+    {
+      "port": "COM9",
+      "command": "sha256sum $f",
+      "output": "sha256sum $f\r\n5b0aac574d1bf779db7fa84cd9f1a3ad42414a71feb37a551fe83b4366ae4044  /tmp/p35-p46u-113416/pkg.gz\r\n# printf '\\n__P46_924e7b61__:%s\\n' \"$?\"\r\n\r\n__P46_924e7b61__:0\r\n# ",
+      "exit_code": 0,
+      "utc": "2026-10-22T11:39:39.105388+00:00"
+    },
+    {
+      "port": "COM9",
+      "command": "command -v gzip",
+      "output": "command -v gzip\r\n/bin/gzip\r\n# printf '\\n__P46_7a5fd6bf__:%s\\n' \"$?\"\r\n\r\n__P46_7a5fd6bf__:0\r\n# ",
+      "exit_code": 0,
+      "utc": "2026-10-22T11:39:39.137351+00:00"
+    },
+    {
+      "port": "COM9",
+      "command": "test ! -e $d/pkg.tar",
+      "output": "test ! -e $d/pkg.tar\r\n# printf '\\n__P46_ff2232e6__:%s\\n' \"$?\"\r\n\r\n__P46_ff2232e6__:0\r\n# ",
+      "exit_code": 0,
+      "utc": "2026-10-22T11:39:39.152882+00:00"
+    },
+    {
+      "port": "COM9",
+      "command": "gzip -dc $d/pkg.gz >$d/pkg.tar",
+      "output": "gzip -dc $d/pkg.gz >$d/pkg.tar\r\n_:%s\\n' \"$?\"\r\n# printf '\\n__P46_a993dffa__:%s\\n' \"$?\"\r\n\r\n__P46_a993dffa__:0\r\n# ",
+      "exit_code": 0,
+      "utc": "2026-10-22T11:39:39.360912+00:00"
+    },
+    {
+      "port": "COM9",
+      "command": "f=/tmp/p35-p46u-113416/pkg.tar",
+      "output": "f=/tmp/p35-p46u-113416/pkg.tar\r\n# printf '\\n__P46_b369f06d__:%s\\n' \"$?\"\r\n\r\n__P46_b369f06d__:0\r\n# ",
+      "exit_code": 0,
+      "utc": "2026-10-22T11:39:39.377295+00:00"
+    },
+    {
+      "port": "COM9",
+      "command": "sha256sum $f",
+      "output": "sha256sum $f\r\n176d76e9d1d0f2f041c4468974d24cb3369b266948cd621cfe53e383c11abf73  /tmp/p35-p46u-113416/pkg.tar\r\n# printf '\\n__P46_b7f8dea3__:%s\\n' \"$?\"\r\n\r\n__P46_b7f8dea3__:0\r\n# ",
+      "exit_code": 0,
+      "utc": "2026-10-22T11:39:39.537404+00:00"
+    },
+    {
+      "port": "COM9",
+      "command": "tar -xf $d/pkg.tar -C $d",
+      "output": "tar -xf $d/pkg.tar -C $d\r\n' \"$?\"\r\n# printf '\\n__P46_3af14b46__:%s\\n' \"$?\"\r\n\r\n__P46_3af14b46__:0",
+      "exit_code": 0,
+      "utc": "2026-10-22T11:39:39.601063+00:00"
+    },
+    {
+      "port": "COM9",
+      "command": "chmod 755 $d/guard",
+      "output": "\r\n# chmod 755 $d/guard\r\n# printf '\\n__P46_2d00d5ce__:%s\\n' \"$?\"\r\n\r\n__P46_2d00d5ce__:0\r\n# ",
+      "exit_code": 0,
+      "utc": "2026-10-22T11:39:39.633380+00:00"
+    },
+    {
+      "port": "COM9",
+      "command": "cd $d",
+      "output": "cd $d\r\n# printf '\\n__P46_8653f085__:%s\\n' \"$?\"\r\n\r\n__P46_8653f085__:0\r\n# ",
+      "exit_code": 0,
+      "utc": "2026-10-22T11:39:39.648983+00:00"
+    },
+    {
+      "port": "COM9",
+      "command": "sha256sum -c sums",
+      "output": "sha256sum -c sums\r\nguard: OK\r\nsource.c: OK\r\ntone: OK\r\nbpsk: OK\r\nqpsk: OK\r\nqam16: OK\r\n# printf '\\n__P46_fc395e6d__:%s\\n' \"$?\"\r\n\r\n__P46_fc395e6d__:0",
+      "exit_code": 0,
+      "utc": "2026-10-22T11:39:39.792976+00:00"
+    },
+    {
+      "port": "COM9",
+      "command": "f=/tmp/p35-p46u-113416/guard",
+      "output": "\r\n# f=/tmp/p35-p46u-113416/guard\r\n# printf '\\n__P46_9f05ad00__:%s\\n' \"$?\"\r\n\r\n__P46_9f05ad00__:0\r\n# ",
+      "exit_code": 0,
+      "utc": "2026-10-22T11:39:39.808399+00:00"
+    },
+    {
+      "port": "COM9",
+      "command": "sha256sum $f",
+      "output": "sha256sum $f\r\n0a188e1e1c0c19a165231c1d5589ff5d72adbf284d98d2bdf39cfc6a65b1163b  /tmp/p35-p46u-113416/guard\r\n# printf '\\n__P46_10765909__:%s\\n' \"$?\"\r\n\r\n__P46_10765909__:0\r\n# ",
+      "exit_code": 0,
+      "utc": "2026-10-22T11:39:39.841139+00:00"
+    },
+    {
+      "port": "COM9",
+      "command": "f=/tmp/p35-p46u-113416/source.c",
+      "output": "f=/tmp/p35-p46u-113416/source.c\r\n# printf '\\n__P46_9824ef08__:%s\\n' \"$?\"\r\n\r\n__P46_9824ef08__:0\r\n# ",
+      "exit_code": 0,
+      "utc": "2026-10-22T11:39:39.857227+00:00"
+    },
+    {
+      "port": "COM9",
+      "command": "sha256sum $f",
+      "output": "sha256sum $f\r\nb9ba90d3ec85359e5b584704702e80d544ffb26e1fd28c271563316d1e41dd30  /tmp/p35-p46u-113416/source.c\r\n# printf '\\n__P46_265fcff3__:%s\\n' \"$?\"\r\n\r\n__P46_265fcff3__:0\r\n# ",
+      "exit_code": 0,
+      "utc": "2026-10-22T11:39:39.888993+00:00"
+    },
+    {
+      "port": "COM9",
+      "command": "f=/tmp/p35-p46u-113416/tone",
+      "output": "f=/tmp/p35-p46u-113416/tone\r\n# printf '\\n__P46_a7f5cd6a__:%s\\n' \"$?\"\r\n\r\n__P46_a7f5cd6a__:0\r\n# ",
+      "exit_code": 0,
+      "utc": "2026-10-22T11:39:39.905133+00:00"
+    },
+    {
+      "port": "COM9",
+      "command": "sha256sum $f",
+      "output": "sha256sum $f\r\nfa20e4b5a5c39776d6cee634501ee5d7fe3e236699db45bbd7640fea1ea70732  /tmp/p35-p46u-113416/tone\r\n# printf '\\n__P46_4e7991c8__:%s\\n' \"$?\"\r\n\r\n__P46_4e7991c8__:0\r\n# ",
+      "exit_code": 0,
+      "utc": "2026-10-22T11:39:39.968846+00:00"
+    },
+    {
+      "port": "COM9",
+      "command": "f=/tmp/p35-p46u-113416/bpsk",
+      "output": "f=/tmp/p35-p46u-113416/bpsk\r\n# printf '\\n__P46_229ad8d1__:%s\\n' \"$?\"\r\n\r\n__P46_229ad8d1__:0\r\n# ",
+      "exit_code": 0,
+      "utc": "2026-10-22T11:39:39.984839+00:00"
+    },
+    {
+      "port": "COM9",
+      "command": "sha256sum $f",
+      "output": "sha256sum $f\r\n167d99034316c7e28c3da46ab3974f883ad457303e836178692cfa451c26217f  /tmp/p35-p46u-113416/bpsk\r\n# printf '\\n__P46_4feaaa8c__:%s\\n' \"$?\"\r\n\r\n__P46_4feaaa8c__:0\r\n# ",
+      "exit_code": 0,
+      "utc": "2026-10-22T11:39:40.048937+00:00"
+    },
+    {
+      "port": "COM9",
+      "command": "f=/tmp/p35-p46u-113416/qpsk",
+      "output": "f=/tmp/p35-p46u-113416/qpsk\r\n# printf '\\n__P46_6b8efb20__:%s\\n' \"$?\"\r\n\r\n__P46_6b8efb20__:0\r\n# ",
+      "exit_code": 0,
+      "utc": "2026-10-22T11:39:40.064601+00:00"
+    },
+    {
+      "port": "COM9",
+      "command": "sha256sum $f",
+      "output": "sha256sum $f\r\nf2a0319737a651454e4fcb767c24aaff31c093b53acdbfe73c7df3aa63074b61  /tmp/p35-p46u-113416/qpsk\r\n# printf '\\n__P46_d4619c4d__:%s\\n' \"$?\"\r\n\r\n__P46_d4619c4d__:0\r\n# ",
+      "exit_code": 0,
+      "utc": "2026-10-22T11:39:40.128780+00:00"
+    },
+    {
+      "port": "COM9",
+      "command": "f=/tmp/p35-p46u-113416/qam16",
+      "output": "f=/tmp/p35-p46u-113416/qam16\r\n# printf '\\n__P46_00b3d75b__:%s\\n' \"$?\"\r\n\r\n__P46_00b3d75b__:0\r\n# ",
+      "exit_code": 0,
+      "utc": "2026-10-22T11:39:40.144887+00:00"
+    },
+    {
+      "port": "COM9",
+      "command": "sha256sum $f",
+      "output": "sha256sum $f\r\n8b9e9c5ea82f8fc9204e5d14c454b66f7717ec474f8c11eb1fc486f696451236  /tmp/p35-p46u-113416/qam16\r\n# printf '\\n__P46_37902a23__:%s\\n' \"$?\"\r\n\r\n__P46_37902a23__:0\r\n# ",
+      "exit_code": 0,
+      "utc": "2026-10-22T11:39:40.208350+00:00"
+    },
+    {
+      "port": "COM9",
+      "command": "f=/tmp/p35-p46u-113416/sums",
+      "output": "f=/tmp/p35-p46u-113416/sums\r\n# printf '\\n__P46_37dca33c__:%s\\n' \"$?\"\r\n\r\n__P46_37dca33c__:0\r\n# ",
+      "exit_code": 0,
+      "utc": "2026-10-22T11:39:40.224364+00:00"
+    },
+    {
+      "port": "COM9",
+      "command": "sha256sum $f",
+      "output": "sha256sum $f\r\n0bb87b68c99daa8036ea5233ad5d138c4eb68bb3dd5d12de1312d55e88bb0ac2  /tmp/p35-p46u-113416/sums\r\n# printf '\\n__P46_3c145a4d__:%s\\n' \"$?\"\r\n\r\n__P46_3c145a4d__:0\r\n# ",
+      "exit_code": 0,
+      "utc": "2026-10-22T11:39:40.256887+00:00"
+    },
+    {
+      "port": "COM9",
+      "command": "./guard --inspect",
+      "output": "./guard --inspect\r\nlibiio=0.24\r\nhw_model=PUZHI PZSDR P201\r\nhw_serial=\r\ntx_guard_identity_kind=boot_session\r\ntx_guard_identity=boot-session:79ec21ce-b1d7-4069-83d7-50f540732849\r\nTX_DMA_sampling_frequency=30720000\r\nTX_SOURCE_RATE_SCOPE=DMA_rate_must_equal_PHY_rate_interpolation_bypass_only\r\nrx0_sampling_frequency=30720000\r\nrx0_rf_bandwidth=18000000\r\nrx0_hardwaregain=71.000000 dB\r\nrx0_rf_port_select=A_BALANCED\r\nrx0_gain_control_mode=slow_attack\r\nrx1_sampling_frequency=30720000\r\nrx1_rf_bandwidth=18000000\r\nrx1_hardwaregain=71.000000 dB\r\nrx1_rf_port_select=A_BALANCED\r\nrx1_gain_control_mode=slow_attack\r\ntx0_sampling_frequency=30720000\r\ntx0_rf_bandwidth=18000000\r\ntx0_hardwaregain=-10.000000 dB\r\ntx0_rf_port_select=A\r\ntx1_sampling_frequency=30720000\r\ntx1_rf_bandwidth=18000000\r\ntx1_hardwaregain=-10.000000 dB\r\ntx1_rf_port_select=A\r\nrx_lo=2400000000\r\ntx_lo=2450000000\r\nbist_prbs=0\r\nbist_tone=0\r\nloopback=0\r\ndds0_frequency=9279985\r\ndds0_phase=90000\r\ndds0_scale=0.000000\r\ndds0_raw=1\r\ndds1_frequency=9279985\r\ndds1_phase=90000\r\ndds1_scale=0.000000\r\ndds1_raw=1\r\ndds2_frequency=9279985\r\ndds2_phase=0\r\ndds2_scale=0.000000\r\ndds2_raw=1\r\ndds3_frequency=9279985\r\ndds3_phase=0\r\ndds3_scale=0.000000\r\ndds3_raw=1\r\ndds4_frequency=9279985\r\ndds4_phase=90000\r\ndds4_scale=0.000000\r\ndds4_raw=1\r\ndds5_frequency=9279985\r\ndds5_phase=90000\r\ndds5_scale=0.000000\r\ndds5_raw=1\r\ndds6_frequency=9279985\r\ndds6_phase=0\r\ndds6_scale=0.000000\r\ndds6_raw=1\r\ndds7_frequency=9279985\r\ndds7_phase=0\r\ndds7_scale=0.000000\r\ndds7_raw=1\r\nDDS_CHANNELS_INSPECTED=8\r\nTX_voltage0 format=le:s16/16>>0 repeat=1 scan=1 output=1 enabled=0 fully_defined=1 scale=0\r\nRX_voltage0 format=le:s12/16>>0 repeat=1 scan=1 output=0 enabled=0 fully_defined=1 scale=0\r\nTX_voltage1 format=le:s16/16>>0 repeat=1 scan=1 output=1 enabled=0 fully_defined=1 scale=0\r\nRX_voltage1 format=le:s12/16>>0 repeat=1 scan=1 output=0 enabled=0 fully_defined=1 scale=0\r\nTX_voltage2 format=le:s16/16>>0 repeat=1 scan=1 output=1 enabled=0 fully_defined=1 scale=0\r\nRX_voltage2 format=le:s12/16>>0 repeat=1 scan=1 output=0 enabled=0 fully_defined=1 scale=0\r\nTX_voltage3 format=le:s16/16>>0 repeat=1 scan=1 output=1 enabled=0 fully_defined=1 scale=0\r\nRX_voltage3 format=le:s12/16>>0 repeat=1 scan=1 output=0 enabled=0 fully_defined=1 scale=0\r\nINSPECT_PASS read_only=true no_buffers_created=true\r\n# printf '\\n__P46_0e45295c__:%s\\n' \"$?\"\r\n\r\n__P46_0e45295c__:0\r\n# ",
+      "exit_code": 0,
+      "utc": "2026-10-22T11:39:40.529268+00:00"
+    },
+    {
+      "port": "COM9",
+      "command": "h=fa20e4b5a5c39776d6cee634501ee5d7fe3e236699db45bbd7640fea1ea70732",
+      "output": "h=fa20e4b5a5c39776d6cee634501ee5d7fe3e236699db45bbd7640fea1ea70732\r\n# printf '\\n__P46_d514812e__:%s\\n' \"$?\"\r\n\r\n__P46_d514812e__:0\r\n# ",
+      "exit_code": 0,
+      "utc": "2026-10-22T11:39:40.560536+00:00"
+    },
+    {
+      "port": "COM9",
+      "command": "./guard --check tone 131072 $h",
+      "output": "./guard --check tone 131072 $h\r\n_:%s\\n' \"$?\"\r\nINPUT_SHA256=fa20e4b5a5c39776d6cee634501ee5d7fe3e236699db45bbd7640fea1ea70732\r\nINPUT_CHECK_PASS samples=131072 format=LE_s16_IQ low_bits_zero=4 min=-4096 max=4096 mean_I2_Q2=16789504\r\n# printf '\\n__P46_27450dc1__:%s\\n' \"$?\"\r\n\r\n__P46_27450dc1__:0\r\n# ",
+      "exit_code": 0,
+      "utc": "2026-10-22T11:39:40.720902+00:00"
+    },
+    {
+      "port": "COM9",
+      "command": "h=167d99034316c7e28c3da46ab3974f883ad457303e836178692cfa451c26217f",
+      "output": "h=167d99034316c7e28c3da46ab3974f883ad457303e836178692cfa451c26217f\r\n# printf '\\n__P46_71953001__:%s\\n' \"$?\"\r\n\r\n__P46_71953001__:0\r\n# ",
+      "exit_code": 0,
+      "utc": "2026-10-22T11:39:40.752718+00:00"
+    },
+    {
+      "port": "COM9",
+      "command": "./guard --check bpsk 131072 $h",
+      "output": "./guard --check bpsk 131072 $h\r\n_:%s\\n' \"$?\"\r\nINPUT_SHA256=167d99034316c7e28c3da46ab3974f883ad457303e836178692cfa451c26217f\r\nINPUT_CHECK_PASS samples=131072 format=LE_s16_IQ low_bits_zero=4 min=-4080 max=4096 mean_I2_Q2=6724074.98047\r\n# printf '\\n__P46_b1481107__:%s\\n' \"$?\"\r\n\r\n__P46_b1481107__:0\r\n# ",
+      "exit_code": 0,
+      "utc": "2026-10-22T11:39:40.913032+00:00"
+    },
+    {
+      "port": "COM9",
+      "command": "h=f2a0319737a651454e4fcb767c24aaff31c093b53acdbfe73c7df3aa63074b61",
+      "output": "h=f2a0319737a651454e4fcb767c24aaff31c093b53acdbfe73c7df3aa63074b61\r\n# printf '\\n__P46_18e2d6b5__:%s\\n' \"$?\"\r\n\r\n__P46_18e2d6b5__:0\r\n# ",
+      "exit_code": 0,
+      "utc": "2026-10-22T11:39:40.945164+00:00"
+    },
+    {
+      "port": "COM9",
+      "command": "./guard --check qpsk 131072 $h",
+      "output": "./guard --check qpsk 131072 $h\r\n_:%s\\n' \"$?\"\r\nINPUT_SHA256=f2a0319737a651454e4fcb767c24aaff31c093b53acdbfe73c7df3aa63074b61\r\nINPUT_CHECK_PASS samples=131072 format=LE_s16_IQ low_bits_zero=4 min=-4096 max=4096 mean_I2_Q2=7148758.9707\r\n# printf '\\n__P46_5f77c213__:%s\\n' \"$?\"\r\n\r\n__P46_5f77c213__:0\r\n# ",
+      "exit_code": 0,
+      "utc": "2026-10-22T11:39:41.104791+00:00"
+    },
+    {
+      "port": "COM9",
+      "command": "h=8b9e9c5ea82f8fc9204e5d14c454b66f7717ec474f8c11eb1fc486f696451236",
+      "output": "h=8b9e9c5ea82f8fc9204e5d14c454b66f7717ec474f8c11eb1fc486f696451236\r\n# printf '\\n__P46_ae1c7c48__:%s\\n' \"$?\"\r\n\r\n__P46_ae1c7c48__:0\r\n# ",
+      "exit_code": 0,
+      "utc": "2026-10-22T11:39:41.137700+00:00"
+    },
+    {
+      "port": "COM9",
+      "command": "./guard --check qam16 131072 $h",
+      "output": "./guard --check qam16 131072 $h\r\n__:%s\\n' \"$?\"\r\nINPUT_SHA256=8b9e9c5ea82f8fc9204e5d14c454b66f7717ec474f8c11eb1fc486f696451236\r\nINPUT_CHECK_PASS samples=131072 format=LE_s16_IQ low_bits_zero=4 min=-4096 max=4080 mean_I2_Q2=4667170.56055\r\n# printf '\\n__P46_16fbb89e__:%s\\n' \"$?\"\r\n\r\n__P46_16fbb89e__:0\r\n# ",
+      "exit_code": 0,
+      "utc": "2026-10-22T11:39:41.296909+00:00"
+    }
+  ],
+  "RF_operations": false,
+  "RF_attribute_writes": false,
+  "PL_changes": false,
+  "reused_transfer_report": "C:\\Users\\project_user\\Documents\\Codex\\2026-09-09\\2026-fpga-fmql30tai-fpai-python-c\\outputs\\rf-signal-lab\\results\\p46-restored-20261022T113416Z\\report.json",
+  "reused_transfer_sha256": "4007e0feb024f953fde7d43e393b15d331fb4ae24e6502346292d0e45882ef25",
+  "tools": "command -v gzip gunzip zcat tar || true\r\n/bin/gzip\r\n# printf '\\n__P46_6c13dd26__:%s\\n' \"$?\"\r\n\r\n__P46_6c13dd26__:0\r\n# ",
+  "inspect": "./guard --inspect\r\nlibiio=0.24\r\nhw_model=PUZHI PZSDR P201\r\nhw_serial=\r\ntx_guard_identity_kind=boot_session\r\ntx_guard_identity=boot-session:79ec21ce-b1d7-4069-83d7-50f540732849\r\nTX_DMA_sampling_frequency=30720000\r\nTX_SOURCE_RATE_SCOPE=DMA_rate_must_equal_PHY_rate_interpolation_bypass_only\r\nrx0_sampling_frequency=30720000\r\nrx0_rf_bandwidth=18000000\r\nrx0_hardwaregain=71.000000 dB\r\nrx0_rf_port_select=A_BALANCED\r\nrx0_gain_control_mode=slow_attack\r\nrx1_sampling_frequency=30720000\r\nrx1_rf_bandwidth=18000000\r\nrx1_hardwaregain=71.000000 dB\r\nrx1_rf_port_select=A_BALANCED\r\nrx1_gain_control_mode=slow_attack\r\ntx0_sampling_frequency=30720000\r\ntx0_rf_bandwidth=18000000\r\ntx0_hardwaregain=-10.000000 dB\r\ntx0_rf_port_select=A\r\ntx1_sampling_frequency=30720000\r\ntx1_rf_bandwidth=18000000\r\ntx1_hardwaregain=-10.000000 dB\r\ntx1_rf_port_select=A\r\nrx_lo=2400000000\r\ntx_lo=2450000000\r\nbist_prbs=0\r\nbist_tone=0\r\nloopback=0\r\ndds0_frequency=9279985\r\ndds0_phase=90000\r\ndds0_scale=0.000000\r\ndds0_raw=1\r\ndds1_frequency=9279985\r\ndds1_phase=90000\r\ndds1_scale=0.000000\r\ndds1_raw=1\r\ndds2_frequency=9279985\r\ndds2_phase=0\r\ndds2_scale=0.000000\r\ndds2_raw=1\r\ndds3_frequency=9279985\r\ndds3_phase=0\r\ndds3_scale=0.000000\r\ndds3_raw=1\r\ndds4_frequency=9279985\r\ndds4_phase=90000\r\ndds4_scale=0.000000\r\ndds4_raw=1\r\ndds5_frequency=9279985\r\ndds5_phase=90000\r\ndds5_scale=0.000000\r\ndds5_raw=1\r\ndds6_frequency=9279985\r\ndds6_phase=0\r\ndds6_scale=0.000000\r\ndds6_raw=1\r\ndds7_frequency=9279985\r\ndds7_phase=0\r\ndds7_scale=0.000000\r\ndds7_raw=1\r\nDDS_CHANNELS_INSPECTED=8\r\nTX_voltage0 format=le:s16/16>>0 repeat=1 scan=1 output=1 enabled=0 fully_defined=1 scale=0\r\nRX_voltage0 format=le:s12/16>>0 repeat=1 scan=1 output=0 enabled=0 fully_defined=1 scale=0\r\nTX_voltage1 format=le:s16/16>>0 repeat=1 scan=1 output=1 enabled=0 fully_defined=1 scale=0\r\nRX_voltage1 format=le:s12/16>>0 repeat=1 scan=1 output=0 enabled=0 fully_defined=1 scale=0\r\nTX_voltage2 format=le:s16/16>>0 repeat=1 scan=1 output=1 enabled=0 fully_defined=1 scale=0\r\nRX_voltage2 format=le:s12/16>>0 repeat=1 scan=1 output=0 enabled=0 fully_defined=1 scale=0\r\nTX_voltage3 format=le:s16/16>>0 repeat=1 scan=1 output=1 enabled=0 fully_defined=1 scale=0\r\nRX_voltage3 format=le:s12/16>>0 repeat=1 scan=1 output=0 enabled=0 fully_defined=1 scale=0\r\nINSPECT_PASS read_only=true no_buffers_created=true\r\n# printf '\\n__P46_0e45295c__:%s\\n' \"$?\"\r\n\r\n__P46_0e45295c__:0\r\n# ",
+  "checks": {
+    "tone": "./guard --check tone 131072 $h\r\n_:%s\\n' \"$?\"\r\nINPUT_SHA256=fa20e4b5a5c39776d6cee634501ee5d7fe3e236699db45bbd7640fea1ea70732\r\nINPUT_CHECK_PASS samples=131072 format=LE_s16_IQ low_bits_zero=4 min=-4096 max=4096 mean_I2_Q2=16789504\r\n# printf '\\n__P46_27450dc1__:%s\\n' \"$?\"\r\n\r\n__P46_27450dc1__:0\r\n# ",
+    "bpsk": "./guard --check bpsk 131072 $h\r\n_:%s\\n' \"$?\"\r\nINPUT_SHA256=167d99034316c7e28c3da46ab3974f883ad457303e836178692cfa451c26217f\r\nINPUT_CHECK_PASS samples=131072 format=LE_s16_IQ low_bits_zero=4 min=-4080 max=4096 mean_I2_Q2=6724074.98047\r\n# printf '\\n__P46_b1481107__:%s\\n' \"$?\"\r\n\r\n__P46_b1481107__:0\r\n# ",
+    "qpsk": "./guard --check qpsk 131072 $h\r\n_:%s\\n' \"$?\"\r\nINPUT_SHA256=f2a0319737a651454e4fcb767c24aaff31c093b53acdbfe73c7df3aa63074b61\r\nINPUT_CHECK_PASS samples=131072 format=LE_s16_IQ low_bits_zero=4 min=-4096 max=4096 mean_I2_Q2=7148758.9707\r\n# printf '\\n__P46_5f77c213__:%s\\n' \"$?\"\r\n\r\n__P46_5f77c213__:0\r\n# ",
+    "qam16": "./guard --check qam16 131072 $h\r\n__:%s\\n' \"$?\"\r\nINPUT_SHA256=8b9e9c5ea82f8fc9204e5d14c454b66f7717ec474f8c11eb1fc486f696451236\r\nINPUT_CHECK_PASS samples=131072 format=LE_s16_IQ low_bits_zero=4 min=-4096 max=4080 mean_I2_Q2=4667170.56055\r\n# printf '\\n__P46_16fbb89e__:%s\\n' \"$?\"\r\n\r\n__P46_16fbb89e__:0\r\n# "
+  },
+  "serial_closed": true
+}

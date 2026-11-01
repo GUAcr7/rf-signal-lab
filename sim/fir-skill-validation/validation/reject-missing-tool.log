@@ -1,0 +1,1 @@
+{"all_passed": false, "report": "C:\\Users\\project_user\\Downloads\\fir-validation-release-20261029\\reject-missing-tool\\report.json", "error": "FileNotFoundError: Icarus tools unavailable; install them or set --tool-root"}

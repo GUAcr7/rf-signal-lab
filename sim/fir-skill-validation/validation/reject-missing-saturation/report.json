@@ -1,0 +1,80 @@
+{
+  "all_passed": false,
+  "scope": "integer_reference_and_RTL_simulation_only",
+  "hardware_accessed": false,
+  "timing_closed": false,
+  "runs": [
+    {
+      "stage": "tool-version",
+      "tool_returncode": 0,
+      "command": [
+        "E:\\FPGA_Tools\\IcarusVerilog13.0\\ucrt64\\bin\\iverilog.exe",
+        "-B",
+        "E:\\FPGA_Tools\\IcarusVerilog13.0\\ucrt64\\lib\\ivl",
+        "-V"
+      ]
+    },
+    {
+      "stage": "compile-0",
+      "tool_returncode": 0,
+      "command": [
+        "E:\\FPGA_Tools\\IcarusVerilog13.0\\ucrt64\\bin\\iverilog.exe",
+        "-B",
+        "E:\\FPGA_Tools\\IcarusVerilog13.0\\ucrt64\\lib\\ivl",
+        "-g2012",
+        "-Wall",
+        "-s",
+        "tb_fixed_fir_iq",
+        "-P",
+        "tb_fixed_fir_iq.N_TAPS=19",
+        "-P",
+        "tb_fixed_fir_iq.RANDOM_STALLS=0",
+        "-o",
+        "C:\\Users\\project_user\\Downloads\\fir-validation-release-20261029\\reject-missing-saturation\\fir-0.vvp",
+        "C:\\Users\\project_user\\Downloads\\fir-validation-release-20261029\\wrong-saturation.v",
+        "C:\\Users\\project_user\\Downloads\\fir-validation-release-20261029\\relocated skill\\assets\\tb_fixed_fir_iq.sv"
+      ]
+    },
+    {
+      "stage": "simulate-0",
+      "tool_returncode": 1,
+      "command": [
+        "E:\\FPGA_Tools\\IcarusVerilog13.0\\ucrt64\\bin\\vvp.exe",
+        "-M",
+        "E:\\FPGA_Tools\\IcarusVerilog13.0\\ucrt64\\lib\\ivl",
+        "C:\\Users\\project_user\\Downloads\\fir-validation-release-20261029\\reject-missing-saturation\\fir-0.vvp",
+        "+CASE=nineteen-tap-saturation",
+        "+INPUT_COUNT=96",
+        "+OUTPUT_COUNT=114",
+        "+COEFF=C:\\Users\\project_user\\Downloads\\fir-validation-release-20261029\\reject-missing-saturation\\COEFF.hex",
+        "+I=C:\\Users\\project_user\\Downloads\\fir-validation-release-20261029\\reject-missing-saturation\\I.hex",
+        "+EI=C:\\Users\\project_user\\Downloads\\fir-validation-release-20261029\\reject-missing-saturation\\EI.hex",
+        "+SI=C:\\Users\\project_user\\Downloads\\fir-validation-release-20261029\\reject-missing-saturation\\SI.hex",
+        "+Q=C:\\Users\\project_user\\Downloads\\fir-validation-release-20261029\\reject-missing-saturation\\Q.hex",
+        "+EQ=C:\\Users\\project_user\\Downloads\\fir-validation-release-20261029\\reject-missing-saturation\\EQ.hex",
+        "+SQ=C:\\Users\\project_user\\Downloads\\fir-validation-release-20261029\\reject-missing-saturation\\SQ.hex"
+      ]
+    }
+  ],
+  "case": "nineteen-tap-saturation",
+  "tap_count": 19,
+  "input_pairs": 96,
+  "output_pairs": 114,
+  "reference_saturated_components": 132,
+  "sources": [
+    {
+      "path": "C:\\Users\\project_user\\Downloads\\fir-validation-release-20261029\\relocated skill\\examples\\nineteen-tap-saturation.json",
+      "sha256": "963abf5cdc453d10cdb5900dbd6e82cf4d77c04d7693d76030535b0531863d29"
+    },
+    {
+      "path": "C:\\Users\\project_user\\Downloads\\fir-validation-release-20261029\\wrong-saturation.v",
+      "sha256": "d5ef7d833a4cbc610753a4fcceee59dc355803cde729aef460f80c0de7b23480"
+    },
+    {
+      "path": "C:\\Users\\project_user\\Downloads\\fir-validation-release-20261029\\relocated skill\\assets\\tb_fixed_fir_iq.sv",
+      "sha256": "47ae7c58d5594d673d9753b9c179c93435e7963c5dd8f822a45fb048b5615056"
+    }
+  ],
+  "vectors_sha256": "e85d2ab63b8de0fe10dc96811eedcd06e0ea6f6705549beb54ee2e606855aa5b",
+  "error": "RuntimeError: simulate-0 failed, see simulate-0.log"
+}

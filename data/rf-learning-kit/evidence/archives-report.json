@@ -1,0 +1,36 @@
+{
+  "status": "passed_all_known_source_raw_buffers_archived",
+  "trial": "C:\\Users\\project_user\\Documents\\Codex\\2026-09-09\\2026-fpga-fmql30tai-fpai-python-c\\outputs\\rf-signal-lab\\results\\p46-known-20261022T114115Z\\report.json",
+  "trial_sha256": "b812694c1a0c4a2dc998c92f50c13bf0a44b0bceae3dc0941d767baaa7eff1d7",
+  "cases": [
+    {
+      "name": "tone",
+      "status": "archived",
+      "exit_code": 0,
+      "report": "C:\\Users\\project_user\\Documents\\Codex\\2026-09-09\\2026-fpga-fmql30tai-fpai-python-c\\outputs\\rf-signal-lab\\results\\p36-file-archive-20261022T114430Z\\report.json",
+      "report_sha256": "4ec0aef41c70b552428a3cb9bed0f25fe6ecb68f2744df2707abd0e6455d7513"
+    },
+    {
+      "name": "bpsk",
+      "status": "archived",
+      "exit_code": 0,
+      "report": "C:\\Users\\project_user\\Documents\\Codex\\2026-09-09\\2026-fpga-fmql30tai-fpai-python-c\\outputs\\rf-signal-lab\\results\\p36-file-archive-20261022T114615Z\\report.json",
+      "report_sha256": "d87383e2cc9e8491ceadd5f7fcbd5f28bbea6b271d43c876257e5725e23b955f"
+    },
+    {
+      "name": "qpsk",
+      "status": "archived",
+      "exit_code": 0,
+      "report": "C:\\Users\\project_user\\Documents\\Codex\\2026-09-09\\2026-fpga-fmql30tai-fpai-python-c\\outputs\\rf-signal-lab\\results\\p36-file-archive-20261022T114802Z\\report.json",
+      "report_sha256": "ef040072a7217c6266079bc7314fd1ff55896199b8a2f7432a1b999c60ef4e3e"
+    },
+    {
+      "name": "qam16",
+      "status": "archived",
+      "exit_code": 0,
+      "report": "C:\\Users\\project_user\\Documents\\Codex\\2026-09-09\\2026-fpga-fmql30tai-fpai-python-c\\outputs\\rf-signal-lab\\results\\p36-file-archive-20261022T114948Z\\report.json",
+      "report_sha256": "d8c199d5e3f108cfc555685ecc15e940743bf9ff6ffd5136ab55b79d23d41d0a"
+    }
+  ],
+  "board_RF_writes": false
+}

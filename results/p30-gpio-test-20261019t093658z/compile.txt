@@ -1,0 +1,4 @@
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/p30c-1019-173651/gpio_sim/tb_rf_display_gpio.sv" into library work
+INFO: [VRFC 10-311] analyzing module tb_rf_display_gpio
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/p30c-1019-173651/gpio_sim/rf_display_gpio.v" into library work
+INFO: [VRFC 10-311] analyzing module rf_display_gpio

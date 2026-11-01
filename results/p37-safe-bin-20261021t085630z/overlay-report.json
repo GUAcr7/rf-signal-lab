@@ -1,0 +1,204 @@
+{
+  "schema": "rfsig.p35_explicit_overlay.v1",
+  "status": "passed_PC_only_explicit_load_overlay_not_deployed",
+  "board_operations": false,
+  "FPGA_operations": false,
+  "boot_files_modified": false,
+  "exact_hang_cause_proven": false,
+  "hardware_verified": false,
+  "paired_report": "C:\\Users\\project_user\\Documents\\Codex\\2026-09-09\\2026-fpga-fmql30tai-fpai-python-c\\outputs\\rf-signal-lab\\results\\p33-paired-overlay-20261020T114656Z\\report.json",
+  "paired_report_sha256": "42cb8419391c98bc34dd7307e7257abeb5be0e0450a8880400ffc8aa3e846b9e",
+  "source": "C:\\Users\\project_user\\Documents\\Codex\\2026-09-09\\2026-fpga-fmql30tai-fpai-python-c\\outputs\\rf-signal-lab\\fpga\\integration\\rf-display-p33-ttl33.dts",
+  "source_sha256": "95ae89e20deced0062292412fd01fe53943ba9363d52252e7a1c1e45425ccc1b",
+  "candidate_BD": "E:\\p37-clock-082321\\project\\combined.srcs\\sources_1\\bd\\system\\system.bd",
+  "candidate_BD_sha256": "093dfc4823508884a9877e22f4b4f2ad3c0310e2fe6f5f949ce4a0cdc8a147ab",
+  "checks": [
+    {
+      "name": "unique firmware fragment",
+      "passed": true
+    },
+    {
+      "name": "remove complete FPGA-region fragment",
+      "passed": true
+    },
+    {
+      "name": "no implicit FPGA firmware request",
+      "passed": true
+    },
+    {
+      "name": "p33 compile success",
+      "passed": true
+    },
+    {
+      "name": "p35 compile success",
+      "passed": true
+    },
+    {
+      "name": "only final-tree change is firmware-name deletion",
+      "passed": true
+    },
+    {
+      "name": "firmware-name absent after apply",
+      "passed": true
+    },
+    {
+      "name": "89 AD9361 initialization properties unchanged",
+      "passed": true
+    },
+    {
+      "name": "7c400000 4KiB resource",
+      "passed": true
+    },
+    {
+      "name": "7c400000 FCLK0",
+      "passed": true
+    },
+    {
+      "name": "7c420000 4KiB resource",
+      "passed": true
+    },
+    {
+      "name": "7c420000 FCLK0",
+      "passed": true
+    },
+    {
+      "name": "ClockWiz input100/AXI200 provider",
+      "passed": true
+    },
+    {
+      "name": "VDMA all five FCLK1",
+      "passed": true
+    },
+    {
+      "name": "PWM2 50us retained",
+      "passed": true
+    },
+    {
+      "name": "pixel33000kHz and 800x480 preserved",
+      "passed": true
+    },
+    {
+      "name": "no source/BD mutation",
+      "passed": true
+    },
+    {
+      "name": "P37 independent clock-only BD change, topology and requested frequencies preserved",
+      "passed": true
+    }
+  ],
+  "stages": [
+    {
+      "label": "p33",
+      "argv": [
+        "E:\\FPGA_Tools\\Utilities\\dtc-1.8.1-ucrt64\\ucrt64\\bin\\dtc.exe",
+        "-@",
+        "-I",
+        "dts",
+        "-O",
+        "dtb",
+        "-o",
+        "C:\\Users\\project_user\\Documents\\Codex\\2026-09-09\\2026-fpga-fmql30tai-fpai-python-c\\outputs\\rf-signal-lab\\results\\p35-explicit-overlay-20261020T160459Z\\p33.dtbo",
+        "C:\\Users\\project_user\\Documents\\Codex\\2026-09-09\\2026-fpga-fmql30tai-fpai-python-c\\outputs\\rf-signal-lab\\fpga\\integration\\rf-display-p33-ttl33.dts"
+      ],
+      "exit_code": 0
+    },
+    {
+      "label": "p33",
+      "native_calls": [
+        {
+          "function": "fdt_check_full",
+          "exit_code": 0
+        },
+        {
+          "function": "fdt_check_full",
+          "exit_code": 0
+        },
+        {
+          "function": "fdt_open_into",
+          "exit_code": 0
+        },
+        {
+          "function": "fdt_overlay_apply",
+          "exit_code": 0
+        },
+        {
+          "function": "fdt_pack",
+          "exit_code": 0
+        },
+        {
+          "function": "fdt_check_full",
+          "exit_code": 0
+        }
+      ]
+    },
+    {
+      "label": "p35",
+      "argv": [
+        "E:\\FPGA_Tools\\Utilities\\dtc-1.8.1-ucrt64\\ucrt64\\bin\\dtc.exe",
+        "-@",
+        "-I",
+        "dts",
+        "-O",
+        "dtb",
+        "-o",
+        "C:\\Users\\project_user\\Documents\\Codex\\2026-09-09\\2026-fpga-fmql30tai-fpai-python-c\\outputs\\rf-signal-lab\\results\\p35-explicit-overlay-20261020T160459Z\\p35.dtbo",
+        "C:\\Users\\project_user\\Documents\\Codex\\2026-09-09\\2026-fpga-fmql30tai-fpai-python-c\\outputs\\rf-signal-lab\\results\\p35-explicit-overlay-20261020T160459Z\\rf-display-p35-explicit.dts"
+      ],
+      "exit_code": 0
+    },
+    {
+      "label": "p35",
+      "native_calls": [
+        {
+          "function": "fdt_check_full",
+          "exit_code": 0
+        },
+        {
+          "function": "fdt_check_full",
+          "exit_code": 0
+        },
+        {
+          "function": "fdt_open_into",
+          "exit_code": 0
+        },
+        {
+          "function": "fdt_overlay_apply",
+          "exit_code": 0
+        },
+        {
+          "function": "fdt_pack",
+          "exit_code": 0
+        },
+        {
+          "function": "fdt_check_full",
+          "exit_code": 0
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "Requires explicit matching raw-bin programming before any overlay device probe",
+    "Only valid for the paired TTL33/PWM2 merged fabric, not the factory fabric",
+    "No hot overlay removal or FPGA reconfiguration underneath drivers",
+    "PC FDT application proves structure only, not kernel or parallel RF/display behavior"
+  ],
+  "base_dtb_sha256": "72419435cc950031aa85c5c959be8a3a26da6fea6edeb53fde7f2701d0cf52c2",
+  "native_library_sha256": "f5cfc89c258fee56229290d331c29e98ae230312ff063bfa0a5377750c6cdda5",
+  "changed_properties": [
+    "/fpga-full/firmware-name"
+  ],
+  "candidate_source": "C:\\Users\\project_user\\Documents\\Codex\\2026-09-09\\2026-fpga-fmql30tai-fpai-python-c\\outputs\\rf-signal-lab\\fpga\\integration\\rf-display-p35-explicit.dts",
+  "candidate_source_sha256": "c55bccff813c8464d648608f81ead597da31b3556dbc501752691d081142332d",
+  "dtbo": "C:\\Users\\project_user\\Documents\\Codex\\2026-09-09\\2026-fpga-fmql30tai-fpai-python-c\\outputs\\rf-signal-lab\\results\\p35-explicit-overlay-20261020T160459Z\\p35.dtbo",
+  "dtbo_sha256": "fe76a72f30541e0bad273d9bb2f715718a98d4cf0e8ca375efbf4a688603a828",
+  "protected_AD9361_properties": 89,
+  "preserved_final_properties": 890,
+  "deleted_fragment": "fragment@3 (FPGA region with only cells + firmware-name)",
+  "loading_contract": "fresh boot hold, verify no drivers/overlays, explicitly load paired raw bin, verify operating, then apply device overlay once",
+  "phase": "P37_safe_clock32",
+  "derived_from": "C:\\Users\\project_user\\Documents\\Codex\\2026-09-09\\2026-fpga-fmql30tai-fpai-python-c\\outputs\\rf-signal-lab\\results\\p35-explicit-overlay-20261020T160459Z\\report.json",
+  "derived_report_sha256": "07ce12d26308db848c1d13d422913f8f921ec64e5756a1bff7811e1856e37c2d",
+  "safe_clock_prepare_report": "C:\\Users\\project_user\\Documents\\Codex\\2026-09-09\\2026-fpga-fmql30tai-fpai-python-c\\outputs\\rf-signal-lab\\results\\p37-safe-clock-prepare-20261021T082321Z\\report.json",
+  "safe_clock_prepare_sha256": "165c635edaa4fd5c0479b9cecd9d6c54f55f16483cfcd5c5bc2aec10c63ef172",
+  "pairing_reason": "Only clk_wiz primitive M/D/O override changed; requested input/output frequencies, all nodes, clocks, addresses and topology are unchanged"
+}

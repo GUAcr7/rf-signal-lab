@@ -1,0 +1,1134 @@
+{
+  "schema": "rfsig.p36_file_archive.v1",
+  "status": "compressed_and_raw_bytes_archived_identity_and_source_rechecked",
+  "created_utc": "2026-10-22T11:48:02.303389+00:00",
+  "stages": [
+    {
+      "port": "COM8",
+      "stage": "wake",
+      "output": "\r\nroot@Zynq-Tronlong:/sys/bus/iio/devices/iio:device2# "
+    },
+    {
+      "port": "COM8",
+      "command": "uname -a",
+      "exit_code": 0,
+      "utc": "2026-10-22T11:48:04.955500+00:00",
+      "output": "uname -a\r\nLinux Zynq-Tronlong 4.9.0-rt1-xilinx-g0e07141-dirty #4 SMP PREEMPT Tue Sep 1 17:20:08 CST 2020 armv7l armv7l armv7l GNU/Linux\r\nroot@Zynq-Tronlong:/sys/bus/iio/devices/iio:device2# echo __P36_e8695061__:$?\r\n__P36_e8695061__:0\r\n"
+    },
+    {
+      "port": "COM8",
+      "command": "a=/proc/sys/kernel/random/boot_id",
+      "exit_code": 0,
+      "utc": "2026-10-22T11:48:05.045896+00:00",
+      "output": "a=/proc/sys/kernel/random/boot_id\r\necho __P36_4ba13c5c__:$?\r\nroot@Zynq-Tronlong:/sys/bus/iio/devices/iio:device2# a=/proc/sys/kernel/random/b \root_id\r\nroot@Zynq-Tronlong:/sys/bus/iio/devices/iio:device2# echo __P36_4ba13c5c__:$?\r\n__P36_4ba13c5c__:0\r\n"
+    },
+    {
+      "port": "COM8",
+      "command": "echo __VALUE__$(cat $a)__END__",
+      "exit_code": 0,
+      "utc": "2026-10-22T11:48:05.165549+00:00",
+      "output": "echo __VALUE__$(cat $a)__END__\r\necho __P36_3ba799a9__:$?\r\nroot@Zynq-Tronlong:/sys/bus/iio/devices/iio:device2# echo __VALUE__$(cat $a)__EN \rD__\r\n__VALUE__343afe82-88e6-4a03-a5d4-c09ee6929e36__END__\r\nroot@Zynq-Tronlong:/sys/bus/iio/devices/iio:device2# echo __P36_3ba799a9__:$?\r\n__P36_3ba799a9__:0\r\n"
+    },
+    {
+      "port": "COM8",
+      "command": "a=/proc/sys/kernel/tainted",
+      "exit_code": 0,
+      "utc": "2026-10-22T11:48:05.257546+00:00",
+      "output": "a=/proc/sys/kernel/tainted\r\necho __P36_d88b87ec__:$?\r\nroot@Zynq-Tronlong:/sys/bus/iio/devices/iio:device2# a=/proc/sys/kernel/tainted\r\nroot@Zynq-Tronlong:/sys/bus/iio/devices/iio:device2# echo __P36_d88b87ec__:$?\r\n__P36_d88b87ec__:0\r\n"
+    },
+    {
+      "port": "COM8",
+      "command": "echo __VALUE__$(cat $a)__END__",
+      "exit_code": 0,
+      "utc": "2026-10-22T11:48:05.375984+00:00",
+      "output": "echo __VALUE__$(cat $a)__END__\r\necho __P36_e8c61852__:$?\r\nroot@Zynq-Tronlong:/sys/bus/iio/devices/iio:device2# echo __VALUE__$(cat $a)__EN \rD__\r\n__VALUE__0__END__\r\nroot@Zynq-Tronlong:/sys/bus/iio/devices/iio:device2# echo __P36_e8c61852__:$?\r\n__P36_e8c61852__:0\r\n"
+    },
+    {
+      "port": "COM8",
+      "command": "g=/etc/rcS.d/S99board",
+      "exit_code": 0,
+      "utc": "2026-10-22T11:48:05.465562+00:00",
+      "output": "g=/etc/rcS.d/S99board\r\necho __P36_f8b7da5d__:$?\r\nroot@Zynq-Tronlong:/sys/bus/iio/devices/iio:device2# g=/etc/rcS.d/S99board\r\nroot@Zynq-Tronlong:/sys/bus/iio/devices/iio:device2# echo __P36_f8b7da5d__:$?\r\n__P36_f8b7da5d__:0\r\n"
+    },
+    {
+      "port": "COM8",
+      "command": "sha256sum $g",
+      "exit_code": 0,
+      "utc": "2026-10-22T11:48:05.596089+00:00",
+      "output": "sha256sum $g\r\necho __P36_5a736fcf__:$?\r\nroot@Zynq-Tronlong:/sys/bus/iio/devices/iio:device2# sha256sum $g\r\n89183f1fe397f8bc20bd0c39544f5d30c37a8f1ca4e440c8cce6841d9b1247f2  /etc/rcS.d/S99board\r\nroot@Zynq-Tronlong:/sys/bus/iio/devices/iio:device2# echo __P36_5a736fcf__:$?\r\n__P36_5a736fcf__:0\r\n"
+    },
+    {
+      "port": "COM8",
+      "command": "ir=/sys/bus/iio/devices",
+      "exit_code": 0,
+      "utc": "2026-10-22T11:48:05.685523+00:00",
+      "output": "ir=/sys/bus/iio/devices\r\necho __P36_d8214ef5__:$?\r\nroot@Zynq-Tronlong:/sys/bus/iio/devices/iio:device2# ir=/sys/bus/iio/devices\r\nroot@Zynq-Tronlong:/sys/bus/iio/devices/iio:device2# echo __P36_d8214ef5__:$?\r\n__P36_d8214ef5__:0\r\n"
+    },
+    {
+      "port": "COM8",
+      "command": "for node in $ir/iio:device*; do echo $node; cat $node/name; done",
+      "exit_code": 0,
+      "utc": "2026-10-22T11:48:05.825405+00:00",
+      "output": "for node in $ir/iio:device*; do echo $node; cat $node/name; done\r\necho __P36_537fb595__:$?\r\nroot@Zynq-Tronlong:/sys/bus/iio/devices/iio:device2# for node in $ir/iio:device* \r; do echo $node; cat $node/name; done\r\n/sys/bus/iio/devices/iio:device0\r\nxadc\r\n/sys/bus/iio/devices/iio:device1\r\nad9361-phy\r\n/sys/bus/iio/devices/iio:device2\r\ncf-ad9361-lpc\r\n/sys/bus/iio/devices/iio:device3\r\ncf-ad9361-dds-core-lpc\r\nroot@Zynq-Tronlong:/sys/bus/iio/devices/iio:device2# echo __P36_537fb595__:$?\r\n__P36_537fb595__:0\r\n"
+    },
+    {
+      "port": "COM8",
+      "command": "cd /sys/bus/iio/devices/iio:device2",
+      "exit_code": 0,
+      "utc": "2026-10-22T11:48:05.916364+00:00",
+      "output": "cd /sys/bus/iio/devices/iio:device2\r\necho __P36_86565167__:$?\r\nroot@Zynq-Tronlong:/sys/bus/iio/devices/iio:device2# cd /sys/bus/iio/devices/iio \r:device2\r\nroot@Zynq-Tronlong:/sys/bus/iio/devices/iio:device2# echo __P36_86565167__:$?\r\n__P36_86565167__:0\r\n"
+    },
+    {
+      "port": "COM8",
+      "command": "a=buffer/enable",
+      "exit_code": 0,
+      "utc": "2026-10-22T11:48:06.006072+00:00",
+      "output": "a=buffer/enable\r\necho __P36_f9cb1fc2__:$?\r\nroot@Zynq-Tronlong:/sys/bus/iio/devices/iio:device2# a=buffer/enable\r\nroot@Zynq-Tronlong:/sys/bus/iio/devices/iio:device2# echo __P36_f9cb1fc2__:$?\r\n__P36_f9cb1fc2__:0\r\n"
+    },
+    {
+      "port": "COM8",
+      "command": "echo __VALUE__$(cat $a)__END__",
+      "exit_code": 0,
+      "utc": "2026-10-22T11:48:06.125986+00:00",
+      "output": "echo __VALUE__$(cat $a)__END__\r\necho __P36_44426caa__:$?\r\nroot@Zynq-Tronlong:/sys/bus/iio/devices/iio:device2# echo __VALUE__$(cat $a)__EN \rD__\r\n__VALUE__0__END__\r\nroot@Zynq-Tronlong:/sys/bus/iio/devices/iio:device2# echo __P36_44426caa__:$?\r\n__P36_44426caa__:0\r\n"
+    },
+    {
+      "port": "COM8",
+      "command": "a=scan_elements/in_voltage0_en",
+      "exit_code": 0,
+      "utc": "2026-10-22T11:48:06.215322+00:00",
+      "output": "a=scan_elements/in_voltage0_en\r\necho __P36_91a5cdf9__:$?\r\nroot@Zynq-Tronlong:/sys/bus/iio/devices/iio:device2# a=scan_elements/in_voltage0 \r_en\r\nroot@Zynq-Tronlong:/sys/bus/iio/devices/iio:device2# echo __P36_91a5cdf9__:$?\r\n__P36_91a5cdf9__:0\r\n"
+    },
+    {
+      "port": "COM8",
+      "command": "echo __VALUE__$(cat $a)__END__",
+      "exit_code": 0,
+      "utc": "2026-10-22T11:48:06.335862+00:00",
+      "output": "echo __VALUE__$(cat $a)__END__\r\necho __P36_c3bec6fb__:$?\r\nroot@Zynq-Tronlong:/sys/bus/iio/devices/iio:device2# echo __VALUE__$(cat $a)__EN \rD__\r\n__VALUE__0__END__\r\nroot@Zynq-Tronlong:/sys/bus/iio/devices/iio:device2# echo __P36_c3bec6fb__:$?\r\n__P36_c3bec6fb__:0\r\n"
+    },
+    {
+      "port": "COM8",
+      "command": "a=scan_elements/in_voltage1_en",
+      "exit_code": 0,
+      "utc": "2026-10-22T11:48:06.426280+00:00",
+      "output": "a=scan_elements/in_voltage1_en\r\necho __P36_9068aaec__:$?\r\nroot@Zynq-Tronlong:/sys/bus/iio/devices/iio:device2# a=scan_elements/in_voltage1 \r_en\r\nroot@Zynq-Tronlong:/sys/bus/iio/devices/iio:device2# echo __P36_9068aaec__:$?\r\n__P36_9068aaec__:0\r\n"
+    },
+    {
+      "port": "COM8",
+      "command": "echo __VALUE__$(cat $a)__END__",
+      "exit_code": 0,
+      "utc": "2026-10-22T11:48:06.546068+00:00",
+      "output": "echo __VALUE__$(cat $a)__END__\r\necho __P36_0ad5b78c__:$?\r\nroot@Zynq-Tronlong:/sys/bus/iio/devices/iio:device2# echo __VALUE__$(cat $a)__EN \rD__\r\n__VALUE__0__END__\r\nroot@Zynq-Tronlong:/sys/bus/iio/devices/iio:device2# echo __P36_0ad5b78c__:$?\r\n__P36_0ad5b78c__:0\r\n"
+    },
+    {
+      "port": "COM8",
+      "command": "a=scan_elements/in_voltage2_en",
+      "exit_code": 0,
+      "utc": "2026-10-22T11:48:06.635365+00:00",
+      "output": "a=scan_elements/in_voltage2_en\r\necho __P36_f00975ea__:$?\r\nroot@Zynq-Tronlong:/sys/bus/iio/devices/iio:device2# a=scan_elements/in_voltage2 \r_en\r\nroot@Zynq-Tronlong:/sys/bus/iio/devices/iio:device2# echo __P36_f00975ea__:$?\r\n__P36_f00975ea__:0\r\n"
+    },
+    {
+      "port": "COM8",
+      "command": "echo __VALUE__$(cat $a)__END__",
+      "exit_code": 0,
+      "utc": "2026-10-22T11:48:06.755617+00:00",
+      "output": "echo __VALUE__$(cat $a)__END__\r\necho __P36_33353526__:$?\r\nroot@Zynq-Tronlong:/sys/bus/iio/devices/iio:device2# echo __VALUE__$(cat $a)__EN \rD__\r\n__VALUE__0__END__\r\nroot@Zynq-Tronlong:/sys/bus/iio/devices/iio:device2# echo __P36_33353526__:$?\r\n__P36_33353526__:0\r\n"
+    },
+    {
+      "port": "COM8",
+      "command": "a=scan_elements/in_voltage3_en",
+      "exit_code": 0,
+      "utc": "2026-10-22T11:48:06.845869+00:00",
+      "output": "a=scan_elements/in_voltage3_en\r\necho __P36_795ef0a3__:$?\r\nroot@Zynq-Tronlong:/sys/bus/iio/devices/iio:device2# a=scan_elements/in_voltage3 \r_en\r\nroot@Zynq-Tronlong:/sys/bus/iio/devices/iio:device2# echo __P36_795ef0a3__:$?\r\n__P36_795ef0a3__:0\r\n"
+    },
+    {
+      "port": "COM8",
+      "command": "echo __VALUE__$(cat $a)__END__",
+      "exit_code": 0,
+      "utc": "2026-10-22T11:48:06.965559+00:00",
+      "output": "echo __VALUE__$(cat $a)__END__\r\necho __P36_22e7cba0__:$?\r\nroot@Zynq-Tronlong:/sys/bus/iio/devices/iio:device2# echo __VALUE__$(cat $a)__EN \rD__\r\n__VALUE__0__END__\r\nroot@Zynq-Tronlong:/sys/bus/iio/devices/iio:device2# echo __P36_22e7cba0__:$?\r\n__P36_22e7cba0__:0\r\n"
+    },
+    {
+      "port": "COM8",
+      "command": "src=/tmp/p36-full-114115-qpsk/iq-packed.bin.gz",
+      "exit_code": 0,
+      "utc": "2026-10-22T11:48:07.055491+00:00",
+      "output": "src=/tmp/p36-full-114115-qpsk/iq-packed.bin.gz\r\necho __P36_19931c56__:$?\r\nroot@Zynq-Tronlong:/sys/bus/iio/devices/iio:device2# src=/tmp/p36-full-114115-qp \rsk/iq-packed.bin.gz\r\nroot@Zynq-Tronlong:/sys/bus/iio/devices/iio:device2# echo __P36_19931c56__:$?\r\n__P36_19931c56__:0\r\n"
+    },
+    {
+      "port": "COM8",
+      "command": "sha256sum $src",
+      "exit_code": 0,
+      "utc": "2026-10-22T11:48:07.216127+00:00",
+      "output": "sha256sum $src\r\necho __P36_6183b708__:$?\r\nroot@Zynq-Tronlong:/sys/bus/iio/devices/iio:device2# sha256sum $src\r\nde17bb7c4bfe35c8b63c40fe61c9e123a11b2b9963437327f83df314a5b47a63  /tmp/p36-full-114115-qpsk/iq-packed.bin.gz\r\nroot@Zynq-Tronlong:/sys/bus/iio/devices/iio:device2# echo __P36_6183b708__:$?\r\n__P36_6183b708__:0\r\n"
+    },
+    {
+      "port": "COM8",
+      "command": "echo __BYTES__$(wc -c < $src)__END__",
+      "exit_code": 0,
+      "utc": "2026-10-22T11:48:07.345459+00:00",
+      "output": "echo __BYTES__$(wc -c < $src)__END__\r\necho __P36_c2d5e3bd__:$?\r\nroot@Zynq-Tronlong:/sys/bus/iio/devices/iio:device2# echo __BYTES__$(wc -c < $sr \rc)__END__\r\n__BYTES__775618__END__\r\nroot@Zynq-Tronlong:/sys/bus/iio/devices/iio:device2# echo __P36_c2d5e3bd__:$?\r\n__P36_c2d5e3bd__:0\r\n"
+    },
+    {
+      "port": "COM8",
+      "command": "dd if=$src bs=32768 skip=0 count=1 2>/dev/null | sha256sum",
+      "exit_code": 0,
+      "utc": "2026-10-22T11:48:07.476271+00:00",
+      "output": "dd if=$src bs=32768 skip=0 count=1 2>/dev/null | sha256sum\r\necho __P36_644e9a32__:$?\r\nroot@Zynq-Tronlong:/sys/bus/iio/devices/iio:device2# dd if=$src bs=32768 skip=0  \rcount=1 2>/dev/null | sha256sum\r\ne07cbe62922207d6e1be7d3ff04b87be15bf43aac6f55a5e9546d6275f7b575c  -\r\nroot@Zynq-Tronlong:/sys/bus/iio/devices/iio:device2# echo __P36_644e9a32__:$?\r\n__P36_644e9a32__:0\r\n"
+    },
+    {
+      "port": "COM8",
+      "command": "dd if=$src bs=32768 skip=0 count=1 2>/dev/null | base64",
+      "exit_code": 0,
+      "utc": "2026-10-22T11:48:11.486554+00:00",
+      "output_omitted": "base64 bytes preserved in uart.rx.bin",
+      "output_chars": 45136,
+      "decoded_transcript_sha256": "a5fac061bb3395171e6281a65610911e0bb3ce6762c49499dbe6ee2ca7b5ed60"
+    },
+    {
+      "port": "COM8",
+      "command": "dd if=$src bs=32768 skip=1 count=1 2>/dev/null | sha256sum",
+      "exit_code": 0,
+      "utc": "2026-10-22T11:48:11.615922+00:00",
+      "output": "dd if=$src bs=32768 skip=1 count=1 2>/dev/null | sha256sum\r\necho __P36_306d87ae__:$?\r\nroot@Zynq-Tronlong:/sys/bus/iio/devices/iio:device2# dd if=$src bs=32768 skip=1  \rcount=1 2>/dev/null | sha256sum\r\n413acb0f07911982c346c179e10ded7ccf0304aa893da51559f76bbbd407d206  -\r\nroot@Zynq-Tronlong:/sys/bus/iio/devices/iio:device2# echo __P36_306d87ae__:$?\r\n__P36_306d87ae__:0\r\n"
+    },
+    {
+      "port": "COM8",
+      "command": "dd if=$src bs=32768 skip=1 count=1 2>/dev/null | base64",
+      "exit_code": 0,
+      "utc": "2026-10-22T11:48:15.626441+00:00",
+      "output_omitted": "base64 bytes preserved in uart.rx.bin",
+      "output_chars": 45136,
+      "decoded_transcript_sha256": "bf0b47919f3244363ec54db70681aef46daee25a754cd79112ebf4d534b59148"
+    },
+    {
+      "port": "COM8",
+      "command": "dd if=$src bs=32768 skip=2 count=1 2>/dev/null | sha256sum",
+      "exit_code": 0,
+      "utc": "2026-10-22T11:48:15.755298+00:00",
+      "output": "dd if=$src bs=32768 skip=2 count=1 2>/dev/null | sha256sum\r\necho __P36_ba6a47e0__:$?\r\nroot@Zynq-Tronlong:/sys/bus/iio/devices/iio:device2# dd if=$src bs=32768 skip=2  \rcount=1 2>/dev/null | sha256sum\r\n0563d55474d3589da40af193bf1154e45e55c80ac8a4eaccf6493600cc45b369  -\r\nroot@Zynq-Tronlong:/sys/bus/iio/devices/iio:device2# echo __P36_ba6a47e0__:$?\r\n__P36_ba6a47e0__:0\r\n"
+    },
+    {
+      "port": "COM8",
+      "command": "dd if=$src bs=32768 skip=2 count=1 2>/dev/null | base64",
+      "exit_code": 0,
+      "utc": "2026-10-22T11:48:19.766508+00:00",
+      "output_omitted": "base64 bytes preserved in uart.rx.bin",
+      "output_chars": 45136,
+      "decoded_transcript_sha256": "47c342ec148051897474e489658347d055c198538d1c63a09b61ae0d4ef5ef49"
+    },
+    {
+      "port": "COM8",
+      "command": "dd if=$src bs=32768 skip=3 count=1 2>/dev/null | sha256sum",
+      "exit_code": 0,
+      "utc": "2026-10-22T11:48:19.896103+00:00",
+      "output": "dd if=$src bs=32768 skip=3 count=1 2>/dev/null | sha256sum\r\necho __P36_e0cb5131__:$?\r\nroot@Zynq-Tronlong:/sys/bus/iio/devices/iio:device2# dd if=$src bs=32768 skip=3  \rcount=1 2>/dev/null | sha256sum\r\n42f81218db0e94bad8c325d21c743a048547c723d7e776bfea260650aaf3eeb0  -\r\nroot@Zynq-Tronlong:/sys/bus/iio/devices/iio:device2# echo __P36_e0cb5131__:$?\r\n__P36_e0cb5131__:0\r\n"
+    },
+    {
+      "port": "COM8",
+      "command": "dd if=$src bs=32768 skip=3 count=1 2>/dev/null | base64",
+      "exit_code": 0,
+      "utc": "2026-10-22T11:48:23.906362+00:00",
+      "output_omitted": "base64 bytes preserved in uart.rx.bin",
+      "output_chars": 45136,
+      "decoded_transcript_sha256": "9915cf4f9c170dddf5355735f19fcddf0fc8f3d4130a94a163223b21dcc8a557"
+    },
+    {
+      "port": "COM8",
+      "command": "dd if=$src bs=32768 skip=4 count=1 2>/dev/null | sha256sum",
+      "exit_code": 0,
+      "utc": "2026-10-22T11:48:24.035871+00:00",
+      "output": "dd if=$src bs=32768 skip=4 count=1 2>/dev/null | sha256sum\r\necho __P36_572ce5d5__:$?\r\nroot@Zynq-Tronlong:/sys/bus/iio/devices/iio:device2# dd if=$src bs=32768 skip=4  \rcount=1 2>/dev/null | sha256sum\r\n257941b300ce19ef056156315ebc9b9c06cd2e2e78247c5861f81b37e60a458f  -\r\nroot@Zynq-Tronlong:/sys/bus/iio/devices/iio:device2# echo __P36_572ce5d5__:$?\r\n__P36_572ce5d5__:0\r\n"
+    },
+    {
+      "port": "COM8",
+      "command": "dd if=$src bs=32768 skip=4 count=1 2>/dev/null | base64",
+      "exit_code": 0,
+      "utc": "2026-10-22T11:48:28.046015+00:00",
+      "output_omitted": "base64 bytes preserved in uart.rx.bin",
+      "output_chars": 45136,
+      "decoded_transcript_sha256": "f711e41b4e4e425f207ec3d857729ad79972fdf099bf9b9c197e6d5326ed63e0"
+    },
+    {
+      "port": "COM8",
+      "command": "dd if=$src bs=32768 skip=5 count=1 2>/dev/null | sha256sum",
+      "exit_code": 0,
+      "utc": "2026-10-22T11:48:28.175615+00:00",
+      "output": "dd if=$src bs=32768 skip=5 count=1 2>/dev/null | sha256sum\r\necho __P36_795ea0a7__:$?\r\nroot@Zynq-Tronlong:/sys/bus/iio/devices/iio:device2# dd if=$src bs=32768 skip=5  \rcount=1 2>/dev/null | sha256sum\r\n4fe63d492ad42c028f24d1da2cb50c8f533b16abbef30bb05c3133e608d389af  -\r\nroot@Zynq-Tronlong:/sys/bus/iio/devices/iio:device2# echo __P36_795ea0a7__:$?\r\n__P36_795ea0a7__:0\r\n"
+    },
+    {
+      "port": "COM8",
+      "command": "dd if=$src bs=32768 skip=5 count=1 2>/dev/null | base64",
+      "exit_code": 0,
+      "utc": "2026-10-22T11:48:32.185749+00:00",
+      "output_omitted": "base64 bytes preserved in uart.rx.bin",
+      "output_chars": 45136,
+      "decoded_transcript_sha256": "df00a5fd72eb377ba7b5179ef8e36da8c67e67f76b2e83b68dbf595b86b656ba"
+    },
+    {
+      "port": "COM8",
+      "command": "dd if=$src bs=32768 skip=6 count=1 2>/dev/null | sha256sum",
+      "exit_code": 0,
+      "utc": "2026-10-22T11:48:32.315630+00:00",
+      "output": "dd if=$src bs=32768 skip=6 count=1 2>/dev/null | sha256sum\r\necho __P36_afa499e0__:$?\r\nroot@Zynq-Tronlong:/sys/bus/iio/devices/iio:device2# dd if=$src bs=32768 skip=6  \rcount=1 2>/dev/null | sha256sum\r\n0ec7da9df5853eafca03a62656eb9c3b9c69954ecbf4681b96cd68f73539b4d5  -\r\nroot@Zynq-Tronlong:/sys/bus/iio/devices/iio:device2# echo __P36_afa499e0__:$?\r\n__P36_afa499e0__:0\r\n"
+    },
+    {
+      "port": "COM8",
+      "command": "dd if=$src bs=32768 skip=6 count=1 2>/dev/null | base64",
+      "exit_code": 0,
+      "utc": "2026-10-22T11:48:36.325963+00:00",
+      "output_omitted": "base64 bytes preserved in uart.rx.bin",
+      "output_chars": 45136,
+      "decoded_transcript_sha256": "9fb2070db34126b767f1b88e0a84228a6c76e07984b9b78e5b60ae4f421d0072"
+    },
+    {
+      "port": "COM8",
+      "command": "dd if=$src bs=32768 skip=7 count=1 2>/dev/null | sha256sum",
+      "exit_code": 0,
+      "utc": "2026-10-22T11:48:36.455604+00:00",
+      "output": "dd if=$src bs=32768 skip=7 count=1 2>/dev/null | sha256sum\r\necho __P36_50c81f8b__:$?\r\nroot@Zynq-Tronlong:/sys/bus/iio/devices/iio:device2# dd if=$src bs=32768 skip=7  \rcount=1 2>/dev/null | sha256sum\r\n94e718cda98121c0f4c5b42581cf325a49f95e9800df1686fab14e357f289045  -\r\nroot@Zynq-Tronlong:/sys/bus/iio/devices/iio:device2# echo __P36_50c81f8b__:$?\r\n__P36_50c81f8b__:0\r\n"
+    },
+    {
+      "port": "COM8",
+      "command": "dd if=$src bs=32768 skip=7 count=1 2>/dev/null | base64",
+      "exit_code": 0,
+      "utc": "2026-10-22T11:48:40.465960+00:00",
+      "output_omitted": "base64 bytes preserved in uart.rx.bin",
+      "output_chars": 45136,
+      "decoded_transcript_sha256": "a3d3b554834661db9178ee1d0dad1c7ecf2076d101c9f0791fc8d8df1e20e721"
+    },
+    {
+      "port": "COM8",
+      "command": "dd if=$src bs=32768 skip=8 count=1 2>/dev/null | sha256sum",
+      "exit_code": 0,
+      "utc": "2026-10-22T11:48:40.596439+00:00",
+      "output": "dd if=$src bs=32768 skip=8 count=1 2>/dev/null | sha256sum\r\necho __P36_347e37f6__:$?\r\nroot@Zynq-Tronlong:/sys/bus/iio/devices/iio:device2# dd if=$src bs=32768 skip=8  \rcount=1 2>/dev/null | sha256sum\r\n0aaf10c409ea02f08eb0a23c1eab51aa303c4d34b1047e1f413e04cee0f9bdb0  -\r\nroot@Zynq-Tronlong:/sys/bus/iio/devices/iio:device2# echo __P36_347e37f6__:$?\r\n__P36_347e37f6__:0\r\n"
+    },
+    {
+      "port": "COM8",
+      "command": "dd if=$src bs=32768 skip=8 count=1 2>/dev/null | base64",
+      "exit_code": 0,
+      "utc": "2026-10-22T11:48:44.605759+00:00",
+      "output_omitted": "base64 bytes preserved in uart.rx.bin",
+      "output_chars": 45136,
+      "decoded_transcript_sha256": "98b62d2543e830ff34a9449a8dc68b5b24cca52da0cefd3ec915adcccaad9ab9"
+    },
+    {
+      "port": "COM8",
+      "command": "dd if=$src bs=32768 skip=9 count=1 2>/dev/null | sha256sum",
+      "exit_code": 0,
+      "utc": "2026-10-22T11:48:44.735731+00:00",
+      "output": "dd if=$src bs=32768 skip=9 count=1 2>/dev/null | sha256sum\r\necho __P36_7d3c6e4e__:$?\r\nroot@Zynq-Tronlong:/sys/bus/iio/devices/iio:device2# dd if=$src bs=32768 skip=9  \rcount=1 2>/dev/null | sha256sum\r\n00703406419dcb686e76769071b2809c85e128a97d1a53b550d40291d1a29fef  -\r\nroot@Zynq-Tronlong:/sys/bus/iio/devices/iio:device2# echo __P36_7d3c6e4e__:$?\r\n__P36_7d3c6e4e__:0\r\n"
+    },
+    {
+      "port": "COM8",
+      "command": "dd if=$src bs=32768 skip=9 count=1 2>/dev/null | base64",
+      "exit_code": 0,
+      "utc": "2026-10-22T11:48:48.745559+00:00",
+      "output_omitted": "base64 bytes preserved in uart.rx.bin",
+      "output_chars": 45136,
+      "decoded_transcript_sha256": "39feb2c76ebb8c7f8dd03a7ff1e0cfa16dd30ce9a1e5d8e0a548184f1f649d67"
+    },
+    {
+      "port": "COM8",
+      "command": "dd if=$src bs=32768 skip=10 count=1 2>/dev/null | sha256sum",
+      "exit_code": 0,
+      "utc": "2026-10-22T11:48:48.875365+00:00",
+      "output": "dd if=$src bs=32768 skip=10 count=1 2>/dev/null | sha256sum\r\necho __P36_1d8c90eb__:$?\r\nroot@Zynq-Tronlong:/sys/bus/iio/devices/iio:device2# dd if=$src bs=32768 skip=10 \r count=1 2>/dev/null | sha256sum\r\n37cdf101bfd3f1f42beb4ce658e43f9fe282b2785e6468bf67902c9f6f72968b  -\r\nroot@Zynq-Tronlong:/sys/bus/iio/devices/iio:device2# echo __P36_1d8c90eb__:$?\r\n__P36_1d8c90eb__:0\r\n"
+    },
+    {
+      "port": "COM8",
+      "command": "dd if=$src bs=32768 skip=10 count=1 2>/dev/null | base64",
+      "exit_code": 0,
+      "utc": "2026-10-22T11:48:52.886275+00:00",
+      "output_omitted": "base64 bytes preserved in uart.rx.bin",
+      "output_chars": 45138,
+      "decoded_transcript_sha256": "7738e88332b4d31ad6f5151d7b11ebb8ccd4ce52bbc072edcf66d51cd7f03217"
+    },
+    {
+      "port": "COM8",
+      "command": "dd if=$src bs=32768 skip=11 count=1 2>/dev/null | sha256sum",
+      "exit_code": 0,
+      "utc": "2026-10-22T11:48:53.016170+00:00",
+      "output": "dd if=$src bs=32768 skip=11 count=1 2>/dev/null | sha256sum\r\necho __P36_35f2d096__:$?\r\nroot@Zynq-Tronlong:/sys/bus/iio/devices/iio:device2# dd if=$src bs=32768 skip=11 \r count=1 2>/dev/null | sha256sum\r\neaa632401e7a4898087277157601da5513c435168dafd34d700743c016b85625  -\r\nroot@Zynq-Tronlong:/sys/bus/iio/devices/iio:device2# echo __P36_35f2d096__:$?\r\n__P36_35f2d096__:0\r\n"
+    },
+    {
+      "port": "COM8",
+      "command": "dd if=$src bs=32768 skip=11 count=1 2>/dev/null | base64",
+      "exit_code": 0,
+      "utc": "2026-10-22T11:48:57.025977+00:00",
+      "output_omitted": "base64 bytes preserved in uart.rx.bin",
+      "output_chars": 45138,
+      "decoded_transcript_sha256": "6c32e365427e315d6970348eb36593808f8f4245c45bcd68963bd98802e92a82"
+    },
+    {
+      "port": "COM8",
+      "command": "dd if=$src bs=32768 skip=12 count=1 2>/dev/null | sha256sum",
+      "exit_code": 0,
+      "utc": "2026-10-22T11:48:57.155524+00:00",
+      "output": "dd if=$src bs=32768 skip=12 count=1 2>/dev/null | sha256sum\r\necho __P36_5e7f291c__:$?\r\nroot@Zynq-Tronlong:/sys/bus/iio/devices/iio:device2# dd if=$src bs=32768 skip=12 \r count=1 2>/dev/null | sha256sum\r\n7ac7c3a9a73e5aab926d18ad5614765a79dd17b25856714dfe3bd81c0cf2d316  -\r\nroot@Zynq-Tronlong:/sys/bus/iio/devices/iio:device2# echo __P36_5e7f291c__:$?\r\n__P36_5e7f291c__:0\r\n"
+    },
+    {
+      "port": "COM8",
+      "command": "dd if=$src bs=32768 skip=12 count=1 2>/dev/null | base64",
+      "exit_code": 0,
+      "utc": "2026-10-22T11:49:01.166056+00:00",
+      "output_omitted": "base64 bytes preserved in uart.rx.bin",
+      "output_chars": 45138,
+      "decoded_transcript_sha256": "bbe94a12727cf66bd184cb99a7159a1defa26f1b53f8f333063f9bd819a3b705"
+    },
+    {
+      "port": "COM8",
+      "command": "dd if=$src bs=32768 skip=13 count=1 2>/dev/null | sha256sum",
+      "exit_code": 0,
+      "utc": "2026-10-22T11:49:01.296035+00:00",
+      "output": "dd if=$src bs=32768 skip=13 count=1 2>/dev/null | sha256sum\r\necho __P36_a875d550__:$?\r\nroot@Zynq-Tronlong:/sys/bus/iio/devices/iio:device2# dd if=$src bs=32768 skip=13 \r count=1 2>/dev/null | sha256sum\r\n1beaf7c4b0b0c07d16e8b26a67abe13d21063037dd4e19bc42550a29d169bb92  -\r\nroot@Zynq-Tronlong:/sys/bus/iio/devices/iio:device2# echo __P36_a875d550__:$?\r\n__P36_a875d550__:0\r\n"
+    },
+    {
+      "port": "COM8",
+      "command": "dd if=$src bs=32768 skip=13 count=1 2>/dev/null | base64",
+      "exit_code": 0,
+      "utc": "2026-10-22T11:49:05.306165+00:00",
+      "output_omitted": "base64 bytes preserved in uart.rx.bin",
+      "output_chars": 45138,
+      "decoded_transcript_sha256": "76e03367b47c5e07014b19334f300fa4ff2fd81e9daf3c8059c695980a0901a4"
+    },
+    {
+      "port": "COM8",
+      "command": "dd if=$src bs=32768 skip=14 count=1 2>/dev/null | sha256sum",
+      "exit_code": 0,
+      "utc": "2026-10-22T11:49:05.436237+00:00",
+      "output": "dd if=$src bs=32768 skip=14 count=1 2>/dev/null | sha256sum\r\necho __P36_4b31e82e__:$?\r\nroot@Zynq-Tronlong:/sys/bus/iio/devices/iio:device2# dd if=$src bs=32768 skip=14 \r count=1 2>/dev/null | sha256sum\r\ndf1999d946dbc68ea0dce7631e87380476005de1a7be70ae076b51184f755351  -\r\nroot@Zynq-Tronlong:/sys/bus/iio/devices/iio:device2# echo __P36_4b31e82e__:$?\r\n__P36_4b31e82e__:0\r\n"
+    },
+    {
+      "port": "COM8",
+      "command": "dd if=$src bs=32768 skip=14 count=1 2>/dev/null | base64",
+      "exit_code": 0,
+      "utc": "2026-10-22T11:49:09.445981+00:00",
+      "output_omitted": "base64 bytes preserved in uart.rx.bin",
+      "output_chars": 45138,
+      "decoded_transcript_sha256": "403409a512db39c009503fd6ccef1383dbce3ea769f2256fcd2bbe47d8660007"
+    },
+    {
+      "port": "COM8",
+      "command": "dd if=$src bs=32768 skip=15 count=1 2>/dev/null | sha256sum",
+      "exit_code": 0,
+      "utc": "2026-10-22T11:49:09.575799+00:00",
+      "output": "dd if=$src bs=32768 skip=15 count=1 2>/dev/null | sha256sum\r\necho __P36_705b5afa__:$?\r\nroot@Zynq-Tronlong:/sys/bus/iio/devices/iio:device2# dd if=$src bs=32768 skip=15 \r count=1 2>/dev/null | sha256sum\r\nf1142cfa5a80b8d7cf682416eee4dada772fe921d2802cf991c42a87e0d500a6  -\r\nroot@Zynq-Tronlong:/sys/bus/iio/devices/iio:device2# echo __P36_705b5afa__:$?\r\n__P36_705b5afa__:0\r\n"
+    },
+    {
+      "port": "COM8",
+      "command": "dd if=$src bs=32768 skip=15 count=1 2>/dev/null | base64",
+      "exit_code": 0,
+      "utc": "2026-10-22T11:49:13.586661+00:00",
+      "output_omitted": "base64 bytes preserved in uart.rx.bin",
+      "output_chars": 45138,
+      "decoded_transcript_sha256": "aa013b45e0f7292d803e761ccc68607d097c3ff8c51cc7dcfd2220baf6257ecc"
+    },
+    {
+      "port": "COM8",
+      "command": "dd if=$src bs=32768 skip=16 count=1 2>/dev/null | sha256sum",
+      "exit_code": 0,
+      "utc": "2026-10-22T11:49:13.715340+00:00",
+      "output": "dd if=$src bs=32768 skip=16 count=1 2>/dev/null | sha256sum\r\necho __P36_85107082__:$?\r\nroot@Zynq-Tronlong:/sys/bus/iio/devices/iio:device2# dd if=$src bs=32768 skip=16 \r count=1 2>/dev/null | sha256sum\r\nfb49adb1ed7ef0be239d94e7b768e9e73be2e226bf392f8eda465c7298ea3d4c  -\r\nroot@Zynq-Tronlong:/sys/bus/iio/devices/iio:device2# echo __P36_85107082__:$?\r\n__P36_85107082__:0\r\n"
+    },
+    {
+      "port": "COM8",
+      "command": "dd if=$src bs=32768 skip=16 count=1 2>/dev/null | base64",
+      "exit_code": 0,
+      "utc": "2026-10-22T11:49:17.725898+00:00",
+      "output_omitted": "base64 bytes preserved in uart.rx.bin",
+      "output_chars": 45138,
+      "decoded_transcript_sha256": "1374b4faf9ae9b407bcf8920ce936d77f75d64a6e4cad26ba5f6e1b16ab13a2b"
+    },
+    {
+      "port": "COM8",
+      "command": "dd if=$src bs=32768 skip=17 count=1 2>/dev/null | sha256sum",
+      "exit_code": 0,
+      "utc": "2026-10-22T11:49:17.855814+00:00",
+      "output": "dd if=$src bs=32768 skip=17 count=1 2>/dev/null | sha256sum\r\necho __P36_538a1d5a__:$?\r\nroot@Zynq-Tronlong:/sys/bus/iio/devices/iio:device2# dd if=$src bs=32768 skip=17 \r count=1 2>/dev/null | sha256sum\r\n16f4c2cbf3dce38244cf93ec443290128feddf422364ac980ff9c466009e4880  -\r\nroot@Zynq-Tronlong:/sys/bus/iio/devices/iio:device2# echo __P36_538a1d5a__:$?\r\n__P36_538a1d5a__:0\r\n"
+    },
+    {
+      "port": "COM8",
+      "command": "dd if=$src bs=32768 skip=17 count=1 2>/dev/null | base64",
+      "exit_code": 0,
+      "utc": "2026-10-22T11:49:21.865562+00:00",
+      "output_omitted": "base64 bytes preserved in uart.rx.bin",
+      "output_chars": 45138,
+      "decoded_transcript_sha256": "dd3fd52891f993adab37ac5c376f9db327f0bedc7563d9ceacc1d98309f31aaf"
+    },
+    {
+      "port": "COM8",
+      "command": "dd if=$src bs=32768 skip=18 count=1 2>/dev/null | sha256sum",
+      "exit_code": 0,
+      "utc": "2026-10-22T11:49:21.996096+00:00",
+      "output": "dd if=$src bs=32768 skip=18 count=1 2>/dev/null | sha256sum\r\necho __P36_3422d48b__:$?\r\nroot@Zynq-Tronlong:/sys/bus/iio/devices/iio:device2# dd if=$src bs=32768 skip=18 \r count=1 2>/dev/null | sha256sum\r\n25aed01294d381d07d6e80aa3ae36bbedaa49e8cef7151b8814d52f6e586dbcf  -\r\nroot@Zynq-Tronlong:/sys/bus/iio/devices/iio:device2# echo __P36_3422d48b__:$?\r\n__P36_3422d48b__:0\r\n"
+    },
+    {
+      "port": "COM8",
+      "command": "dd if=$src bs=32768 skip=18 count=1 2>/dev/null | base64",
+      "exit_code": 0,
+      "utc": "2026-10-22T11:49:26.006177+00:00",
+      "output_omitted": "base64 bytes preserved in uart.rx.bin",
+      "output_chars": 45138,
+      "decoded_transcript_sha256": "993d6ca36f90a96a8343f68c51ec73ba2c73ff930b42ab81d057192c8740c4e9"
+    },
+    {
+      "port": "COM8",
+      "command": "dd if=$src bs=32768 skip=19 count=1 2>/dev/null | sha256sum",
+      "exit_code": 0,
+      "utc": "2026-10-22T11:49:26.136263+00:00",
+      "output": "dd if=$src bs=32768 skip=19 count=1 2>/dev/null | sha256sum\r\necho __P36_d9f36b38__:$?\r\nroot@Zynq-Tronlong:/sys/bus/iio/devices/iio:device2# dd if=$src bs=32768 skip=19 \r count=1 2>/dev/null | sha256sum\r\nf274f3cf68b3d892488120b9c823a61700ad798fd397f0dd90f161f948a5d74b  -\r\nroot@Zynq-Tronlong:/sys/bus/iio/devices/iio:device2# echo __P36_d9f36b38__:$?\r\n__P36_d9f36b38__:0\r\n"
+    },
+    {
+      "port": "COM8",
+      "command": "dd if=$src bs=32768 skip=19 count=1 2>/dev/null | base64",
+      "exit_code": 0,
+      "utc": "2026-10-22T11:49:30.146589+00:00",
+      "output_omitted": "base64 bytes preserved in uart.rx.bin",
+      "output_chars": 45138,
+      "decoded_transcript_sha256": "75739dac3362b55e2cbea190a63e4c490b1d9ef0a8f5164321db32f4c8055dfc"
+    },
+    {
+      "port": "COM8",
+      "command": "dd if=$src bs=32768 skip=20 count=1 2>/dev/null | sha256sum",
+      "exit_code": 0,
+      "utc": "2026-10-22T11:49:30.275659+00:00",
+      "output": "dd if=$src bs=32768 skip=20 count=1 2>/dev/null | sha256sum\r\necho __P36_251d0d81__:$?\r\nroot@Zynq-Tronlong:/sys/bus/iio/devices/iio:device2# dd if=$src bs=32768 skip=20 \r count=1 2>/dev/null | sha256sum\r\n84b2d37f0172fc684b81396ed49836810e221993d9aca5e5b86d621a8b6af183  -\r\nroot@Zynq-Tronlong:/sys/bus/iio/devices/iio:device2# echo __P36_251d0d81__:$?\r\n__P36_251d0d81__:0\r\n"
+    },
+    {
+      "port": "COM8",
+      "command": "dd if=$src bs=32768 skip=20 count=1 2>/dev/null | base64",
+      "exit_code": 0,
+      "utc": "2026-10-22T11:49:34.286159+00:00",
+      "output_omitted": "base64 bytes preserved in uart.rx.bin",
+      "output_chars": 45138,
+      "decoded_transcript_sha256": "bbf54b88a031b4376dd7f7ec3e04cee042330e375b77d144ef43ac6a847cd89f"
+    },
+    {
+      "port": "COM8",
+      "command": "dd if=$src bs=32768 skip=21 count=1 2>/dev/null | sha256sum",
+      "exit_code": 0,
+      "utc": "2026-10-22T11:49:34.416218+00:00",
+      "output": "dd if=$src bs=32768 skip=21 count=1 2>/dev/null | sha256sum\r\necho __P36_6f0db463__:$?\r\nroot@Zynq-Tronlong:/sys/bus/iio/devices/iio:device2# dd if=$src bs=32768 skip=21 \r count=1 2>/dev/null | sha256sum\r\n6ea3f0ba1d15e11fa3e2974b8aca305e698a1b56273314145f259d41698bcc0e  -\r\nroot@Zynq-Tronlong:/sys/bus/iio/devices/iio:device2# echo __P36_6f0db463__:$?\r\n__P36_6f0db463__:0\r\n"
+    },
+    {
+      "port": "COM8",
+      "command": "dd if=$src bs=32768 skip=21 count=1 2>/dev/null | base64",
+      "exit_code": 0,
+      "utc": "2026-10-22T11:49:38.425813+00:00",
+      "output_omitted": "base64 bytes preserved in uart.rx.bin",
+      "output_chars": 45138,
+      "decoded_transcript_sha256": "2746ceed40490116f685f3418b673ac9ca36648d9d90e695f73218c2fb3ce96a"
+    },
+    {
+      "port": "COM8",
+      "command": "dd if=$src bs=32768 skip=22 count=1 2>/dev/null | sha256sum",
+      "exit_code": 0,
+      "utc": "2026-10-22T11:49:38.555227+00:00",
+      "output": "dd if=$src bs=32768 skip=22 count=1 2>/dev/null | sha256sum\r\necho __P36_9cf16cf0__:$?\r\nroot@Zynq-Tronlong:/sys/bus/iio/devices/iio:device2# dd if=$src bs=32768 skip=22 \r count=1 2>/dev/null | sha256sum\r\nfeb0c5725f69d63592990db32842333856c0f9063ed0b15b6ede986be584a986  -\r\nroot@Zynq-Tronlong:/sys/bus/iio/devices/iio:device2# echo __P36_9cf16cf0__:$?\r\n__P36_9cf16cf0__:0\r\n"
+    },
+    {
+      "port": "COM8",
+      "command": "dd if=$src bs=32768 skip=22 count=1 2>/dev/null | base64",
+      "exit_code": 0,
+      "utc": "2026-10-22T11:49:42.565555+00:00",
+      "output_omitted": "base64 bytes preserved in uart.rx.bin",
+      "output_chars": 45138,
+      "decoded_transcript_sha256": "0bf822bb553b8e83d5fd0a3f1baa98b0bb50a436bee02bd7a4c430b319a52c01"
+    },
+    {
+      "port": "COM8",
+      "command": "dd if=$src bs=32768 skip=23 count=1 2>/dev/null | sha256sum",
+      "exit_code": 0,
+      "utc": "2026-10-22T11:49:42.695785+00:00",
+      "output": "dd if=$src bs=32768 skip=23 count=1 2>/dev/null | sha256sum\r\necho __P36_5ceacb50__:$?\r\nroot@Zynq-Tronlong:/sys/bus/iio/devices/iio:device2# dd if=$src bs=32768 skip=23 \r count=1 2>/dev/null | sha256sum\r\n141ab3a18c84d6fad2c36fd91c490dd1b7e4a43f26668ecb219bacd456ac081d  -\r\nroot@Zynq-Tronlong:/sys/bus/iio/devices/iio:device2# echo __P36_5ceacb50__:$?\r\n__P36_5ceacb50__:0\r\n"
+    },
+    {
+      "port": "COM8",
+      "command": "dd if=$src bs=32768 skip=23 count=1 2>/dev/null | base64",
+      "exit_code": 0,
+      "utc": "2026-10-22T11:49:45.425818+00:00",
+      "output_omitted": "base64 bytes preserved in uart.rx.bin",
+      "output_chars": 30340,
+      "decoded_transcript_sha256": "3e87cbc2b5e75e387dd56f5e4efb67186a2edf8b7427256ac70028a62a802964"
+    },
+    {
+      "port": "COM8",
+      "command": "uname -a",
+      "exit_code": 0,
+      "utc": "2026-10-22T11:49:45.555974+00:00",
+      "output": "uname -a\r\necho __P36_5075f6e6__:$?\r\nroot@Zynq-Tronlong:/sys/bus/iio/devices/iio:device2# uname -a\r\nLinux Zynq-Tronlong 4.9.0-rt1-xilinx-g0e07141-dirty #4 SMP PREEMPT Tue Sep 1 17:20:08 CST 2020 armv7l armv7l armv7l GNU/Linux\r\nroot@Zynq-Tronlong:/sys/bus/iio/devices/iio:device2# echo __P36_5075f6e6__:$?\r\n__P36_5075f6e6__:0\r\n"
+    },
+    {
+      "port": "COM8",
+      "command": "a=/proc/sys/kernel/random/boot_id",
+      "exit_code": 0,
+      "utc": "2026-10-22T11:49:45.646079+00:00",
+      "output": "a=/proc/sys/kernel/random/boot_id\r\necho __P36_e8a6dc4f__:$?\r\nroot@Zynq-Tronlong:/sys/bus/iio/devices/iio:device2# a=/proc/sys/kernel/random/b \root_id\r\nroot@Zynq-Tronlong:/sys/bus/iio/devices/iio:device2# echo __P36_e8a6dc4f__:$?\r\n__P36_e8a6dc4f__:0\r\n"
+    },
+    {
+      "port": "COM8",
+      "command": "echo __VALUE__$(cat $a)__END__",
+      "exit_code": 0,
+      "utc": "2026-10-22T11:49:45.764759+00:00",
+      "output": "echo __VALUE__$(cat $a)__END__\r\necho __P36_9c8d48f6__:$?\r\nroot@Zynq-Tronlong:/sys/bus/iio/devices/iio:device2# echo __VALUE__$(cat $a)__EN \rD__\r\n__VALUE__343afe82-88e6-4a03-a5d4-c09ee6929e36__END__\r\nroot@Zynq-Tronlong:/sys/bus/iio/devices/iio:device2# echo __P36_9c8d48f6__:$?\r\n__P36_9c8d48f6__:0\r\n"
+    },
+    {
+      "port": "COM8",
+      "command": "a=/proc/sys/kernel/tainted",
+      "exit_code": 0,
+      "utc": "2026-10-22T11:49:45.855958+00:00",
+      "output": "a=/proc/sys/kernel/tainted\r\necho __P36_907573c2__:$?\r\nroot@Zynq-Tronlong:/sys/bus/iio/devices/iio:device2# a=/proc/sys/kernel/tainted\r\nroot@Zynq-Tronlong:/sys/bus/iio/devices/iio:device2# echo __P36_907573c2__:$?\r\n__P36_907573c2__:0\r\n"
+    },
+    {
+      "port": "COM8",
+      "command": "echo __VALUE__$(cat $a)__END__",
+      "exit_code": 0,
+      "utc": "2026-10-22T11:49:45.976087+00:00",
+      "output": "echo __VALUE__$(cat $a)__END__\r\necho __P36_8d0c20b6__:$?\r\nroot@Zynq-Tronlong:/sys/bus/iio/devices/iio:device2# echo __VALUE__$(cat $a)__EN \rD__\r\n__VALUE__0__END__\r\nroot@Zynq-Tronlong:/sys/bus/iio/devices/iio:device2# echo __P36_8d0c20b6__:$?\r\n__P36_8d0c20b6__:0\r\n"
+    },
+    {
+      "port": "COM8",
+      "command": "g=/etc/rcS.d/S99board",
+      "exit_code": 0,
+      "utc": "2026-10-22T11:49:46.066096+00:00",
+      "output": "g=/etc/rcS.d/S99board\r\necho __P36_84d48817__:$?\r\nroot@Zynq-Tronlong:/sys/bus/iio/devices/iio:device2# g=/etc/rcS.d/S99board\r\nroot@Zynq-Tronlong:/sys/bus/iio/devices/iio:device2# echo __P36_84d48817__:$?\r\n__P36_84d48817__:0\r\n"
+    },
+    {
+      "port": "COM8",
+      "command": "sha256sum $g",
+      "exit_code": 0,
+      "utc": "2026-10-22T11:49:46.195630+00:00",
+      "output": "sha256sum $g\r\necho __P36_97b57546__:$?\r\nroot@Zynq-Tronlong:/sys/bus/iio/devices/iio:device2# sha256sum $g\r\n89183f1fe397f8bc20bd0c39544f5d30c37a8f1ca4e440c8cce6841d9b1247f2  /etc/rcS.d/S99board\r\nroot@Zynq-Tronlong:/sys/bus/iio/devices/iio:device2# echo __P36_97b57546__:$?\r\n__P36_97b57546__:0\r\n"
+    },
+    {
+      "port": "COM8",
+      "command": "ir=/sys/bus/iio/devices",
+      "exit_code": 0,
+      "utc": "2026-10-22T11:49:46.285945+00:00",
+      "output": "ir=/sys/bus/iio/devices\r\necho __P36_b0073bb7__:$?\r\nroot@Zynq-Tronlong:/sys/bus/iio/devices/iio:device2# ir=/sys/bus/iio/devices\r\nroot@Zynq-Tronlong:/sys/bus/iio/devices/iio:device2# echo __P36_b0073bb7__:$?\r\n__P36_b0073bb7__:0\r\n"
+    },
+    {
+      "port": "COM8",
+      "command": "for node in $ir/iio:device*; do echo $node; cat $node/name; done",
+      "exit_code": 0,
+      "utc": "2026-10-22T11:49:46.426250+00:00",
+      "output": "for node in $ir/iio:device*; do echo $node; cat $node/name; done\r\necho __P36_0e82c766__:$?\r\nroot@Zynq-Tronlong:/sys/bus/iio/devices/iio:device2# for node in $ir/iio:device* \r; do echo $node; cat $node/name; done\r\n/sys/bus/iio/devices/iio:device0\r\nxadc\r\n/sys/bus/iio/devices/iio:device1\r\nad9361-phy\r\n/sys/bus/iio/devices/iio:device2\r\ncf-ad9361-lpc\r\n/sys/bus/iio/devices/iio:device3\r\ncf-ad9361-dds-core-lpc\r\nroot@Zynq-Tronlong:/sys/bus/iio/devices/iio:device2# echo __P36_0e82c766__:$?\r\n__P36_0e82c766__:0\r\n"
+    },
+    {
+      "port": "COM8",
+      "command": "cd /sys/bus/iio/devices/iio:device2",
+      "exit_code": 0,
+      "utc": "2026-10-22T11:49:46.516156+00:00",
+      "output": "cd /sys/bus/iio/devices/iio:device2\r\necho __P36_418e3ac7__:$?\r\nroot@Zynq-Tronlong:/sys/bus/iio/devices/iio:device2# cd /sys/bus/iio/devices/iio \r:device2\r\nroot@Zynq-Tronlong:/sys/bus/iio/devices/iio:device2# echo __P36_418e3ac7__:$?\r\n__P36_418e3ac7__:0\r\n"
+    },
+    {
+      "port": "COM8",
+      "command": "a=buffer/enable",
+      "exit_code": 0,
+      "utc": "2026-10-22T11:49:46.605481+00:00",
+      "output": "a=buffer/enable\r\necho __P36_9c2bbeae__:$?\r\nroot@Zynq-Tronlong:/sys/bus/iio/devices/iio:device2# a=buffer/enable\r\nroot@Zynq-Tronlong:/sys/bus/iio/devices/iio:device2# echo __P36_9c2bbeae__:$?\r\n__P36_9c2bbeae__:0\r\n"
+    },
+    {
+      "port": "COM8",
+      "command": "echo __VALUE__$(cat $a)__END__",
+      "exit_code": 0,
+      "utc": "2026-10-22T11:49:46.726295+00:00",
+      "output": "echo __VALUE__$(cat $a)__END__\r\necho __P36_f7ea33a3__:$?\r\nroot@Zynq-Tronlong:/sys/bus/iio/devices/iio:device2# echo __VALUE__$(cat $a)__EN \rD__\r\n__VALUE__0__END__\r\nroot@Zynq-Tronlong:/sys/bus/iio/devices/iio:device2# echo __P36_f7ea33a3__:$?\r\n__P36_f7ea33a3__:0\r\n"
+    },
+    {
+      "port": "COM8",
+      "command": "a=scan_elements/in_voltage0_en",
+      "exit_code": 0,
+      "utc": "2026-10-22T11:49:46.815515+00:00",
+      "output": "a=scan_elements/in_voltage0_en\r\necho __P36_ec835340__:$?\r\nroot@Zynq-Tronlong:/sys/bus/iio/devices/iio:device2# a=scan_elements/in_voltage0 \r_en\r\nroot@Zynq-Tronlong:/sys/bus/iio/devices/iio:device2# echo __P36_ec835340__:$?\r\n__P36_ec835340__:0\r\n"
+    },
+    {
+      "port": "COM8",
+      "command": "echo __VALUE__$(cat $a)__END__",
+      "exit_code": 0,
+      "utc": "2026-10-22T11:49:46.935317+00:00",
+      "output": "echo __VALUE__$(cat $a)__END__\r\necho __P36_4e8ff5fb__:$?\r\nroot@Zynq-Tronlong:/sys/bus/iio/devices/iio:device2# echo __VALUE__$(cat $a)__EN \rD__\r\n__VALUE__0__END__\r\nroot@Zynq-Tronlong:/sys/bus/iio/devices/iio:device2# echo __P36_4e8ff5fb__:$?\r\n__P36_4e8ff5fb__:0\r\n"
+    },
+    {
+      "port": "COM8",
+      "command": "a=scan_elements/in_voltage1_en",
+      "exit_code": 0,
+      "utc": "2026-10-22T11:49:47.025272+00:00",
+      "output": "a=scan_elements/in_voltage1_en\r\necho __P36_30d92d91__:$?\r\nroot@Zynq-Tronlong:/sys/bus/iio/devices/iio:device2# a=scan_elements/in_voltage1 \r_en\r\nroot@Zynq-Tronlong:/sys/bus/iio/devices/iio:device2# echo __P36_30d92d91__:$?\r\n__P36_30d92d91__:0\r\n"
+    },
+    {
+      "port": "COM8",
+      "command": "echo __VALUE__$(cat $a)__END__",
+      "exit_code": 0,
+      "utc": "2026-10-22T11:49:47.145666+00:00",
+      "output": "echo __VALUE__$(cat $a)__END__\r\necho __P36_d665e836__:$?\r\nroot@Zynq-Tronlong:/sys/bus/iio/devices/iio:device2# echo __VALUE__$(cat $a)__EN \rD__\r\n__VALUE__0__END__\r\nroot@Zynq-Tronlong:/sys/bus/iio/devices/iio:device2# echo __P36_d665e836__:$?\r\n__P36_d665e836__:0\r\n"
+    },
+    {
+      "port": "COM8",
+      "command": "a=scan_elements/in_voltage2_en",
+      "exit_code": 0,
+      "utc": "2026-10-22T11:49:47.236436+00:00",
+      "output": "a=scan_elements/in_voltage2_en\r\necho __P36_1d493792__:$?\r\nroot@Zynq-Tronlong:/sys/bus/iio/devices/iio:device2# a=scan_elements/in_voltage2 \r_en\r\nroot@Zynq-Tronlong:/sys/bus/iio/devices/iio:device2# echo __P36_1d493792__:$?\r\n__P36_1d493792__:0\r\n"
+    },
+    {
+      "port": "COM8",
+      "command": "echo __VALUE__$(cat $a)__END__",
+      "exit_code": 0,
+      "utc": "2026-10-22T11:49:47.355252+00:00",
+      "output": "echo __VALUE__$(cat $a)__END__\r\necho __P36_f4e7cae6__:$?\r\nroot@Zynq-Tronlong:/sys/bus/iio/devices/iio:device2# echo __VALUE__$(cat $a)__EN \rD__\r\n__VALUE__0__END__\r\nroot@Zynq-Tronlong:/sys/bus/iio/devices/iio:device2# echo __P36_f4e7cae6__:$?\r\n__P36_f4e7cae6__:0\r\n"
+    },
+    {
+      "port": "COM8",
+      "command": "a=scan_elements/in_voltage3_en",
+      "exit_code": 0,
+      "utc": "2026-10-22T11:49:47.445853+00:00",
+      "output": "a=scan_elements/in_voltage3_en\r\necho __P36_534f7540__:$?\r\nroot@Zynq-Tronlong:/sys/bus/iio/devices/iio:device2# a=scan_elements/in_voltage3 \r_en\r\nroot@Zynq-Tronlong:/sys/bus/iio/devices/iio:device2# echo __P36_534f7540__:$?\r\n__P36_534f7540__:0\r\n"
+    },
+    {
+      "port": "COM8",
+      "command": "echo __VALUE__$(cat $a)__END__",
+      "exit_code": 0,
+      "utc": "2026-10-22T11:49:47.566448+00:00",
+      "output": "echo __VALUE__$(cat $a)__END__\r\necho __P36_f2844338__:$?\r\nroot@Zynq-Tronlong:/sys/bus/iio/devices/iio:device2# echo __VALUE__$(cat $a)__EN \rD__\r\n__VALUE__0__END__\r\nroot@Zynq-Tronlong:/sys/bus/iio/devices/iio:device2# echo __P36_f2844338__:$?\r\n__P36_f2844338__:0\r\n"
+    },
+    {
+      "port": "COM8",
+      "command": "src=/tmp/p36-full-114115-qpsk/iq-packed.bin.gz",
+      "exit_code": 0,
+      "utc": "2026-10-22T11:49:47.655886+00:00",
+      "output": "src=/tmp/p36-full-114115-qpsk/iq-packed.bin.gz\r\necho __P36_c121a8fe__:$?\r\nroot@Zynq-Tronlong:/sys/bus/iio/devices/iio:device2# src=/tmp/p36-full-114115-qp \rsk/iq-packed.bin.gz\r\nroot@Zynq-Tronlong:/sys/bus/iio/devices/iio:device2# echo __P36_c121a8fe__:$?\r\n__P36_c121a8fe__:0\r\n"
+    },
+    {
+      "port": "COM8",
+      "command": "sha256sum $src",
+      "exit_code": 0,
+      "utc": "2026-10-22T11:49:47.815571+00:00",
+      "output": "sha256sum $src\r\necho __P36_90e1d615__:$?\r\nroot@Zynq-Tronlong:/sys/bus/iio/devices/iio:device2# sha256sum $src\r\nde17bb7c4bfe35c8b63c40fe61c9e123a11b2b9963437327f83df314a5b47a63  /tmp/p36-full-114115-qpsk/iq-packed.bin.gz\r\nroot@Zynq-Tronlong:/sys/bus/iio/devices/iio:device2# echo __P36_90e1d615__:$?\r\n__P36_90e1d615__:0\r\n"
+    },
+    {
+      "port": "COM8",
+      "command": "echo __BYTES__$(wc -c < $src)__END__",
+      "exit_code": 0,
+      "utc": "2026-10-22T11:49:47.945533+00:00",
+      "output": "echo __BYTES__$(wc -c < $src)__END__\r\necho __P36_82730fd8__:$?\r\nroot@Zynq-Tronlong:/sys/bus/iio/devices/iio:device2# echo __BYTES__$(wc -c < $sr \rc)__END__\r\n__BYTES__775618__END__\r\nroot@Zynq-Tronlong:/sys/bus/iio/devices/iio:device2# echo __P36_82730fd8__:$?\r\n__P36_82730fd8__:0\r\n"
+    }
+  ],
+  "checks": [
+    {
+      "name": "before receiver identity",
+      "passed": true
+    },
+    {
+      "name": "before same boot",
+      "passed": true
+    },
+    {
+      "name": "before untainted",
+      "passed": true
+    },
+    {
+      "name": "before startup guard",
+      "passed": true
+    },
+    {
+      "name": "before RF names present and unique",
+      "passed": true
+    },
+    {
+      "name": "before RX buffer idle",
+      "passed": true
+    },
+    {
+      "name": "before RX scans idle",
+      "passed": true
+    },
+    {
+      "name": "before compressed source SHA",
+      "passed": true
+    },
+    {
+      "name": "before compressed source size",
+      "passed": true
+    },
+    {
+      "name": "after receiver identity",
+      "passed": true
+    },
+    {
+      "name": "after same boot",
+      "passed": true
+    },
+    {
+      "name": "after untainted",
+      "passed": true
+    },
+    {
+      "name": "after startup guard",
+      "passed": true
+    },
+    {
+      "name": "after RF names present and unique",
+      "passed": true
+    },
+    {
+      "name": "after RX buffer idle",
+      "passed": true
+    },
+    {
+      "name": "after RX scans idle",
+      "passed": true
+    },
+    {
+      "name": "after compressed source SHA",
+      "passed": true
+    },
+    {
+      "name": "after compressed source size",
+      "passed": true
+    }
+  ],
+  "chunks": [
+    {
+      "index": 0,
+      "expected_bytes": 32768,
+      "sha256": "e07cbe62922207d6e1be7d3ff04b87be15bf43aac6f55a5e9546d6275f7b575c",
+      "attempts": [
+        {
+          "number": 1,
+          "accepted": true
+        }
+      ],
+      "local_file": "chunk-000.gzpart",
+      "verified": true
+    },
+    {
+      "index": 1,
+      "expected_bytes": 32768,
+      "sha256": "413acb0f07911982c346c179e10ded7ccf0304aa893da51559f76bbbd407d206",
+      "attempts": [
+        {
+          "number": 1,
+          "accepted": true
+        }
+      ],
+      "local_file": "chunk-001.gzpart",
+      "verified": true
+    },
+    {
+      "index": 2,
+      "expected_bytes": 32768,
+      "sha256": "0563d55474d3589da40af193bf1154e45e55c80ac8a4eaccf6493600cc45b369",
+      "attempts": [
+        {
+          "number": 1,
+          "accepted": true
+        }
+      ],
+      "local_file": "chunk-002.gzpart",
+      "verified": true
+    },
+    {
+      "index": 3,
+      "expected_bytes": 32768,
+      "sha256": "42f81218db0e94bad8c325d21c743a048547c723d7e776bfea260650aaf3eeb0",
+      "attempts": [
+        {
+          "number": 1,
+          "accepted": true
+        }
+      ],
+      "local_file": "chunk-003.gzpart",
+      "verified": true
+    },
+    {
+      "index": 4,
+      "expected_bytes": 32768,
+      "sha256": "257941b300ce19ef056156315ebc9b9c06cd2e2e78247c5861f81b37e60a458f",
+      "attempts": [
+        {
+          "number": 1,
+          "accepted": true
+        }
+      ],
+      "local_file": "chunk-004.gzpart",
+      "verified": true
+    },
+    {
+      "index": 5,
+      "expected_bytes": 32768,
+      "sha256": "4fe63d492ad42c028f24d1da2cb50c8f533b16abbef30bb05c3133e608d389af",
+      "attempts": [
+        {
+          "number": 1,
+          "accepted": true
+        }
+      ],
+      "local_file": "chunk-005.gzpart",
+      "verified": true
+    },
+    {
+      "index": 6,
+      "expected_bytes": 32768,
+      "sha256": "0ec7da9df5853eafca03a62656eb9c3b9c69954ecbf4681b96cd68f73539b4d5",
+      "attempts": [
+        {
+          "number": 1,
+          "accepted": true
+        }
+      ],
+      "local_file": "chunk-006.gzpart",
+      "verified": true
+    },
+    {
+      "index": 7,
+      "expected_bytes": 32768,
+      "sha256": "94e718cda98121c0f4c5b42581cf325a49f95e9800df1686fab14e357f289045",
+      "attempts": [
+        {
+          "number": 1,
+          "accepted": true
+        }
+      ],
+      "local_file": "chunk-007.gzpart",
+      "verified": true
+    },
+    {
+      "index": 8,
+      "expected_bytes": 32768,
+      "sha256": "0aaf10c409ea02f08eb0a23c1eab51aa303c4d34b1047e1f413e04cee0f9bdb0",
+      "attempts": [
+        {
+          "number": 1,
+          "accepted": true
+        }
+      ],
+      "local_file": "chunk-008.gzpart",
+      "verified": true
+    },
+    {
+      "index": 9,
+      "expected_bytes": 32768,
+      "sha256": "00703406419dcb686e76769071b2809c85e128a97d1a53b550d40291d1a29fef",
+      "attempts": [
+        {
+          "number": 1,
+          "accepted": true
+        }
+      ],
+      "local_file": "chunk-009.gzpart",
+      "verified": true
+    },
+    {
+      "index": 10,
+      "expected_bytes": 32768,
+      "sha256": "37cdf101bfd3f1f42beb4ce658e43f9fe282b2785e6468bf67902c9f6f72968b",
+      "attempts": [
+        {
+          "number": 1,
+          "accepted": true
+        }
+      ],
+      "local_file": "chunk-010.gzpart",
+      "verified": true
+    },
+    {
+      "index": 11,
+      "expected_bytes": 32768,
+      "sha256": "eaa632401e7a4898087277157601da5513c435168dafd34d700743c016b85625",
+      "attempts": [
+        {
+          "number": 1,
+          "accepted": true
+        }
+      ],
+      "local_file": "chunk-011.gzpart",
+      "verified": true
+    },
+    {
+      "index": 12,
+      "expected_bytes": 32768,
+      "sha256": "7ac7c3a9a73e5aab926d18ad5614765a79dd17b25856714dfe3bd81c0cf2d316",
+      "attempts": [
+        {
+          "number": 1,
+          "accepted": true
+        }
+      ],
+      "local_file": "chunk-012.gzpart",
+      "verified": true
+    },
+    {
+      "index": 13,
+      "expected_bytes": 32768,
+      "sha256": "1beaf7c4b0b0c07d16e8b26a67abe13d21063037dd4e19bc42550a29d169bb92",
+      "attempts": [
+        {
+          "number": 1,
+          "accepted": true
+        }
+      ],
+      "local_file": "chunk-013.gzpart",
+      "verified": true
+    },
+    {
+      "index": 14,
+      "expected_bytes": 32768,
+      "sha256": "df1999d946dbc68ea0dce7631e87380476005de1a7be70ae076b51184f755351",
+      "attempts": [
+        {
+          "number": 1,
+          "accepted": true
+        }
+      ],
+      "local_file": "chunk-014.gzpart",
+      "verified": true
+    },
+    {
+      "index": 15,
+      "expected_bytes": 32768,
+      "sha256": "f1142cfa5a80b8d7cf682416eee4dada772fe921d2802cf991c42a87e0d500a6",
+      "attempts": [
+        {
+          "number": 1,
+          "accepted": true
+        }
+      ],
+      "local_file": "chunk-015.gzpart",
+      "verified": true
+    },
+    {
+      "index": 16,
+      "expected_bytes": 32768,
+      "sha256": "fb49adb1ed7ef0be239d94e7b768e9e73be2e226bf392f8eda465c7298ea3d4c",
+      "attempts": [
+        {
+          "number": 1,
+          "accepted": true
+        }
+      ],
+      "local_file": "chunk-016.gzpart",
+      "verified": true
+    },
+    {
+      "index": 17,
+      "expected_bytes": 32768,
+      "sha256": "16f4c2cbf3dce38244cf93ec443290128feddf422364ac980ff9c466009e4880",
+      "attempts": [
+        {
+          "number": 1,
+          "accepted": true
+        }
+      ],
+      "local_file": "chunk-017.gzpart",
+      "verified": true
+    },
+    {
+      "index": 18,
+      "expected_bytes": 32768,
+      "sha256": "25aed01294d381d07d6e80aa3ae36bbedaa49e8cef7151b8814d52f6e586dbcf",
+      "attempts": [
+        {
+          "number": 1,
+          "accepted": true
+        }
+      ],
+      "local_file": "chunk-018.gzpart",
+      "verified": true
+    },
+    {
+      "index": 19,
+      "expected_bytes": 32768,
+      "sha256": "f274f3cf68b3d892488120b9c823a61700ad798fd397f0dd90f161f948a5d74b",
+      "attempts": [
+        {
+          "number": 1,
+          "accepted": true
+        }
+      ],
+      "local_file": "chunk-019.gzpart",
+      "verified": true
+    },
+    {
+      "index": 20,
+      "expected_bytes": 32768,
+      "sha256": "84b2d37f0172fc684b81396ed49836810e221993d9aca5e5b86d621a8b6af183",
+      "attempts": [
+        {
+          "number": 1,
+          "accepted": true
+        }
+      ],
+      "local_file": "chunk-020.gzpart",
+      "verified": true
+    },
+    {
+      "index": 21,
+      "expected_bytes": 32768,
+      "sha256": "6ea3f0ba1d15e11fa3e2974b8aca305e698a1b56273314145f259d41698bcc0e",
+      "attempts": [
+        {
+          "number": 1,
+          "accepted": true
+        }
+      ],
+      "local_file": "chunk-021.gzpart",
+      "verified": true
+    },
+    {
+      "index": 22,
+      "expected_bytes": 32768,
+      "sha256": "feb0c5725f69d63592990db32842333856c0f9063ed0b15b6ede986be584a986",
+      "attempts": [
+        {
+          "number": 1,
+          "accepted": true
+        }
+      ],
+      "local_file": "chunk-022.gzpart",
+      "verified": true
+    },
+    {
+      "index": 23,
+      "expected_bytes": 21954,
+      "sha256": "141ab3a18c84d6fad2c36fd91c490dd1b7e4a43f26668ecb219bacd456ac081d",
+      "attempts": [
+        {
+          "number": 1,
+          "accepted": true
+        }
+      ],
+      "local_file": "chunk-023.gzpart",
+      "verified": true
+    }
+  ],
+  "expected_boot": "343afe82-88e6-4a03-a5d4-c09ee6929e36",
+  "remote": "/tmp/p36-full-114115-qpsk/iq-packed.bin.gz",
+  "expected_bytes": 775618,
+  "expected_sha256": "de17bb7c4bfe35c8b63c40fe61c9e123a11b2b9963437327f83df314a5b47a63",
+  "raw_bytes": 1048576,
+  "raw_sha256": "c6b2945c4d6bd3079ab8b5b5f67f2cd4fe11c48810ce31d9471a9de231e85b37",
+  "guard_sha256": "89183f1fe397f8bc20bd0c39544f5d30c37a8f1ca4e440c8cce6841d9b1247f2",
+  "chunk_bytes": 32768,
+  "max_attempts_per_chunk": 3,
+  "command_timeout_seconds": 12,
+  "board_file_writes": false,
+  "RF_operations": false,
+  "PL_or_overlay_operations": false,
+  "lossless_proven": false,
+  "continuous_ADC_timeline_verified": false,
+  "IQ_layout_verified": false,
+  "physical_display_verified": false,
+  "limitations": [
+    "Byte-exact archive only; acquisition and physical output need separate evidence"
+  ],
+  "local_compressed_file": "source.gz",
+  "local_raw_file": "iq-packed.bin",
+  "compressed_sha256": "de17bb7c4bfe35c8b63c40fe61c9e123a11b2b9963437327f83df314a5b47a63",
+  "compressed_bytes": 775618,
+  "verified_raw_sha256": "c6b2945c4d6bd3079ab8b5b5f67f2cd4fe11c48810ce31d9471a9de231e85b37",
+  "verified_raw_bytes": 1048576,
+  "serial_closed": true,
+  "ended_utc": "2026-10-22T11:49:47.951719+00:00"
+}

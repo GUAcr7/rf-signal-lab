@@ -1,0 +1,165 @@
+{
+  "status": "passed_P81_human_screen_RF_rehearsal_saved",
+  "created_utc": "2026-10-27T14:26:31.151518+00:00",
+  "screen_report": "results/p80-screen-control-20261027T141654Z/report.json",
+  "screen_sha256": "4355a1756cdeda14de993ecbca66de04473bc4920d34ef3b8791d43bde03c414",
+  "archive": "results/p59-p79-session-archive-20261027T142252005759Z/report.json",
+  "archive_sha256": "39ee19faddb96b5e71bbc42e8182b9a9fd16c17329c3252768a310fc81195fca",
+  "review": "results/p79-review-20261027T142421Z/report.json",
+  "review_sha256": "a4eaf3e07e887472161d55663dc64fd6d9ce69425295d10dfa444bc0a519a19d",
+  "human_three_preset_rehearsal": true,
+  "latency_rows": [
+    {
+      "signal": "bpsk",
+      "action": "check",
+      "feedback_s": 0.02199411392211914,
+      "completion_s": 3.371217966079712
+    },
+    {
+      "signal": "bpsk",
+      "action": "start",
+      "feedback_s": 0.0415341854095459,
+      "completion_s": 5.276916980743408
+    },
+    {
+      "signal": "qam16",
+      "action": "check",
+      "feedback_s": 0.02295398712158203,
+      "completion_s": 3.5404670238494873
+    },
+    {
+      "signal": "qam16",
+      "action": "start",
+      "feedback_s": 0.041092872619628906,
+      "completion_s": 5.2839179039001465
+    },
+    {
+      "signal": "qpsk",
+      "action": "check",
+      "feedback_s": 0.022717952728271484,
+      "completion_s": 4.18162202835083
+    },
+    {
+      "signal": "qpsk",
+      "action": "start",
+      "feedback_s": 0.04128217697143555,
+      "completion_s": 5.428399085998535
+    },
+    {
+      "signal": "qpsk",
+      "action": "check",
+      "feedback_s": 0.02279496192932129,
+      "completion_s": 3.5904040336608887
+    },
+    {
+      "signal": "qpsk",
+      "action": "start",
+      "feedback_s": 0.024998903274536133,
+      "completion_s": 5.350183963775635
+    },
+    {
+      "signal": "qpsk",
+      "action": "check",
+      "feedback_s": 0.005858898162841797,
+      "completion_s": 6.6455419063568115
+    },
+    {
+      "signal": "qpsk",
+      "action": "start",
+      "feedback_s": 0.005913972854614258,
+      "completion_s": 7.062442064285278
+    },
+    {
+      "signal": "qpsk",
+      "action": "stop",
+      "feedback_s": 0.022012948989868164,
+      "completion_s": 2.4415488243103027
+    }
+  ],
+  "latency": {
+    "check": {
+      "samples": 5,
+      "median_s": 3.5904040336608887,
+      "minimum_s": 3.371217966079712,
+      "maximum_s": 6.6455419063568115
+    },
+    "start": {
+      "samples": 5,
+      "median_s": 5.350183963775635,
+      "minimum_s": 5.276916980743408,
+      "maximum_s": 7.062442064285278
+    },
+    "stop": {
+      "samples": 1,
+      "median_s": 2.4415488243103027,
+      "minimum_s": 2.4415488243103027,
+      "maximum_s": 2.4415488243103027
+    }
+  },
+  "RF_groups": [
+    {
+      "signal": "bpsk",
+      "stable_updates": 16,
+      "accepted": 16,
+      "correct": 16,
+      "coverage": 1.0,
+      "conditional_accuracy": 1.0
+    },
+    {
+      "signal": "qam16",
+      "stable_updates": 16,
+      "accepted": 16,
+      "correct": 16,
+      "coverage": 1.0,
+      "conditional_accuracy": 1.0
+    },
+    {
+      "signal": "qpsk",
+      "stable_updates": 16,
+      "accepted": 16,
+      "correct": 16,
+      "coverage": 1.0,
+      "conditional_accuracy": 1.0
+    },
+    {
+      "signal": "qpsk",
+      "stable_updates": 16,
+      "accepted": 16,
+      "correct": 16,
+      "coverage": 1.0,
+      "conditional_accuracy": 1.0
+    }
+  ],
+  "display_updates": 802,
+  "elapsed_software_s": 479.668192,
+  "TX_stopped": true,
+  "RX_stopped": true,
+  "DDS_digital_zero": true,
+  "handles_released": true,
+  "user_feedback": {
+    "buttons_faster": true,
+    "TX_RX_display_normal": true,
+    "final_STOP_returned_IDLE": true
+  },
+  "missing_STOP_packets_on_first_attempts": true,
+  "missing_STOP_root_cause": "unconfirmed; no raw STOP packet, final deliberate touch succeeded",
+  "direct_P201_UART": false,
+  "standalone_without_PC": false,
+  "new_independent_AI_accuracy": false,
+  "persistent_board_changes": false,
+  "reboots_issued": 0,
+  "boards_powered": true,
+  "parent": {
+    "status": "passed_P80_fast_screen_control_saved",
+    "report": "results/p80-final-20261027T140528Z/report.json",
+    "report_sha256": "0bb9af421f74413852da7bf61dfc59ab4294dfe752c958d650938ff1675d854f",
+    "handoff": "docs/handoff/RESUME-P80-20261027.md",
+    "checkpoint": "results/p80-final-20261027T140528Z/checkpoint.zip",
+    "acceptance": "results/p80-final-20261027T140528Z/acceptance.json"
+  },
+  "next_tasks": [
+    "archive teammate final HMI/TFT",
+    "verify independent P201 UART physical loopback before screen wiring",
+    "move control to P201 and verify persistent boot recovery"
+  ]
+}

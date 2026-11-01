@@ -1,0 +1,2 @@
+PASS case=positive_impulse taps=63 accepted=63 received=63 valid_after_cycles=64 handshake_min=65 handshake_max=67 output_stall_cycles=14 input_wait_cycles=4043 reset_during_mac=1 reset_stalled_output=1 rounding_checks=22 random_stalls=1 default_coeff=0
+C:\Users\project_user\Documents\Codex\2026-09-09\2026-fpga-fmql30tai-fpai-python-c\outputs\rf-signal-lab\fpga\tb\tb_fixed_fir_iq.sv:202: $finish called at 43236000 (1ps)

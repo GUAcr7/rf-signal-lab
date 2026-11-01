@@ -1,0 +1,2 @@
+FATAL: C:\Users\project_user\Downloads\fir-validation-release-20261029\relocated skill\assets\tb_fixed_fir_iq.sv:116: sample 1 differs: got I=2 Q=2 sat=00 expected I=2 Q=-2 sat=00
+       Time: 355000  Scope: tb_fixed_fir_iq

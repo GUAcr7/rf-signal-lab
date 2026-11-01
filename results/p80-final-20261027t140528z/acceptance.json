@@ -1,0 +1,7 @@
+{
+  "status": "passed_P80_incremental_checkpoint_CRC_SHA",
+  "zip_bytes": 4906153,
+  "zip_sha256": "c82f78df6915e357a1bc72d6a7d1c1cc7e51e7b27473cc788228b4972e7811d6",
+  "files_verified": 219,
+  "duplicate_alias_repaired": true
+}

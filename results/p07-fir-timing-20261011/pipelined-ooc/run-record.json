@@ -1,0 +1,133 @@
+{
+  "started": "2026-10-11T11:59:30.6667666+08:00",
+  "ended": "2026-10-11T12:00:10.9279745+08:00",
+  "run_root": "E:\\FPGA_Tools\\Work\\p07-fir-ooc-20261011-115930-d17039",
+  "vivado_launcher": "E:\\FPGA_Tools\\Xilinx\\Vivado\\2021.1\\bin\\vivado.bat",
+  "expected_version": "2021.1",
+  "part": "xc7z020clg400-2",
+  "top": "fixed_fir_iq",
+  "taps": 63,
+  "clock_period_ns": 10,
+  "synthesis_started": true,
+  "exit_code": 0,
+  "reports_completed": true,
+  "error": null,
+  "sources": [
+    {
+      "relative_path": "fpga/rtl/fixed_fir_iq.v",
+      "original_path": "C:\\Users\\project_user\\Documents\\Codex\\2026-09-09\\2026-fpga-fmql30tai-fpai-python-c\\outputs\\rf-signal-lab\\fpga\\rtl\\fixed_fir_iq.v",
+      "bytes": 5232,
+      "sha256": "bfd540ae1bada5dae89fefd0d4f3f881d659473f0c522c4390f1ea9bef53660d",
+      "synthesis_input": true
+    },
+    {
+      "relative_path": "fpga/ip/fir63_q17.hex",
+      "original_path": "C:\\Users\\project_user\\Documents\\Codex\\2026-09-09\\2026-fpga-fmql30tai-fpai-python-c\\outputs\\rf-signal-lab\\fpga\\ip\\fir63_q17.hex",
+      "bytes": 441,
+      "sha256": "41ea00cd11a244d5522456409813a88051cc831ef456e0783773da45f27bb3d6",
+      "synthesis_input": true
+    },
+    {
+      "relative_path": "fpga/tb/tb_fixed_fir_iq.sv",
+      "original_path": "C:\\Users\\project_user\\Documents\\Codex\\2026-09-09\\2026-fpga-fmql30tai-fpai-python-c\\outputs\\rf-signal-lab\\fpga\\tb\\tb_fixed_fir_iq.sv",
+      "bytes": 9575,
+      "sha256": "47ae7c58d5594d673d9753b9c179c93435e7963c5dd8f822a45fb048b5615056",
+      "synthesis_input": false
+    }
+  ],
+  "simulation_evidence": [
+    {
+      "path": "C:\\Users\\project_user\\Documents\\Codex\\2026-09-09\\2026-fpga-fmql30tai-fpai-python-c\\outputs\\rf-signal-lab\\results\\p07-fir-rtl-20261011T035739182285Z\\report.json",
+      "sha256": "ac2c2b47432a388f69450df6138837005c9e53b998b576cc5622c3a2899d5224",
+      "comparisons": 72356,
+      "all_passed": true
+    },
+    {
+      "path": "C:\\Users\\project_user\\Documents\\Codex\\2026-09-09\\2026-fpga-fmql30tai-fpai-python-c\\outputs\\rf-signal-lab\\results\\p07-fir-rtl-20261011T035905891918Z\\report.json",
+      "sha256": "f1d0f741b176059efccaf2a515f63176c2464aab3acd849facd54d898dca12ca",
+      "comparisons": 1086,
+      "all_passed": true
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "E:\\FPGA_Tools\\Work\\p07-fir-ooc-20261011-115930-d17039\\reports\\utilization.rpt",
+      "bytes": 7971,
+      "sha256": "9d8a75738c2978c79646449cb3f5068ccb553ed7cf4fff4013cdebe8f0226779"
+    },
+    {
+      "path": "E:\\FPGA_Tools\\Work\\p07-fir-ooc-20261011-115930-d17039\\reports\\utilization_hierarchical.rpt",
+      "bytes": 1481,
+      "sha256": "458d52756152d46bbaacde5fdbeb7e18b9ca197c8650a2ddb336cf8e7e8909c0"
+    },
+    {
+      "path": "E:\\FPGA_Tools\\Work\\p07-fir-ooc-20261011-115930-d17039\\reports\\timing_summary.rpt",
+      "bytes": 185868,
+      "sha256": "352269fef4628ff0d30b2be4c315e8bc64a653824a8a47b2ddec3a4df905c219"
+    },
+    {
+      "path": "E:\\FPGA_Tools\\Work\\p07-fir-ooc-20261011-115930-d17039\\reports\\internal_setup.rpt",
+      "bytes": 71930,
+      "sha256": "fd4e801e5063de7c6d5e420877f44b92ddbcf98603f5f9ca67e4c15e9c691878"
+    },
+    {
+      "path": "E:\\FPGA_Tools\\Work\\p07-fir-ooc-20261011-115930-d17039\\reports\\internal_hold.rpt",
+      "bytes": 29033,
+      "sha256": "cd46ca254a604783229cf890679a1df296b2b1a69f56565e7d93b64032e762b0"
+    },
+    {
+      "path": "E:\\FPGA_Tools\\Work\\p07-fir-ooc-20261011-115930-d17039\\reports\\check_timing.rpt",
+      "bytes": 3696,
+      "sha256": "047268d996ee60b5bb2370d19857dad9bfaf2f176d0601f2749d82b637199f2d"
+    },
+    {
+      "path": "E:\\FPGA_Tools\\Work\\p07-fir-ooc-20261011-115930-d17039\\reports\\clocks.rpt",
+      "bytes": 1382,
+      "sha256": "dd1468c9d81454b1a8fed6bc19e214d5e4c3e9027bbee5b4650cc4633a51f19f"
+    },
+    {
+      "path": "E:\\FPGA_Tools\\Work\\p07-fir-ooc-20261011-115930-d17039\\reports\\unconstrained_io.rpt",
+      "bytes": 336,
+      "sha256": "aed992feb59424b76b62f59a817f83b7d1dc3b99c379612079d13272b8091f57"
+    },
+    {
+      "path": "E:\\FPGA_Tools\\Work\\p07-fir-ooc-20261011-115930-d17039\\reports\\synth.dcp",
+      "bytes": 376561,
+      "sha256": "3aabdf4fa9247896686c3054344eaf0d6ab4af3875b75ee932932fcc3907944f"
+    },
+    {
+      "path": "E:\\FPGA_Tools\\Work\\p07-fir-ooc-20261011-115930-d17039\\reports\\internal_metrics.tsv",
+      "bytes": 304,
+      "sha256": "bb886b954d7bd130d5a357a14d005e5a4d807a4e62ffd15e572dc06e82ea42f4"
+    }
+  ],
+  "resource_report_used_rows": {
+    "Block RAM Tile": "0",
+    "Slice Registers": "1631",
+    "Slice LUTs": "731",
+    "DSPs": "2"
+  },
+  "internal_synthesis_estimates": {
+    "board_accessed": "false",
+    "tool_version": "2021.1",
+    "register_cells": "1633",
+    "internal_hold_estimate_nonnegative": "1",
+    "clock_period_ns": "10.0",
+    "placed": "false",
+    "setup_slack_ns": "1.866",
+    "routed": "false",
+    "top": "fixed_fir_iq",
+    "internal_setup_estimate_nonnegative": "1",
+    "taps": "63",
+    "hold_slack_ns": "0.246",
+    "timing_closed": "false",
+    "part": "xc7z020clg400-2"
+  },
+  "placed": false,
+  "routed": false,
+  "timing_closed": false,
+  "bitstream_written": false,
+  "board_accessed": false,
+  "io_delays_modeled": false,
+  "sample_rate_measured": false
+}
