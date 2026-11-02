@@ -1750,5 +1750,55 @@
     "reason": "board password read from RFSIG_BOARD_PASSWORD instead of stored literal",
     "original_sha256": "612cea424459c05a90208cf1d490573eb334e59af6cf17ec021c2fcddcb0ff04",
     "published_sha256": "4cee06597a7357234ddc4fea54c0f443440453c7e543b4fd1dca23f758955ac5"
+  },
+  {
+    "path": "README.md",
+    "reason": "2026-11-02 submission edition: unified project name, application design and verified completion scope",
+    "published_sha256": "20789fbdc168f3417b7352483462e327a49f00b4f5c0d299c09284c55c8b3e8d"
+  },
+  {
+    "path": "start-here.md",
+    "reason": "2026-11-02 submission edition: unified project name, application design and verified completion scope",
+    "published_sha256": "a11903e7e799e4e273d098f1f1ca4c29b38defc14a6243f1a5ad95b130014c01"
+  },
+  {
+    "path": "docs/reproduction.md",
+    "reason": "2026-11-02 submission edition: unified project name, application design and verified completion scope",
+    "published_sha256": "72e21850548d6fff1cbdea8dc3d4869edbde75f606d920a5821197e1ab5513d4"
+  },
+  {
+    "path": "docs/application-design.md",
+    "reason": "2026-11-02 submission edition: unified project name, application design and verified completion scope",
+    "published_sha256": "35b5f631e9b8ecb4726494738f0dde34f047c68ccb7c2eb88bf14ca191cc62e5"
+  },
+  {
+    "path": "skill/README.md",
+    "reason": "2026-11-02 submission edition: unified project name, application design and verified completion scope",
+    "published_sha256": "bf8a9c1d73865dfa70f18aeb5a08909895dfa7c0eb3dbe5025ac3b8b3d9932d4"
+  },
+  {
+    "path": "pyproject.toml",
+    "reason": "2026-11-02 submission edition: unified project name, application design and verified completion scope",
+    "published_sha256": "8e45cb40e250dfc891adff03be7d8a33f8ae8237aa9b8a4dbb0f42712322187f"
+  },
+  {
+    "path": "report/design_report.docx",
+    "reason": "2026-11-02 submission edition: unified project name, application design and verified completion scope",
+    "published_sha256": "66f5a30ec3ac78102534835f7a67aae2754a52a85c92aba4b7fa18952180703a"
+  },
+  {
+    "path": "report/design_report.pdf",
+    "reason": "2026-11-02 submission edition: unified project name, application design and verified completion scope",
+    "published_sha256": "fb3fab445b82a3d4d9712bc2a6534fe9d5323c0ecbc19a826bf8899c9806d07c"
+  },
+  {
+    "path": "report/poster_zh_en.pptx",
+    "reason": "2026-11-02 submission edition: unified project name, application design and verified completion scope",
+    "published_sha256": "ed853b3acdb2fc7fa5192b24c958279274276c2ccf3f93e31ce956f5f3e99c60"
+  },
+  {
+    "path": "project-info.json",
+    "reason": "2026-11-02 submission edition: unified project name, application design and verified completion scope",
+    "published_sha256": "bf5db8dd4669ee98d52cf05ded57587b555c7b47d8071ab05e3c0239ce49624d"
   }
 ]

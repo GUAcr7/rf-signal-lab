@@ -1,6 +1,6 @@
 {
   "schema": "rfsig.publication.v1",
-  "created_utc": "2026-11-01T14:04:55.060534+00:00",
+  "created_utc": "2026-11-02T10:50:57.257408+00:00",
   "exclusions": [
     "package_manifest.json (self)",
     "sim/publication-validation.json (verification attestation)"
@@ -15,6 +15,11 @@
       "path": "archive/history/project-readme.md",
       "bytes": 9798,
       "sha256": "d0ee6efcf28a6e15a0a82d28ed56d400afaa149c91385a779de229b089a777fb"
+    },
+    {
+      "path": "archive/history/start-here-20261028.md",
+      "bytes": 20646,
+      "sha256": "e35a7714610c9fe111c7b141b20589a40d2a85c78632dc8fa9770753c7432c9c"
     },
     {
       "path": "archive/history/start-here-before-p47-20261022t131103z.md",
@@ -2627,6 +2632,11 @@
       "sha256": "a08bf2e8874e867762d912667fe1a102cb785e4b22aba64621cab869bf6bd430"
     },
     {
+      "path": "docs/application-design.md",
+      "bytes": 2366,
+      "sha256": "35b5f631e9b8ecb4726494738f0dde34f047c68ccb7c2eb88bf14ca191cc62e5"
+    },
+    {
       "path": "docs/board-control.md",
       "bytes": 5341,
       "sha256": "0b05a4434731750787b3094583c0bfa8107b45923fec4241851b1228c147e38b"
@@ -3753,8 +3763,8 @@
     },
     {
       "path": "docs/reproduction.md",
-      "bytes": 2794,
-      "sha256": "5278e8466439229d9d1d5cd4d1b26c021437fd2d0ae0e74388f23a4b7f93f475"
+      "bytes": 2823,
+      "sha256": "72e21850548d6fff1cbdea8dc3d4869edbde75f606d920a5821197e1ab5513d4"
     },
     {
       "path": "docs/roadmap.md",
@@ -7612,14 +7622,19 @@
       "sha256": "03eb2151aa3fdf8fbb583a8a32facb32e08433541feb36cf8fb5e87461d4f20d"
     },
     {
+      "path": "project-info.json",
+      "bytes": 820,
+      "sha256": "bf5db8dd4669ee98d52cf05ded57587b555c7b47d8071ab05e3c0239ce49624d"
+    },
+    {
       "path": "publication_changes.json",
-      "bytes": 93262,
-      "sha256": "4b275ffd63a59d9983d3dd061a0943fc900c2965790cb2e26325d07a43ade0ea"
+      "bytes": 95849,
+      "sha256": "f487ae095f36647cdb9df86a91ada75b9c5241a9a69062cf8151d80751d7dbbb"
     },
     {
       "path": "pyproject.toml",
-      "bytes": 310,
-      "sha256": "301b3b4e21bf34310b5381907728a4953571ad04a9fc05704195284750b412d5"
+      "bytes": 326,
+      "sha256": "8e45cb40e250dfc891adff03be7d8a33f8ae8237aa9b8a4dbb0f42712322187f"
     },
     {
       "path": "pytest.ini",
@@ -7628,18 +7643,18 @@
     },
     {
       "path": "README.md",
-      "bytes": 4430,
-      "sha256": "05fe7c205c37fa8fd42547f40fc545f51c5242f51443868eb876480680f9a87c"
+      "bytes": 5262,
+      "sha256": "20789fbdc168f3417b7352483462e327a49f00b4f5c0d299c09284c55c8b3e8d"
     },
     {
       "path": "report/design_report.docx",
-      "bytes": 2191085,
-      "sha256": "333f6abb979cdde75d9f3abfed508c72f2a0e93e18cb8b0c49583d3c9f73e833"
+      "bytes": 2195969,
+      "sha256": "66f5a30ec3ac78102534835f7a67aae2754a52a85c92aba4b7fa18952180703a"
     },
     {
       "path": "report/design_report.pdf",
-      "bytes": 1429103,
-      "sha256": "1964c1af50a30c21ffd57be4dcf8ba007db5b845887bd37d36300a9975aa360b"
+      "bytes": 1736707,
+      "sha256": "fb3fab445b82a3d4d9712bc2a6534fe9d5323c0ecbc19a826bf8899c9806d07c"
     },
     {
       "path": "report/development-chat/messages.jsonl",
@@ -7660,6 +7675,11 @@
       "path": "report/development-chat/README.md",
       "bytes": 1005,
       "sha256": "cc34853ed8f5de7b5bab03ef8e1bd425f1b90fd120b509a9905036a6d0704b69"
+    },
+    {
+      "path": "report/poster_zh_en.pptx",
+      "bytes": 3801844,
+      "sha256": "ed853b3acdb2fc7fa5192b24c958279274276c2ccf3f93e31ce956f5f3e99c60"
     },
     {
       "path": "requirements-lock.txt",
@@ -10153,8 +10173,8 @@
     },
     {
       "path": "skill/README.md",
-      "bytes": 930,
-      "sha256": "8eae0b8a3ddbeaf94bc5248f84fb553da6b9978db9243092d5f4cc64a9d74ed4"
+      "bytes": 966,
+      "sha256": "bf8a9c1d73865dfa70f18aeb5a08909895dfa7c0eb3dbe5025ac3b8b3d9932d4"
     },
     {
       "path": "skill/validate.py",
@@ -10219,7 +10239,7 @@
     {
       "path": "source_manifest.json",
       "bytes": 1087445,
-      "sha256": "db39fa5d8ec5c05fabd5507541402e1bc720251a600c5f14603b847bcf2dbffa"
+      "sha256": "f77c7864c257a1ad2d807017b73e78e3dcf2c81fdd53b767bdbf104b110035fe"
     },
     {
       "path": "src/rfsig/__init__.py",
@@ -10458,8 +10478,8 @@
     },
     {
       "path": "start-here.md",
-      "bytes": 20646,
-      "sha256": "e35a7714610c9fe111c7b141b20589a40d2a85c78632dc8fa9770753c7432c9c"
+      "bytes": 683,
+      "sha256": "a11903e7e799e4e273d098f1f1ca4c29b38defc14a6243f1a5ad95b130014c01"
     },
     {
       "path": "tests/native/check_p201_uart_pty.py",

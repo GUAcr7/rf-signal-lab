@@ -1,0 +1,24 @@
+{
+  "project_name": "Zynq 的信号AI识别系统",
+  "english_name": "Zynq AI Signal Recognition System",
+  "team": "芯芯向荣队",
+  "members": [
+    "广泽放",
+    "黄冠",
+    "刘昌帅"
+  ],
+  "institution": "中国矿业大学",
+  "submission_edition": "2026-11-02",
+  "repository": "https://github.com/GUAcr7/rf-signal-lab",
+  "report_docx": "report/design_report.docx",
+  "report_pdf": "report/design_report.pdf",
+  "poster_pptx": "report/poster_zh_en.pptx",
+  "channel_quality_status": "parameter_analysis_and_application_design_only_no_deployed_automatic_program",
+  "measured_test_scope": "fixed_configuration_controlled_coaxial_link",
+  "frozen_int8_independent_test": {
+    "correct": 52,
+    "total": 54,
+    "accuracy_percent": 96.3
+  },
+  "fir_skill_recorded_checks": 11
+}

@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "rfsig"
 version = "0.1.0"
-description = "Golden-reference models for the Zynq RF analysis and AI project"
+description = "Zynq 的信号AI识别系统 reference models and validation tools"
 requires-python = ">=3.11"
 dependencies = ["numpy"]
 

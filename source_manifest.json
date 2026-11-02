@@ -8213,7 +8213,7 @@
       "member": "rf-project/project/pyproject.toml",
       "original_project_path": "pyproject.toml",
       "original_sha256": "301b3b4e21bf34310b5381907728a4953571ad04a9fc05704195284750b412d5",
-      "published_sha256": "301b3b4e21bf34310b5381907728a4953571ad04a9fc05704195284750b412d5"
+      "published_sha256": "8e45cb40e250dfc891adff03be7d8a33f8ae8237aa9b8a4dbb0f42712322187f"
     },
     {
       "path": "pytest.ini",
@@ -9749,7 +9749,7 @@
       "member": "rf-evidence-v2-20261029/evidence/README.md",
       "original_project_path": "README.md",
       "original_sha256": "5f5454fedaad2a8eb796e62d5908d326ed7b5e7817bab0becdfa657e5d66d255",
-      "published_sha256": "05fe7c205c37fa8fd42547f40fc545f51c5242f51443868eb876480680f9a87c"
+      "published_sha256": "20789fbdc168f3417b7352483462e327a49f00b4f5c0d299c09284c55c8b3e8d"
     },
     {
       "path": "start-here.md",
@@ -9757,7 +9757,7 @@
       "member": "rf-evidence-v2-20261029/evidence/START-HERE.md",
       "original_project_path": "START-HERE.md",
       "original_sha256": "ced14ae8a281f17d1ed0115d9ce22251c566691239faf4047c54d3a61f8c2800",
-      "published_sha256": "e35a7714610c9fe111c7b141b20589a40d2a85c78632dc8fa9770753c7432c9c"
+      "published_sha256": "a11903e7e799e4e273d098f1f1ca4c29b38defc14a6243f1a5ad95b130014c01"
     },
     {
       "path": "data/measured-data/p81-valid-metric-examples.json",
@@ -13269,7 +13269,7 @@
       "member": "reusable-skill-20261029/skill/README.md",
       "original_project_path": null,
       "original_sha256": "e6286a61558a0035b234f7bae469b1efe80447478e35ee5ff55a5c8ce5cbe30f",
-      "published_sha256": "8eae0b8a3ddbeaf94bc5248f84fb553da6b9978db9243092d5f4cc64a9d74ed4"
+      "published_sha256": "bf8a9c1d73865dfa70f18aeb5a08909895dfa7c0eb3dbe5025ac3b8b3d9932d4"
     },
     {
       "path": "sim/fir-skill-validation/validation/development-saturation-fixture-not-exercised.json",

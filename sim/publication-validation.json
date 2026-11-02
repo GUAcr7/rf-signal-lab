@@ -4,7 +4,7 @@
   "checks": [
     {
       "name": "published_file_hashes",
-      "files": 2204,
+      "files": 2208,
       "passed": true
     },
     {
@@ -31,5 +31,6 @@
     "archive_code_members": 3952,
     "unique_source_code_contents": 1336,
     "all_included": true
-  }
+  },
+  "submission_edition": "2026-11-02"
 }

@@ -1,18 +1,26 @@
-# RF Signal Lab
+# Zynq 的信号AI识别系统
 
-基于 Zynq-7000 与 AD9361 的射频信号分析及轻量化调制识别系统，参赛方向为 2026 FPGA 创新设计赛道 AMD 自主选题初级组。
+英文名称：Zynq AI Signal Recognition System。参赛方向：2026 FPGA 创新设计赛道 AMD 自主选题初级组。
 
-系统由发送板、接收分析板和显示组件组成。发送板采用璞致 P201 / XC7Z020，接收板采用创龙 TLZ7xH-EVM / XC7Z100，均配 AD9361 射频前端。PL 完成射频数字接口、DMA 和显示通路；接收板 ARM 完成数字前端、FFT、ROI 参数估计与 CNN 推理。电脑负责发送控制屏中转、校准和数据归档。当前验证条件为同轴衰减链中的受控三类调制。
+芯芯向荣队，中国矿业大学。成员：广泽放、黄冠、刘昌帅。
+
+面向工厂和演出现场的选信道与通信排障需求，作品将信号检测、频谱观测、参数分析和 BPSK/QPSK/16QAM 三类调制识别结合起来。设计报告先说明使用场景，再给出技术实现和实测结果，并提出利用已有参数开展信道质量分析的方法。
+
+当前实物已完成双板受控收发、频谱与 ROI 参数估计、板端识别和显示。信道质量评估属于报告中的参数分析与应用设计，自动评分、选信道排序和现场故障诊断程序尚未实现，也没有工厂或演出现场的验证数据。
+
+发送板采用璞致 P201 / XC7Z020，接收板采用创龙 TLZ7xH-EVM / XC7Z100，均配 AD9361 射频前端。PL 承担射频数字接口、DMA 和显示通路，接收板 ARM 完成前端、FFT、ROI 参数与 CNN 推理。电脑负责发送控制屏中转、校准和归档。已有射频验证采用固定配置的同轴衰减链。
 
 ## 评审阅读入口
 
 - 设计报告：[PDF](report/design_report.pdf) / [Word](report/design_report.docx)
+- [中英文海报，两页 PPTX](report/poster_zh_en.pptx)
+- [应用设计与实现范围](docs/application-design.md)
 - [复现方法与环境要求](docs/reproduction.md)
 - [FIR 验证技能包](skill/README.md)
 - [开发协作记录](report/development-chat/README.md)
 - [第三方来源与许可证](notice.md)
 
-报告说明系统原理、软硬件划分、优化过程及实测结果。验证数据和原始日志位于 `results/`，技能包的独立验证记录位于 `sim/fir-skill-validation/validation/`。
+报告、海报与本仓库使用同一作品名称和测试口径。验证数据和原始日志位于 `results/`，技能包的历史验证记录位于 `sim/fir-skill-validation/validation/`。演示视频已由队伍制作并另行提交，本仓库不提供视频文件或未经核实的播放链接。
 
 ## 主要结果
 
@@ -45,7 +53,7 @@ python sim/verify_package.py
 | board/ 上板与实测 | board/、embedded/、host/、results/ |
 | data/ 测试与参考 | data/rf-learning-kit/、data/measured-data/、results/ 中的输入与模型 |
 | skill/ 技能包 | skill/verify-fixed-point-fir/；验证记录见 sim/fir-skill-validation/ |
-| report/ 设计报告与协作 | report/design_report.docx、report/design_report.pdf、report/development-chat/ |
+| report/ 设计报告与海报 | report/design_report.docx、report/design_report.pdf、report/poster_zh_en.pptx、report/development-chat/ |
 
 `archive/source-variants/` 保存历史源码差异，`archive/history/` 保存阶段记录。历史记录中的状态对应其记录日期，当前结果以设计报告及相应验收证据为准。
 
