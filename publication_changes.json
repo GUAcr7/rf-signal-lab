@@ -1754,7 +1754,7 @@
   {
     "path": "README.md",
     "reason": "2026-11-02 submission edition: unified project name, application design and verified completion scope",
-    "published_sha256": "20789fbdc168f3417b7352483462e327a49f00b4f5c0d299c09284c55c8b3e8d"
+    "published_sha256": "6cc7e1140a464f67df3a4aa822d1bcac5e3d2de7bbdd3133315b03dbafe93a15"
   },
   {
     "path": "start-here.md",
@@ -1784,12 +1784,12 @@
   {
     "path": "report/design_report.docx",
     "reason": "2026-11-02 submission edition: unified project name, application design and verified completion scope",
-    "published_sha256": "66f5a30ec3ac78102534835f7a67aae2754a52a85c92aba4b7fa18952180703a"
+    "published_sha256": "bd4dc02d49996b35f58070a0d01192fd48adce4a954a6f7d0d7fdbd95663d5a7"
   },
   {
     "path": "report/design_report.pdf",
     "reason": "2026-11-02 submission edition: unified project name, application design and verified completion scope",
-    "published_sha256": "fb3fab445b82a3d4d9712bc2a6534fe9d5323c0ecbc19a826bf8899c9806d07c"
+    "published_sha256": "e58091f8bd7bba21cdb8d611090ffc872fe711ab9008dbd260a760e0ac8b3fa4"
   },
   {
     "path": "report/poster_zh_en.pptx",
@@ -1797,8 +1797,13 @@
     "published_sha256": "ed853b3acdb2fc7fa5192b24c958279274276c2ccf3f93e31ce956f5f3e99c60"
   },
   {
+    "path": "report/poster_en_print.pptx",
+    "reason": "2026-11-02 submission edition: unified project name, application design and verified completion scope",
+    "published_sha256": "66e6bc2e791ba5ea544b6e9a644079c62f94bccdf8a3e73e62b14cae03829ba4"
+  },
+  {
     "path": "project-info.json",
     "reason": "2026-11-02 submission edition: unified project name, application design and verified completion scope",
-    "published_sha256": "bf5db8dd4669ee98d52cf05ded57587b555c7b47d8071ab05e3c0239ce49624d"
+    "published_sha256": "4d8719e46270427d4ca50dffdd6a47371e614bd6ccd2802ecb6f071fbb50151d"
   }
 ]

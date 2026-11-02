@@ -14,6 +14,7 @@
 
 - 设计报告：[PDF](report/design_report.pdf) / [Word](report/design_report.docx)
 - [中英文海报，两页 PPTX](report/poster_zh_en.pptx)
+- [现场英文匿名打印版，一页 PPTX](report/poster_en_print.pptx)
 - [应用设计与实现范围](docs/application-design.md)
 - [复现方法与环境要求](docs/reproduction.md)
 - [FIR 验证技能包](skill/README.md)

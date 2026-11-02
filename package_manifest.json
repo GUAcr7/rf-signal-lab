@@ -1,6 +1,6 @@
 {
   "schema": "rfsig.publication.v1",
-  "created_utc": "2026-11-02T10:50:57.257408+00:00",
+  "created_utc": "2026-11-02T16:17:06.112277+00:00",
   "exclusions": [
     "package_manifest.json (self)",
     "sim/publication-validation.json (verification attestation)"
@@ -7623,13 +7623,13 @@
     },
     {
       "path": "project-info.json",
-      "bytes": 820,
-      "sha256": "bf5db8dd4669ee98d52cf05ded57587b555c7b47d8071ab05e3c0239ce49624d"
+      "bytes": 881,
+      "sha256": "4d8719e46270427d4ca50dffdd6a47371e614bd6ccd2802ecb6f071fbb50151d"
     },
     {
       "path": "publication_changes.json",
-      "bytes": 95849,
-      "sha256": "f487ae095f36647cdb9df86a91ada75b9c5241a9a69062cf8151d80751d7dbbb"
+      "bytes": 96116,
+      "sha256": "ed71a918df3228f8ba046e9a050cac7f71fa044cadd62f62c4d88f0b3e222ab9"
     },
     {
       "path": "pyproject.toml",
@@ -7643,18 +7643,18 @@
     },
     {
       "path": "README.md",
-      "bytes": 5262,
-      "sha256": "20789fbdc168f3417b7352483462e327a49f00b4f5c0d299c09284c55c8b3e8d"
+      "bytes": 5338,
+      "sha256": "6cc7e1140a464f67df3a4aa822d1bcac5e3d2de7bbdd3133315b03dbafe93a15"
     },
     {
       "path": "report/design_report.docx",
-      "bytes": 2195969,
-      "sha256": "66f5a30ec3ac78102534835f7a67aae2754a52a85c92aba4b7fa18952180703a"
+      "bytes": 2195951,
+      "sha256": "bd4dc02d49996b35f58070a0d01192fd48adce4a954a6f7d0d7fdbd95663d5a7"
     },
     {
       "path": "report/design_report.pdf",
-      "bytes": 1736707,
-      "sha256": "fb3fab445b82a3d4d9712bc2a6534fe9d5323c0ecbc19a826bf8899c9806d07c"
+      "bytes": 1741236,
+      "sha256": "e58091f8bd7bba21cdb8d611090ffc872fe711ab9008dbd260a760e0ac8b3fa4"
     },
     {
       "path": "report/development-chat/messages.jsonl",
@@ -7675,6 +7675,11 @@
       "path": "report/development-chat/README.md",
       "bytes": 1005,
       "sha256": "cc34853ed8f5de7b5bab03ef8e1bd425f1b90fd120b509a9905036a6d0704b69"
+    },
+    {
+      "path": "report/poster_en_print.pptx",
+      "bytes": 3598254,
+      "sha256": "66e6bc2e791ba5ea544b6e9a644079c62f94bccdf8a3e73e62b14cae03829ba4"
     },
     {
       "path": "report/poster_zh_en.pptx",
@@ -10239,7 +10244,7 @@
     {
       "path": "source_manifest.json",
       "bytes": 1087445,
-      "sha256": "f77c7864c257a1ad2d807017b73e78e3dcf2c81fdd53b767bdbf104b110035fe"
+      "sha256": "9c21b189f24fc5b0ee1c4065b4dc3d93d746b9cee8ef4d5bf653fb5f019991be"
     },
     {
       "path": "src/rfsig/__init__.py",
