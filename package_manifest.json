@@ -1,6 +1,6 @@
 {
   "schema": "rfsig.publication.v1",
-  "created_utc": "2026-11-03T15:44:52.486679+00:00",
+  "created_utc": "2026-11-03T17:11:59.197868+00:00",
   "exclusions": [
     "package_manifest.json (self)",
     "sim/publication-validation.json (verification attestation)"
@@ -10,6 +10,11 @@
       "path": ".gitignore",
       "bytes": 73,
       "sha256": "b19ed09fa14fbed23fe247d6107d8750500aab9a80ceb8a1a6ca3d0dd3790886"
+    },
+    {
+      "path": "README.md",
+      "bytes": 6091,
+      "sha256": "18580ffabf76a39b1d53f07f5cf00b4ce17aba37333a38029f417fcbe204c5d5"
     },
     {
       "path": "archive/history/project-readme.md",
@@ -2217,6 +2222,11 @@
       "sha256": "cf5d55e307e798af12d80a5b94195e93d07b7755672a354e557216cf529a4b0c"
     },
     {
+      "path": "board/README.md",
+      "bytes": 10709,
+      "sha256": "58da65a417037ec96867328bdfeb5b75b1c0c9cdec337ef340f49d94f87aecfb"
+    },
+    {
       "path": "board/boot/99touch",
       "bytes": 3025,
       "sha256": "78a99f915c88bf80313d567f1f23fe537364317747bbee5d6ac03b0eaaa7d8aa"
@@ -2297,6 +2307,11 @@
       "sha256": "3692f128e8ef2b9259e07b98deb1ffc3d251f48f3e4750124eafbb068cd2113b"
     },
     {
+      "path": "board/display-identification/README.md",
+      "bytes": 1570,
+      "sha256": "6e4e5c4d2fffecf1594f4f545982ad9cd72ec9830b0a68765cb476fb87c37d70"
+    },
+    {
       "path": "board/display-identification/available-source-notes-20261019.json",
       "bytes": 927,
       "sha256": "60d381b7697b7098445ee51269cbf9125e07f15f39f1201a833d4319775a17f8"
@@ -2310,16 +2325,6 @@
       "path": "board/display-identification/panel-back-20261019.jpg",
       "bytes": 986863,
       "sha256": "b9cfb2ec0379252a3fce82e3af3ad11deeed8585c02cc426182f66ccd0aef764"
-    },
-    {
-      "path": "board/display-identification/README.md",
-      "bytes": 1570,
-      "sha256": "6e4e5c4d2fffecf1594f4f545982ad9cd72ec9830b0a68765cb476fb87c37d70"
-    },
-    {
-      "path": "board/README.md",
-      "bytes": 10709,
-      "sha256": "58da65a417037ec96867328bdfeb5b75b1c0c9cdec337ef340f49d94f87aecfb"
     },
     {
       "path": "board/rx-control-snapshot.sh",
@@ -2347,6 +2352,11 @@
       "sha256": "4a45f222db48dfe90cdc6ebd6b809c04c857a5141ae51587be092c1e9ac76655"
     },
     {
+      "path": "build/README.md",
+      "bytes": 1422,
+      "sha256": "157fa50e6b775182632110293d4e5e687a306edcc8374dce2cca155bac7e3d0a"
+    },
+    {
       "path": "build/preflight.py",
       "bytes": 987,
       "sha256": "57a38dfb868553c8941c8652299064b09ad150d95dd20b56e9c374a649664315"
@@ -2355,11 +2365,6 @@
       "path": "build/prepare_workspace.py",
       "bytes": 1549,
       "sha256": "35621c755440bf96483e60e716f0c18cd910792f880aefac3a62702dadd215b8"
-    },
-    {
-      "path": "build/README.md",
-      "bytes": 1422,
-      "sha256": "157fa50e6b775182632110293d4e5e687a306edcc8374dce2cca155bac7e3d0a"
     },
     {
       "path": "configs/board-connections.json",
@@ -2387,6 +2392,11 @@
       "sha256": "06f11dbb27b69bb9a455b8678025869a60d458dc7f7a921c24b313bc3645b184"
     },
     {
+      "path": "data/README.md",
+      "bytes": 905,
+      "sha256": "a3cd5ef565f7baa3e0a9c4c634ae4ee3450718fcc06aad65e5d4e7dba3b6cd43"
+    },
+    {
       "path": "data/measured-data/p81-valid-metric-examples.json",
       "bytes": 5570,
       "sha256": "a0e9f40fa8cfd2821ea38a3f5df6b0ddbb5934b3530cb2bb186d23e0007bca26"
@@ -2397,9 +2407,9 @@
       "sha256": "2a333644a3e8bb4dc4ad99064798adbda0731dc71d0a0549f41716bcec7d3202"
     },
     {
-      "path": "data/README.md",
-      "bytes": 905,
-      "sha256": "a3cd5ef565f7baa3e0a9c4c634ae4ee3450718fcc06aad65e5d4e7dba3b6cd43"
+      "path": "data/rf-learning-kit/README.md",
+      "bytes": 3575,
+      "sha256": "daf2eb140100e95097be15e2f1d5a25432b3e0a01c0de49e5530101b24b3f471"
     },
     {
       "path": "data/rf-learning-kit/__init__.py",
@@ -2560,11 +2570,6 @@
       "path": "data/rf-learning-kit/previews/tone.png",
       "bytes": 231476,
       "sha256": "b3f8107681a2cfc049621047aac9a78f16f55d1d0e8af19f490cf7fbcb04c757"
-    },
-    {
-      "path": "data/rf-learning-kit/README.md",
-      "bytes": 3575,
-      "sha256": "daf2eb140100e95097be15e2f1d5a25432b3e0a01c0de49e5530101b24b3f471"
     },
     {
       "path": "data/rf-learning-kit/requirements.txt",
@@ -3887,6 +3892,11 @@
       "sha256": "8b9a160a0f9fc573c0b65812d2f27251a751feb4a0afc95d833a2c643ef9a648"
     },
     {
+      "path": "embedded/arm_panel/README.md",
+      "bytes": 1443,
+      "sha256": "8bd0d9522b6a38554f3dbbe9a9983c660f7ccf70e2562a9ee148b7b97301dfe3"
+    },
+    {
       "path": "embedded/arm_panel/arm_panel",
       "bytes": 22848,
       "sha256": "abe35c19ad676ca7a3c120395139d74093ccf892ea67f6e515f8db17580256db"
@@ -3900,11 +3910,6 @@
       "path": "embedded/arm_panel/font8x12.h",
       "bytes": 9287,
       "sha256": "cfd86f35716459278ad17f90a0916f09c085db7b91a6856e49b900aabaefea11"
-    },
-    {
-      "path": "embedded/arm_panel/README.md",
-      "bytes": 1443,
-      "sha256": "8bd0d9522b6a38554f3dbbe9a9983c660f7ccf70e2562a9ee148b7b97301dfe3"
     },
     {
       "path": "embedded/arm_panel_p48/arm_panel.c",
@@ -3922,14 +3927,14 @@
       "sha256": "e51ced1ac42a6e60392684e89560ab19ff3187b85c4661cfa756590f05bfb49f"
     },
     {
-      "path": "embedded/arm_rx_full_p36/arm_rx_full_p36.c",
-      "bytes": 19395,
-      "sha256": "0e3e7cdbd32ad82c4593cce502d1f8e8f00306c81f5d383edf5e7b750e78e307"
-    },
-    {
       "path": "embedded/arm_rx_full_p36/README.md",
       "bytes": 4270,
       "sha256": "404362682d21c1be5dd7e9fd9a233dce39d3c9a5337f5f65b45a19de8d3ac2f3"
+    },
+    {
+      "path": "embedded/arm_rx_full_p36/arm_rx_full_p36.c",
+      "bytes": 19395,
+      "sha256": "0e3e7cdbd32ad82c4593cce502d1f8e8f00306c81f5d383edf5e7b750e78e307"
     },
     {
       "path": "embedded/arm_rx_panel_p38/arm_rx_panel_p38.c",
@@ -3952,6 +3957,11 @@
       "sha256": "b9ba90d3ec85359e5b584704702e80d544ffb26e1fd28c271563316d1e41dd30"
     },
     {
+      "path": "embedded/fir_reference/README.md",
+      "bytes": 3673,
+      "sha256": "9d8f808b35bf95971dee4e8741f1d094457587bd727b7ad11b1505b4567b0886"
+    },
+    {
       "path": "embedded/fir_reference/arm_smoke.c",
       "bytes": 969,
       "sha256": "0d7a0287f5cf1383031e300ae005dc64abc743cc0722f767f6fec233811da0c1"
@@ -3970,11 +3980,6 @@
       "path": "embedded/fir_reference/fixed_fir.h",
       "bytes": 1539,
       "sha256": "106c7ac84a2dcca246d8d5d356eb8ca3a0fc73111a4d1985a93df8829e24da05"
-    },
-    {
-      "path": "embedded/fir_reference/README.md",
-      "bytes": 3673,
-      "sha256": "9d8f808b35bf95971dee4e8741f1d094457587bd727b7ad11b1505b4567b0886"
     },
     {
       "path": "embedded/modulation_baseline/baseline_infer.c",
@@ -4002,6 +4007,11 @@
       "sha256": "69141489a8c259e4c3685abaa901387139f5c5c42fbdd9745f8ff2e5a331bdde"
     },
     {
+      "path": "embedded/source_panel/README.md",
+      "bytes": 4177,
+      "sha256": "663ec82c0888b59ef5fd0544b42641535c7ee26de6f1f8c8514056434fe6504d"
+    },
+    {
       "path": "embedded/source_panel/panel_logic.h",
       "bytes": 6410,
       "sha256": "2c1e73a3b278b5f0dc40f391ead02ef85c71b27395604ed2c0630a7622bc703e"
@@ -4020,11 +4030,6 @@
       "path": "embedded/source_panel/panel_wire_check.c",
       "bytes": 2373,
       "sha256": "59393badd92d1e710c436ac0948eac4d56f7f8ef50b7a0e7d59832f7ac188084"
-    },
-    {
-      "path": "embedded/source_panel/README.md",
-      "bytes": 4177,
-      "sha256": "663ec82c0888b59ef5fd0544b42641535c7ee26de6f1f8c8514056434fe6504d"
     },
     {
       "path": "embedded/tiny_cnn_probe/real_rf_infer.c",
@@ -6662,6 +6667,11 @@
       "sha256": "3b73fb0030dc787a41bf5aeda8a2e72c3a079857d4b7da9163f0c36a7e6c2578"
     },
     {
+      "path": "fpga/fir-vivado/README.md",
+      "bytes": 3869,
+      "sha256": "84186fa58c5fbddc2a32bad88652d7d2600a85eb2e75130d2a18122dcf8d69f9"
+    },
+    {
       "path": "fpga/fir-vivado/expected-contract.json",
       "bytes": 965,
       "sha256": "16b08cdaadd279869110af2792d077cd10e8cfdd16902a568ea904ae25feda5c"
@@ -6670,11 +6680,6 @@
       "path": "fpga/fir-vivado/fir_internal_100mhz.xdc",
       "bytes": 285,
       "sha256": "55ce128c19265000096df2eacb10c5a868751251eb4cb8bc3d707ea9edcab871"
-    },
-    {
-      "path": "fpga/fir-vivado/README.md",
-      "bytes": 3869,
-      "sha256": "84186fa58c5fbddc2a32bad88652d7d2600a85eb2e75130d2a18122dcf8d69f9"
     },
     {
       "path": "fpga/fir-vivado/run-fir-synthesis.ps1",
@@ -6782,6 +6787,11 @@
       "sha256": "9254dae2129b6ab90bffe0fff5994daf82e009a03d32b478cc8d0e835dcabeeb"
     },
     {
+      "path": "fpga/vendor-baseline/README.md",
+      "bytes": 6269,
+      "sha256": "aedae2ca1eca43beb0ebbf77215103cc6b6ef1cecb4098355bf71f9402502c5b"
+    },
+    {
       "path": "fpga/vendor-baseline/archive-sha256.json",
       "bytes": 453,
       "sha256": "2b4334fadbb39dedc5e0ba5edc091cbb43f456845aa6474fc02e2defe3941aa7"
@@ -6817,11 +6827,6 @@
       "sha256": "54d0bf27b6047daf848e67488d38ad405e1aed6f7533e41fb0937deb07d9acaa"
     },
     {
-      "path": "fpga/vendor-baseline/README.md",
-      "bytes": 6269,
-      "sha256": "aedae2ca1eca43beb0ebbf77215103cc6b6ef1cecb4098355bf71f9402502c5b"
-    },
-    {
       "path": "fpga/vendor-baseline/reimplement-control-replication.tcl",
       "bytes": 5413,
       "sha256": "d393bdd349ec7a5ae5f20db42288f783f2e0ce3682d6fa7eb797d8b945b957d7"
@@ -6847,6 +6852,11 @@
       "sha256": "3800be93f7874cfcc2b730c91901f78bcc8c3e3bbb90b52fdfb0b7346acafe72"
     },
     {
+      "path": "fpga/vendor-baseline/source-manifest.json",
+      "bytes": 72136,
+      "sha256": "a1ebb1dbf8ae4126e509fd922629d4b640d58154825bc283b7770c47ea5c0da3"
+    },
+    {
       "path": "fpga/vendor-baseline/source/plutosdr-fw/hdl/.gitattributes",
       "bytes": 150,
       "sha256": "82a9dbf7309c0064befedb14942b4b9f60ef278cf4030470af286a7aa3fa6c75"
@@ -6855,6 +6865,11 @@
       "path": "fpga/vendor-baseline/source/plutosdr-fw/hdl/.gitignore",
       "bytes": 785,
       "sha256": "28bba2141be4400063b9e0bb1148272cf879cb7ff59c871c28a3688a646e028d"
+    },
+    {
+      "path": "fpga/vendor-baseline/source/plutosdr-fw/hdl/README.md",
+      "bytes": 4230,
+      "sha256": "40b628050b2e1a76a4fc81f01d58463e98a6861f8b56643e1e3d152ecb475136"
     },
     {
       "path": "fpga/vendor-baseline/source/plutosdr-fw/hdl/library/axi_ad9361/axi_ad9361.v",
@@ -7532,16 +7547,6 @@
       "sha256": "01f024357dcecfadd3e7f69983ecadad021e0ef09d93ef544a605c539ff5965f"
     },
     {
-      "path": "fpga/vendor-baseline/source/plutosdr-fw/hdl/README.md",
-      "bytes": 4230,
-      "sha256": "40b628050b2e1a76a4fc81f01d58463e98a6861f8b56643e1e3d152ecb475136"
-    },
-    {
-      "path": "fpga/vendor-baseline/source-manifest.json",
-      "bytes": 72136,
-      "sha256": "a1ebb1dbf8ae4126e509fd922629d4b640d58154825bc283b7770c47ea5c0da3"
-    },
-    {
       "path": "host/analyzer_viewer.py",
       "bytes": 18328,
       "sha256": "5eb0bf87a67e5511a4860b134fa35a4ac474f6b309584f4bd0933b2ad4dfacdd"
@@ -7562,6 +7567,11 @@
       "sha256": "6264fd08f1903eab18b3edfd0a1dee6d6b2075d9976085828b2fb5202af4c2da"
     },
     {
+      "path": "host/rf_learning_kit/README.md",
+      "bytes": 3575,
+      "sha256": "daf2eb140100e95097be15e2f1d5a25432b3e0a01c0de49e5530101b24b3f471"
+    },
+    {
       "path": "host/rf_learning_kit/__init__.py",
       "bytes": 73,
       "sha256": "8aef3d6ac5a6b0b48121ea8ee2e79a321fffb60857fa80e88a859ef5e65fe40b"
@@ -7575,11 +7585,6 @@
       "path": "host/rf_learning_kit/example_read.py",
       "bytes": 699,
       "sha256": "3de6ce1b239ac00e75b6b5dbf937768e8bcdc38aeb336c67109676b6d4862e5c"
-    },
-    {
-      "path": "host/rf_learning_kit/README.md",
-      "bytes": 3575,
-      "sha256": "daf2eb140100e95097be15e2f1d5a25432b3e0a01c0de49e5530101b24b3f471"
     },
     {
       "path": "host/rf_learning_kit/run-demo.cmd",
@@ -7639,12 +7644,12 @@
     {
       "path": "project-info.json",
       "bytes": 1011,
-      "sha256": "14119443a0949cf66d4f101e956663c8e9227c7226dd161832a858c503917b41"
+      "sha256": "e3f055c0274a30479a65e210341cc98f815ae7064df4c5cecf9745e543c44111"
     },
     {
       "path": "publication_changes.json",
-      "bytes": 98254,
-      "sha256": "4a960f192ceecf85c3cb13f1fcf760b9f91f0014c48ce8e07826b3d2f3056dc8"
+      "bytes": 98986,
+      "sha256": "ac4e1e5c04cf7bbbf4bf9ae673f00516451a5485336e8a8f1da9eaa100cdeb88"
     },
     {
       "path": "pyproject.toml",
@@ -7657,19 +7662,24 @@
       "sha256": "0afd0745c9306d9e07a78954c5f867c3954038a324875824f23e81993453b727"
     },
     {
-      "path": "README.md",
-      "bytes": 6091,
-      "sha256": "18580ffabf76a39b1d53f07f5cf00b4ce17aba37333a38029f417fcbe204c5d5"
+      "path": "report/README.md",
+      "bytes": 858,
+      "sha256": "fb3120988a155e84833901fe9ddfb10212f92f7cf062f354244579db7ddfb892"
     },
     {
       "path": "report/design_report.docx",
-      "bytes": 2195951,
-      "sha256": "bd4dc02d49996b35f58070a0d01192fd48adce4a954a6f7d0d7fdbd95663d5a7"
+      "bytes": 2196017,
+      "sha256": "549c3368f6a5dad08dd61ee1c853b9f758085199fc49cc4973e36bafda990ca8"
     },
     {
       "path": "report/design_report.pdf",
-      "bytes": 1741236,
-      "sha256": "e58091f8bd7bba21cdb8d611090ffc872fe711ab9008dbd260a760e0ac8b3fa4"
+      "bytes": 1741337,
+      "sha256": "e8bec2610579a926485ea825472582602d60e23a5cad59d92e7ec9ec744e0e59"
+    },
+    {
+      "path": "report/development-chat/README.md",
+      "bytes": 1005,
+      "sha256": "cc34853ed8f5de7b5bab03ef8e1bd425f1b90fd120b509a9905036a6d0704b69"
     },
     {
       "path": "report/development-chat/messages.jsonl",
@@ -7687,11 +7697,6 @@
       "sha256": "b8dc9ac0638262397bfabb9ae59696ac9f0189b54b44256e7811f87c3b0b8fa6"
     },
     {
-      "path": "report/development-chat/README.md",
-      "bytes": 1005,
-      "sha256": "cc34853ed8f5de7b5bab03ef8e1bd425f1b90fd120b509a9905036a6d0704b69"
-    },
-    {
       "path": "report/poster_en_print.pptx",
       "bytes": 3598254,
       "sha256": "66e6bc2e791ba5ea544b6e9a644079c62f94bccdf8a3e73e62b14cae03829ba4"
@@ -7700,11 +7705,6 @@
       "path": "report/poster_zh_en.pptx",
       "bytes": 3801844,
       "sha256": "ed853b3acdb2fc7fa5192b24c958279274276c2ccf3f93e31ce956f5f3e99c60"
-    },
-    {
-      "path": "report/README.md",
-      "bytes": 858,
-      "sha256": "fb3120988a155e84833901fe9ddfb10212f92f7cf062f354244579db7ddfb892"
     },
     {
       "path": "requirements-lock.txt",
@@ -9677,14 +9677,19 @@
       "sha256": "cd63a9f6c9d5c86e894fb84e771aa3cbbc186b5c195e5855ff667acc4d6fbbd5"
     },
     {
-      "path": "sim/fir-skill-validation/manifest.json",
-      "bytes": 19042,
-      "sha256": "cadbff437fb894ef4da1cbe86ac45a9da470c1949a50ea5d414b291d475cbe84"
+      "path": "sim/README.md",
+      "bytes": 1072,
+      "sha256": "675e36cd80228c7e38bfbf976ccabbbdd81c9258f445b1d234e664b4ff2aa199"
     },
     {
       "path": "sim/fir-skill-validation/README.md",
       "bytes": 2781,
       "sha256": "eb651a89c0e9aaa3069dacf1ced0c84e13b659098d9e9fbef3e15704e45793c1"
+    },
+    {
+      "path": "sim/fir-skill-validation/manifest.json",
+      "bytes": 19042,
+      "sha256": "cadbff437fb894ef4da1cbe86ac45a9da470c1949a50ea5d414b291d475cbe84"
     },
     {
       "path": "sim/fir-skill-validation/validate.py",
@@ -9695,6 +9700,11 @@
       "path": "sim/fir-skill-validation/validation/development-saturation-fixture-not-exercised.json",
       "bytes": 968,
       "sha256": "c30ca16866982dcba5d4aaae7cf643dce8b89cdae318012884a175d5539b414b"
+    },
+    {
+      "path": "sim/fir-skill-validation/validation/five-tap.log",
+      "bytes": 141,
+      "sha256": "dde4a85d34f0c832facdb60ecf16c4eb2d388697b2813907b3353c43e58714df"
     },
     {
       "path": "sim/fir-skill-validation/validation/five-tap/coeff.hex",
@@ -9777,9 +9787,9 @@
       "sha256": "8f62e93085d8edccde49f17a0db10220bd4d3a19a49a6ae6f439ee8b30fa3799"
     },
     {
-      "path": "sim/fir-skill-validation/validation/five-tap.log",
-      "bytes": 141,
-      "sha256": "dde4a85d34f0c832facdb60ecf16c4eb2d388697b2813907b3353c43e58714df"
+      "path": "sim/fir-skill-validation/validation/nineteen-tap-saturation.log",
+      "bytes": 156,
+      "sha256": "2075739572ad58f0812304438f7c403ab7f615a22c040888860f6429c960772b"
     },
     {
       "path": "sim/fir-skill-validation/validation/nineteen-tap-saturation/coeff.hex",
@@ -9862,16 +9872,6 @@
       "sha256": "e85d2ab63b8de0fe10dc96811eedcd06e0ea6f6705549beb54ee2e606855aa5b"
     },
     {
-      "path": "sim/fir-skill-validation/validation/nineteen-tap-saturation.log",
-      "bytes": 156,
-      "sha256": "2075739572ad58f0812304438f7c403ab7f615a22c040888860f6429c960772b"
-    },
-    {
-      "path": "sim/fir-skill-validation/validation/reject-bool/report.json",
-      "bytes": 227,
-      "sha256": "7326f640c972334c844bc0e4934d978258a65b05e00bafa280cd455c54a6be85"
-    },
-    {
       "path": "sim/fir-skill-validation/validation/reject-bool.json",
       "bytes": 144,
       "sha256": "54ea124e74e020efeac738dc66a627cdb4b552b812c576db79bec9d4a5fd8286"
@@ -9880,6 +9880,16 @@
       "path": "sim/fir-skill-validation/validation/reject-bool.log",
       "bytes": 195,
       "sha256": "fd961ba39104ad6949ee0e57601cc79e56a3b49a115e0bf3fd50d004216540fa"
+    },
+    {
+      "path": "sim/fir-skill-validation/validation/reject-bool/report.json",
+      "bytes": 227,
+      "sha256": "7326f640c972334c844bc0e4934d978258a65b05e00bafa280cd455c54a6be85"
+    },
+    {
+      "path": "sim/fir-skill-validation/validation/reject-missing-saturation.log",
+      "bytes": 208,
+      "sha256": "3142fb7f5228ffe263594d59befe6ded307c844f422d74a9269e7fb2517540a5"
     },
     {
       "path": "sim/fir-skill-validation/validation/reject-missing-saturation/coeff.hex",
@@ -9947,9 +9957,9 @@
       "sha256": "e85d2ab63b8de0fe10dc96811eedcd06e0ea6f6705549beb54ee2e606855aa5b"
     },
     {
-      "path": "sim/fir-skill-validation/validation/reject-missing-saturation.log",
-      "bytes": 208,
-      "sha256": "3142fb7f5228ffe263594d59befe6ded307c844f422d74a9269e7fb2517540a5"
+      "path": "sim/fir-skill-validation/validation/reject-missing-tool.log",
+      "bytes": 227,
+      "sha256": "934ff94d781522f07e41402d4352df2c03f88e432dcdc059097c46cdcb939c04"
     },
     {
       "path": "sim/fir-skill-validation/validation/reject-missing-tool/coeff.hex",
@@ -9997,16 +10007,6 @@
       "sha256": "41724cd96c066e30bc8603a014cc2f8f68bb9d7adf06e3f5d798a0a9ace8d3b3"
     },
     {
-      "path": "sim/fir-skill-validation/validation/reject-missing-tool.log",
-      "bytes": 227,
-      "sha256": "934ff94d781522f07e41402d4352df2c03f88e432dcdc059097c46cdcb939c04"
-    },
-    {
-      "path": "sim/fir-skill-validation/validation/reject-out-of-range/report.json",
-      "bytes": 227,
-      "sha256": "6b251e94048dff5b3cda086cbc6f2cc392d27dd2aef01af7f0255c5272411edb"
-    },
-    {
       "path": "sim/fir-skill-validation/validation/reject-out-of-range.json",
       "bytes": 144,
       "sha256": "f9023d879341c8c0cae0f88bd59b615eaa9d2814ca45c866a2ecded4fa5b4c08"
@@ -10015,6 +10015,16 @@
       "path": "sim/fir-skill-validation/validation/reject-out-of-range.log",
       "bytes": 203,
       "sha256": "92241eec4a66eff19fdab83c9347d4cae67b115913cceb8cc6b593b6b6c61d79"
+    },
+    {
+      "path": "sim/fir-skill-validation/validation/reject-out-of-range/report.json",
+      "bytes": 227,
+      "sha256": "6b251e94048dff5b3cda086cbc6f2cc392d27dd2aef01af7f0255c5272411edb"
+    },
+    {
+      "path": "sim/fir-skill-validation/validation/reject-wrong-channel.log",
+      "bytes": 203,
+      "sha256": "fe4d4b72817f195d27a3dceaa1bef19ef8dbc9e7d7b875b58310098d3cd9e742"
     },
     {
       "path": "sim/fir-skill-validation/validation/reject-wrong-channel/coeff.hex",
@@ -10082,14 +10092,14 @@
       "sha256": "41724cd96c066e30bc8603a014cc2f8f68bb9d7adf06e3f5d798a0a9ace8d3b3"
     },
     {
-      "path": "sim/fir-skill-validation/validation/reject-wrong-channel.log",
-      "bytes": 203,
-      "sha256": "fe4d4b72817f195d27a3dceaa1bef19ef8dbc9e7d7b875b58310098d3cd9e742"
-    },
-    {
       "path": "sim/fir-skill-validation/validation/skill-format-validation.txt",
       "bytes": 199,
       "sha256": "cc02e3bc8de4728ec7c7921c3ab269aa4f4cfd74d130c153b8da3f31e111e34d"
+    },
+    {
+      "path": "sim/fir-skill-validation/validation/three-tap.log",
+      "bytes": 142,
+      "sha256": "4f26d82780a94451247611fab2604aa272b9037e7d8934647e101e3ca3d36539"
     },
     {
       "path": "sim/fir-skill-validation/validation/three-tap/coeff.hex",
@@ -10172,11 +10182,6 @@
       "sha256": "41724cd96c066e30bc8603a014cc2f8f68bb9d7adf06e3f5d798a0a9ace8d3b3"
     },
     {
-      "path": "sim/fir-skill-validation/validation/three-tap.log",
-      "bytes": 142,
-      "sha256": "4f26d82780a94451247611fab2604aa272b9037e7d8934647e101e3ca3d36539"
-    },
-    {
       "path": "sim/fir-skill-validation/validation/validation-summary.json",
       "bytes": 2320,
       "sha256": "c9b08628cb57a5c8ab26ab7e405dd6f872c877d5611a056fdc504b141a099b13"
@@ -10192,11 +10197,6 @@
       "sha256": "d5ef7d833a4cbc610753a4fcceee59dc355803cde729aef460f80c0de7b23480"
     },
     {
-      "path": "sim/README.md",
-      "bytes": 1072,
-      "sha256": "675e36cd80228c7e38bfbf976ccabbbdd81c9258f445b1d234e664b4ff2aa199"
-    },
-    {
       "path": "sim/verify_package.py",
       "bytes": 3147,
       "sha256": "ed67568734f024cf636bf498b94541fd991f33cde5206f6c9de491508ee21dcc"
@@ -10210,6 +10210,16 @@
       "path": "skill/validate.py",
       "bytes": 4023,
       "sha256": "364ed14b70ed095af3d2f6f1644d78b29e9fb6adc305fd293ae05d1cc16a0500"
+    },
+    {
+      "path": "skill/verify-fixed-point-fir/README.md",
+      "bytes": 1177,
+      "sha256": "832a8cc4f56ca02d14948a8444bc7fb20d8197cece9991eac7878cd630c75e7d"
+    },
+    {
+      "path": "skill/verify-fixed-point-fir/SKILL.md",
+      "bytes": 1952,
+      "sha256": "5ea9661d7998e6dd75330286a6ed0042670226bdb4e3d7e869865cf856460322"
     },
     {
       "path": "skill/verify-fixed-point-fir/assets/fixed_fir_iq.v",
@@ -10242,11 +10252,6 @@
       "sha256": "927d4d76c6ba7ae49fe671c9c4c3d80a2d2eec5ec0431b56965217f0660b7a11"
     },
     {
-      "path": "skill/verify-fixed-point-fir/README.md",
-      "bytes": 1177,
-      "sha256": "832a8cc4f56ca02d14948a8444bc7fb20d8197cece9991eac7878cd630c75e7d"
-    },
-    {
       "path": "skill/verify-fixed-point-fir/references/contract.md",
       "bytes": 1393,
       "sha256": "9ba72140d032563281c983e5cd3cc9614e5b046843a2679b42a1cae554d6c386"
@@ -10260,11 +10265,6 @@
       "path": "skill/verify-fixed-point-fir/scripts/verify.py",
       "bytes": 6764,
       "sha256": "6bcff39488fa2e36ec347bea2619beb0fe9162c92026ec1abc7478b3ea93c200"
-    },
-    {
-      "path": "skill/verify-fixed-point-fir/SKILL.md",
-      "bytes": 1952,
-      "sha256": "5ea9661d7998e6dd75330286a6ed0042670226bdb4e3d7e869865cf856460322"
     },
     {
       "path": "source_manifest.json",

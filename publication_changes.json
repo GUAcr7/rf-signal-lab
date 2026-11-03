@@ -1850,5 +1850,20 @@
     "path": "project-info.json",
     "reason": "2026-11-03 submission edition: official 3.3.5 directory mapping and reading entries",
     "published_sha256": "14119443a0949cf66d4f101e956663c8e9227c7226dd161832a858c503917b41"
+  },
+  {
+    "path": "report/design_report.docx",
+    "reason": "2026-11-04 submission review: anonymous report metadata and current delivery status",
+    "published_sha256": "549c3368f6a5dad08dd61ee1c853b9f758085199fc49cc4973e36bafda990ca8"
+  },
+  {
+    "path": "report/design_report.pdf",
+    "reason": "2026-11-04 submission review: anonymous report metadata and current delivery status",
+    "published_sha256": "e8bec2610579a926485ea825472582602d60e23a5cad59d92e7ec9ec744e0e59"
+  },
+  {
+    "path": "project-info.json",
+    "reason": "2026-11-04 submission review: anonymous report metadata and current delivery status",
+    "published_sha256": "e3f055c0274a30479a65e210341cc98f815ae7064df4c5cecf9745e543c44111"
   }
 ]
