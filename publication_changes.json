@@ -1805,5 +1805,50 @@
     "path": "project-info.json",
     "reason": "2026-11-02 submission edition: unified project name, application design and verified completion scope",
     "published_sha256": "4d8719e46270427d4ca50dffdd6a47371e614bd6ccd2802ecb6f071fbb50151d"
+  },
+  {
+    "path": "README.md",
+    "reason": "2026-11-03 submission edition: official 3.3.5 directory mapping and reading entries",
+    "published_sha256": "18580ffabf76a39b1d53f07f5cf00b4ce17aba37333a38029f417fcbe204c5d5"
+  },
+  {
+    "path": "docs/submission-structure.md",
+    "reason": "2026-11-03 submission edition: official 3.3.5 directory mapping and reading entries",
+    "published_sha256": "26863bd019ebaf46de3731c38473d9d479e2fad4ede2e1a9a6dc6dee1095ed31"
+  },
+  {
+    "path": "src/README.md",
+    "reason": "2026-11-03 submission edition: official 3.3.5 directory mapping and reading entries",
+    "published_sha256": "51f9ce78e64d3a9a8e32d50504c4454f4c5ca16dad4b666cf80b39a62809ea84"
+  },
+  {
+    "path": "sim/README.md",
+    "reason": "2026-11-03 submission edition: official 3.3.5 directory mapping and reading entries",
+    "published_sha256": "675e36cd80228c7e38bfbf976ccabbbdd81c9258f445b1d234e664b4ff2aa199"
+  },
+  {
+    "path": "build/README.md",
+    "reason": "2026-11-03 submission edition: official 3.3.5 directory mapping and reading entries",
+    "published_sha256": "157fa50e6b775182632110293d4e5e687a306edcc8374dce2cca155bac7e3d0a"
+  },
+  {
+    "path": "data/README.md",
+    "reason": "2026-11-03 submission edition: official 3.3.5 directory mapping and reading entries",
+    "published_sha256": "a3cd5ef565f7baa3e0a9c4c634ae4ee3450718fcc06aad65e5d4e7dba3b6cd43"
+  },
+  {
+    "path": "report/README.md",
+    "reason": "2026-11-03 submission edition: official 3.3.5 directory mapping and reading entries",
+    "published_sha256": "fb3120988a155e84833901fe9ddfb10212f92f7cf062f354244579db7ddfb892"
+  },
+  {
+    "path": "board/README.md",
+    "reason": "2026-11-03 submission edition: official 3.3.5 directory mapping and reading entries",
+    "published_sha256": "58da65a417037ec96867328bdfeb5b75b1c0c9cdec337ef340f49d94f87aecfb"
+  },
+  {
+    "path": "project-info.json",
+    "reason": "2026-11-03 submission edition: official 3.3.5 directory mapping and reading entries",
+    "published_sha256": "14119443a0949cf66d4f101e956663c8e9227c7226dd161832a858c503917b41"
   }
 ]

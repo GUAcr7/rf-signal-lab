@@ -1,6 +1,6 @@
 {
   "schema": "rfsig.publication.v1",
-  "created_utc": "2026-11-02T16:17:06.112277+00:00",
+  "created_utc": "2026-11-03T15:44:52.486679+00:00",
   "exclusions": [
     "package_manifest.json (self)",
     "sim/publication-validation.json (verification attestation)"
@@ -2318,8 +2318,8 @@
     },
     {
       "path": "board/README.md",
-      "bytes": 10451,
-      "sha256": "1c70c3c7f73814078b55c32a41d4a9780231b7256d5fe7bba6f02370d0994496"
+      "bytes": 10709,
+      "sha256": "58da65a417037ec96867328bdfeb5b75b1c0c9cdec337ef340f49d94f87aecfb"
     },
     {
       "path": "board/rx-control-snapshot.sh",
@@ -2357,6 +2357,11 @@
       "sha256": "35621c755440bf96483e60e716f0c18cd910792f880aefac3a62702dadd215b8"
     },
     {
+      "path": "build/README.md",
+      "bytes": 1422,
+      "sha256": "157fa50e6b775182632110293d4e5e687a306edcc8374dce2cca155bac7e3d0a"
+    },
+    {
       "path": "configs/board-connections.json",
       "bytes": 756,
       "sha256": "c63b6321df055a0363df18f83547de867770a7c6d6ec2e128702c8ee0c2666bf"
@@ -2390,6 +2395,11 @@
       "path": "data/measured-data/summary.json",
       "bytes": 7811,
       "sha256": "2a333644a3e8bb4dc4ad99064798adbda0731dc71d0a0549f41716bcec7d3202"
+    },
+    {
+      "path": "data/README.md",
+      "bytes": 905,
+      "sha256": "a3cd5ef565f7baa3e0a9c4c634ae4ee3450718fcc06aad65e5d4e7dba3b6cd43"
     },
     {
       "path": "data/rf-learning-kit/__init__.py",
@@ -3780,6 +3790,11 @@
       "path": "docs/source-screen-control.md",
       "bytes": 4394,
       "sha256": "9194e2f14d6eee64844225373daff01c763d48f79465756826086f3b5009a321"
+    },
+    {
+      "path": "docs/submission-structure.md",
+      "bytes": 3792,
+      "sha256": "26863bd019ebaf46de3731c38473d9d479e2fad4ede2e1a9a6dc6dee1095ed31"
     },
     {
       "path": "docs/team-three-person.md",
@@ -7623,13 +7638,13 @@
     },
     {
       "path": "project-info.json",
-      "bytes": 881,
-      "sha256": "4d8719e46270427d4ca50dffdd6a47371e614bd6ccd2802ecb6f071fbb50151d"
+      "bytes": 1011,
+      "sha256": "14119443a0949cf66d4f101e956663c8e9227c7226dd161832a858c503917b41"
     },
     {
       "path": "publication_changes.json",
-      "bytes": 96116,
-      "sha256": "ed71a918df3228f8ba046e9a050cac7f71fa044cadd62f62c4d88f0b3e222ab9"
+      "bytes": 98254,
+      "sha256": "4a960f192ceecf85c3cb13f1fcf760b9f91f0014c48ce8e07826b3d2f3056dc8"
     },
     {
       "path": "pyproject.toml",
@@ -7643,8 +7658,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 5338,
-      "sha256": "6cc7e1140a464f67df3a4aa822d1bcac5e3d2de7bbdd3133315b03dbafe93a15"
+      "bytes": 6091,
+      "sha256": "18580ffabf76a39b1d53f07f5cf00b4ce17aba37333a38029f417fcbe204c5d5"
     },
     {
       "path": "report/design_report.docx",
@@ -7685,6 +7700,11 @@
       "path": "report/poster_zh_en.pptx",
       "bytes": 3801844,
       "sha256": "ed853b3acdb2fc7fa5192b24c958279274276c2ccf3f93e31ce956f5f3e99c60"
+    },
+    {
+      "path": "report/README.md",
+      "bytes": 858,
+      "sha256": "fb3120988a155e84833901fe9ddfb10212f92f7cf062f354244579db7ddfb892"
     },
     {
       "path": "requirements-lock.txt",
@@ -10172,6 +10192,11 @@
       "sha256": "d5ef7d833a4cbc610753a4fcceee59dc355803cde729aef460f80c0de7b23480"
     },
     {
+      "path": "sim/README.md",
+      "bytes": 1072,
+      "sha256": "675e36cd80228c7e38bfbf976ccabbbdd81c9258f445b1d234e664b4ff2aa199"
+    },
+    {
       "path": "sim/verify_package.py",
       "bytes": 3147,
       "sha256": "ed67568734f024cf636bf498b94541fd991f33cde5206f6c9de491508ee21dcc"
@@ -10244,7 +10269,12 @@
     {
       "path": "source_manifest.json",
       "bytes": 1087445,
-      "sha256": "9c21b189f24fc5b0ee1c4065b4dc3d93d746b9cee8ef4d5bf653fb5f019991be"
+      "sha256": "1a83d6130924e448314cba25d91d4900360d7c00831e9238ab551516fd444078"
+    },
+    {
+      "path": "src/README.md",
+      "bytes": 1039,
+      "sha256": "51f9ce78e64d3a9a8e32d50504c4454f4c5ca16dad4b666cf80b39a62809ea84"
     },
     {
       "path": "src/rfsig/__init__.py",

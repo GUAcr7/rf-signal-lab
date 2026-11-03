@@ -189,7 +189,7 @@
       "member": "rf-project/project/board/README.md",
       "original_project_path": "board/README.md",
       "original_sha256": "6d5ddf79601cd64f06a3cf61cec4338bdfa55adfc1b98e7d27ccb8af38174833",
-      "published_sha256": "1c70c3c7f73814078b55c32a41d4a9780231b7256d5fe7bba6f02370d0994496"
+      "published_sha256": "58da65a417037ec96867328bdfeb5b75b1c0c9cdec337ef340f49d94f87aecfb"
     },
     {
       "path": "board/rx-control-snapshot.sh",
@@ -9749,7 +9749,7 @@
       "member": "rf-evidence-v2-20261029/evidence/README.md",
       "original_project_path": "README.md",
       "original_sha256": "5f5454fedaad2a8eb796e62d5908d326ed7b5e7817bab0becdfa657e5d66d255",
-      "published_sha256": "6cc7e1140a464f67df3a4aa822d1bcac5e3d2de7bbdd3133315b03dbafe93a15"
+      "published_sha256": "18580ffabf76a39b1d53f07f5cf00b4ce17aba37333a38029f417fcbe204c5d5"
     },
     {
       "path": "start-here.md",

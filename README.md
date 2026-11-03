@@ -17,6 +17,7 @@
 - [现场英文匿名打印版，一页 PPTX](report/poster_en_print.pptx)
 - [应用设计与实现范围](docs/application-design.md)
 - [复现方法与环境要求](docs/reproduction.md)
+- [官方提交目录与材料对照](docs/submission-structure.md)
 - [FIR 验证技能包](skill/README.md)
 - [开发协作记录](report/development-chat/README.md)
 - [第三方来源与许可证](notice.md)
@@ -46,6 +47,8 @@ python sim/verify_package.py
 
 ## 工程目录
 
+本工程按所提供《2026 选题指南（AMD）》3.3.5 自主选题赛道组织，初级组与高级组采用同一提交清单。指南的目录树为推荐结构；本仓库保留软硬件模块各自的路径，并按要求给出以下对照。各入口目录均附阅读说明，文件名采用英文命名。
+
 | 指南目录 | 本仓库对应内容 |
 | --- | --- |
 | src/ 设计源码 | src/rfsig/、embedded/、host/、fpga/rtl/、configs/ |
@@ -57,6 +60,8 @@ python sim/verify_package.py
 | report/ 设计报告与海报 | report/design_report.docx、report/design_report.pdf、report/poster_zh_en.pptx、report/development-chat/ |
 
 `archive/source-variants/` 保存历史源码差异，`archive/history/` 保存阶段记录。历史记录中的状态对应其记录日期，当前结果以设计报告及相应验收证据为准。
+
+正式工程 ZIP 与本仓库使用同一份文件清单，解压后直接从根目录的 `README.md` 开始，无需恢复重复副本。完整本地留档中的重复工程、嵌套 checkpoint、个人交接材料和赛事指南不随正式工程包重复提交。原始验证日志、技能包案例以及指南要求的大模型协作记录继续保留。
 
 ## 复现状态与许可
 
